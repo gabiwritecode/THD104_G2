@@ -1,11 +1,23 @@
-$color1: #78BEC8;
-$color2: #6996A0;
-$yellow: #FFC107;
-$grey1:   #8C8C8C;
-$grey2:  #F5F5F5;
-$black:  #282828;
-$white:  white;
-// hover color
-$color1_h:#6996A0;
-$color2_h:#467882;
-$yellow_h:#F5AF00;
+// 常用色
+$color1: #78BEC8; // 主色: 按鈕,底色,部分標題 | rgb(120, 190, 200);
+$color2: #6996A0; // 次要色: 標題,邊框等     | rgb(105, 150, 160);
+$yellow: #FFC107; // 點綴色: 部分標籤用(前台) | rgb(255, 193, 7);
+
+$grey1:  #8C8C8C; // input字placeholder    | rgb(140, 140, 140);
+$grey2:  #F5F5F5; 
+    // 淺灰色: 訂單管理,信用卡,註冊底,(下拉式選單) | rgb(245, 245, 245);
+
+$black:  #282828; // 內文字顏色 | rgb(40, 40, 40);
+$white:  white;   // 背景色    | rgb(255, 255, 255);
+
+// 純後台用
+$color_pic:#EAEAEA; // 後台編輯圖片標示 | rgb(234, 234, 234);
+$bgc_bs:   #F8F8F8; // 後台背景色      | rgb(248, 248, 248); 
+
+// button hover color
+$color_hover:(
+    color1:#78AAB4, // rgb(120, 170, 180);
+    color2:#467882, // rgb(70, 120, 130);
+    yellow:#F5AF00  // rgb(245, 175, 0);
+); // color: map-get($color_hover, color1);
+

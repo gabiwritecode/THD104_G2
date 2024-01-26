@@ -1,0 +1,121 @@
+
+.example_wrapper{
+    font-size: 20px;
+    // color: rgb(50, 50, 167);
+    width: 600px;
+    margin: 0 auto;
+
+    h6{
+        color:darkblue;
+        text-align: center;
+        margin-top: 60px;
+        margin-bottom: 20px;
+        // example用
+    }
+    h5{
+        @include font_t2();
+    }
+    span {
+        color:red;
+        // example用
+    }
+    h1 {
+        @include font_h1(40);
+        text-align-last: left;
+    }
+
+    h2 {
+        @include font_h2();
+    }
+
+    p {
+        @include font_t1();
+        
+    }
+
+
+     // ----- btn -----
+    .btn_amount{
+      @include btn_amount();
+
+     }
+    .btn_L{
+        @include btn_L();
+        // width: 200px;
+        display:inline-block;
+        cursor:default;
+    }
+
+    .btn_yellow{
+        @include btn_yellow();
+        display:inline-block;
+    }
+
+    .btn_M{
+        @include btn_M();
+    }
+    .btn_bs_M{
+        @include btn_bs_M();
+    }
+
+    .btn_bs_S{
+        @include btn_bs_S();
+    }
+
+    // ----- tag -----
+    .tag_S{
+        @include tag_S();
+         display:inline-block;
+    }
+
+    .tag_M{
+        @include tag_M();
+    }
+    
+    a{
+        @include font_a();
+        // @include font_a($yellow);
+        // color:$yellow;
+    }
+
+    // ----- select -----
+
+    .SS{
+        @include select_S();
+    }
+
+    .SM{
+        @include select_M();
+        // width: 100px;
+    }
+
+    .SL{
+        @include select_L();
+        // width: 200px;
+        // border-color: $yellow;
+    }
+
+    // ----- input -----
+    .input_L{
+        @include input_L();
+        display: inline-block;
+    }
+
+    .input_M {
+        @include input_M();
+    }
+
+    .input_S{
+        @include input_S();
+    }
+
+    input[type=checkbox] {
+        @include checkbox();
+    }
+
+    input[type=radio] {
+        @include radio();
+    }
+    
+
+}

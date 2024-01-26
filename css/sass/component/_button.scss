@@ -1,0 +1,137 @@
+// ----- button -----
+//共同屬性
+@mixin btn_defult(){
+    color: $white;
+    text-align: center;
+    border: 0;
+    cursor: pointer;
+    transition: .3s all ease;
+    }
+
+// 註冊頁
+@mixin btn_L(){
+    @include btn_defult();
+    font-size: map-get($title_size, h2);
+    font-weight: map-get($fontWeight, h2);
+    width: 400px;
+    height: 60px;
+    letter-spacing:.1rem;
+    background-color: $color1;
+    border-radius: 12px;
+    margin: 20px auto;
+    display: block;
+    
+    &:hover {
+        background-color: darken($color1, 15);
+     }
+
+    @include m(){
+        font-size: map-get($title_size, t1);
+        font-weight: map-get($fontWeight, h2 );
+        width: 256px;
+        height: 40px;
+        border-radius: 8px;
+    }
+}
+
+//寬度太多種要手動改
+@mixin btn_M(){
+    @include btn_defult();
+    font-size: map-get($title_size, h2);
+    font-weight: map-get($fontWeight, t1);
+    width: 104px;
+    height: 40px;
+    letter-spacing: $letterSpacing;
+    background-color: $color1;
+    border-radius: 8px;
+    // margin: 10px auto;
+    
+    &:hover {
+        background-color: darken($color1, 15);
+     }
+}
+// 購物車 黃色
+@mixin btn_yellow(){
+    @include btn_defult();
+    font-size: map-get($title_size, h2);
+    font-weight: map-get($fontWeight, h2);
+    width: 366px;
+    height: 60px;
+    letter-spacing:.1rem;
+    background-color: $yellow;
+    border-radius: 12px;
+    margin: 20px auto;
+    display: block;
+    
+    &:hover {
+        background-color: map-get($color_hover, yellow);
+     }
+    @include m(){
+        @include btn_defult();
+        width: 324px;
+        height: 44px;
+        font-size: 18px;
+        font-weight: map-get($fontWeight, t1 );
+        border-radius: 8px;
+    }
+}
+
+// 購物車+-按鈕
+@mixin btn_amount(){
+      @include btn_defult();
+            font-size: 18px;
+            width: 24px;
+            height: 24px;
+            color:$color2;
+            background-color: $white;
+            border: 1px solid $color2;
+            border-radius: 6px;
+            margin: 4px 8px 10px;
+
+            transition: .1s all ease;
+            &:hover {
+            background-color: lighten($color1,10);
+            color: darken($color2, 15);
+            border-color: darken($color2, 15);
+     }
+}
+
+// ----- 後台按鈕 -----
+
+@mixin btn_bs_M(){
+    @include btn_defult();
+    font-size: map-get($title_size, h2);
+    font-weight: map-get($fontWeight, t1);
+    width: 200px;
+    height: 40px;
+    letter-spacing: .1rem;
+    background-color: $color2;
+    border-radius: 4px;
+    // margin: 10px auto;
+    // display: block;
+    
+    &:hover {
+        background-color: darken($color2, 10);
+     }
+}
+
+@mixin btn_bs_S(){
+    @include btn_defult();
+    font-size: map-get($title_size, t2);
+    font-weight: map-get($fontWeight, t2);
+    width: 98px;
+    height: 24px;
+    letter-spacing: $letterSpacing;
+    background-color: $color2;
+    border-radius: 4px;
+    // margin: 10px auto;
+    
+    &:hover {
+        background-color: darken($color2, 10);
+     }
+}
+
+// product page cart
+
+
+

@@ -1,0 +1,38 @@
+// ----- tag 目前都是黃色 -----
+//共同屬性
+@mixin tag_defut(){
+    color: $white;
+    background-color: $yellow;
+    letter-spacing: $letterSpacing;
+    text-align: center;
+    border: 0;
+    border-radius: 20px;
+}
+@mixin tag_M(){
+    @include tag_defut();
+    width: 100px;
+    height: 40px;
+    font-size: map-get($title_size, h2);
+    font-weight: map-get($fontWeight, h2);
+    cursor: pointer;
+    transition: .3s all ease;
+    &:hover {
+        background-color: map-get($color_hover, yellow);
+     }
+    }
+
+@mixin tag_S(){
+    @include tag_defut();
+    width: 80px;
+    height: 28px;
+    font-size: map-get($title_size, t2);
+    font-weight: map-get($fontWeight, t2);
+    
+    display: block;
+    margin: 16px 0;
+
+    @include m {
+        margin: 12px 0;
+    }
+    
+    }

@@ -1,0 +1,20 @@
+body{
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    font-weight: map-get($fontWeight, t1);
+    line-height: $lineHeight;
+    letter-spacing: $letterSpacing;
+    color: $black;
+}
+
+
+h1 {
+    @include font_h1();
+}
+
+h2 {
+    @include font_h2();
+    // margin: 30px;
+}
+
+// .wrapper{ @media (max-width: 390px)}

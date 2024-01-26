@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$fontFamily : "Poppins", "Noto Sans TC", sans-serif;  //英文先
+$fontSize : 16px;  //內文預設大小
+$lineHeight: 1.6; 
+$letterSpacing: .05rem;
+
+$title_size :(
+    h1: 24px, // 大標題
+    h2: 20px, // 小標題
+    t1: 16px, // p 大部分內文
+    t2: 14px, // p 說明小字(下拉選單 無糖去冰)
+    h3: 16px, // header選單文字
+    h4: 15px  // footer選單文字
+    );
+
+$fontWeight:(
+    h1: 700, // 大標題 Bold
+    h2: 500, // 小標題 Medium
+    t1: 400, // p 大部分內文 Regular
+    t2: 400, // p 說明小字 DemiLight 
+    h3: 500, // header選單文字 Medium
+    h4: 500  // footer選單文字 Medium
+    );
+
+
+
+// 取map值範例：font-size: map-get($title, h1);
+
+$bold :false; // 布林值

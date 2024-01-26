@@ -1,0 +1,43 @@
+// ----- select -----
+//共同屬性
+@mixin select_defult(){
+    font-size: map-get($title_size, t2);
+    font-weight: map-get($fontWeight, t2 );
+    border: 1px solid $color2;
+    border-radius: 4px;
+    color:$black;
+    box-sizing: border-box;
+    cursor: pointer;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url(../../../image/pic/icon/select_rightM.svg) no-repeat scroll right center transparent;  
+}
+
+//select門市用
+@mixin select_L(){
+    @include select_defult();
+    width: 120px;
+    height: 30px;
+    padding-left: 8px;
+    background: url(../../../image/pic/icon/select_rightL.svg) no-repeat scroll right center transparent;  
+}
+
+//select後台用
+@mixin select_M(){
+    @include select_defult();
+    width: 80px;
+    height: 26px;
+    padding-left: 8px;
+    background: url(../../../image/pic/icon/select_rightM.svg) no-repeat scroll right center transparent;  
+}
+
+//select購物車用
+@mixin select_S(){
+    @include select_defult();
+    width: 64px;
+    height: 24px;
+    padding-left: 6px;
+    background: url(../../../image/pic/icon/select_rightS.svg) no-repeat scroll right center transparent;  
+}
+

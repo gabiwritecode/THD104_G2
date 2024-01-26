@@ -1,0 +1,17 @@
+// ----- check box -----
+// 還沒查到怎麼改裡面樣式
+@mixin checkbox(){
+    width: 30px;
+    height: 30px;
+    border: 1px solid $color2;
+    border-radius: 4px;
+    
+    cursor: pointer;
+}
+
+@mixin radio(){
+    width: 20px;
+    height: 20px;
+    border: 1px solid $color2;
+    cursor: pointer;
+}

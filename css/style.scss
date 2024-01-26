@@ -1,1 +1,28 @@
-@import"sass/page/index"
+// var 
+@import "sass/base/reset";
+@import "sass/base/var"; // sass
+@import "sass/base/font"; // sass
+@import "sass/base/color"; // sass
+
+// mixin
+@import  "sass/mixin/mixin";
+
+// component
+@import "sass/component/font-style";
+@import "sass/component/button";
+@import "sass/component/checkbox";
+@import "sass/component/input";
+@import "sass/component/select";
+@import "sass/component/tag";
+
+// layout
+@import "sass/layout/body";
+@import "sass/layout/header";
+@import "sass/layout/footer";
+
+// page 
+@import "sass/page/0-Eric";
+@import "sass/page/0-Gabriel";
+@import "sass/page/0-Nora";
+@import "sass/page/0-Shawn";
+@import "sass/page/0-0example"

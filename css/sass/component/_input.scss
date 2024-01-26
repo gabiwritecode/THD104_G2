@@ -1,0 +1,46 @@
+// ----- input -----
+//共同屬性
+@mixin input_defult(){
+    color:$black;
+    border: 1px solid $color2;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+//註冊頁
+@mixin input_L(){
+     @include input_defult();
+    font-size: map-get($title_size, t1);
+    font-weight: map-get($fontWeight, t2 );
+    width: 400px;
+    height: 60px;
+    border-radius: 12px;
+    padding-left: 20px;
+    
+    display: block;
+    @include m(){
+        width: 256px;
+        height: 38px;
+    }
+}
+
+// 後台
+@mixin input_M(){
+    @include input_defult();
+    font-size: map-get($title_size, t1);
+    font-weight: map-get($fontWeight, t2 );
+    border-radius: 4px;
+    width: 362px;
+    height: 32px;
+    padding-left: 16px;
+}
+
+@mixin input_S(){
+    @include input_defult();
+    font-size: map-get($title_size, t1);
+    font-weight: map-get($fontWeight, t2 );
+    width: 154px;
+    height: 26px;
+    border-radius: 4px;
+    padding-left: 12px;
+     
+}
