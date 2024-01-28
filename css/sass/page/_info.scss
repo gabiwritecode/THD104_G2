@@ -1,5 +1,5 @@
 /* 預設 */
-body{
+.info-body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,7 +8,7 @@ body{
   justify-content: center;
 }
 /* 頁面內容 */
-main{
+.info-main{
   display: flex;
   flex-direction: column;
 }
