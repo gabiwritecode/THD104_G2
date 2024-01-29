@@ -3,3 +3,4 @@ css
 package-lock.json
 *.html
 !src/*.html
+!src/layout/*.html
