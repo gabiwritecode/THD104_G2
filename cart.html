@@ -4,55 +4,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>訂單確認</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="./cart.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" href="./image/pic/icon/logo_ico.ico" type="image/x-icon" />
 </head>
+<body class="cart">
 
-<body>
-  <div class="cart">
+  <header>
+  </header>
+  <main>
+    <div id="app" class="info">
+      <div class="confirm_info">
+        <h2>訂單資料</h2>
+        <div class="cart_list_banner">
+          <div class="order_list">
+            <ul>
+              <li><img src="./image/pic/icon/cartlist_logo.png" alt=""></li>
+              <div class="order_list_text">
+                <span>檸檬蜜桃冰沙 - 中杯</span>
+                <p>微糖/加珍珠</p>
+                <div class="button">
+                  <button class="minus" @click="minus()">-</button>
+                  <span>{{counter}}</span>
+                  <button class="plus" @click="counter++">+</button>
+                </div>
+              </div>
+            </ul>
+          </div>
+          <div class="order_list_r">
+            <img src="./image/pic/icon/Garbage.svg" alt="">
+            <div>NT$60</div>
+          </div>
+  
+        </div>
+        <div class="cart_list_banner">
+          <div class="order_list">
+            <ul>
+              <li><img src="./image/pic/icon/cartlist_logo.png" alt=""></li>
+              <div class="order_list_text">
+                <span>武夷岩茶 - 大杯</span>
+                <p>無糖/去冰/加愛玉</p>
+                <div class="button">
+                  <button class="minus" @click="minus()">-</button>
+                  <span>{{counter}}</span>
+                  <button class="plus" @click="counter++">+</button>
+                </div>
+              </div>
+            </ul>
+          </div>
+          <div class="order_list_r">
+            <img src="./image/pic/icon/Garbage.svg" alt="">
+            <div>NT$60</div>
+          </div>
+  
+        </div>
+        <div class="cart_list_banner">
+          <div class="order_list">
+            <ul>
+              <li><img src="./image/pic/icon/cartlist_logo.png" alt=""></li>
+              <div class="order_list_text">
+                <span>經典拿鐵 - 大杯</span>
+                <p>少糖/少冰</p>
+                <div class="button">
+                  <button class="minus" @click="minus()">-</button>
+                  <span>{{counter}}</span>
+                  <button class="plus" @click="counter++">+</button>
+                </div>
+              </div>
+            </ul>
+          </div>
+          <div class="order_list_r">
+            <img src="./image/pic/icon/Garbage.svg" alt="">
+            <div>NT$60</div>
+          </div>
+        </div>
+        <div class="count">
+          <button class="add_cart">繼續加購</button>
+          <div class="add_cart_text">
+            <span class="amount">總計3杯</span>
+            <span>NT$180元</span>
+          </div>
+        </div>
+      </div>
+      <div class="write_info">
+        <h2>確認完請填寫以下資訊</h2>
+        <form>
+          <label class="lable_name">
+            <h2>姓名:</h2>
+            <input type="text" placeholder="請輸入您的姓名" name="name">
+          </label>
+          <label class="lable_name">
+            <h2>手機:</h2>
+            <input type="text" placeholder="請輸入您的手機號碼" name="phone">
+          </label>
+          <label class="lable_name">
+            <h2>地址:</h2>
+            <input type="text" placeholder="請輸入您的地址" name="address">
+          </label>
+          <label for="creditCard" class="lable_name">
+            <h2>付款方式:</h2>
+            <input type="radio" class="radio" name="payment" value="creditCard" id="creditCard">信用卡
+            <label for="linePay" class="lable_name">
+              <input type="radio" class="radio" name="payment" value="linePay" id="linePay">Line Pay
+            </label>
+          </label>
+          <div class="creditcard">
+            <div class="creditcard_1">
+              <div class="creditnum">信用卡號碼</div>
+              <div class="creditcard_text">
+                <input type="text" placeholder="1234">
+                <input type="text" placeholder="1234">
+                <input type="text" placeholder="1234">
+                <input type="text" placeholder="1234">
+              </div>
+            </div>
+            <div class="creditcard_1">
+              <div class="creditnum">有效期限</div>
+              <div class="creditcard_text">
+                <input type="text" placeholder="MM/YY" class="date">
+              </div>
+            </div>
+            <div class="creditcard_1">
+              <div class="creditnum">背面後三碼</div>
+              <div class="creditcard_text">
+                <input type="text" placeholder="CVC/CVV">
+              </div>
+            </div>
+          </div>
+        </form>
+        <button>結帳</button>
+      </div>
+    </main>
+    <footer></footer>
 
-    <ul>
-      <li><img src="./image/Frame 9.png" alt=""></li>
-      <li>
-        <h3 class="productname">原豆咖啡名字很長的話呢</h3>
-        <ol class="product">
-          <li>
-            <select name="" id="">
-              <option value="">大小*</option>
-              <option value="">L</option>
-              <option value="">M</option>
-            </select>
-            <select name="" id="">
-              <option value="">大小*</option>
-              <option value="">L</option>
-              <option value="">M</option>
-            </select>
-            <br>
-            <select name="" id="">
-              <option value="">大小*</option>
-              <option value="">L</option>
-              <option value="">M</option>
-            </select>
-            <select name="" id="">
-              <option value="">大小</option>
-              <option value="">L</option>
-              <option value="">M</option>
-            </select>
-          <li>
-            <button>-</button>
-            1
-            <button>+</button>
-            <br>
-            <span>NT$60</span><i class="fa-regular fa-trash-can"></i>
-          </li>
-      </li>
-      </ol>
+    </div>
 
-      </li>
-    </ul>
-    <span>123</span>
-  </div>
+  <script src="./vue/vue.global.js"></script>
+
+  <script>
+    const app = Vue.createApp({
+      data(){
+        return{
+          counter:1
+        }
+      },
+      methods:{
+        minus(){
+          this.counter--;
+          if(this.counter<1){
+            this.counter = 1;
+          }
+
+        }
+          
+        }
+      }
+
+    );
+    app.mount("#app");
+  </script>
+
 </body>
 
 </html>
