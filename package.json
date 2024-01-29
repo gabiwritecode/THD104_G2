@@ -2,11 +2,26 @@
   "name": "thd104_g2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "安裝環境": "npm i",
+    "開發": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabiwritecode/THD104_G2.git"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabiwritecode/THD104_G2/issues"
+  },
+  "homepage": "https://github.com/gabiwritecode/THD104_G2#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-file-include": "^2.3.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.70.0"
+  }
 }
