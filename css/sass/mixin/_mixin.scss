@@ -19,6 +19,13 @@
 
 // ----- RWD -----
 
+@mixin d1100 (){
+    @media screen and (max-width: $d1100) {
+        // 內容
+        @content;
+    }
+ }
+
  // 平板
  @mixin t(){
     @media screen and (max-width: $t) {
