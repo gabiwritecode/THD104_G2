@@ -1,3 +1,72 @@
-// footer{
+/* Option 2: Import via CSS */
+// @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+footer{
+    width: 100%;
+    height: 180px;
+    background-color: $color1;
+    padding: 14px 20px;
+    box-sizing: border-box;
 
-// }
+    
+    .footer{
+        width: 1200px;
+        position: relative;;
+        margin: 0 auto;
+        @include d1100() {
+            width: auto;
+        }
+        
+    ul{
+        display: flex;
+        justify-content: center;
+        margin: 12px 0;
+    }
+    img{
+        margin: 0 40px;
+        width: 55px;
+        display: block;
+    }
+    a{
+        color: $white;
+        font-size: 15px;
+        text-decoration: none;
+        letter-spacing: .1rem;
+        text-align: center;
+        display: block;
+        &:hover {
+            opacity: .8;
+        }
+    }
+   .menu li{
+        width: 126px;
+        // align-items: center; 
+        line-height: 5;
+                
+    }
+    p{
+        color:$white;
+        font-size: 13px;
+        font-weight: 300;
+        text-align: center;
+        // justify-content: center;
+    }
+    .btn{
+        justify-content: right;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        .fa-brands{
+            color: $white;
+            font-size: 24px;
+            text-align: center;
+            letter-spacing: normal;
+            margin: 0 12px;
+        }
+        .fa-line{
+            font-size: 22px;
+            padding-top: 2px;
+        }
+    }
+            
+    }
+}

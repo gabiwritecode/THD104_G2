@@ -133,5 +133,21 @@
 
 // product page cart
 
-
+@mixin btn_product_cart(){
+    @include btn_defult();
+     width: 36px;
+    height: 36px;
+    color: $white;
+    background-color: $color1;
+    border-radius: 50%;
+    font-size: 16px;
+    text-align: center;
+    line-height: 2.3;
+    transition: .2s all ease;
+    &:hover{
+        color: $white;
+        background-color: $yellow;
+    }
+      
+}
 

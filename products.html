@@ -6,65 +6,311 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./image/pic/icon/logo_ico.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <title>商品</title>
 </head>
 <body>
-    <header class="products">
-        <img src="./image/icon/logo.svg" alt="">
-        <nav>
-        <ul>
-            <li><a href="">關於我們</a></li>
-            <li><a href="">最新消息</a></li>
-            <li><a href="">飲品菜單</a></li>
-            <li><a href="">門市據點</a></li>
-            </li>
-        </nav>
-        </ul>
-    </header>
-    
     <div class="products_wrapper">
-        <img src="./image/products/naixi_qubei.png" alt="">
-        <h1>BOISSON MENU</h1>
-        <h1>測試中H1 1234</h1>
-
-        <h2>測試中H2</h2>
-
-        <button>登入</button>
-        <button>登入</button>
-        <a href="#">a標籤 測試</a>
-        <a href="#">a標籤 測試</a>
-        <input type="text">
-
-        <i class="fa-solid fa-caret-down"></i>
-        <select name="" id="" class="SS">
-            
-            <option value="">甜度*</option>
-            <option value="">下拉式選單1</option>
-            <option value="">下拉式選單1</option>
-            <option value="">下拉式選單1</option>
-        </select>
-        <select name="" id="" class="SM">
-            <option value="">台北市</option>
-            <option value="">下拉式選單1</option>
-            <option value="">下拉式選單1</option>
-            <option value="">下拉式選單1</option>
-        </select>
-            <select name="" id="" class="SL">
-                <option value="">鄉鎮市區</option>
-                <option value="">下拉式選單1</option>
-                <option value="">下拉式選單1</option>
-                <option value="">下拉式選單1</option>
-            </select>
-        
-        <h1>純茶系列</h1>
-        <p>清香悠遠，口感純淨，純茶，自然的悠然饗宴。清香悠遠，口感純淨，純茶，自然的悠然饗宴。</p>
-        <p>精心挑選高品質的原料，配合獨特的製茶技術，確保每一杯茶都保持著最細緻的香氣和口感。</p>
-        <h2>奶茶系列</h2>
-        <p>香滑濃醇，奶香四溢，美味奶茶的經典滋味。</p>
-        <p>以嚴謹的工藝，捕捉每片茶葉的道地風華。經過悉心挑選和精湛技術，感受最純粹、道地的茶香。</p>
-
-
-    </div>
+        <header>
+            <nav>
+                <a href="./index.html"><img src="./image/pic/icon/logo.svg" alt=""></a>
+                <ul class="empty"></ul>
+                <ul class="menu">
+                    <li><a href="./about.html">關於我們</a></li>
+                    <li><a href="./info.html">最新消息</a></li>
+                    <li><a href="./products.html">飲品菜單</a></li>
+                    <li><a href="#">門市據點</a></li>
+                </li>
+            </ul>
+            <ul class="member_btn">
+                <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="space"></div>
     
+    <!-- banner -->
+    <div class="banner">
+        <div class="container">
+                <span>BOISSON </span><br><span>MENU</span>
+                <img src="./image/products/ion_leaf-outline.svg" alt="">
+                <!-- <ion-icon name="leaf-outline"></ion-icon> -->
+                <p>捌嵩茶飲的經典滋味<img src="./image/products/Line_banner.svg" alt=""></p>
+            </div>
+            
+        </div>
+        <div class="top">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <img src="./image/products/naixi_qubei.png" alt="">
+        </div>
+        <div class="background_text">
+            <span>TAIWAN TEA</span>
+            <span>捌嵩飲茶，品味悠久的文化底蘊，感受時光與茶的對話。</span>
+        </div>
+       
+        
+        
+        <!-- products -->
+        <div class="product tea">
+            <ul>
+                <li>
+                    <img src="./image/products/tea_pic.png" alt="">
+                </li>
+                
+                <li><h1><ion-icon name="leaf-outline"></ion-icon>純茶系列</h1>
+                <p>清香悠遠，口感純淨，純茶，自然的悠然饗宴。</p>
+                
+                    <ol>
+                        <li>
+                    <!-- 左邊產品  -->
+                            <table>
+                                <tr class="size">
+                                    <td></td>
+                                    <td>M</td>
+                                    <td>L</td>
+                                </tr>
+                                <!-- 產品1 -->
+                                <tr class="tag tag1">
+                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
+                                </tr>
+                                <tr>
+                                    <td>高山烏龍</td>
+                                    <td>$30</td>
+                                    <td>$35</td>
+                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
+                                </tr>
+                                <!-- 產品1 -->
+                                <tr class="tag tag2">
+                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
+                                <tr>
+                                    <td>高山烏龍</td>
+                                    <td>$30</td>
+                                    <td>$35</td>
+                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
+                                </tr>
+                                <!-- 產品1 -->
+                                <tr class="tag tag3">
+                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
+                                </tr>
+                                <tr>
+                                    <td>高山烏龍</td>
+                                    <td>$30</td>
+                                    <td>$35</td>
+                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
+                                </tr>
+                                <!-- 產品1 -->
+                                <tr class="tag tag4">
+                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
+                                <tr>
+                                    <td>高山烏龍</td>
+                                    <td>$30</td>
+                                    <td>$35</td>
+                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
+                                </tr>
+                            </table>
+                        </li>
+                                
+                        <!-- 右邊產品  -->
+                        <li>
+                            <table>
+                                <tr class="size">
+                                    <td></td>
+                                    <td>M</td>
+                                    <td>L</td>
+                                </tr>
+                                <!-- 產品1 -->
+                                <tr class="tag tag5">
+                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
+                                </tr>
+                                <tr>
+                                    <td>日月潭紅茶</td>
+                                    <td>$30</td>
+                                    <td>$35</td>
+                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
+                                </tr>
+                                <!-- 產品1 -->
+                                <tr class="tag tag6">
+                                    <td><i class="fa-solid fa-wine-glass"></i>新品</td>
+                                <tr>
+                                    <td>日月潭紅茶</td>
+                                    <td>$30</td>
+                                    <td>$35</td>
+                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
+                                </tr>
+                                <!-- 產品1 -->
+                                <tr class="tag tag7">
+                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
+                                </tr>
+                                <tr>
+                                    <td>日月潭紅茶</td>
+                                    <td>$30</td>
+                                    <td>$35</td>
+                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
+                                </tr>
+                                <!-- 產品1 -->
+                                <tr class="tag tag8">
+                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
+                                <tr>
+                                    <td>日月潭紅茶</td>
+                                    <td>$30</td>
+                                    <td>$35</td>
+                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
+                                </tr>
+                            </table>
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+
+        </div>
+        <div class="product milk_tea">
+            <ul>
+
+                <li>
+                    <h1><ion-icon name="leaf-outline"></ion-icon>奶茶系列</h1>
+                    <p>香滑濃醇，奶香四溢，美味奶茶的經典滋味。</p>
+
+                    <ol>
+                        <li>
+                            <!-- 左邊產品  -->
+                            <table>
+                                <tr class="size">
+                                    <td></td>
+                                    <td>M</td>
+                                    <td>L</td>
+                                </tr>
+                                <!-- 產品1 -->
+                                <tr class="tag tag1">
+                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
+                                </tr>
+                                <tr>
+                                    <td>高山烏龍</td>
+                                    <td>$30</td>
+                                    <td>$35</td>
+                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
+                                </tr>
+                                <!-- 產品1 -->
+                                <tr class="tag tag2">
+                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
+                                <tr>
+                                    <td>高山烏龍</td>
+                                    <td>$30</td>
+                                    <td>$35</td>
+                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
+                                </tr>
+                                <!-- 產品1 -->
+                                <tr class="tag tag3">
+                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
+                                </tr>
+                                <tr>
+                                    <td>高山烏龍</td>
+                                    <td>$30</td>
+                                    <td>$35</td>
+                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
+                                </tr>
+                                <!-- 產品1 -->
+                                <tr class="tag tag4">
+                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
+                                <tr>
+                                    <td>高山烏龍</td>
+                                    <td>$30</td>
+                                    <td>$35</td>
+                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
+                                </tr>
+                            </table>
+                        </li>
+
+                        <!-- 右邊產品  -->
+                        <li>
+                            <table>
+                                <tr class="size">
+                                    <td></td>
+                                    <td>M</td>
+                                    <td>L</td>
+                                </tr>
+                                <!-- 產品1 -->
+                                <tr class="tag tag5">
+                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
+                                </tr>
+                                <tr>
+                                    <td>高山烏龍</td>
+                                    <td>$30</td>
+                                    <td>$35</td>
+                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
+                                </tr>
+                                <!-- 產品1 -->
+                                <tr class="tag tag6">
+                                    <td><i class="fa-solid fa-wine-glass"></i>新品</td>
+                                <tr>
+                                    <td>高山烏龍</td>
+                                    <td>$30</td>
+                                    <td>$35</td>
+                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
+                                </tr>
+                                <!-- 產品1 -->
+                                <tr class="tag tag7">
+                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
+                                </tr>
+                                <tr>
+                                    <td>高山烏龍</td>
+                                    <td>$30</td>
+                                    <td>$35</td>
+                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
+                                </tr>
+                                <!-- 產品1 -->
+                                <tr class="tag tag8">
+                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
+                                <tr>
+                                    <td>高山烏龍</td>
+                                    <td>$30</td>
+                                    <td>$35</td>
+                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
+                                </tr>
+                            </table>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <img src="./image/products/milktea_pic.png" alt="">
+                </li>
+            </ul>
+
+        </div>
+
+        
+
+        <h1>FRUIT & COFFEE</h1>
+        <p>清新解渴，每口都是生活的美好。</p>
+  
+
+
+        <footer>
+            <!-- <ul class="empty"></ul> -->
+            <div class="footer">
+                <ul class="menu">
+                    <li><a href="./about.html">關於我們</a></li>
+                    <li><a href="./info.html">最新消息</a></li>
+                    <li><img src="./image/pic/icon/logo2.svg" alt=""></li>
+                        <li><a href="./products.html">飲品菜單</a></li>
+                        <li><a href="#">門市據點</a></li>
+                        </li>
+                </ul>
+                <p>本網站為緯育TibaMe【第89期】前端工程師專業技術養成班學員作品,僅供學習、展示之用途。</p>
+                    <p>Copyright© 2024 BOISSON TEA Inc.</p>
+                <ul class="btn">
+                    <li><a href="#"><i class="fa-brands fa-line"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </footer>
+        
+    </div>
+    <!-- ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
 </body>
 </html>

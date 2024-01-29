@@ -27,12 +27,5 @@
     height: 28px;
     font-size: map-get($title_size, t2);
     font-weight: map-get($fontWeight, t2);
-    
     display: block;
-    margin: 16px 0;
-
-    @include m {
-        margin: 12px 0;
-    }
-    
     }

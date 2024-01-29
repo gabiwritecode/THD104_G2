@@ -1,1 +1,104 @@
-// header{}
+header{
+    width: 100%;
+    height: 82px;
+    background-color: $color1;
+    display: flex;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    // margin-bottom: 200px;
+    // display: block;
+    // overflow: hidden;
+    
+    nav{
+        width: 1200px;
+        // height: 60px;
+        display: flex;
+        margin: 0px auto;
+        justify-content: space-between;
+        img{
+            width: 154px;
+            &:hover {
+                 transition: .2s all ease;
+                opacity: .8;
+            }
+        }
+        ul{
+            display: flex;
+            align-items: center;
+        }
+        .empty{
+            width: 440px;
+            @include t(){
+                width: auto;
+            }
+        }
+        .menu{
+            width: 410px;
+            li{
+                // width: 120px;
+                margin: 0 14px;
+                a{
+                    color: $white;
+                    text-decoration: none;
+                    // line-height: 3.8;
+                    letter-spacing: .1rem;
+                    text-align: center;
+                    display: block;
+                    // height: 60px;
+                     transition: .2s all ease;
+                    &:hover{
+                        color: $yellow;
+                    }
+                    
+                }
+            }
+        }
+        .member_btn li{
+            // align-items: center;
+        i{
+            width: 28px;
+            height: 28px;
+            color: $color1;
+            background-color: $white;
+            border-radius: 50%;
+            font-size: 15px;
+            text-align: center;
+            line-height: 1.8;
+            margin: 12px;
+            transition: .2s all ease;
+            &:hover{
+                color: $white;
+                background-color: $yellow;
+                scale:1.1;
+            }
+        }
+        }
+        
+    }
+    .menu a:hover::after{
+         content: "";
+        width: 100%;
+        height: 2px;
+        background-color: $yellow;
+        display: block;
+        animation: a .4s 1 ease-out forwards;
+    }
+}
+
+.space{
+    height: 82px;
+}
+
+
+@keyframes a {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
