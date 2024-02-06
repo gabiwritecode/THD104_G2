@@ -7,16 +7,16 @@
     <link rel="icon" href="./image/pic/icon/logo_ico.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <title>商品</title>
+    <title>捌嵩｜商品</title>
 </head>
 <body>
-    <div class="products_wrapper">
-   @@include('./layout/header.html')
+    @@include('./layout/header.html')
     <div class="space"></div>
+    <div class="products_wrapper">
     
     <!-- banner -->
-    <div class="banner">
-        <div class="container">
+        <div class="banner">
+            <div class="container">
                 <span>BOISSON </span><br><span>MENU</span>
                 <img src="./image/products/ion_leaf-outline.svg" alt="">
                 <!-- <ion-icon name="leaf-outline"></ion-icon> -->
@@ -30,250 +30,232 @@
             <div class="circle3"></div>
             <img src="./image/products/naixi_qubei.png" alt="">
         </div>
+        
         <div class="background_text">
             <span>TAIWAN TEA</span>
             <span>捌嵩飲茶，品味悠久的文化底蘊，感受時光與茶的對話。</span>
         </div>
+
+        <div class="background_img">
+            <img class="curve1" src="/image/products/curve_p_1.png" alt="">
+            <div class="circle4"></div> 
+            <img class="curve2" src="/image/products/curve_p_2.png" alt="">
+           
+        </div>
        
         
-        
-        <!-- products -->
+        <!------ products ------>
         <div class="product tea">
             <ul>
                 <li>
                     <img src="./image/products/tea_pic.png" alt="">
                 </li>
                 
-                <li><h1><ion-icon name="leaf-outline"></ion-icon>純茶系列</h1>
-                <p>清香悠遠，口感純淨，純茶，自然的悠然饗宴。</p>
+                <li>
+                    <div class="introduce"> <h1><ion-icon name="leaf-outline"></ion-icon>純茶系列</h1>
+                    <p>清香悠遠，口感純淨，純茶，自然的悠然饗宴。</p></div>
                 
                     <ol>
-                        <li>
-                    <!-- 左邊產品  -->
-                            <table>
-                                <tr class="size">
-                                    <td></td>
-                                    <td>M</td>
-                                    <td>L</td>
-                                </tr>
-                                <!-- 產品1 -->
-                                <tr class="tag tag1">
-                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
-                                </tr>
-                                <tr>
-                                    <td>高山烏龍</td>
-                                    <td>$30</td>
-                                    <td>$35</td>
-                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
-                                </tr>
-                                <!-- 產品1 -->
-                                <tr class="tag tag2">
-                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
-                                <tr>
-                                    <td>高山烏龍</td>
-                                    <td>$30</td>
-                                    <td>$35</td>
-                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
-                                </tr>
-                                <!-- 產品1 -->
-                                <tr class="tag tag3">
-                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
-                                </tr>
-                                <tr>
-                                    <td>高山烏龍</td>
-                                    <td>$30</td>
-                                    <td>$35</td>
-                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
-                                </tr>
-                                <!-- 產品1 -->
-                                <tr class="tag tag4">
-                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
-                                <tr>
-                                    <td>高山烏龍</td>
-                                    <td>$30</td>
-                                    <td>$35</td>
-                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
-                                </tr>
-                            </table>
+                        <li class="left_list"> 
+                            <div class="size">                                                                 <span class="product_name"></span> <span class="product_price">M</span><span class="product_price">L</span></div>
+                            <div class="row no1"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <div class="row no2"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <div class="row no3"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <div class="row no4"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍茶勒</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>    
                         </li>
-                                
-                        <!-- 右邊產品  -->
-                        <li>
-                            <table>
-                                <tr class="size">
-                                    <td></td>
-                                    <td>M</td>
-                                    <td>L</td>
-                                </tr>
-                                <!-- 產品1 -->
-                                <tr class="tag tag5">
-                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
-                                </tr>
-                                <tr>
-                                    <td>日月潭紅茶</td>
-                                    <td>$30</td>
-                                    <td>$35</td>
-                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
-                                </tr>
-                                <!-- 產品1 -->
-                                <tr class="tag tag6">
-                                    <td><i class="fa-solid fa-wine-glass"></i>新品</td>
-                                <tr>
-                                    <td>日月潭紅茶</td>
-                                    <td>$30</td>
-                                    <td>$35</td>
-                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
-                                </tr>
-                                <!-- 產品1 -->
-                                <tr class="tag tag7">
-                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
-                                </tr>
-                                <tr>
-                                    <td>日月潭紅茶</td>
-                                    <td>$30</td>
-                                    <td>$35</td>
-                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
-                                </tr>
-                                <!-- 產品1 -->
-                                <tr class="tag tag8">
-                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
-                                <tr>
-                                    <td>日月潭紅茶</td>
-                                    <td>$30</td>
-                                    <td>$35</td>
-                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
-                                </tr>
-                            </table>
+            
+                        <li> 
+                                                       <div class="size">                                                                 <span class="product_name"></span> <span class="product_price">M</span><span class="product_price">L</span></div>
+                            <div class="row no5"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <div class="row no6"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <div class="row no7"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <div class="row no8"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍茶勒</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>   
                         </li>
                     </ol>
+                 
                 </li>
             </ul>
-
         </div>
+
         <div class="product milk_tea">
             <ul>
 
                 <li>
-                    <h1><ion-icon name="leaf-outline"></ion-icon>奶茶系列</h1>
-                    <p>香滑濃醇，奶香四溢，美味奶茶的經典滋味。</p>
-
+                    <div class="introduce"><h1><ion-icon name="leaf-outline"></ion-icon>奶茶系列</h1>
+                    <p>香滑濃醇，奶香四溢，美味奶茶的經典滋味。</p></div>
                     <ol>
-                        <li>
-                            <!-- 左邊產品  -->
-                            <table>
-                                <tr class="size">
-                                    <td></td>
-                                    <td>M</td>
-                                    <td>L</td>
-                                </tr>
-                                <!-- 產品1 -->
-                                <tr class="tag tag1">
-                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
-                                </tr>
-                                <tr>
-                                    <td>高山烏龍</td>
-                                    <td>$30</td>
-                                    <td>$35</td>
-                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
-                                </tr>
-                                <!-- 產品1 -->
-                                <tr class="tag tag2">
-                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
-                                <tr>
-                                    <td>高山烏龍</td>
-                                    <td>$30</td>
-                                    <td>$35</td>
-                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
-                                </tr>
-                                <!-- 產品1 -->
-                                <tr class="tag tag3">
-                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
-                                </tr>
-                                <tr>
-                                    <td>高山烏龍</td>
-                                    <td>$30</td>
-                                    <td>$35</td>
-                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
-                                </tr>
-                                <!-- 產品1 -->
-                                <tr class="tag tag4">
-                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
-                                <tr>
-                                    <td>高山烏龍</td>
-                                    <td>$30</td>
-                                    <td>$35</td>
-                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
-                                </tr>
-                            </table>
+                        <li class="left_list"> 
+                            <div class="size">                                                                 <span class="product_name"></span> <span class="product_price">M</span><span class="product_price">L</span></div>
+                            <div class="row no1"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <div class="row no2"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <div class="row no3"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <div class="row no4"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍茶勒</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>    
                         </li>
-
-                        <!-- 右邊產品  -->
-                        <li>
-                            <table>
-                                <tr class="size">
-                                    <td></td>
-                                    <td>M</td>
-                                    <td>L</td>
-                                </tr>
-                                <!-- 產品1 -->
-                                <tr class="tag tag5">
-                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
-                                </tr>
-                                <tr>
-                                    <td>高山烏龍</td>
-                                    <td>$30</td>
-                                    <td>$35</td>
-                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
-                                </tr>
-                                <!-- 產品1 -->
-                                <tr class="tag tag6">
-                                    <td><i class="fa-solid fa-wine-glass"></i>新品</td>
-                                <tr>
-                                    <td>高山烏龍</td>
-                                    <td>$30</td>
-                                    <td>$35</td>
-                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
-                                </tr>
-                                <!-- 產品1 -->
-                                <tr class="tag tag7">
-                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
-                                </tr>
-                                <tr>
-                                    <td>高山烏龍</td>
-                                    <td>$30</td>
-                                    <td>$35</td>
-                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
-                                </tr>
-                                <!-- 產品1 -->
-                                <tr class="tag tag8">
-                                    <td><i class="fa-solid fa-crown"></i>熱銷</td>
-                                <tr>
-                                    <td>高山烏龍</td>
-                                    <td>$30</td>
-                                    <td>$35</td>
-                                    <td><button><i class="fa-solid fa-cart-shopping"></i></button></td>
-                                </tr>
-                            </table>
+            
+                        <li> 
+                                                       <div class="size">                                                                 <span class="product_name"></span> <span class="product_price">M</span><span class="product_price">L</span></div>
+                            <div class="row no5"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <div class="row no6"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <div class="row no7"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <div class="row no8"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍茶勒</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>   
                         </li>
                     </ol>
-                </li>
+                   
                 <li>
                     <img src="./image/products/milktea_pic.png" alt="">
                 </li>
             </ul>
+        </div>
+        <!------ 商品下半部 ------>
+        <div class="area2">
 
+            <img class="curve3" src="/image/products/curve_p_3.png" alt="">
+            <img class="curve4" src="/image/products/curve_p_4.png" alt="">
+
+        <div class="title">
+            <h1>FRUIT & COFFEE</h1>
+            <p>清新解渴，每口都是生活的美好。</p>
+        </div>
+        
+        
+        <div class="product juice">
+            <div class="rotate">
+                <img src="/image/products/oringe_bgi.png" alt="">
+            </div>
+
+            <div class="introduce">
+                <h1><ion-icon name="leaf-outline"></ion-icon>水果茶系列</h1>
+                <p>果香十足，清新解渴，水果茶，夏日的綠意悠然。</p>
+            </div>
+
+            <div class="product_img">
+                <img src="./image/products/juice.png" alt="">
+            </div>
+
+            <ul>
+                <li class="left_list2">
+                </li>
+        
+                <li> 
+                    <div class="size"> <span class="product_name"></span> <span class="product_price">M</span><span
+                            class="product_price">L</span></div>
+                    <div class="row no1"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
+                            class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span
+                            class="product_price">$35</span><button class="add_cart"><i
+                                class="fa-solid fa-cart-shopping"></i></button></div>
+                    <div class="row no2"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
+                            class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span
+                            class="product_price">$35</span><button class="add_cart"><i
+                                class="fa-solid fa-cart-shopping"></i></button></div>
+                    <div class="row no3"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
+                            class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span
+                            class="product_price">$35</span><button class="add_cart"><i
+                                class="fa-solid fa-cart-shopping"></i></button></div>
+                    <div class="row no4"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
+                            class="product_name">高山烏龍茶勒</span> <span class="product_price ">$30</span><span
+                            class="product_price">$35</span><button class="add_cart"><i
+                                class="fa-solid fa-cart-shopping"></i></button></div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="product coffee">
+            
+            <div class="move1">
+                <img src="/image/products/coffee_beans.svg" alt="">
+            </div>
+            <div class="move2">
+                <img src="/image/products/coffee_beans.svg" alt="">
+            </div>
+            <div class="move3">
+                <img src="/image/products/coffee_beans.svg" alt="">
+            </div>
+
+            <div class="introduce">
+                <h1><ion-icon name="leaf-outline"></ion-icon>咖啡系列</h1>
+                <p>香濃咖啡，醒神提神，每杯都是品味的享受。</p>
+            </div>
+
+            <div class="product_img">
+                <img src="./image/products/coffee.png" alt="">
+            </div>
+            
+            <ul>
+                <li> 
+                    <div class="size"> <span class="product_name"></span> <span class="product_price">M</span><span
+                            class="product_price">L</span></div>
+                    <div class="row no1"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
+                            class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span
+                            class="product_price">$35</span><button class="add_cart"><i
+                                class="fa-solid fa-cart-shopping"></i></button></div>
+                    <div class="row no2"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
+                            class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span
+                            class="product_price">$35</span><button class="add_cart"><i
+                                class="fa-solid fa-cart-shopping"></i></button></div>
+                    <div class="row no3"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
+                            class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span
+                            class="product_price">$35</span><button class="add_cart"><i
+                                class="fa-solid fa-cart-shopping"></i></button></div>
+                    <div class="row no4"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
+                            class="product_name">高山烏龍茶勒</span> <span class="product_price ">$30</span><span
+                            class="product_price">$35</span><button class="add_cart"><i
+                                class="fa-solid fa-cart-shopping"></i></button></div>
+                </li>
+
+                <li class="left_list2">
+                </li>
+            </ul>
+        </div>
+          
+        <div class="product smoothies">
+
+            <div class="scale">
+                <img src="/image/products/ice.svg" alt="">
+            </div>
+
+            <div class="introduce">
+                <h1><ion-icon name="leaf-outline"></ion-icon>冰沙系列</h1>
+                <p>多種水果結合，口感豐富，每一口都是夏日的清涼享受。</p>
+            </div>
+
+            <div class="product_img">
+                <img src="./image/products/Smoothies.png" alt="">
+            </div>
+
+            <ul>
+                <li class="left_list2">
+                </li>
+        
+                <li>
+                    <div class="size"> <span class="product_name"></span> <span class="product_price">M</span><span
+                            class="product_price">L</span></div>
+                    <div class="row no1"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
+                            class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span
+                            class="product_price">$35</span><button class="add_cart"><i
+                                class="fa-solid fa-cart-shopping"></i></button></div>
+                    <div class="row no2"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
+                            class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span
+                            class="product_price">$35</span><button class="add_cart"><i
+                                class="fa-solid fa-cart-shopping"></i></button></div>
+                    <div class="row no3"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
+                            class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span
+                            class="product_price">$35</span><button class="add_cart"><i
+                                class="fa-solid fa-cart-shopping"></i></button></div>
+                    <div class="row no4"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
+                            class="product_name">高山烏龍茶勒</span> <span class="product_price ">$30</span><span
+                            class="product_price">$35</span><button class="add_cart"><i
+                                class="fa-solid fa-cart-shopping"></i></button></div>
+                </li>
+            </ul>
         </div>
 
         
-
-        <h1>FRUIT & COFFEE</h1>
-        <p>清新解渴，每口都是生活的美好。</p>
   
 
 
-        @@include('./layout/footer.html')
         
     </div>
+    @@include('./layout/footer.html')
     <!-- ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 

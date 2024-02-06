@@ -1,4 +1,8 @@
+body{
+  overflow-x: hidden;
+}
 .products_wrapper{
+  // position: relative;
   .background_text{
     color:$color1;
     font-size: 66px;
@@ -11,6 +15,46 @@
   .background_text span:nth-child(2){
     @include font_t1();
   }
+
+  .curve1{
+    position: absolute;
+    right: -190px;
+    top: 320px;
+    z-index: -999;
+  }
+  .circle4{
+    position: absolute;
+    right: 130px;
+    top: 530px;
+      background-color: $color1;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      //  animation: circle4 4s ease-in-out backwards infinite ;
+  }
+  @keyframes circle4{
+        0%{
+          top:500px;
+        }
+        50%{
+          top:560px;
+          right: 120px;
+        }
+        100%{
+          top:500px;
+        }
+  }
+
+  .curve2{
+    position: absolute;
+    left: -260px;
+    top: 1560px;
+    z-index: -999;
+  }
+
+ 
+
+
   .banner{
     color:$color1;
     background-color: $color1;
@@ -60,8 +104,9 @@
       width: 110px;
       height: 110px;
       border-radius: 50%;
-      left: 120px;
+      left: 100px;
       top:-140px;
+       animation: circle 4s ease-in-out backwards infinite ;
     }
     .circle2{
       position: absolute;
@@ -71,6 +116,7 @@
       border-radius: 50%;
       left: 224px;
       top:-50px;
+       animation: circle 4s ease-in-out backwards infinite ;
     }
       .circle3{
       position: absolute;
@@ -86,18 +132,18 @@
     @keyframes circle {
       0%{
         scale:1;
-        opacity: 1;
+        // opacity: 1;
       }
       50%{ 
         scale:1.3;
-        opacity: .7;
+        // opacity: .7;
       }
       100%{
         scale:1;
-         opacity: 1;
+        //  opacity: 1;
       }
-      
     }
+
     img{
       position: absolute;
       right: 120px;
@@ -109,79 +155,330 @@
   // 產品1
   .product{
     width: 1200px;
-    height: 440px;
-    margin: 60px auto;
+    // height: 440px;
+    margin: 160px auto;
+    @include d1100(){
+      width: auto;
+    }
 
     ul{
       display: flex;
+      flex-wrap: wrap;
     }
     img{
       margin-right: 20px;
     }
-    ul li ol{
-        display: flex;
+    .introduce{
+      margin-top: 10px;
+      margin-bottom: 32px;
+      ion-icon{
+        @include font_h1();
+        display: inline-block;
+        margin: 0px 8px 0 10px;
       }
-    ion-icon{
-      @include font_h1();
-      display: inline-block;
-      margin: 20px 8px 0 10px;
+      h1{
+        margin: 0px 10px 0px 0;
+        display: inline-block;
+      }
+      p{
+        color: $color2;
+        display: inline-block;
+      }
     }
-    h1{
-      margin: 0px 10px 10px 0;
-      display: inline-block;
-    }
-    p{
-      color: $color2;
-      display: inline-block;
-    }
-    ol li:first-child > table{
-      border-right: 1px solid $color2;
-    }
-    table {
-      margin: 20px;
+    ol{
+      display: flex;
       font-size: 20px;
+      flex-wrap: wrap;
+      @include m(){
+        font-size: 16px;
+      }
+    }
+    ol li{
+      margin: 0 20px;
+      padding-right: 40px;
+    }
+    ol .left_list{
+      border-right: 1px solid $color2;
+      height: 358px;
+    }
+    .size{
+      color:$color1;
+      padding-left: 12px;
+      margin-bottom: 40px;
+    }
+    .row{
+      position: relative;
+      margin-bottom: 46px;
+    }
+    .product_name{
+      display: inline-block;
+      width: 152px;
+    }
+    .product_price{
+      display: inline-block;
+      width: 68px;
+    }
 
-      button{
-        @include btn_product_cart();
-        margin-right: 20px;
-      }
-      td{
-        padding: 0 12px;
-        height:50px;
-        // box-sizing: border-box;
-      }
-      .size{
-        color:$color1;
-        text-align: center;
-      }
-      .tag{
-        height: 28px;
-        opacity: 0;  
-        i{
-          width: 22px;
-        }
-      }
-      .tag td{
-        @include tag_S();
-        width: 90px;
-        font-size: 18px;
-        margin: 0 10px;
-        box-sizing: border-box;
-        
+    .add_cart{
+      @include btn_product_cart();
+    }
+    .tag{
+      @include tag_S();
+      position:absolute;
+      top: -28px;
+      left: -6px;
+      width: 90px;
+      font-size: 18px;
+      display: none;
+      i{
+        width: 22px;
       }
     }
   } //product
 
-  .tea table{
-    .tag1, .tag6{
-      opacity: 1;
+  .tea{ 
+    img{
+      margin-right: 50px;
     }
+      .no1 .tag, .no6 .tag{
+        display: block;
+      }
   }
-  .milk_tea table{
-     .tag1, .tag8{
-      opacity: 1;
+  .milk_tea{
+      .no1 .tag, .no6 .tag{
+        display: block;
+      }
+  }
+  
+  .area2{
+    background-color: $color1;
+    margin-top: 140px;
+    overflow: hidden;
+    // z-index: -999;
+    color:$white;
+    position: relative;
+
+    .curve3{
+    position: absolute;
+    left: -260px;
+    top: 720px;
+    // z-index: -998;
     }
-  }
+
+    .curve4{
+    position: absolute;
+    right: -160px;
+    bottom: -260px;
+    // z-index: -999;
+    }
+     
+
+    .title{
+      color:$white;
+      width: 1200px;
+      margin: 0px auto;
+      padding: 50px 0;
+      h1{
+        color:$white;
+        font-size: 92px;
+        text-align: left;
+        line-height: 0.8;
+      }
+      p{
+        @include font_h2();
+        color:$white;
+      }
+    }
+    
+    .rotate{
+      position: absolute;
+      right: -160px;
+      top: -100px;
+      animation: oringe 6s linear backwards infinite ;
+    }
+    @keyframes oringe{
+      0%{
+        tramsform:rotate(0deg);
+      }
+      100%{
+        transform:rotate(360deg);
+      }
+    }
+
+    .product{
+      width: 1140px;
+      // margin: 140px auto;
+      position: relative;
+      @include m(){
+        width: auto;
+      }
+    }
+    .juice, .smoothies{
+      padding-right: 60px;
+    }
+
+    .introduce{
+      h1{color:$white;}
+      ion-icon{color:$white;}
+      p{color:$white;}
+      text-align:right;
+    }
+  
+    ul{
+      width: 100%;
+      height: 394px;
+      outline: 2px solid $white;
+      border-radius: 0 100px 0 100px;
+      font-size: 20px;
+      flex-wrap: wrap;
+      @include m(){
+        height: auto;
+        font-size: 16px;
+        border-radius: 0 36px 0 36px;
+      }
+    }
+    ul .left_list2{
+      width: 720px;
+      // height: 1200px;
+      display: block;
+    }
+    .product_img img{
+      position: absolute;
+      margin: 0;
+      @include m(){
+        width: 214px;
+       border-radius: 0 0 0 36px;
+       position: static;
+      }
+    }
+    .juice .product_img img, .smoothies .product_img img{
+      top: -33px;
+      // left: -1px;
+      border-radius: 0 0 0 100px;
+      @include m(){
+        border-radius: 0 0 0 36px;
+      }
+    }
+
+    .coffee{
+      padding-left: 60px;
+
+      .move1{
+      position: absolute;
+      left: 20px;
+      top: 380px;
+      animation: move1 2s ease-in-out backwards infinite ;
+      }
+      @keyframes move1{
+        0%{
+          top:390px;
+        }
+        50%{
+          top:380px;
+        }
+        100%{
+          top:390px;
+        }
+      }
+      .move2{
+      position: absolute;
+      left: -20px;
+      top: 424px;
+      rotate:(85deg);
+      animation: move2 2s 1s ease-in-out backwards infinite ;
+      }
+      @keyframes move2{
+        0%{
+          top:434px;
+        }
+        50%{
+          top:424px;
+        }
+        100%{
+          top:434px;
+        }
+      }
+      .move3{
+      position: absolute;
+      left: 40px;
+      top: 420px;
+      rotate:(20deg);
+      animation: move3 2s .5s ease-in-out backwards infinite ;
+      }
+      @keyframes move3{
+        0%{
+          top:430px;
+        }
+        50%{
+          top:420px;
+        }
+        100%{
+          top:430px;
+        }
+      }
+      .introduce{
+        text-align: left;
+      }
+      .product_img img{
+        right: 0px;
+        top: 13px;
+        border-radius: 0;
+      }
+      li{
+        padding-left: 120px;
+      }
+    }
+  
+   
+    
+    .smoothies {
+      .scale{
+        position: absolute;
+        right: -20px;
+        bottom: -10px;
+        animation: scale 3s  ease-in-out backwards infinite ;
+      }
+      @keyframes scale {
+      0%{
+        scale:1;
+        // opacity: 1;
+      }
+      50%{ 
+        scale:1.2;
+        // opacity: .7;
+      }
+      100%{
+        scale:1;
+        //  opacity: 1;
+      }
+    }
+      .product_img img{
+        top: -59px;
+      }
+    }
+    // tag開關
+    .no4{
+      margin-bottom: 0;
+    }
+    .size{
+      color:$yellow;
+      margin-top: 20px;
+    }
+    .add_cart{
+      color: $color1;
+      background-color: $white;
+    }
+    .tag{
+      display: block;
+    }
+
+  } // .area2
 
 
 } //.products_wrapper
+
+
+  
+
+
+ 
