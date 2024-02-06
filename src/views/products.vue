@@ -1,42 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" href="./image/pic/icon/logo_ico.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <title>捌嵩｜商品</title>
-</head>
-<body>
-    <header>
-    <nav>
-        <a href="./index.html"><img src="./image/pic/icon/logo.svg" alt=""></a>
-        <ul class="empty"></ul>
-        <ul class="menu">
-            <li><a href="./about.html">關於我們</a></li>
-            <li><a href="./info.html">最新消息</a></li>
-            <li><a href="./products.html">飲品菜單</a></li>
-            <li><a href="#">門市據點</a></li>
-        </li>
-    </ul>
-    <ul class="member_btn">
-        <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-        <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
-    </ul>
-</nav>
-</header>
-    <div class="space"></div>
+<template>
+   <div class="space"></div>
     <div class="products_wrapper">
     
     <!-- banner -->
         <div class="banner">
             <div class="container">
                 <span>BOISSON </span><br><span>MENU</span>
-                <img src="./image/products/ion_leaf-outline.svg" alt="">
+                <img src="@/image/products/ion_leaf-outline.svg" alt="">
                 <!-- <ion-icon name="leaf-outline"></ion-icon> -->
-                <p>捌嵩茶飲的經典滋味<img src="./image/products/Line_banner.svg" alt=""></p>
+                <p>捌嵩茶飲的經典滋味<img src="@/image/products/Line_banner.svg" alt=""></p>
             </div>
             
         </div>
@@ -44,7 +16,7 @@
             <div class="circle1"></div>
             <div class="circle2"></div>
             <div class="circle3"></div>
-            <img src="./image/products/naixi_qubei.png" alt="">
+            <img src="../assets/image/products/naixi_qubei.png" alt="">
         </div>
         
         <div class="background_text">
@@ -53,9 +25,9 @@
         </div>
 
         <div class="background_img">
-            <img class="curve1" src="/image/products/curve_p_1.png" alt="">
+            <img class="curve1" src="@/image/products/curve_p_1.png" alt="">
             <div class="circle4"></div> 
-            <img class="curve2" src="/image/products/curve_p_2.png" alt="">
+            <img class="curve2" src="@/image/products/curve_p_2.png" alt="">
            
         </div>
        
@@ -64,7 +36,7 @@
         <div class="product tea">
             <ul>
                 <li>
-                    <img src="./image/products/tea_pic.png" alt="">
+                    <img src="@/image/products/tea_pic.png" alt="">
                 </li>
                 
                 <li>
@@ -96,7 +68,7 @@
         <div class="product milk_tea">
             <ul>
 
-                <li>
+                
                     <div class="introduce"><h1><ion-icon name="leaf-outline"></ion-icon>奶茶系列</h1>
                     <p>香滑濃醇，奶香四溢，美味奶茶的經典滋味。</p></div>
                     <ol>
@@ -118,15 +90,15 @@
                     </ol>
                    
                 <li>
-                    <img src="./image/products/milktea_pic.png" alt="">
+                    <img src="@/image/products/milktea_pic.png" alt="">
                 </li>
             </ul>
         </div>
         <!------ 商品下半部 ------>
         <div class="area2">
 
-            <img class="curve3" src="/image/products/curve_p_3.png" alt="">
-            <img class="curve4" src="/image/products/curve_p_4.png" alt="">
+            <img class="curve3" src="@/image/products/curve_p_3.png" alt="">
+            <img class="curve4" src="@/image/products/curve_p_4.png" alt="">
 
         <div class="title">
             <h1>FRUIT & COFFEE</h1>
@@ -136,7 +108,7 @@
         
         <div class="product juice">
             <div class="rotate">
-                <img src="/image/products/oringe_bgi.png" alt="">
+                <img src="@/image/products/oringe_bgi.png" alt="">
             </div>
 
             <div class="introduce">
@@ -145,7 +117,7 @@
             </div>
 
             <div class="product_img">
-                <img src="./image/products/juice.png" alt="">
+                <img src="@/image/products/juice.png" alt="">
             </div>
 
             <ul>
@@ -178,13 +150,13 @@
         <div class="product coffee">
             
             <div class="move1">
-                <img src="/image/products/coffee_beans.svg" alt="">
+                <img src="@/image/products/coffee_beans.svg" alt="">
             </div>
             <div class="move2">
-                <img src="/image/products/coffee_beans.svg" alt="">
+                <img src="@/image/products/coffee_beans.svg" alt="">
             </div>
             <div class="move3">
-                <img src="/image/products/coffee_beans.svg" alt="">
+                <img src="@/image/products/coffee_beans.svg" alt="">
             </div>
 
             <div class="introduce">
@@ -193,7 +165,7 @@
             </div>
 
             <div class="product_img">
-                <img src="./image/products/coffee.png" alt="">
+                <img src="@/image/products/coffee.png" alt="">
             </div>
             
             <ul>
@@ -226,7 +198,7 @@
         <div class="product smoothies">
 
             <div class="scale">
-                <img src="/image/products/ice.svg" alt="">
+                <img src="@/image/products/ice.svg" alt="">
             </div>
 
             <div class="introduce">
@@ -235,7 +207,7 @@
             </div>
 
             <div class="product_img">
-                <img src="./image/products/Smoothies.png" alt="">
+                <img src="@/image/products/Smoothies.png" alt="">
             </div>
 
             <ul>
@@ -269,29 +241,11 @@
   
 
 
-        
+   </div>     
     </div>
-    <footer>
-    <!-- <ul class="empty"></ul> -->
-    <div class="footer">
-        <ul class="menu">
-            <li><a href="./about.html">關於我們</a></li>
-            <li><a href="./info.html">最新消息</a></li>
-            <li><img src="./image/pic/icon/logo2.svg" alt=""></li>
-                <li><a href="./products.html">飲品菜單</a></li>
-                <li><a href="#">門市據點</a></li>
-        </ul>
-        <p>本網站為緯育TibaMe【第89期】前端工程師專業技術養成班學員作品,僅供學習、展示之用途。</p>
-            <p>Copyright© 2024 BOISSON TEA Inc.</p>
-        <ul class="btn">
-            <li><a href="#"><i class="fa-brands fa-line"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-        </ul>
-    </div>
-</footer>
-    <!-- ionicons -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 
-</body>
-</html>
+</template>
+<script></script>
+<style lang="scss">
+  @import"../assets/sass/style.scss";
+</style>

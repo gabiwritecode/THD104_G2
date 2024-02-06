@@ -1,4 +1,5 @@
-<footer>
+<template>
+  <footer>
     <!-- <ul class="empty"></ul> -->
     <div class="footer">
         <ul class="menu">
@@ -17,3 +18,8 @@
         </ul>
     </div>
 </footer>
+</template>
+<script></script>
+<style lang="scss">
+  @import"../assets/sass/style.scss";
+</style>
