@@ -1,7 +1,13 @@
-body{
-  overflow-x: hidden;
+// body{
+//   overflow-x: hidden;
+// }
+.space{
+    height: 81px;
 }
 .products_wrapper{
+  @include m(){
+    font-weight: 300;
+  }
   // position: relative;
   .background_text{
     color:$color1;
@@ -11,47 +17,86 @@ body{
     rotate:90deg;
     right: -250px;
     top: 1000px;
+    span{
+      padding-right: 16px;
+    }
+    @include d1100{
+      right: -350px;
+      font-size: 46px;
+    }
+    @include m(){
+      left: 40px;
+      rotate:0deg;
+      font-size: 32px;
+      width: 300px;
+      top: 298px;
+    }
   }
   .background_text span:nth-child(2){
     @include font_t1();
+    @include m(){
+      display: block;
+      font-weight: 300;
+    }
   }
-
-  .curve1{
-    position: absolute;
-    right: -190px;
-    top: 320px;
-    z-index: -999;
-  }
-  .circle4{
-    position: absolute;
-    right: 130px;
-    top: 530px;
+  .background_img{
+    .curve1{
+      position: absolute;
+      right: 0px;
+      top: 320px;
+      z-index: -999;
+      @include m(){
+        display: none;
+      }
+    }
+    .curve1m{
+      display: none;
+      @include m(){
+        display: block;
+        top: 190px;
+      }
+    }
+    .bg_circle1{
+      position: absolute;
+      right: 130px;
+      top: 530px;
       background-color: $color1;
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      //  animation: circle4 4s ease-in-out backwards infinite ;
-  }
-  @keyframes circle4{
-        0%{
-          top:500px;
-        }
-        50%{
-          top:560px;
-          right: 120px;
-        }
-        100%{
-          top:500px;
-        }
-  }
+        //  animation: circle4 4s ease-in-out backwards infinite ;
+      @include m(){
+        right: 30px;
+        top: 250px;
+        width: 10px;
+        height: 10px;
+      }
+    }
+    @keyframes circle4{
+          0%{
+            top:500px;
+          }
+          50%{
+            top:560px;
+            right: 120px;
+          }
+          100%{
+            top:500px;
+          }
+    }
 
-  .curve2{
-    position: absolute;
-    left: -260px;
-    top: 1560px;
-    z-index: -999;
+    .curve2{
+      position: absolute;
+      left: 0px;
+      top: 1560px;
+      z-index: -999;
+      @include m(){
+        width: 60px;
+        top: 1980px;
+        
+      }
+    }
   }
-
  
 
 
@@ -61,9 +106,20 @@ body{
     overflow: hidden;
     height: calc(550px - 82px);
     border-radius: 0 0 50% 50%;
+    width: 100%;
+    @include m(){
+      //  border-radius:0 0 80% 80%  /100% 100% ;
+      height: 175px;
+      margin: 0 auto;
+    }
+
     .container{
       width: 800px;
       margin: 40px auto;
+      @include m(){
+       width: 230px;
+       margin: 10px auto;
+      }
       span{
         font-weight: map-get($fontWeight, h1 );
         color:rgba(255,255,255,0);
@@ -71,19 +127,31 @@ body{
         font-size: 92px;
         text-align: left;
         line-height: 1.2;
-      }
-      ion-icon{
-        font-size: 92px;
-        color:$white;
+        @include m(){
+          -webkit-text-stroke:1px $white;
+          font-size: 42px;
+        }
       }
       p{
         @include font_h2();
-        color:$white;
+        color: $white;
+        @include m(){
+          font-size: 12px;
+          font-weight: 300;
+          margin: 0;
+        }
+      }
+      img{
+        @include m(){
+          width: 24px;
+        }
       }
       p img{
         padding-bottom: 8px;
         padding-left: 10px;
-      
+        @include m(){
+          display: none;
+        }
       }
 
     }
@@ -95,6 +163,9 @@ body{
     position: relative;
     width: 1400px;
     margin: 0 auto;
+    @include m(){
+      margin-bottom: 180px;
+    }
     @include d1100(){
       width: auto;
     }
@@ -106,7 +177,13 @@ body{
       border-radius: 50%;
       left: 100px;
       top:-140px;
-       animation: circle 4s ease-in-out backwards infinite ;
+      animation: circle 4s ease-in-out backwards infinite ;
+      @include m(){
+        width: 32px;
+        height: 32px;
+        left: 38px;
+        top: -44px;
+      }
     }
     .circle2{
       position: absolute;
@@ -115,19 +192,30 @@ body{
       height: 25px;
       border-radius: 50%;
       left: 224px;
-      top:-50px;
-       animation: circle 4s ease-in-out backwards infinite ;
+      top: -50px;
+      animation: circle 4s ease-in-out backwards infinite ;
+        @include m(){
+        width: 8px;
+        height: 8px;
+        left: 72px;
+        top: -14px;
+      }
     }
       .circle3{
       position: absolute;
-      border:1px solid $white;
+      border: 1px solid $white;
       width: 196px;
       height:196px;
       border-radius: 50%;
       right: 44px;
-      top:-364px;
-      
+      top: -364px;
       animation: circle 4s ease-in-out backwards infinite ;
+        @include m(){
+        width: 58px;
+        height: 58px;
+        right: 46px;
+        top: -92px;
+      }
     }
     @keyframes circle {
       0%{
@@ -147,44 +235,60 @@ body{
     img{
       position: absolute;
       right: 120px;
-      top:-380px;
+      top: -380px;
+      @include m(){
+        right: 64px;
+        top: -100px;
+        width: 62px;
+      }
     }  
     
   }
 
-  // 產品1
+  // ------- 產品1 --------
   .product{
     width: 1200px;
-    // height: 440px;
     margin: 160px auto;
-    @include d1100(){
-      width: auto;
+    position: relative;
+    @include m(){
+      width: 300px;
+      margin: 70px auto;
     }
 
     ul{
       display: flex;
       flex-wrap: wrap;
     }
-    img{
-      margin-right: 20px;
-    }
+    
     .introduce{
-      margin-top: 10px;
-      margin-bottom: 32px;
-      ion-icon{
-        @include font_h1();
-        display: inline-block;
-        margin: 0px 8px 0 10px;
+      margin-top: 2px;
+      margin-bottom: 28px;
+      @include m(){
+        margin-bottom: 0px;
+      }
+      img{
+        margin-right: 8px;
+         @include m(){
+          width: 24px;
+         }
       }
       h1{
         margin: 0px 10px 0px 0;
         display: inline-block;
+        font-size: 30px;
+        @include m(){
+        font-size: 20px;
+        line-height: 2;
+        
+        }
       }
       p{
+        // font-weight: 300;
         color: $color2;
         display: inline-block;
       }
     }
+    
     ol{
       display: flex;
       font-size: 20px;
@@ -196,27 +300,51 @@ body{
     ol li{
       margin: 0 20px;
       padding-right: 40px;
+      @include m(){
+        padding-right: 0px;
+        margin: 0 auto;
+      }
     }
     ol .left_list{
       border-right: 1px solid $color2;
       height: 358px;
+      @include m(){
+        border-right: 0;
+        height: auto;
+        border-bottom: 1px solid $color2;
+        padding-bottom: 8px;
+      }
     }
     .size{
       color:$color1;
       padding-left: 12px;
       margin-bottom: 40px;
+      @include m(){
+        padding-left: 8px;
+        margin-top: 20px;
+        margin-bottom: 24px;
+      }
     }
     .row{
       position: relative;
-      margin-bottom: 46px;
+      margin-bottom: 40px;
+      @include m(){
+        margin-bottom: 20px;
+      }
     }
     .product_name{
       display: inline-block;
       width: 152px;
+      @include m(){
+        width: 132px;
+      }
     }
     .product_price{
       display: inline-block;
       width: 68px;
+      @include m(){
+        width: 58px;
+      }
     }
 
     .add_cart{
@@ -233,8 +361,41 @@ body{
       i{
         width: 22px;
       }
+      @include m(){
+        top: -20px;
+        left: -2px;
+        width: 52px;
+        height: 18px;
+        font-size: 11.5px;
+      }
     }
   } //product
+
+  .tea .introduce, .milk_tea .introduce{
+    @include m(){
+      position: absolute;
+      width: 140px;
+      right: 0px;
+      top: 4px;
+    }
+  }
+
+  .milk_tea img, .tea img{
+      @include m(){
+        width: 136px;
+      }
+    }
+  .milk_tea ul li:nth-child(2){
+    @include m(){
+    order:-1;
+    }
+  }
+
+   .milk_tea ul li ol li:nth-child(1){
+    @include m(){
+    order:-2;
+    }
+  }
 
   .tea{ 
     img{
@@ -254,47 +415,80 @@ body{
     background-color: $color1;
     margin-top: 140px;
     overflow: hidden;
-    // z-index: -999;
-    color:$white;
+    color: $white;
     position: relative;
+    @include m(){
+      margin-top: 0px;
+    }
 
     .curve3{
     position: absolute;
-    left: -260px;
+    left: 0px;
     top: 720px;
     // z-index: -998;
+      @include m(){
+        width: 60px;
+        top: 800px;
+      }
     }
 
     .curve4{
     position: absolute;
-    right: -160px;
-    bottom: -260px;
+    right: 0px;
+    bottom: -160px;
     // z-index: -999;
+      @include m(){
+      width: 160px;
+      bottom: -80px;
+      // top: 200px;
+    }
     }
      
-
     .title{
-      color:$white;
+      color: $white;
       width: 1200px;
       margin: 0px auto;
       padding: 50px 0;
+      @include m(){
+        width: 320px;
+        padding: 20px 0 30px 0;
+      }
       h1{
-        color:$white;
+        color: $white;
         font-size: 92px;
         text-align: left;
         line-height: 0.8;
+        @include m(){
+          font-size: 34px;
+          margin: 10px auto;
+        }
       }
       p{
         @include font_h2();
         color:$white;
+        @include m(){
+          @include font_t2();
+        }
       }
     }
     
-    .rotate{
+    .rotate_oringe{
       position: absolute;
       right: -160px;
       top: -100px;
+      width: 329px;
       animation: oringe 6s linear backwards infinite ;
+      @include m(){
+        width: 100px;
+        right: 0px;
+        top: 100px;
+      }
+      img{
+        width: 100%;
+        @include m(){
+         width: 100px;
+        }
+      }
     }
     @keyframes oringe{
       0%{
@@ -308,20 +502,32 @@ body{
     .product{
       width: 1140px;
       // margin: 140px auto;
-      position: relative;
+      // position: relative;
       @include m(){
-        width: auto;
+        width: 320px;
+        margin: 0 auto;
+        margin-bottom: 60px;
+    
       }
     }
     .juice, .smoothies{
       padding-right: 60px;
+      @include m(){
+        padding: 0;
+      }
     }
 
     .introduce{
+      @include m(){
+        margin-bottom: 20px;
+      }
       h1{color:$white;}
-      ion-icon{color:$white;}
+      // ion-icon{color:$white;}
       p{color:$white;}
       text-align:right;
+      @include m(){
+        text-align: left;
+      }
     }
   
     ul{
@@ -332,15 +538,19 @@ body{
       font-size: 20px;
       flex-wrap: wrap;
       @include m(){
-        height: auto;
+        height: 290px;
         font-size: 16px;
         border-radius: 0 36px 0 36px;
+        outline: 1px solid $white;
       }
     }
     ul .left_list2{
       width: 720px;
       // height: 1200px;
       display: block;
+      @include m(){
+        display: none;
+      }
     }
     .product_img img{
       position: absolute;
@@ -352,24 +562,37 @@ body{
       }
     }
     .juice .product_img img, .smoothies .product_img img{
-      top: -33px;
+      top: -25px;
       // left: -1px;
       border-radius: 0 0 0 100px;
       @include m(){
         border-radius: 0 0 0 36px;
       }
     }
+    li{
+      @include m(){
+        margin: 0 auto;
+      }
+    }
 
     .coffee{
       padding-left: 60px;
+      @include m(){
+        padding-left: 0;
+      }
 
-      .move1{
+      .coffee_bean1{
       position: absolute;
       left: 20px;
       top: 380px;
-      animation: move1 2s ease-in-out backwards infinite ;
+      animation: coffee_bean1 2s ease-in-out backwards infinite ;
+      @include m(){
+        left: 20px;
+        width: 20px;
+        animation: coffee_bean1m 2s ease-in-out backwards infinite ;
       }
-      @keyframes move1{
+      }
+      @keyframes coffee_bean1{
         0%{
           top:390px;
         }
@@ -380,65 +603,127 @@ body{
           top:390px;
         }
       }
-      .move2{
+      @keyframes coffee_bean1m{
+        0%{
+          top: 230px;
+        }
+        50%{
+          top: 224px;
+        }
+        100%{
+          top: 230px;
+        }
+      }
+
+      .coffee_bean2{
       position: absolute;
       left: -20px;
       top: 424px;
       rotate:(85deg);
-      animation: move2 2s 1s ease-in-out backwards infinite ;
+      animation: coffee_bean2 2s 1s ease-in-out backwards infinite ;
+        @include m(){
+          left: 6px;
+          width: 20px;
+          animation: coffee_bean2m 2s 1s ease-in-out backwards infinite ;
       }
-      @keyframes move2{
+      }
+      @keyframes coffee_bean2{
         0%{
-          top:434px;
+          top: 434px;
         }
         50%{
-          top:424px;
+          top: 424px;
         }
         100%{
-          top:434px;
+          top: 434px;
         }
       }
-      .move3{
+      @keyframes coffee_bean2m{
+        0%{
+          top: 250px;
+        }
+        50%{
+          top: 244px;
+        }
+        100%{
+          top: 250px;
+        }
+      }
+      .coffee_bean3{
       position: absolute;
       left: 40px;
       top: 420px;
       rotate:(20deg);
-      animation: move3 2s .5s ease-in-out backwards infinite ;
+      animation: coffee_bean3 2s 0.7s ease-in-out backwards infinite ;
+        @include m(){
+          left: 30px;
+          width: 20px;
+          animation: coffee_bean3m 2s .7s ease-in-out backwards infinite ;
       }
-      @keyframes move3{
+      }
+      @keyframes coffee_bean3{
         0%{
-          top:430px;
+          top: 430px;
         }
         50%{
-          top:420px;
+          top: 420px;
         }
         100%{
-          top:430px;
+          top: 430px;
         }
       }
+      @keyframes coffee_bean3m{
+        0%{
+          top: 250px;
+        }
+        50%{
+          top: 244px;
+        }
+        100%{
+          top: 250px;
+        }
+      }
+
       .introduce{
         text-align: left;
       }
       .product_img img{
         right: 0px;
-        top: 13px;
+        top: 22px;
         border-radius: 0;
+        @include m(){
+          padding-left: 104px;
+          border-radius: 0 0 36px 0;
+        }
       }
       li{
         padding-left: 120px;
+        @include m(){
+          padding-left: 0px;
+          margin: 0 auto;
+          }
       }
-    }
+    } //coffee
   
    
     
     .smoothies {
-      .scale{
+      .ice{
         position: absolute;
-        right: -20px;
+        right: 0px;
         bottom: -10px;
-        animation: scale 3s  ease-in-out backwards infinite ;
+        animation: ice 3s  ease-in-out backwards infinite ;
+        @include m(){
+          width: 40px;
+          right: 16px;
+          bottom: auto;
+          top: 220px;
+        }
+        img{
+          width: 100%;
+        }
       }
-      @keyframes scale {
+      @keyframes ice {
       0%{
         scale:1;
         // opacity: 1;
@@ -453,7 +738,7 @@ body{
       }
     }
       .product_img img{
-        top: -59px;
+        top: -51px;
       }
     }
     // tag開關

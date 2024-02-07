@@ -1,15 +1,14 @@
 <template>
       <header>
         <nav>
-            <a href="./index.html"><img src="./image/pic/icon/logo.svg" alt=""></a>
+            <a href="./index.html"><img src="../assets/image/pic/icon/logo.svg" alt=""></a>
             <ul class="empty"></ul>
             <ul class="menu">
-                <li><a href="./about.html">關於我們</a></li>
-                
-                <li><a href="./info.html">最新消息</a></li>
-                <RouterLink to="/about">about</RouterLink>
+                <li><RouterLink to="./about">關於我們</RouterLink></li>
+                <li><RouterLink to="./info">最新消息</RouterLink></li>
+                <!-- <RouterLink to="/about">about</RouterLink> -->
                 <li><RouterLink to="/products">飲品菜單</RouterLink></li>
-                <li><a href="#">門市據點</a></li>
+                <li><RouterLink to="#">門市據點</RouterLink></li>
             </ul>
         <ul class="member_btn">
             <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
