@@ -2,7 +2,7 @@
    <div class="space"></div>
     <div class="products_wrapper">
     
-    <!-- banner -->
+    <!------------------- banner ------------------->
         <div class="banner">
             <div class="container">
                 <span>BOISSON </span><br><span>MENU</span>
@@ -10,7 +10,7 @@
                 <p>捌嵩茶飲的經典滋味<img src="../assets/image/products/Line_banner.svg" alt=""></p>
             </div>
         </div>
-
+        <!---- 圓形動畫、飲料照片 ---->
         <div class="top">
             <div class="circle1"></div>
             <div class="circle2"></div>
@@ -18,11 +18,13 @@
             <img src="../assets/image/products/naixi_qubei.png" alt="">
         </div>
         
+        <!---- TAIWAN TEA字 ---->
         <div class="background_text">
             <span>TAIWAN TEA</span>
             <span>捌嵩飲茶，品味悠久的文化底蘊，感受時光與茶的對話。</span>
         </div>
 
+        <!---- 背景裝飾曲線 ---->
         <div class="background_img">
             <img class="curve1" src="../assets/image/products/curve_p_1.png" alt="">
             <img class="curve1 curve1m" src="../assets/image/products/curve_p_1m.svg" alt="">
@@ -32,7 +34,9 @@
         </div>
        
         
-        <!------ products ------>
+        <!------------------- products ------------------->
+
+        <!---- 純茶系列 ---->
         <div class="product tea">
             <ul>
                 <li>
@@ -64,7 +68,8 @@
                 </li>
             </ul>
         </div>
-
+        
+        <!---- 奶茶系列 ---->
         <div class="product milk_tea">
             <ul>
                 <li>
@@ -94,18 +99,19 @@
                 </li>
             </ul>
         </div>
-        <!------ 商品下半部 ------>
+        <!------------------- 商品下半部 ------------------->
         <div class="area2">
 
+            <!---- 背景裝飾曲線 ---->
             <img class="curve3" src="../assets/image/products/curve_p_3.png" alt="">
             <img class="curve4" src="../assets/image/products/curve_p_4.png" alt="">
-
+            <!---- 大標題 ---->
             <div class="title">
                 <h1>FRUIT & COFFEE</h1>
                 <p>清新解渴，每口都是生活的美好。</p>
             </div>
             
-            
+            <!---- 水果茶系列 ---->
             <div class="product juice">
                 <div class="rotate_oringe">
                     <img src="../assets/image/products/oringe_bgi.png" alt="">
@@ -147,6 +153,7 @@
                 </ul>
             </div>
             
+            <!---- 咖啡系列 ---->
             <div class="product coffee">
                 
                 <div class="coffee_bean">
@@ -191,6 +198,7 @@
                 </ul>
             </div>
             
+            <!---- 冰沙系列 ---->
             <div class="product smoothies">
 
                 <div class="ice">
@@ -233,11 +241,9 @@
                 </ul>
             </div>
 
-            
-    
 
 
-    </div>     
+     </div>     
     </div>
 
 </template>
