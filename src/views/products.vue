@@ -1,8 +1,7 @@
 <template>
    <div class="space"></div>
     <div class="products_wrapper">
-    
-    <!-- banner -->
+     <!-- banner -->
         <div class="banner">
             <div class="container">
                 <span>BOISSON </span><br><span>MENU</span>
@@ -40,24 +39,27 @@
                 </li>
                 
                 <li>
-                    <div class="introduce"> <h1><img src="../assets/image/products/ion_leaf-outline2.svg" alt="">純茶系列</h1>
+                    <div class="introduce"> 
+                    <h1>
+                    <img src="../assets/image/products/ion_leaf-outline2.svg" alt="">純茶系列</h1>
                     <p>清香悠遠，口感純淨，純茶，自然的悠然饗宴。</p></div>
                 
                     <ol>
                         <li class="left_list"> 
-                            <div class="size">                                                                 <span class="product_name"></span> <span class="product_price">M</span><span class="product_price">L</span></div>
-                            <div class="row no1"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
-                            <div class="row no2"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <div class="size"> 
+                                <span class="product_name"></span> <span class="product_price">M</span><span class="product_price">L</span></div>
+                            <div class="row no1" v-for=" item in drinkList1" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <!-- <div class="row no2"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
                             <div class="row no3"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
-                            <div class="row no4"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍茶勒</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>    
+                            <div class="row no4"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍茶勒</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>     -->
                         </li>
             
-                        <li> 
-                                                       <div class="size">                                                                 <span class="product_name"></span> <span class="product_price">M</span><span class="product_price">L</span></div>
-                            <div class="row no5"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
-                            <div class="row no6"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
-                            <div class="row no7"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
-                            <div class="row no8"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍茶勒</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>   
+                            <li> 
+                                <div class="size">                                                                 <span class="product_name"></span> <span class="product_price">M</span><span class="product_price">L</span></div>
+                                <div class="row no5"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                                <div class="row no6"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                                <div class="row no7"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                                <div class="row no8"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍茶勒</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>   
                         </li>
                     </ol>
                  
@@ -81,7 +83,8 @@
                         </li>
             
                         <li> 
-                                                       <div class="size">                                                                 <span class="product_name"></span> <span class="product_price">M</span><span class="product_price">L</span></div>
+                             <div class="size">
+                                <span class="product_name"></span> <span class="product_price">M</span><span class="product_price">L</span></div>
                             <div class="row no5"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
                             <div class="row no6"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
                             <div class="row no7"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
@@ -232,17 +235,65 @@
                     </li>
                 </ul>
             </div>
-
             
-    
-
-
     </div>     
     </div>
 
 </template>
 <!-- <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> -->
-<script></script>
+<script>
+import CartSlide from "../components/member_btn.vue"
+export default {
+    components:{CartSlide},
+    data (){
+        return{
+            drinkList1: [
+                {
+                    id: 1,
+                    name: '高山烏龍',
+                    num: 1,
+                    mediumPrice: 30,
+                    largePrice: 35
+                },
+                {
+                    id: 2,
+                    name: '龍井綠茶',
+                    num: 1,
+                    mediumPrice: 30,
+                    largePrice: 35
+                },
+                {
+                    id: 3,
+                    name: '武夷岩茶',
+                    num: 1,
+                    mediumPrice: 30,
+                    largePrice: 35
+                },
+                {
+                    id: 4,
+                    name: '茉莉花茶',
+                    num: 1,
+                    mediumPrice: 30,
+                    largePrice: 35
+                }
+            ],
+            cart: []
+        }
+    },
+   
+
+    methods:{
+        addToCart(item) {
+        console.log(item);
+        let item2 = JSON.parse(JSON.stringify(item));
+        item2.key_id = Date.now();
+        this.cart.push(item2);
+
+        localStorage.setItem("cart", JSON.stringify(this.cart));
+      }
+    }
+}
+</script>
 <style lang="scss">
   @import"../assets/sass/style.scss";
 </style>
