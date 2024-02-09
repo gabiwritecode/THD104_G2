@@ -1,0 +1,131 @@
+.member_container {
+    width: 1200px;
+    margin: 0 auto;
+
+    @include m() {
+        width: 390px;
+
+
+
+
+    }
+
+
+}
+
+//-----------------表單
+.member_form {
+    width: 580px;
+    height: 940px;
+    margin: 60px auto 0;
+    background-color: $grey2;
+    border: 1px solid black;
+    border-radius: 40px;
+    position: relative;
+
+    @include m() {
+        width: 360px;
+        height: 720px;
+
+        margin-top: 120px;
+        margin-bottom: 40px;
+        
+        box-sizing: border-box;
+
+
+    }
+
+
+    .h1 {
+        margin-top: 80px;
+    }
+
+    //-----------------輸入選項
+    h3 {
+        margin-left: 100px;
+
+        @include m() {
+            margin-left: 70px;
+
+
+
+        }
+
+    }
+
+    input {
+        @include input_L();
+        margin: 0 auto 36px;
+
+    }
+
+    //-----------------按鈕
+    button {
+        @include btn_L();
+        margin-top: 60px;
+
+    }
+
+    //-----------------按鈕下的文字
+    h5 {
+        font-size: 14px;
+        width: 389px;
+        margin: 36px auto;
+        text-align: center;
+        position: relative;
+
+        @include m() {
+            font-size: 12px;
+            width: 260px;
+
+
+        }
+    }
+
+    h5:before,
+    h5:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        background: #aaa;
+        width: 30%;
+        height: 1px;
+    }
+
+    h5:before {
+        left: 1%;
+    }
+
+    h5:after {
+        right: 1%;
+    }
+
+    //-----------------google註冊
+    a {
+        width: 286px;
+        height: 54px;
+        display: flex;
+        margin: 32px auto;
+        border: 1px solid #78BEC8;
+        border-radius: 30px;
+        text-decoration: none;
+        color: #78BEC8;
+    }
+
+    img {
+        width: 30px;
+        height: 30px;
+        line-height: 54px;
+        margin-top: 12px;
+        margin-left: 39px;
+    }
+
+    .google {
+        font-size: 18px;
+        margin-left: 8px;
+        width: 200px;
+        line-height: 54px;
+
+    }
+
+}
