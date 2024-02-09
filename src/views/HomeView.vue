@@ -13,8 +13,17 @@
       <p>捌嵩飲茶，品味悠久的文化底蘊，感受時光與茶的對話。</p>
     </div>
 
+    <!---- 背景裝飾曲線1 ---->
+    <div class="background_img">
+        <img class="curve1" src="../assets/image/index/curve_i_1.png" alt="">
+        <img class="curve2" src="../assets/image/index/curve_i_2.png" alt="">
+        <img class="text_move" src="../assets/image/index/TAIWAN TEA.svg" alt="">
+        <!-- <h1>TAIWAN TEA</h1> -->
+    </div>
     <!------ 介紹 ------>
     <div class="introduce">
+
+
       <h1>TAIWAN TEA</h1>
 
       <ul class="introduce1">
@@ -45,7 +54,7 @@
     </div>
 
 
-
+    <!------ 背景色圓弧 ------>
     <div class="background_color"></div>
     
     <!------ TOP5商品 ------>
@@ -81,10 +90,13 @@
             <p>享受絲滑口感與甜蜜幸福的奢華體驗。</p>
           </li>
         </ul>
-
-
       </div>
 
+    <!---- 背景裝飾曲線2 ---->
+    <div class="background_img">
+      <img class="curve3" src="../assets/image/index/curve_i_3.png" alt="">
+      <!-- <img class="curve4" src="../assets/image/index/curve_i_4.png" alt=""> -->
+    </div>
     
 
     <!------ 最新消息 ------>
@@ -116,10 +128,14 @@
               <p>捌嵩飲茶，全新推出「莓果繽紛系列」！</p>
             </li>
           </ul>
+          <button>Read more</button>
         </div>
       </div>
 
-
+      <!---- 背景裝飾曲線3 ---->
+      <div class="background_img">
+        <img class="curve4" src="../assets/image/index/curve_i_4.png" alt="">
+      </div>
 
     
   </div>

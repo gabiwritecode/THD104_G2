@@ -1,6 +1,8 @@
 .index_wrapper{
+    overflow: hidden;
     position: relative;
     h1{
+        margin: 80px auto;
         color: $white;
            @include m(){
                 @include font_h2();
@@ -22,6 +24,8 @@
             font-weight: 300;
         }
     }
+
+    // ===== banner ====
     .banner{
         // background-image: url('../../image/index/banner_test.jpg');
         // position: relative;
@@ -41,6 +45,7 @@
             text-align: left;
             @include m(){
                 font-size: 38px;
+                font-weight: 600;
             }
         }
         p{
@@ -51,15 +56,93 @@
         }
     } // banner
 
+    // ===== 背景裝飾曲線 ====
+    .background_img{
+        position: relative;
+        z-index: -999;
+        .curve1{
+        position: absolute;
+        right: 0px;
+        top: -200px;
+        @include m(){
+            width: 124px;
+            top: -80px;
+        }
+        }
+        .curve2{
+        position: absolute;
+        left: 0px;
+        top: 820px;
+        @include m(){
+            width: 40px;
+            top: 680px;
+            }
+        }
+        .text_move{
+            position: absolute;
+            top: 640px;
+            color:rgba( 0, 0, 0, 0);;
+            opacity: .4;
+            animation: text1 5s linear infinite;
+            @include m(){
+                top: 360px;
+                height: 40px;
+                animation: text2 4s linear infinite;
+            }
+            @keyframes text1{
+                0%{
+                    left: -400px;
+                }
+                100%{
+                    left: 1940px;
+                }
+                
+            }
+            @keyframes text2{
+                0%{
+                    left: -300px;
+                }
+                100%{
+                    left: 440px;
+                }
+                
+            }
+        }
+        // ===== 背景裝飾曲線2 ====
+        .curve3{
+            position: absolute;
+            right: 0px;
+            top: -400px;
+            // z-index: -998;
+            @include m(){
+                width: 70px;
+                top: -380px;
+            }
+        }
+        .curve4{
+            position: absolute;
+            left: 0px;
+            bottom: -180px;
+            // z-index: -999;
+            @include m(){
+                width: 120px;
+                bottom: -30px;
+                // top: 200px;
+            }
+        }
+    }// background_img
+
+ 
+    // ===== 介紹 ====
     .introduce {
         width: 1200px;
-        height: 900px;
+        height: 880px;
         margin: 80px auto;
         padding: 40px 0;
         position: relative;
         @include m(){
             width: 310px;
-            height: 660px;
+            height: 540px;
         }
         ul{
             display: flex;
@@ -79,6 +162,7 @@
             margin: 0;
             @include m(){
                 font-size: 38px;
+                font-weight: 600;
                 text-align: left;
                 line-height: 1.2;
                 width: 200px;
@@ -109,7 +193,7 @@
             position: absolute;
             top: 50px;
             @include m(){
-                top: 30px;
+                top: 10px;
             }
         }
          .introduce2{
@@ -129,10 +213,11 @@
         }
     } // introduce
 
+    // ===== 背景色圓弧 =====
     .background_color{
         background-color: $color1;
         position: absolute;
-        height: 1200px;
+        height: 1240px;
         width: 100%;
         top: 2600px;
         z-index: -9999;
@@ -140,11 +225,13 @@
         border-radius: 1300% 1300% 0 0/800% 800%;
         @include m(){
             border-radius: 500% 500% 0 0/60% 60%;
-            top: 1400px
+            top: 1300px
         }
     } // background_color
     
-    
+
+
+    // ===== TOP5商品 =====
     .top_products_all{
         width: 1200px;
         margin: 100px auto;
@@ -194,7 +281,8 @@
             }
         }
         .product1 img, .product5 img{
-            display: none;
+            @include m(){
+            display: none;}
         }
         .product1, .product2, .product4, .product5{
             h2, p{
@@ -212,6 +300,7 @@
 
     } // top_products_all
 
+    // ===== 最新消息 =====
     .news{
         .container{
             width: 1200px;
@@ -225,13 +314,13 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            margin: 40px auto;
         }
         li{
             width: 280px;
             // justify-content: center;
             @include m(){ 
             width: 136px;
-            margin: 20px auto;
             }
         }
         img{
@@ -254,6 +343,29 @@
         p{
             text-align: center;
         }
+        button{
+            text-align: center;
+            cursor: pointer;
+            transition: .2s all ease;
+            display: block;
+            width: 120px;
+            height: 30px;
+            margin: 80px auto;
+            border: 1px solid $white;
+            background-color: rgba( 0, 0, 0, 0);
+            border-radius: 15px;
+            color: $white;
+            font-size: 14px;
+             &:hover {
+                color: $yellow;
+                // border-color: $yellow;
+                border: 2px solid $yellow;
+            }
+            @include m(){
+                margin: 60px auto;
+            }
+        }
+
     } // news
 
 } // index_wrapper
