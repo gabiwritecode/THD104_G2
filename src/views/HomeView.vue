@@ -1,4 +1,10 @@
-<script setup>
+<script>
+
+import MemberBtn from "../components/member_btn.vue"
+
+export default {
+  components: { MemberBtn }
+}
 // import TheWelcome from '../components/TheWelcome.vue'
 </script>
 
@@ -139,6 +145,8 @@
 
     
   </div>
+
+  <MemberBtn></MemberBtn>
 </template>
 
 <style lang="scss">

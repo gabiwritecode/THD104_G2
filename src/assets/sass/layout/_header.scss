@@ -18,7 +18,7 @@ header{
         display: flex;
         margin: 0px auto;
         justify-content: space-between;
-        img{
+        .logo{
             width: 154px;
             &:hover {
                  transition: .2s all ease;
@@ -58,7 +58,8 @@ header{
         }
         .member_btn li{
             // align-items: center;
-        i{
+            
+            i{
             width: 28px;
             height: 28px;
             color: $color1;
