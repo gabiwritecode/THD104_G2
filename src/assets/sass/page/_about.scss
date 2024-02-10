@@ -37,6 +37,8 @@
 .about_story_p {
     @include m() {
         padding: 0 15px;
+        width: 320px;
+        margin: 0 auto;
     }
 }
 
@@ -89,7 +91,9 @@
     margin-bottom: 40px;
 
     @include m() {
+        margin: 0 auto;
         padding: 15px;
+        width: 320px;
         margin-bottom: 0;
     }
 }
@@ -104,15 +108,15 @@
 }
 
 .about_intrdouce_right {
-    width: 600px;
+    width: 320px;
     height: 512px;
     border-radius: 0 50px 0 50px;
 
     @include m() {
-        width: 390px;
-        height: 300px;
-        padding: 15px;
+        width: 320px;
+        height: 272px;
         box-sizing: border-box;
+        margin: 0 auto;
     }
 }
 
@@ -125,7 +129,7 @@
 
     @include m() {
         width: auto;
-        height: 2400px;
+        height: 1350px;
         margin-top: 60px;
 
     }
@@ -150,8 +154,9 @@
     color: white;
 
     @include m() {
-        width: 300px;
-        height: 240px;
+        margin-top: 0 auto;
+        width: 320px;
+        height: 160px;
         padding-right: 3px;
     }
 }
@@ -173,18 +178,36 @@
 .about_4point {
     margin-top: 20px;
 
+    @include m() {
+        width: 134px;
+
+    }
+
+
 }
 
 .about_4point_img {
     display: block;
     width: 200px;
     height: 200px;
+
+    @include m() {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+
+    }
 }
 
 .about_4point_h2 {
     width: 160px;
     margin: 24px 0 0 24px;
     color: white;
+
+    @include m() {
+        margin: 0 auto;
+        margin-top: 12px;
+    }
 }
 
 .about_4point_p {
@@ -193,7 +216,9 @@
     margin: 12px 0 110px 18px;
 
     @include m() {
-        margin-bottom: 0;
+        margin: 0 auto;
+        width: 134px;
+        margin-left: 12px;
     }
 
 
@@ -209,7 +234,7 @@
     @include m() {
         width: auto;
         flex-wrap: wrap;
-        margin-bottom: 40px;
+        margin-bottom: 190px;
     }
 
 }
@@ -217,6 +242,10 @@
 .about_value_h1 {
     margin-top: 100px;
     margin-bottom: 60px;
+
+    @include m() {
+        margin-top: 40px;
+    }
 }
 
 .about_value_left {
@@ -225,10 +254,10 @@
     border-radius: 0 50px 0 50px;
 
     @include m() {
-        width: 390px;
-        height: 300px;
-        padding: 15px;
+        width: 320px;
+        height: 320px;
         box-sizing: border-box;
+        margin: 0 auto;
     }
 
 
@@ -256,6 +285,7 @@
     @include m() {
         width: 100px;
         margin: 0 auto 5px;
+        margin-top: 15px;
     }
 }
 
@@ -268,9 +298,11 @@
 }
 
 .about_value_right_p {
-    
+
     @include m() {
-        padding: 15px;
+
+        width: 320px;
+        margin: 0 auto;
     }
 }
 
@@ -279,8 +311,9 @@
 
     @include m() {
         margin: 20px 0 20px;
-        width:350px;
+        width: 350px;
         margin: 0 auto;
+    }
 }
-}
+
 // --------------------------------RWD
