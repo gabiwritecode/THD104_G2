@@ -127,11 +127,17 @@
   </main>
 
 </div>
+
+<MemberBtn></MemberBtn>
 </template>
 
-<!-- <script src="../assets/js/vue.global.js"></script> -->
 <script>
+import MemberBtn from "../components/member_btn.vue"
+
+
+
 export default{
+  components: { MemberBtn },
  
       data() {
         return {

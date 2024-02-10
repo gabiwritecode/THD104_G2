@@ -9,20 +9,34 @@
                 <!-- <RouterLink to="/about">about</RouterLink> -->
                 <li><RouterLink to="/products">飲品菜單</RouterLink></li>
                 <li><RouterLink to="#">門市據點</RouterLink></li>
-                <li><router-link to="/cart">訂單確認</router-link></li>
             </ul>
         <ul class="member_btn">
             <li><RouterLink to="#"><i class="fa-solid fa-user"></i></RouterLink></li>
-            <CartSlide></CartSlide>
-            <!-- <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li> -->
+            <li><a href="#" @click.prevent><i class="fa-solid fa-cart-shopping" @click="toggleSlide"></i></a></li>
         </ul>
     </nav>
 </header>
+
 </template>
-<script setup>
- import CartSlide from "./member_btn.vue"
+<script>
+ export default {
+  data() {
+      return {
+        cart:[]
+      }
+     },
+      methods: {
+    
+        toggleSlide() {
+        
+          const slide = document.querySelector('.card_slide');
+          slide.classList.toggle("on");
+        }
+    }
+ }
+
 </script>
 <style lang="scss" scoped>
     
-//   @import"../assets/sass/style.scss";
+//    @import "../assets/sass/style.scss";
 </style>

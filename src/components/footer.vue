@@ -13,14 +13,14 @@
             <p>Copyright© 2024 BOISSON TEA Inc.</p>
         <ul class="btn">
             <!-- fontawesome -->
-            <li><a href="#"><i class="fa-brands fa-line"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><RouterLink to="#"><i class="fa-brands fa-line"></i></RouterLink></li>
+            <li><RouterLink to="#"><i class="fa-brands fa-square-facebook"></i></RouterLink></li>
+            <li><RouterLink to="#"><i class="fa-brands fa-instagram"></i></RouterLink></li>
         </ul>
     </div>
 </footer>
 </template>
 <script></script>
 <style lang="scss">
-  @import"../assets/sass/style.scss";
+//   @import"../assets/sass/style.scss";
 </style>
