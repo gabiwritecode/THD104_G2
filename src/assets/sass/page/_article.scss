@@ -1,0 +1,54 @@
+
+/* 文章圖片大小設定 */
+ .article-img-container{
+  width: 1200px;
+  height: 600px;
+  margin: 120px auto;
+  overflow: hidden;
+  padding: 0;
+  border-top-right-radius: 60px;
+  border-bottom-left-radius: 60px;
+  
+}
+.article-img-container img{
+  width: 1200px;
+  height: 600px;
+  object-fit:cover;
+  object-position: bottom;
+  
+  
+}
+/* 文章文字設定 */
+.article-text-container{
+  width: 1200px;
+  margin: 0 auto;
+}
+.article-title{
+  @include font_h1();
+  color: black;
+}
+.article-subtitle{
+  @include font_h2();
+  color: black;
+}
+.article-text{
+  @include font_h2();
+  color: black;
+  margin-bottom: 150px;
+}
+/* 文章RWD設定 */
+@media screen and (max-width: 390px) {
+  /* 文章RWD圖片設定 */
+  .article-img-container{
+    width: 320px;
+    height: 248px;
+  }
+  .article-img-container img{
+    width: 320px;
+    height: 248px;
+  }
+  /* 文章RWD文字設定 */
+  .article-text-container{
+    width: 320px;
+  }
+}
