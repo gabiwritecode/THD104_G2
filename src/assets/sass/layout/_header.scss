@@ -8,21 +8,45 @@ header{
     position: fixed;
     top: 0;
     z-index: 10;
+    @include m(){
+        height: 65px;
+    }
     // margin-bottom: 200px;
     // display: block;
     // overflow: hidden;
     
     nav{
         width: 1200px;
-        // height: 60px;
+        height: 60px;
         display: flex;
         margin: 0px auto;
         justify-content: space-between;
+        @include m(){
+            height: 44px;
+        }
+        // === 漢堡 ===
+        .fa-bars{
+            display: none;
+            color: $white;
+            font-size: 22px;
+            line-height: 2;
+            padding-left: 4px;
+            @include m(){
+                display: block;
+            }
+        }
         .logo{
             width: 154px;
             &:hover {
                  transition: .2s all ease;
                 opacity: .8;
+            }
+            @include m(){
+                width: 112px;
+                // margin: 2px auto;
+                display: block;
+                padding-left: 32px;
+                // align-items: center;
             }
         }
         ul{
@@ -34,9 +58,15 @@ header{
             @include t(){
                 width: auto;
             }
+            @include m(){
+                display: none;
+            }
         }
         .menu{
             width: 410px;
+            @include m(){
+                display: none;
+            }
             li{
                 // width: 120px;
                 margin: 0 14px;
@@ -75,10 +105,13 @@ header{
                 background-color: $yellow;
                 scale:1.1;
             }
+            @include m(){
+                margin: 6px;
+            }
         }
         }
         
-    }
+    } // nav
     .menu a:hover::after{
          content: "";
         width: 100%;
@@ -87,7 +120,7 @@ header{
         display: block;
         animation: a .4s 1 ease-out forwards;
     }
-}
+} // header
 
 
 @keyframes a {

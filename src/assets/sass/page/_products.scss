@@ -3,6 +3,9 @@
 // }
 .space{
     height: 81px;
+    @include m(){
+      height: 64px;
+    }
 }
 .products_wrapper{
   @include m(){
@@ -17,7 +20,7 @@
     font-weight: 600;
     position: absolute;
     rotate:90deg;
-    right: -250px;
+    right: -300px;
     top: 1000px;
     span{
       padding-right: 16px;
@@ -97,7 +100,7 @@
       z-index: -999;
       @include m(){
         width: 60px;
-        top: 1980px;
+        top: 1950px;
         
       }
     }
@@ -328,6 +331,7 @@
         padding-left: 8px;
         margin-top: 20px;
         margin-bottom: 24px;
+        font-weight: 500;
       }
     }
     .row{
@@ -363,15 +367,19 @@
       width: 90px;
       font-size: 18px;
       display: none;
-      i{
-        width: 22px;
-      }
       @include m(){
-        top: -20px;
+        top: -14px;
         left: -2px;
         width: 52px;
-        height: 18px;
-        font-size: 11.5px;
+        height: 20px;
+        font-size: 12.5px;
+        padding: 0;
+      }
+      i{
+        width: 22px;
+        @include m(){}
+          padding: 0;
+          width: auto;
       }
     }
   } //product
@@ -484,7 +492,7 @@
       right: -160px;
       top: -100px;
       width: 329px;
-      animation: oringe 6s linear backwards infinite ;
+      animation: oringe 6s linear backwards infinite;
       @include m(){
         width: 100px;
         right: 0px;
@@ -499,7 +507,7 @@
     }
     @keyframes oringe{
       0%{
-        tramsform:rotate(0deg);
+        transform:rotate(0deg);
       }
       100%{
         transform:rotate(360deg);

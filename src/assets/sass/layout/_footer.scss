@@ -6,8 +6,14 @@ footer{
     background-color: $color1;
     padding: 14px 20px;
     box-sizing: border-box;
-
-    
+    position: relative;
+    @include m(){
+        height: 280px;
+    }
+    ul{ // 追蹤btn
+        display: flex;
+        justify-content: space-between;
+    }
     .footer{
         width: 1200px;
         position: relative;;
@@ -15,46 +21,93 @@ footer{
         @include d1100() {
             width: auto;
         }
-        
-    ul{
-        display: flex;
-        justify-content: center;
-        margin: 12px 0;
-    }
-    img{
-        margin: 0 40px;
-        width: 55px;
-        display: block;
-    }
-    a{
-        color: $white;
-        font-size: 15px;
-        text-decoration: none;
-        letter-spacing: .1rem;
-        text-align: center;
-        display: block;
-        &:hover {
-            opacity: .8;
+        @include m(){
+            width: 250px;
         }
-    }
-   .menu li{
-        width: 126px;
-        // align-items: center; 
-        line-height: 5;
-                
-    }
-    p{
-        color:$white;
-        font-size: 13px;
-        font-weight: 300;
-        text-align: center;
-        // justify-content: center;
-    }
+        
+        ul{
+            display: flex;
+            justify-content: center;
+            margin: 12px 0;
+            flex-wrap: wrap;
+            @include m(){
+                margin: 16px auto 60px auto;
+            }
+        }
+        .menu li{
+            width: 126px;
+            // align-items: center; 
+            line-height: 5;
+            @include m(){
+                width: 110px;
+                line-height: 3;
+            }
+        }
+        .logo{
+            @include m(){
+                display: none;
+            }
+        }
+        img{
+            margin: 0 40px;
+            width: 55px;
+            display: block;
+        }
+        a{
+            color: $white;
+            font-size: 15px;
+            text-decoration: none;
+            letter-spacing: .1rem;
+            text-align: center;
+            display: block;
+            font-weight: 500;
+            &:hover {
+                opacity: .8;
+            }
+            @include m(){
+            }
+        }
+        p{
+            color:$white;
+            font-size: 13px;
+            font-weight: 300;
+            text-align: center;
+            margin: 0 auto;
+            // justify-content: center;
+            @include m(){
+                width: 250px;
+            }
+        }
+        .tibaMe{
+            padding-bottom: 4px;
+            @include m(){
+                width: 210px;
+            }
+        }
+        .copyright{
+            @include m(){
+                font-size: 12.5px;
+            }
+        }
+
+    
+    } // .footer
     .btn{
-        justify-content: right;
+        // justify-content: right;
         position: absolute;
-        right: 0;
-        bottom: 0;
+        right: 10%;
+        bottom: 10%;
+        @include m(){
+            width: 210px;
+            right:auto;  
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 43%;
+        }
+
+        li{
+            margin: 0 8px;
+        }
         .fa-brands{
             color: $white;
             font-size: 24px;
@@ -66,7 +119,5 @@ footer{
             font-size: 22px;
             padding-top: 2px;
         }
-    }
-            
     }
 }
