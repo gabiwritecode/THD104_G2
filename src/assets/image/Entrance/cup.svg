@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68.03 68.03">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #78bec8;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #78bec8;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 15px;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="34.02" cy="34.02" r="31.18"/>
+  <line class="cls-2" x1="31.75" y1="36.56" x2="59.58" y2="8.73"/>
+</svg>

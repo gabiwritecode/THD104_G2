@@ -8,21 +8,48 @@ header{
     position: fixed;
     top: 0;
     z-index: 10;
+    @include m(){
+        height: 65px;
+    }
     // margin-bottom: 200px;
     // display: block;
     // overflow: hidden;
     
     nav{
         width: 1200px;
-        // height: 60px;
+        height: 60px;
         display: flex;
         margin: 0px auto;
         justify-content: space-between;
+        @include m(){
+            position: relative;
+            height: 44px;
+        }
+        // === 漢堡 ===
+        .fa-bars{
+            display: none;
+            color: $white;
+            font-size: 22px;
+            line-height: 2;
+            padding-left: 4px;
+            @include m(){
+                display: block;
+            }
+        }
+        // 假
+        .fa-bars:hover ~ .menu{
+            display: block;
+        }
         .logo{
             width: 154px;
             &:hover {
                  transition: .2s all ease;
                 opacity: .8;
+            }
+            @include m(){
+                width: 112px;
+                display: block;
+                padding-left: 32px;
             }
         }
         ul{
@@ -34,25 +61,72 @@ header{
             @include t(){
                 width: auto;
             }
+            @include m(){
+                display: none;
+            }
         }
         .menu{
-            width: 410px;
+            width: 460px;
+            @include m(){
+                position: absolute;
+                left: -20px;
+                top: -12px;
+                display: block;
+                padding: 10px;
+                box-sizing: border-box;
+                height: 600px;
+                width: 270px;
+                border-radius: 0 0 24px 0;
+                background-color: $color1;
+                opacity: .9;
+                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+                // 漢堡選單隱藏
+                display: none;
+            }
+
+            // == 漢堡選單內的X按鈕 ==
+            .close_button{
+                display: none;
+                color: $white;
+                border: 0;
+                font-size: 24px;
+                background-color: rgba(120, 190, 200,0);
+                @include m(){
+                    padding: 10px;
+                    display: block;
+                    // margin: 8px 0 0 0;
+                }
+            }
+            // == 漢堡選單內的logo ==
+            .logo_m{
+                display: none;
+                width: 126px;
+                @include m(){
+                    display: block;
+                    margin: 30px auto 26px auto;
+                }
+            }
             li{
                 // width: 120px;
                 margin: 0 14px;
+                @include m(){
+                    border-bottom: 1px solid $white;
+                }
                 a{
                     color: $white;
                     text-decoration: none;
-                    // line-height: 3.8;
                     letter-spacing: .1rem;
-                    text-align: center;
                     display: block;
-                    // height: 60px;
-                     transition: .2s all ease;
+                    transition: .2s all ease;
                     &:hover{
                         color: $yellow;
                     }
-                    
+                    @include m(){
+                        font-size: 18px;
+                        height: 80px;
+                        line-height: 5;
+                        text-align: center;
+                    }
                 }
             }
         }
@@ -75,10 +149,13 @@ header{
                 background-color: $yellow;
                 scale:1.1;
             }
+            @include m(){
+                margin: 6px;
+            }
         }
         }
         
-    }
+    } // nav
     .menu a:hover::after{
          content: "";
         width: 100%;
@@ -86,8 +163,11 @@ header{
         background-color: $yellow;
         display: block;
         animation: a .4s 1 ease-out forwards;
+        @include m(){
+            visibility: hidden;
+        }
     }
-}
+} // header
 
 
 @keyframes a {

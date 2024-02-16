@@ -1,0 +1,99 @@
+.entrance_wrapper{
+    width: 100%;
+    height: 840px;
+    align-items: center;
+    position: relative;
+    @include m(){
+        height: 600px;
+    }
+    ul{
+        height: 90%;
+        width: 954px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        // padding-bottom: 150px;
+        overflow: hidden;
+        @include m(){
+            display: block;
+            width: 320px;
+            margin: 8% auto;
+            // justify-content: center;
+        }
+    }
+    li{
+        position: relative;
+         margin: 40px;
+    }
+    .btn{
+        @include m(){
+            padding-left: 8px;
+        }
+        // 杯子形狀按鈕
+        .cup{
+            position: absolute;
+            width: 210px;
+            z-index: -998;
+            left: 0px;
+            top: 6px;
+            animation: oringe 6s linear backwards infinite;
+            // transition: .3s all ease;
+            @include m(){
+                width: 128px;
+                height: 137px;
+                left: 58px;
+                top: 4px;
+            }
+        }
+       a{
+        text-decoration: none;
+        cursor: pointer;
+        color: $white;
+        transition: .3s all ease;
+        font-size: 28px;
+        font-weight: 500;
+        display: block;
+        width: 210px;
+        height: 214px;
+        line-height: 8;
+        text-align: center;
+        margin: 0 auto;
+         &:hover {
+            // opacity: .8;
+            filter:drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.5));
+            // scale: 1.05;
+        }
+        @include m(){
+        font-size: 20px;
+         width: 134px;
+         height: 137px;
+         line-height: 7;
+        }
+       }
+    }
+    .logo{
+        display: block;
+        margin: 20px auto;
+        @include m(){
+            width: 54px;
+            margin: 50px auto;
+        }
+    }
+
+    // === 右下杯子 ===
+    .drink_icon{
+        position: absolute;
+        width: 80px;
+        right: 20%;
+        bottom: 9%;
+        z-index: -9999;
+        @include m(){
+            right: 10%;
+            bottom: 10px;
+            width: 60px;
+        }
+    }
+
+
+} // entrance_wrapper

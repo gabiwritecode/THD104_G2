@@ -9,18 +9,46 @@ export default {
 </script>
 
 <template>
-  <div class="space"></div>
+  <!-- <div class="space"></div> -->
   <div class="index_wrapper">
 
     <!------ banner ------>
 
     <div class="banner">
-      <h1>BOISSON</h1>
-      <p>捌嵩飲茶，品味悠久的文化底蘊，感受時光與茶的對話。</p>
+      <img class="curve_b1" src="../assets/image/index/curve_i_b1.svg" alt="">
+      <img class="curve_b2" src="../assets/image/index/curve_i_b2.svg" alt="">
+      <img class="text_move1" src="../assets/image/index/BOISSON.png" alt="">
+      <img class="text_move2" src="../assets/image/index/BOISSON2.png" alt="">
+      
+      <div class="table"></div>
+      <img class="arched_door" src="../assets/image/index/arched_door.png" alt="">
+      
+      <div class="container">
+        <!-- <div class="beverage_container"> -->
+          <h1>BOISSON</h1>
+          <p>捌嵩飲茶，品味悠久的文化底蘊，感受時光與茶的對話。</p>
+          <img class="ball1" src="../assets/image/index/ball1.png" alt="">
+          <img class="ball2" src="../assets/image/index/ball2.png" alt="">
+          <img class="fan" src="../assets/image/index/fan.png" alt="">
+          <img class="beverage beverage1" src="../assets/image/index/banner_beverage1.png" alt="">
+          <img class="beverage beverage2" src="../assets/image/index/banner_beverage2.png" alt="">
+          <img class="beverage beverage3" src="../assets/image/index/banner_beverage3.png" alt="">
+          <img class="beverage beverage4" src="../assets/image/index/banner_beverage4.png" alt="">
+        <!-- </div> -->
+      </div>
     </div>
 
+    <!---- 背景裝飾曲線1 ---->
+    <div class="background_img">
+        <img class="curve1" src="../assets/image/index/curve_i_1.png" alt="">
+        <img class="curve2" src="../assets/image/index/curve_i_2.png" alt="">
+        <img class="text_move_t" src="../assets/image/index/TAIWAN TEA.svg" alt="">
+        <!-- <h1>TAIWAN TEA</h1> -->
+    </div>
     <!------ 介紹 ------>
     <div class="introduce">
+
+
       <h1>TAIWAN TEA</h1>
 
       <ul class="introduce1">
@@ -51,7 +79,7 @@ export default {
     </div>
 
 
-
+    <!------ 背景色圓弧 ------>
     <div class="background_color"></div>
     
     <!------ TOP5商品 ------>
@@ -87,10 +115,13 @@ export default {
             <p>享受絲滑口感與甜蜜幸福的奢華體驗。</p>
           </li>
         </ul>
-
-
       </div>
 
+    <!---- 背景裝飾曲線2 ---->
+    <div class="background_img">
+      <img class="curve3" src="../assets/image/index/curve_i_3.png" alt="">
+      <!-- <img class="curve4" src="../assets/image/index/curve_i_4.png" alt=""> -->
+    </div>
     
 
     <!------ 最新消息 ------>
@@ -122,10 +153,14 @@ export default {
               <p>捌嵩飲茶，全新推出「莓果繽紛系列」！</p>
             </li>
           </ul>
+          <RouterLink to="./info"><button>Read more</button></RouterLink>
         </div>
       </div>
 
-
+      <!---- 背景裝飾曲線3 ---->
+      <div class="background_img">
+        <img class="curve4" src="../assets/image/index/curve_i_4.png" alt="">
+      </div>
 
     
   </div>
@@ -136,9 +171,17 @@ export default {
 <style lang="scss">
 // @import"../assets/sass/style.scss";
 
-.index_wrapper{
-    .banner{
-        background-image: url('../assets/image/index/banner_test.jpg');
-    }
-}
+// header{
+//   background-color: rgba(0,0,0,0) !important;
+// }
+
+  .header_index{
+    background-color: rgba(120, 190, 200,0);
+  }
 </style>
+<!-- <script setup scoped> -->
+  // document.addEventListener("DOMContentLoaded", () => {
+    // let header_bgc = document.getElementsByTagName('header');
+    // header_bgc[0].className = 'header_index';
+  // });
+<!-- </script> -->
