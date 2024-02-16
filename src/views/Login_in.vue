@@ -4,14 +4,12 @@
             <h1 class="about_Lo_h1">會員登入</h1>
 
             <!---------------------------輸入選項-------------------------->
-            
             <h3 class="about_Lo_h3">帳號</h3>
             <input type="text" class="about_Lo_input" placeholder="請輸入Email">
 
             <h3 class="about_Lo_h3 Lo_h3_1">密碼</h3>
             <input type="password" class="about_Lo_input  " id="password" placeholder="請輸入密碼" >
             <i class="fa-solid fa-eye password"  id="eye" ></i>
-
             <!---------------------------連結-------------------------->
 
             <div class="about_Lo_a">
@@ -39,8 +37,13 @@
 </style>
 <script>
 import MemberBtn from "../components/member_btn.vue"
-
-export default {
-  components: { MemberBtn }
+export default{
+    components: { MemberBtn }
 }
+
+
+
+
+
+
 </script>

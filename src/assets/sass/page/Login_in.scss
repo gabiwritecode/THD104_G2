@@ -56,12 +56,20 @@
     position: absolute;
     top:337.4px;
     left:452.3px;
+    @include m() {
+        top:222.4px;
+        left:281.3px; 
+    }  
 }.fa-eye-slash{
     font-size: 20px;
     color:#78BEC8;
     position: absolute;
     top:337.4px;
-    left:452.3px;  
+    left:452.3px;
+    @include m() {
+        top:222.4px;
+        left:281.3px; 
+    }  
 }
 .about_Lo_a{
     display: flex;
