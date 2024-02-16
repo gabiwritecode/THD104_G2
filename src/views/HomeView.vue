@@ -153,7 +153,7 @@ export default {
               <p>捌嵩飲茶，全新推出「莓果繽紛系列」！</p>
             </li>
           </ul>
-          <button>Read more</button>
+          <RouterLink to="./info"><button>Read more</button></RouterLink>
         </div>
       </div>
 
@@ -179,9 +179,9 @@ export default {
     background-color: rgba(120, 190, 200,0);
   }
 </style>
-<!-- <script setup>
-  document.addEventListener("DOMContentLoaded", () => {
-    let header_bgc = document.getElementsByTagName('header');
-    header_bgc[0].className = 'header_index';
-  });
-</script> -->
+<!-- <script setup scoped> -->
+  // document.addEventListener("DOMContentLoaded", () => {
+    // let header_bgc = document.getElementsByTagName('header');
+    // header_bgc[0].className = 'header_index';
+  // });
+<!-- </script> -->

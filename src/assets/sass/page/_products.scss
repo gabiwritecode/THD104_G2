@@ -100,8 +100,7 @@
       z-index: -999;
       @include m(){
         width: 60px;
-        top: 1950px;
-        
+        top: 1930px;
       }
     }
   } // background_img
@@ -215,8 +214,8 @@
       width: 196px;
       height:196px;
       border-radius: 50%;
-      right: 44px;
-      top: -364px;
+      right: 14%;
+      top: -334px;
       animation: circle 4s ease-in-out backwards infinite ;
         @include m(){
         width: 58px;
@@ -242,12 +241,12 @@
 
     img{
       position: absolute;
-      right: 120px;
-      top: -380px;
+      right: 20%;
+      top: -320px;
       @include m(){
         right: 64px;
         top: -100px;
-        width: 62px;
+        width: 64px;
       }
     }  
     
