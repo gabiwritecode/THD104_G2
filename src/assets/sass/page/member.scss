@@ -4,13 +4,7 @@
 
     @include m() {
         width: 390px;
-
-
-
-
     }
-
-
 }
 
 //-----------------表單
@@ -19,20 +13,17 @@
     height: 940px;
     margin: 120px auto 40px;
     background-color: $grey2;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 40px;
     position: relative;
 
     @include m() {
-        width: 360px;
+        width: 320px;
         height: 720px;
 
         margin-top: 120px;
         margin-bottom: 40px;
-        
         box-sizing: border-box;
-
-
     }
 
 
@@ -45,10 +36,7 @@
         margin-left: 100px;
 
         @include m() {
-            margin-left: 70px;
-
-
-
+            margin-left: 40px;
         }
 
     }
@@ -56,16 +44,16 @@
     input {
         @include input_L();
         margin: 0 auto 36px;
-
     }
-
     //-----------------按鈕
     button {
         @include btn_L();
         margin-top: 60px;
-
+        @include m() {
+            margin-top: 36px;
+            
+        }
     }
-
     //-----------------按鈕下的文字
     h5 {
         font-size: 14px;
@@ -77,8 +65,7 @@
         @include m() {
             font-size: 12px;
             width: 260px;
-
-
+            margin:16px auto;
         }
     }
 
@@ -91,7 +78,6 @@
         width: 30%;
         height: 1px;
     }
-
     h5:before {
         left: 1%;
     }
@@ -110,6 +96,12 @@
         border-radius: 30px;
         text-decoration: none;
         color: #78BEC8;
+
+        @include m() {
+            margin-top: 16px;
+            width: 200px;
+            height: 40px;
+        }
     }
 
     img {
@@ -118,6 +110,12 @@
         line-height: 54px;
         margin-top: 12px;
         margin-left: 39px;
+        @include m() {
+            margin-top: 10px;
+            margin-left: 20px;
+            width: 20px;
+            height: 20px;
+        }
     }
 
     .google {
@@ -125,6 +123,11 @@
         margin-left: 8px;
         width: 200px;
         line-height: 54px;
+
+        @include m() {
+            font-size: 14px;
+            line-height: 40px;
+        }
 
     }
 

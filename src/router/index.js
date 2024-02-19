@@ -11,8 +11,8 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path:'/',
-      redirect:'/HomeView'
+      path: '/',
+      redirect: '/HomeView'
     },
     {
       path: '/about',
@@ -30,7 +30,7 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/Login_in.vue')
     },
-   
+
     {
       path: '/member',
       name: 'member',
@@ -38,6 +38,14 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/member.vue')
+    },
+    {
+      path: '/store_map',
+      name: 'store_map',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/store_map.vue')
     },
     {
       path: '/products',
@@ -70,7 +78,7 @@ const router = createRouter({
       name: 'order',
       component: () => import('../views/FrontOrderView.vue')
     },
- 
+
   ]
 })
 

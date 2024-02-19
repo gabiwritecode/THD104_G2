@@ -1,0 +1,205 @@
+.map_container {
+    width: 1200px;
+    margin: 0 auto;
+    @include m() {
+        width:390px;
+    }
+
+        img{
+            display:none;
+            @include m() {
+                display:block;
+                width:390px;
+                height:244px;
+        
+        
+            }
+        }
+   
+
+}
+.store_name{
+    width:120px;
+    @include m() {
+        margin:16px  auto 12px;
+
+
+    }
+}
+
+.map_box {
+    display: flex;
+    @include m() {
+        margin:0 auto;
+        display: block;
+
+
+    }
+}
+    
+
+form{
+    @include m() {
+      text-align: center;
+    }
+}  
+
+
+
+//-----------------台灣地圖
+:root {
+    --color-gold: rgb(105, 150, 160);
+}
+
+svg {
+    height: 900px;
+    width: 700px;
+     @include m() {
+       display: none;
+
+    }
+
+}
+
+path {
+    stroke: $color2;
+    fill: $color1;
+    transition: 0.5s;
+    cursor: pointer;
+    stroke-width: 5px;
+}
+
+path:hover {
+    fill: $color2;
+    transform: translate(-10px, -10px);
+}
+
+#svg {
+    display: none;
+    z-index: 2;
+}
+
+//---------------地圖小標示
+.fa-house {
+    color: #F5AF00;
+    display: none;
+}
+
+.map_svg {
+    position: relative;
+}
+
+.map_1 {
+    //-----台北小地標
+    visibility: hidden;
+    position: absolute;
+    top: 182px;
+    left: 697px;
+}
+
+.map_2 {
+    //-----新北小地標
+    visibility: hidden;
+    position: absolute;
+    top: 230px;
+    left: 670px;
+}
+
+.map_3 {
+    //-----宜蘭小地標
+    visibility: hidden;
+    position: absolute;
+    top: 310px;
+    left: 710px;
+}
+
+.map_4 {
+    //-----台中小地標
+    visibility: hidden;
+    position: absolute;
+    top: 390px;
+    left: 500px;
+}
+
+.map_5 {
+    //-----高雄小地標
+    visibility: hidden;
+    position: absolute;
+    top: 658.8px;
+    left: 510px;
+}
+
+.map_6 {
+    //-----桃園小地標
+    visibility: hidden;
+    position: absolute;
+    top: 200px;
+    left: 620px;
+}
+
+
+//-----------------下拉選單
+select {
+    @include select_L();
+}
+
+
+
+
+.store-info {
+    width: 250px;
+    margin: 20px 10px 0;
+    p {
+        margin: 10px;
+    }
+    h2{
+        margin-left: 10px;
+    }
+    @include m() {
+       margin: 30px  auto 10px;
+       
+
+    }
+}
+
+
+.select_box{
+    border-bottom: 2px solid black;
+    display: flex;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    @include m() {
+        height:400px;
+        display:block;
+        border-bottom: none;
+        padding:0;
+        margin-bottom: 10px;
+
+
+    }
+}
+.iframe_box{
+    width:280px;
+    height:200px;
+    @include m() {
+        margin: 0 auto;
+        
+
+
+    }
+}
+iframe {
+    width: 280px;
+    height: 200px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+   
+}
+.short {
+    width: 200px;
+    margin-left: 12px;
+    border-color: $color1;
+
+}
+
+// }

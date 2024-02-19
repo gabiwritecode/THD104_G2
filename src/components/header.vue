@@ -12,7 +12,7 @@
         <li><RouterLink to="./info">最新消息</RouterLink></li>
         <!-- <RouterLink to="/about">about</RouterLink> -->
         <li><RouterLink to="/products">飲品菜單</RouterLink></li>
-        <li><RouterLink to="#">門市據點</RouterLink></li>
+        <li><RouterLink to="/store_map">門市據點</RouterLink></li>
       </ul>
       <ul class="member_btn">
           <li><RouterLink to="./Login_in"><i class="fa-solid fa-user"></i></RouterLink></li>
