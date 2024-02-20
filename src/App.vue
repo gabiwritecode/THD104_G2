@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <div>
+  <div :class="'page-' + $route.name">
     <Header></Header>
     <router-view></router-view>
     <Footer></Footer>

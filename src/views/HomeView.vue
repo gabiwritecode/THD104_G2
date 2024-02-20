@@ -171,17 +171,4 @@ export default {
 <style lang="scss">
 // @import"../assets/sass/style.scss";
 
-// header{
-//   background-color: rgba(0,0,0,0) !important;
-// }
-
-  .header_index{
-    background-color: rgba(120, 190, 200,0);
-  }
 </style>
-<!-- <script setup scoped> -->
-  // document.addEventListener("DOMContentLoaded", () => {
-    // let header_bgc = document.getElementsByTagName('header');
-    // header_bgc[0].className = 'header_index';
-  // });
-<!-- </script> -->

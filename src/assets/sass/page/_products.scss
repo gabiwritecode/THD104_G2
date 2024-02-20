@@ -168,7 +168,7 @@
   // ===== 圓形動畫、飲料照片 ====
   .top{
     position: relative;
-    width: 1400px;
+    width: 1200px;
     margin: 0 auto;
     @include m(){
       margin-bottom: 180px;
@@ -214,7 +214,7 @@
       width: 196px;
       height:196px;
       border-radius: 50%;
-      right: 14%;
+      right: 10%;
       top: -334px;
       animation: circle 4s ease-in-out backwards infinite ;
         @include m(){
@@ -241,7 +241,7 @@
 
     img{
       position: absolute;
-      right: 20%;
+      right: 16%;
       top: -320px;
       @include m(){
         right: 64px;
@@ -777,8 +777,12 @@
 
 } //.products_wrapper
 
-
-  
+//當頁header a改色
+// .page-products{
+//   .menu li:nth-child(5) a{
+//     color: $yellow;
+//   }
+// }
 
 
  

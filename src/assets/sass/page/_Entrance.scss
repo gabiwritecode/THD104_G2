@@ -97,3 +97,8 @@
 
 
 } // entrance_wrapper
+
+// 隱藏header footer
+.page-entrance header,.page-entrance footer{
+    display: none;
+}
