@@ -26,7 +26,7 @@ export default {
       <h2>想要把茶飲變成香醇的拿鐵嗎? 那就點擊下方的選項吧<br>
         (若無，請按下一步)</h2>
     </div>
-    <div class="customized-checkbox-container">
+    <div class="customized-milk-container">
       <p>加奶：</p>
       <input type="checkbox" class="checkbox">
     </div>
