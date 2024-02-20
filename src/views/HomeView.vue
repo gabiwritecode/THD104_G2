@@ -1,9 +1,42 @@
 <script>
 
 import MemberBtn from "../components/member_btn.vue"
+import { ref, onMounted, onUnmounted } from 'vue';
+
 
 export default {
-  components: { MemberBtn }
+  components: { MemberBtn },
+  // 首頁header背景色 滾動透明
+  setup(){
+  //   const headerBgc = document.querySelector('.page-home').querySelector('header')
+  //   // console.log(headerBgc);
+  //   window.addEventListener('scroll', function () {
+  //   if (window.scrollY > 250) {
+  //     headerBgc.classList.add('header_bgc');
+  //   } else {
+  //     headerBgc.classList.remove('header_bgc');
+  //   }
+  //   })
+    const headerBgc = ref(null);
+
+    const handleScroll = () => {
+      if (window.scrollY > 250) {
+        headerBgc.value.classList.add('header_bgc');
+      } else {
+        headerBgc.value.classList.remove('header_bgc');
+      }
+    };
+
+    onMounted(() => {
+      headerBgc.value = document.querySelector('.page-home header');
+      window.addEventListener('scroll', handleScroll);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('scroll', handleScroll);
+    });
+  
+  }
 }
 // import TheWelcome from '../components/TheWelcome.vue'
 </script>
@@ -168,7 +201,7 @@ export default {
   <MemberBtn></MemberBtn>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 // @import"../assets/sass/style.scss";
 
 </style>

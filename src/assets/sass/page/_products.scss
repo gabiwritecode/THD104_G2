@@ -1,8 +1,9 @@
 // body{
 //   overflow-x: hidden;
 // }
-.space{
+.page-products .space{
     height: 81px;
+    background-color: $color1;
     @include m(){
       height: 64px;
     }

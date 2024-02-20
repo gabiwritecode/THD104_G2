@@ -40,7 +40,7 @@
             position: absolute;
             top: 180px;
             z-index: 2;
-            color:rgba( 0, 0, 0, 0);;
+            color:rgba( 0, 0, 0, 0);
             opacity: .15;
             animation: text_move1 10s linear infinite;
             @include m(){
@@ -72,7 +72,7 @@
             top: 700px;
             height: 150px;
             z-index: 4;
-            color:rgba( 0, 0, 0, 0);;
+            color:rgba( 0, 0, 0, 0);
             opacity: .2;
             animation: text_move2 10s linear infinite;
             @include m(){
@@ -292,7 +292,7 @@
         .text_move_t{
             position: absolute;
             top: 640px;
-            color:rgba( 0, 0, 0, 0);;
+            color:rgba( 0, 0, 0, 0);
             opacity: .4;
             animation: text_move_t 5s linear infinite;
             @include m(){
@@ -590,10 +590,10 @@
 } // index_wrapper
 
 
-// .page-home header{
-//     background-color: rgba(120, 190, 200,0);
-// }
-
-.index_header{
+.page-home  header{
     background-color: rgba(120, 190, 200,0);
+}
+
+.header_bgc{
+        background-color: rgba(120, 190, 200,1) !important;
 }
