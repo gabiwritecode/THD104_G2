@@ -13,12 +13,8 @@
         <li><RouterLink to="./info">最新消息</RouterLink></li>
         <!-- <RouterLink to="/about">about</RouterLink> -->
         <li><RouterLink to="/products">飲品菜單</RouterLink></li>
-<<<<<<< HEAD
         <li><RouterLink to="/store_map">門市據點</RouterLink></li>
-=======
-        <li><RouterLink to="#">門市據點</RouterLink></li>
         <li><p>Copyright© 2024 BOISSON TEA Inc.</p></li>
->>>>>>> 40ed4a6b06d876d22cd59045a04963f025a72e68
       </ul>
       <ul class="member_btn">
           <li><RouterLink to="./Login_in"><i class="fa-solid fa-user"></i></RouterLink></li>
