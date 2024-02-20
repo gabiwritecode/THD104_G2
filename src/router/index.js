@@ -101,6 +101,14 @@ const router = createRouter({
         title: '訂單明細'
       }
     },
+    {
+      path: '/customized',
+      name: 'customized',
+      component: () => import('../views/CustomizedView.vue'),
+      meta: {
+        title: '客製化飲料'
+      }
+    },
  
   ]
 })

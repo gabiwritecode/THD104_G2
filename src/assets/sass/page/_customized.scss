@@ -1,0 +1,122 @@
+
+.customized-image-container{
+  margin: 0 auto;
+  margin-top: 120px;
+  text-align: center;
+}
+.customized-image-container img{
+  object-fit: cover;
+  object-position: center;
+}
+.customized-text-container{
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+
+}
+.customized-text-container h1,
+.customized-text-container h2 {
+  text-align: center;
+  color: black;
+}
+
+.customized-input-container{
+  margin: 20px auto;
+  text-align: center;
+}
+/* 客製化第二頁開始的圖片 */
+.customized-img-container{
+  width: 760px;
+  height: 560px;
+  border-top-right-radius: 60px;
+  border-bottom-left-radius: 60px;
+  margin: 0 auto;
+  margin-top: 120px;
+  text-align: center;
+  overflow: hidden;
+}
+.customized-img-container img{
+  width: 760px;
+  height: 560px;
+  object-fit: cover;
+  object-position: center;
+}
+.customized-input-container select{
+  height: 30px;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  /* 添加自訂箭頭 */
+  background: url('@/assets/image/customized/arrow.png') no-repeat right center;
+
+  padding-right: 30px;
+  padding-left: 5px;
+  background-size: 25px; 
+  box-sizing: border-box;
+  border: 1px solid #78BEC8;
+}
+.button-container{
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 120px;
+}
+.customized-button{
+  @include btn_M();
+  width: auto;
+  text-wrap: nowrap;
+  padding: 6px 10px;
+  margin: 0 20px;
+  cursor: pointer;
+}
+/* checkbox */
+.customized-checkbox-container{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  align-items: center;
+}
+.customized-checkbox-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.customized-checkbox-container .checkbox{
+  width: 29px;
+  height: 29px;
+  border-radius: 4px;
+}
+.customized-checkbox-item .radio-box{
+  width: 14px;
+  height: 14px;
+  
+}
+
+
+@media screen and (max-width:390px) {
+  .customized-text-container{
+    width: 370px;
+  }
+  /* 客製化第二頁開始的圖片 */
+.customized-img-container{
+  width: 320px;
+  height: 236px;
+  border-top-right-radius: 24px;
+  border-bottom-left-radius: 24px;
+}
+.customized-img-container img{
+  width: 320px;
+  height: 236px;
+}
+.customized-checkbox-container{
+  flex-direction: column;
+  align-items: flex-end;
+  width: 120px;
+}
+}
