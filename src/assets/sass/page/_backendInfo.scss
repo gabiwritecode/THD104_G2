@@ -1,0 +1,111 @@
+.backend-main{
+  display: grid;
+  grid-template-columns: 20% 80% ;
+}
+.sidebar{
+  height: 100%;
+  background-color: #78BEC8;
+  text-align: center;
+  padding-block: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.sidebar i{
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.sidebar-btn{
+  @include font_h2();
+  height: 90px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  
+}
+.sidebar-btn:hover{
+  background-color: #6996A0;
+}
+
+.sidebar-btn-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-btn-container a:active{
+  color: white;
+}
+
+.backend-logout p{
+  @include font_t1();
+  align-self: flex-end;
+  color: white;
+  cursor: pointer;
+}
+.backend-table-container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 180px;
+  
+}
+.backend-table-container h1{
+  @include font_h1();
+  color: #6996A0;
+}
+.backend-input-container{
+  width: 1060px;
+  display: flex;
+  justify-content: right;
+  margin-bottom: 12px;
+}
+.backend-input-container input{
+  height: 26px;
+  border: 1px solid #6996A0;
+  border-radius: 4px;
+}
+.backend-input-container button{
+  margin-left: 4px;
+  background-color: #6996A0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 21px;
+  cursor: pointer;
+}
+.backend-info-table{
+  @include font_t1();
+  border-collapse: collapse;
+  width: 1060px;
+  text-align: center;
+}
+.backend-info-table thead{
+  background-color: #6996A0;
+  color: white;
+  height: 54px;
+  border:1px solid #6996A0;
+
+
+}
+.backend-info-table tbody tr{
+  height: 54px;
+  border:1px solid #6996A0;
+}
+.backend-info-table tbody td button{
+  background-color: #6996A0;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+// 隱藏header footer
+.page-backendInfo header,.page-backendInfo footer{
+  display: none;
+}
