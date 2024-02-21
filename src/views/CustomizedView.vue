@@ -2,6 +2,7 @@
 
 <script setup>
 import { ref, computed } from 'vue';
+import memberBtn from "../components/member_btn.vue";
 
 import Start from '@/components/customized_start.vue';
 import Step1 from '@/components/customized_step1.vue';
@@ -45,4 +46,5 @@ const currentStepComponent = computed(() => {
 </script>
 <template>
   <component :is="currentStepComponent" @prev-step="prevStep" @next-step="nextStep"></component>
+  <memberBtn></memberBtn>
 </template>

@@ -2,6 +2,7 @@
   import Carousel from "../components/carousel.vue"
   import a from "../data/articles.json"
   import a2 from "../data/articles2.json"
+  import memberBtn from "../components/member_btn.vue"
   import {ref} from "vue"
   const articles = ref(a)
   const articles2 = ref(a2)
@@ -16,4 +17,5 @@
     <h2 class="info-subtitle info-spacing">門市消息</h2>
       <Carousel :articles="articles2"/>
   </div>
+  <memberBtn></memberBtn>
 </template>
