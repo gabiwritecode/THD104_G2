@@ -29,6 +29,17 @@
     }
 }
 
+.frame {
+    width: 1200px;
+    margin: 0 auto;
+
+    @include m() {
+
+        width: 390px;
+
+    }
+}
+
 //-----------------------品牌故事
 .about_story {}
 
@@ -75,7 +86,7 @@
     margin: 20px 0 16px 0;
 
     @include m() {
-        width: 140px;
+        width: 160px;
         margin: 0 auto 10px;
     }
 }
@@ -85,6 +96,15 @@
     height: 36px;
     margin-right: 8px;
     vertical-align: bottom;
+
+    @include m() {
+        width: 24px;
+        height: 24px;
+        margin-right: 4px;
+        vertical-align: sub;
+
+
+    }
 }
 
 .about_origin_p {
@@ -103,12 +123,12 @@
 
     @include m() {
         margin: 20px auto 20px;
-        width: 350px;
+        width: 320px;
     }
 }
 
 .about_intrdouce_right {
-    width: 320px;
+    width: 600px;
     height: 512px;
     border-radius: 0 50px 0 50px;
 
@@ -163,9 +183,11 @@
 
 //------------------------------創業理念4重點
 .about_Thought_4point {
+    width:1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
-
+    
     @include m() {
         width: auto;
         flex-wrap: wrap;
@@ -284,9 +306,10 @@
 .about_value_right_h2 {
     @include m() {
         width: 100px;
-        margin: 0 auto 5px;
-        margin-top: 15px;
+        margin-left: 33px;
+
     }
+
 }
 
 
@@ -295,6 +318,13 @@
     height: 36px;
     margin-right: 8px;
     vertical-align: bottom;
+
+    @include m() {
+        width: 24px;
+        height: 24px;
+        margin-right: 4px;
+        vertical-align: sub;
+    }
 }
 
 .about_value_right_p {
@@ -311,7 +341,7 @@
 
     @include m() {
         margin: 20px 0 20px;
-        width: 350px;
+        width: 320px;
         margin: 0 auto;
     }
 }

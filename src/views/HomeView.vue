@@ -1,9 +1,42 @@
 <script>
 
 import MemberBtn from "../components/member_btn.vue"
+import { ref, onMounted, onUnmounted } from 'vue';
+
 
 export default {
-  components: { MemberBtn }
+  components: { MemberBtn },
+  // 首頁header背景色 滾動透明
+  setup(){
+  //   const headerBgc = document.querySelector('.page-home').querySelector('header')
+  //   // console.log(headerBgc);
+  //   window.addEventListener('scroll', function () {
+  //   if (window.scrollY > 120) {
+  //     headerBgc.classList.add('header_bgc');
+  //   } else {
+  //     headerBgc.classList.remove('header_bgc');
+  //   }
+  //   })
+    const headerBgc = ref(null);
+
+    const handleScroll = () => {
+      if (window.scrollY > 120) {
+        headerBgc.value.classList.add('header_bgc');
+      } else {
+        headerBgc.value.classList.remove('header_bgc');
+      }
+    };
+
+    onMounted(() => {
+      headerBgc.value = document.querySelector('.page-home header');
+      window.addEventListener('scroll', handleScroll);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('scroll', handleScroll);
+    });
+  
+  }
 }
 // import TheWelcome from '../components/TheWelcome.vue'
 </script>
@@ -25,7 +58,8 @@ export default {
       
       <div class="container">
         <!-- <div class="beverage_container"> -->
-          <h1>BOISSON</h1>
+          <!-- <h1>BOISSON</h1> -->
+          <img class="boisson_gradient" src="../assets/image/index/boisson_gradient.png" alt="">
           <p>捌嵩飲茶，品味悠久的文化底蘊，感受時光與茶的對話。</p>
           <img class="ball1" src="../assets/image/index/ball1.png" alt="">
           <img class="ball2" src="../assets/image/index/ball2.png" alt="">
@@ -87,13 +121,13 @@ export default {
         <h1>TOP 5 熱銷飲品</h1>
         <ul>
           <li class="top_products product1">
-            <img src="../assets/image/products/naixi_qubei.png" alt="">
+            <img src="../assets/image/index/top5_beverage1.png" alt="">
             <h2>愛爾蘭巧克力奶昔</h2>
             <p>享受絲滑口感與甜蜜幸福的奢華體驗。</p>
           </li>
 
           <li class="top_products product2">
-            <img src="../assets/image/products/naixi_qubei.png" alt="">
+            <img src="../assets/image/index/top5_beverage2.png" alt="">
             <h2>愛爾蘭巧克力奶昔</h2>
             <p>享受絲滑口感與甜蜜幸福的奢華體驗。</p>
           </li>
@@ -105,12 +139,12 @@ export default {
           </li>
 
           <li class="top_products product4">
-            <img src="../assets/image/products/naixi_qubei.png" alt="">
+            <img src="../assets/image/index/top5_beverage4.png" alt="">
             <h2>愛爾蘭巧克力奶昔</h2>
             <p>享受絲滑口感與甜蜜幸福的奢華體驗。</p>
           </li>
           <li class="top_products product5">
-            <img src="../assets/image/products/naixi_qubei.png" alt="">
+            <img src="../assets/image/index/top5_beverage5.png" alt="">
             <h2>愛爾蘭巧克力奶昔</h2>
             <p>享受絲滑口感與甜蜜幸福的奢華體驗。</p>
           </li>
@@ -168,20 +202,7 @@ export default {
   <MemberBtn></MemberBtn>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 // @import"../assets/sass/style.scss";
 
-// header{
-//   background-color: rgba(0,0,0,0) !important;
-// }
-
-  .header_index{
-    background-color: rgba(120, 190, 200,0);
-  }
 </style>
-<!-- <script setup scoped> -->
-  // document.addEventListener("DOMContentLoaded", () => {
-    // let header_bgc = document.getElementsByTagName('header');
-    // header_bgc[0].className = 'header_index';
-  // });
-<!-- </script> -->

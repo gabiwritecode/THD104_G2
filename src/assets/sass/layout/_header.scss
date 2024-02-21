@@ -3,23 +3,20 @@ header{
     height: 82px;
     background-color: $color1;
     display: flex;
-    padding: 12px 20px;
     box-sizing: border-box;
     position: fixed;
     top: 0;
     z-index: 10;
+    transition: .3s all ease;
     @include m(){
         height: 65px;
     }
-    // margin-bottom: 200px;
-    // display: block;
-    // overflow: hidden;
     
     nav{
         width: 1200px;
         height: 60px;
         display: flex;
-        margin: 0px auto;
+        margin: 10px auto;
         justify-content: space-between;
         @include m(){
             position: relative;
@@ -31,14 +28,10 @@ header{
             color: $white;
             font-size: 22px;
             line-height: 2;
-            padding-left: 4px;
+            padding-left: 20px;
             @include m(){
                 display: block;
             }
-        }
-        // 假
-        .fa-bars:hover ~ .menu{
-            display: block;
         }
         .logo{
             width: 154px;
@@ -49,7 +42,7 @@ header{
             @include m(){
                 width: 112px;
                 display: block;
-                padding-left: 32px;
+                padding-left: 26px;
             }
         }
         ul{
@@ -65,12 +58,14 @@ header{
                 display: none;
             }
         }
+       
         .menu{
-            width: 460px;
+            width: 620px;
+            z-index: 20;
             @include m(){
                 position: absolute;
-                left: -20px;
-                top: -12px;
+                left: -300px;
+                top: -10px;
                 display: block;
                 padding: 10px;
                 box-sizing: border-box;
@@ -78,10 +73,9 @@ header{
                 width: 270px;
                 border-radius: 0 0 24px 0;
                 background-color: $color1;
-                opacity: .9;
-                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
-                // 漢堡選單隱藏
-                display: none;
+                opacity: .92;
+                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+                transition: .8s all ease;
             }
 
             // == 漢堡選單內的X按鈕 ==
@@ -92,9 +86,8 @@ header{
                 font-size: 24px;
                 background-color: rgba(120, 190, 200,0);
                 @include m(){
-                    padding: 10px;
+                    padding: 10px 0px 0px 14px;
                     display: block;
-                    // margin: 8px 0 0 0;
                 }
             }
             // == 漢堡選單內的logo ==
@@ -102,12 +95,24 @@ header{
                 display: none;
                 width: 126px;
                 @include m(){
+                    padding-right: 8px;
                     display: block;
                     margin: 30px auto 26px auto;
                 }
             }
+            p{
+                display: none;
+                color: $white;
+                text-align: center;
+                font-size: 13px;
+                font-weight: 300;
+                letter-spacing: .07rem;
+                @include m(){
+                display: block;
+                margin: 24px auto 0px auto;
+                }
+            }
             li{
-                // width: 120px;
                 margin: 0 14px;
                 @include m(){
                     border-bottom: 1px solid $white;
@@ -123,16 +128,27 @@ header{
                     }
                     @include m(){
                         font-size: 18px;
-                        height: 80px;
-                        line-height: 5;
+                        height: 72px;
+                        line-height: 4;
                         text-align: center;
                     }
                 }
             }
+            li:last-child{
+                border: 0;
+            }
+        } // menu
+        
+        // 漢堡滑出
+        .menu_on{
+            left: 0px;
+        }
+        .member_btn{
+            @include m(){
+                margin-right: 16px;
+            }
         }
         .member_btn li{
-            // align-items: center;
-            
             i{
             width: 28px;
             height: 28px;
@@ -167,15 +183,30 @@ header{
             visibility: hidden;
         }
     }
+    @keyframes a {
+        0% {
+            transform: scaleX(0);
+        }
+    
+        100% {
+            transform: scaleX(1);
+        }
+    }
+
+    .header_mobile_bg{
+        background-color: $black;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0%;
+        position: fixed;
+        z-index: 11;
+        opacity: .6;
+        display: none;
+        transition: .8s all ease;
+    }
+    .header_mobile_bg_on{
+        display: block;
+    }
 } // header
 
-
-@keyframes a {
-    0% {
-        transform: scaleX(0);
-    }
-
-    100% {
-        transform: scaleX(1);
-    }
-}
