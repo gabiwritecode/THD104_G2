@@ -1,0 +1,127 @@
+.Store_settings {
+    width: 700px;
+    height: 480px;
+    margin: 60px auto 0;
+    border: 1px solid black;
+  
+    //  ---------選單   
+    select {
+      @include select_M();
+    }
+  
+    //  ---------選單一   
+    .city {
+      margin-left: 60px;
+      margin-right: 12px;
+    }
+  
+    .city_s {
+      margin-right: 30px;
+    }
+  
+    //  ---------選單二 
+    .Township {
+      margin-right: 12px;
+    }
+  
+    .Township_s {
+      margin-right: 30px;
+    }
+  
+    //  ---------選單三 
+    .Time {
+      margin-right: 12px;
+    }
+  
+    .Time_s {
+      @include select_L();
+    }
+  
+  
+    //----------------------------區塊二
+    .block2 {
+      display: flex;
+    }
+  
+    //--------區塊二 [ 左半邊]
+    .left {
+      width: 360px;
+  
+    }
+  
+    .right {
+      width: 360px;
+  
+  
+    }
+  
+    .left_form {
+  
+      margin: 20px 0 0 60px;
+  
+      .input {
+        @include input_M();
+        width: 300px;
+        margin-bottom: 20px;
+      }
+  
+    }
+  
+    //--------區塊二 [ 右半邊]
+    .right {
+      .right_form {
+        margin-left: 45px;
+        
+  
+        h3 {
+          margin-top: 20px;
+        }
+  
+        div {
+          width: 200px;
+          height: 190px;
+          background-color: $grey2;
+        }
+      }
+  
+      //---------新增input樣式
+      .input_image {
+        margin-top: 8px;
+        display: inline-block;
+        padding: 3px 20px;
+        cursor: pointer;
+        background-color:$color2;
+        /* 淺藍色 */
+        color: #fff;
+        /* 白色文字 */
+        
+        border-radius: 4px;
+      }
+  
+      //---------隱藏原生的文件上傳按鈕
+      #image {
+        display: none;
+      }
+  
+    }
+  
+    
+   
+    .button{
+      width:500px;
+      margin: 0 auto;
+      display: flex;
+      
+      
+      button{
+      
+        @include btn_bs_M();
+        
+        margin-top: 25px ;
+        margin-left: 50px;
+  
+      }
+    }
+    
+  
+  }
