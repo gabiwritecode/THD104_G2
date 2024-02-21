@@ -118,7 +118,14 @@ const router = createRouter({
         title: '客製化飲料'
       }
     },
-
+    {
+      path: '/backendInfo',
+      name: 'backendInfo',
+      component: () => import('../views/backend/BackEndInfoView.vue'),
+      meta: {
+        title: '入口'
+      }
+    },
   ]
 })
 const main_title = '捌嵩'
