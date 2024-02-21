@@ -1,10 +1,54 @@
 .backend_login{
     background-color: $color1;
-}
+    .container{
+        width: 400px;
+        height: 100vh;
+        margin: 0 auto;
+    }
+    h1{
+        color: $white;
+    }
+    h2{
+        color: $white;
+        text-align: center;
+    }
+    img{
+        display: block;
+        margin: 0 auto;
+        width: 260px;
+        padding-right: 20px;
+    }
+    p{
+        color: $white;
+        font-size: 18px;
+    }
+    input{
+        @include input_L();
+        display: block;
+        margin: 0 auto;
+    }
+    button{
+        @include btn_L();
+        background-color: $color2;
+        text-decoration: none;
+        &:hover {
+        background-color: darken($color2, 10);
+     }
+    }
+    a{
+        text-decoration: none;
+    }
+
+
+} // backend_login
 .page-backendLogin .space{
     height: 81px;
-    // /* background-color: $color1;
-    // @include m(){
-    //   height: 64px;
-    // } */
+    background-color: $color1;
+    @include m(){
+        height: 64px;
+    } 
+}
+
+.page-backendLogin header, .page-backendLogin footer{
+    display: none;
 }
