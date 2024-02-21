@@ -3,19 +3,14 @@ header{
     height: 82px;
     background-color: $color1;
     display: flex;
-    // padding: 12px 20px;
     box-sizing: border-box;
     position: fixed;
-    // position: relative;
     top: 0;
     z-index: 10;
     transition: .3s all ease;
     @include m(){
         height: 65px;
     }
-    // margin-bottom: 200px;
-    // display: block;
-    // overflow: hidden;
     
     nav{
         width: 1200px;
@@ -38,10 +33,6 @@ header{
                 display: block;
             }
         }
-        // 假
-        // .fa-bars:hover ~ .menu{
-        //     display: block;
-        // }
         .logo{
             width: 154px;
             &:hover {
@@ -69,12 +60,12 @@ header{
         }
        
         .menu{
-            width: 460px;
+            width: 620px;
             z-index: 20;
             @include m(){
                 position: absolute;
                 left: -300px;
-                top: -12px;
+                top: -10px;
                 display: block;
                 padding: 10px;
                 box-sizing: border-box;
@@ -84,8 +75,6 @@ header{
                 background-color: $color1;
                 opacity: .92;
                 box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
-                // 漢堡選單隱藏
-                // display: none;
                 transition: .8s all ease;
             }
 
@@ -99,7 +88,6 @@ header{
                 @include m(){
                     padding: 10px 0px 0px 14px;
                     display: block;
-                    // margin: 8px 0 0 0;
                 }
             }
             // == 漢堡選單內的logo ==
@@ -107,6 +95,7 @@ header{
                 display: none;
                 width: 126px;
                 @include m(){
+                    padding-right: 8px;
                     display: block;
                     margin: 30px auto 26px auto;
                 }
@@ -120,11 +109,10 @@ header{
                 letter-spacing: .07rem;
                 @include m(){
                 display: block;
-                margin: 40px auto 0px auto;
+                margin: 24px auto 0px auto;
                 }
             }
             li{
-                // width: 120px;
                 margin: 0 14px;
                 @include m(){
                     border-bottom: 1px solid $white;
@@ -140,8 +128,8 @@ header{
                     }
                     @include m(){
                         font-size: 18px;
-                        height: 80px;
-                        line-height: 5;
+                        height: 72px;
+                        line-height: 4;
                         text-align: center;
                     }
                 }
@@ -150,6 +138,7 @@ header{
                 border: 0;
             }
         } // menu
+        
         // 漢堡滑出
         .menu_on{
             left: 0px;
@@ -160,8 +149,6 @@ header{
             }
         }
         .member_btn li{
-            // align-items: center;
-            
             i{
             width: 28px;
             height: 28px;
@@ -196,38 +183,30 @@ header{
             visibility: hidden;
         }
     }
+    @keyframes a {
+        0% {
+            transform: scaleX(0);
+        }
+    
+        100% {
+            transform: scaleX(1);
+        }
+    }
 
-} // header
-// .header{
-    // position: relative;
-    // height: 100%;
     .header_mobile_bg{
         background-color: $black;
-        // width: calc(100% + 12px);
         width: 100%;
-        height: calc(100% + 12px);
-        top: -12px;
+        height: 100%;
+        top: 0px;
         left: 0%;
         position: fixed;
         z-index: 11;
         opacity: .6;
         display: none;
-        // transition-delay: 5s;
         transition: .8s all ease;
     }
     .header_mobile_bg_on{
         display: block;
-        // left: 0px;
     }
-// }
+} // header
 
-
-@keyframes a {
-    0% {
-        transform: scaleX(0);
-    }
-
-    100% {
-        transform: scaleX(1);
-    }
-}

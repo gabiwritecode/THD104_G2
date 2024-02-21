@@ -13,6 +13,7 @@
         <li><RouterLink to="./info">最新消息</RouterLink></li>
         <!-- <RouterLink to="/about">about</RouterLink> -->
         <li><RouterLink to="/products">飲品菜單</RouterLink></li>
+        <li><RouterLink to="/customized">客製飲品</RouterLink></li>
         <li><RouterLink to="/store_map">門市據點</RouterLink></li>
         <li><p>Copyright© 2024 BOISSON TEA Inc.</p></li>
       </ul>
@@ -46,7 +47,7 @@
           const menu = document.querySelector('.menu');
           menu.classList.toggle("menu_on");
           const header_mobile_bg = document.querySelector('.header_mobile_bg');
-          header_mobile_bg.classList.toggle('header_mobile_bg_on')
+          header_mobile_bg.classList.toggle('header_mobile_bg_on');
         }
     }
  }

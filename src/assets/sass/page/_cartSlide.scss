@@ -1,16 +1,5 @@
 
   
-  
-  // .mask{
-  //   position: fixed;
-  //   top: 0;
-  //   right: 0;
-  //   left: 0;
-  //   bottom: 0;
-  //   background-color: rgba(0,0,0,.3);
-  //   z-index: 3;
-    
-  // }
 .cart{
   .card_slide{
     width: 440px;
@@ -22,6 +11,40 @@
     top: 0;
     right: -440px;
     transition: all linear .5s;
+    .lightbox{
+      // width: 395px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,.8);
+      z-index: 3;
+      .alertText{
+        width: 300px;
+        height: 250px;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .text_1{
+          margin-top: 70px;
+        }
+        h4{
+          text-align: center;
+          
+        }
+        button{
+          @include btn_M();
+          display: block;
+          margin: 30px auto;
+
+          
+        }
+
+      }
+    }
     .close_slide{
       width: 30px;
       height: 30px;
@@ -79,8 +102,11 @@
       height: 50vh;
       margin: auto;
       overflow-y: auto;
+      
       // background-color: aquamarine;
     }
+
+    
     ul{
       // width: 365px;
       margin: auto;
@@ -88,10 +114,11 @@
       padding-bottom: 5px;
       border-bottom: 2px dashed $color2;
       margin-top: 20px;
+   
       
     }
     .product_r{
-      width: 262px;
+      width: 300px;
       margin-left: 17px;
     }
     h3{
@@ -137,6 +164,9 @@
       @include font_t1();
       color: $black;
       margin-right: 10px;
+      span{
+        color: $black;
+      }
     }
    }
    .button_2{
