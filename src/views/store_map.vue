@@ -1,7 +1,7 @@
 <template>
     <div class="map_container" id="test1">
     <h1>門市據點</h1>
-    <img src="@/image/about/map_2.png" alt="">
+    <img src="../assets/image/about/map_2.png" alt="">
     <div class="map_box">
       <!-- 地圖容器 -->
       
