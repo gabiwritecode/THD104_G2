@@ -1,12 +1,51 @@
 // @import "../../style.scss";
 
 .cart{
+  position: relative;
+  overflow: hidden;
 
   main{
     max-width: 1040px;
     margin: auto;
     margin-top: 130px;
     margin-bottom: 60px;
+    
+    
+    .lightbox{
+      // width: 395px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,.8);
+      z-index: 3;
+      .lightbox_inner{
+        width: 500px;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        padding: 50px 0 0;
+        border-radius: 10px;
+        // .close{
+        //   position: absolute;
+        //   right: -20px;
+        //   top: -20px;
+
+        // }
+        h3{
+          margin-top: 10px;
+        }
+        button{
+          @include btn_L();
+          margin-bottom: 30px;
+          // margin-top: 30px;
+        }
+      }
+    }
   }
   .info{
     display: flex;
@@ -31,6 +70,9 @@
   }
   .order_list_text p{
     @include font_t2();
+    .add{
+      @include font_t2();
+    }
   }
   .order_list_text > span,
   .order_list_text > p{
@@ -76,7 +118,10 @@
   }
   .lable_name{
     display: flex;
+    align-items: center;
     margin-bottom: 40px;
+   
+   
   }
   .lable_name:last-child{
     margin-bottom: 0;
@@ -85,16 +130,18 @@
     @include font_t1();
     color: $black;
     margin-right: 10px;
+    margin-top: 3px;
   }
   .lable_name input{
     @include input_M();
-    padding-bottom: 3px;
+    margin-right: 5px;
   }
   .lable_name input::placeholder{
     color: $grey1;
   }
   .lable_name .radio{
     @include radio();
+    // margin-top: 5px;
   }
   #linePay{
     margin-left: 20px;
