@@ -1,0 +1,34 @@
+.forget{
+    width: 1200px;
+    margin: 0 auto;
+}
+.forget_content{
+    width:600px;
+    height:300px;
+    background-color: $grey2;
+    margin:120px auto 40px;
+    border-radius: 40px;
+    border: 1px solid white;
+    form{
+        width:400px;
+        margin: 0 auto;
+    }
+    h1{
+        width:140px;
+       margin:40px   auto 0;    }
+    label{
+       width:140px;
+       margin: 10px  auto 5px;
+       text-align: center;
+    }
+    input{
+        @include input_L();
+        margin:5px 0;
+    }
+    button{
+        margin: 0 auto;
+        @include btn_L();  
+        
+    }
+   
+}

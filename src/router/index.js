@@ -65,6 +65,14 @@ const router = createRouter({
       component: () => import('../views/store_map.vue')
     },
     {
+      path: '/forget',
+      name: 'forget',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/forget.vue')
+    },
+    {
       path: '/products',
       name: 'products',
       // route level code-splitting

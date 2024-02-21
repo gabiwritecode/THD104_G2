@@ -83,44 +83,58 @@ path:hover {
 #svg {
     display: none;
     z-index: 2;
+    
+}
+
+.map_svg{
+    position: relative;
+
+    
+    
 }
 
 //---------------地圖小標示
 .fa-house {
     color: #F5AF00;
-
-    position: absolute;
+    
+    
     
     &.map_1 {
-        top: 182px;
-        left: 697px;
+        position: absolute;
+        top: 63px;
+        left: 444px;
         
     }
 
     &.map_2 {
-        top: 230px;
-        left: 670px;
+        position: absolute;
+        top: 104px;
+        left: 439px;
         
     }
 
     &.map_3 {
-        top: 310px;
-        left: 710px;
+        position: absolute;
+        top: 165px;
+        left: 460px;
     }
 
     &.map_4 {
-        top: 390px;
-        left: 500px;
+        position: absolute;
+        top: 227px;
+        left: 300px;
     }
 
     &.map_5 {
-        top: 658.8px;
-        left: 510px;
+        position: absolute;
+        top: 448.8px;
+        left: 304px;
     }
 
     &.map_6 {
-        top: 200px;
-        left: 620px;
+        position: absolute;
+        top: 88px;
+        left: 384px;
     }
 }
 
@@ -157,6 +171,7 @@ select {
     display: flex;
     margin-bottom: 20px;
     padding-bottom: 20px;
+    height:250px;
     @include m() {
         height:400px;
         display:block;
