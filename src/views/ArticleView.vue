@@ -1,6 +1,7 @@
 <script setup>
   import articles1 from "../data/articles.json"
   import articles2 from "../data/articles2.json"
+  import memberBtn from "../components/member_btn.vue"
   import { useRoute } from "vue-router"
   
   const route = useRoute()
@@ -23,4 +24,5 @@
       </h2>
     </div>
     </div>
+  <memberBtn></memberBtn>
 </template>

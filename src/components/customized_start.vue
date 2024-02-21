@@ -1,5 +1,6 @@
 <script>
 export default {
+  emits: ['prev-step', 'next-step'], 
   setup(props, { emit }) {
     const nextStep = () => {
       emit('next-step');

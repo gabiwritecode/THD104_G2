@@ -1,5 +1,7 @@
+
 <script>
 export default {
+  emits: ['prev-step', 'next-step'], 
   setup(props, { emit }) {
     const prevStep = () => {
       emit('prev-step');
@@ -28,7 +30,7 @@ export default {
     </div>
     <div class="customized-milk-container">
       <p>加奶：</p>
-      <input type="checkbox" class="checkbox">
+      <input type="checkbox" class="checkbox" >
     </div>
     <br>
     <div class="button-container">
