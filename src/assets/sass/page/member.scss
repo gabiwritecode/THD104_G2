@@ -19,7 +19,7 @@
 
     @include m() {
         width: 320px;
-        height: 720px;
+        height: 650px;
 
         margin-top: 120px;
         margin-bottom: 40px;
@@ -27,20 +27,29 @@
     }
 
 
-    .h1 {
+    h1 {
         margin-top: 80px;
+        @include m() {
+           margin-top: 20px;
+        }
+        
     }
-
     //-----------------輸入選項
     h3 {
         margin-left: 100px;
 
         @include m() {
-            margin-left: 40px;
+            width: 40px;
+            margin-left: 30px;
         }
 
     }
-
+    .check_password{
+        @include m() {
+            width: 90px;
+            margin-left: 22px;
+        }
+    }
     input {
         @include input_L();
         margin: 0 auto 36px;

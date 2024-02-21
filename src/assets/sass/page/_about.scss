@@ -183,9 +183,11 @@
 
 //------------------------------創業理念4重點
 .about_Thought_4point {
+    width:1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
-
+    
     @include m() {
         width: auto;
         flex-wrap: wrap;
@@ -304,7 +306,7 @@
 .about_value_right_h2 {
     @include m() {
         width: 100px;
-        margin-left: 15px;
+        margin-left: 33px;
 
     }
 

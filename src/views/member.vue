@@ -13,7 +13,7 @@
             <input type="text" placeholder="請輸入Email">
             <h3>密碼</h3>
             <input type="text" placeholder="請輸入密碼" >
-            <h3>確認密碼</h3>
+            <h3 class="check_password">確認密碼</h3>
             <input type="text" placeholder="請再輸入一次密碼">
         
         <!---------------------------按鈕-------------------------->
