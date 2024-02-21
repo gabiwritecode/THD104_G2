@@ -20,11 +20,17 @@
 }
 .store_name{
     width:120px;
+    display: none;
     @include m() {
         margin:16px  auto 12px;
-
+        display: block;
 
     }
+}
+.store_name2{
+    @include m() {
+       display: none;
+    } 
 }
 
 .map_box {
@@ -52,8 +58,8 @@ form{
 }
 
 svg {
-    height: 900px;
-    width: 700px;
+    height: 700px;
+    width: 600px;
      @include m() {
        display: none;
 
@@ -82,60 +88,42 @@ path:hover {
 //---------------地圖小標示
 .fa-house {
     color: #F5AF00;
-    display: none;
-}
 
-.map_svg {
-    position: relative;
-}
-
-.map_1 {
-    //-----台北小地標
-    visibility: hidden;
     position: absolute;
-    top: 182px;
-    left: 697px;
+    
+    &.map_1 {
+        top: 182px;
+        left: 697px;
+        
+    }
+
+    &.map_2 {
+        top: 230px;
+        left: 670px;
+        
+    }
+
+    &.map_3 {
+        top: 310px;
+        left: 710px;
+    }
+
+    &.map_4 {
+        top: 390px;
+        left: 500px;
+    }
+
+    &.map_5 {
+        top: 658.8px;
+        left: 510px;
+    }
+
+    &.map_6 {
+        top: 200px;
+        left: 620px;
+    }
 }
 
-.map_2 {
-    //-----新北小地標
-    visibility: hidden;
-    position: absolute;
-    top: 230px;
-    left: 670px;
-}
-
-.map_3 {
-    //-----宜蘭小地標
-    visibility: hidden;
-    position: absolute;
-    top: 310px;
-    left: 710px;
-}
-
-.map_4 {
-    //-----台中小地標
-    visibility: hidden;
-    position: absolute;
-    top: 390px;
-    left: 500px;
-}
-
-.map_5 {
-    //-----高雄小地標
-    visibility: hidden;
-    position: absolute;
-    top: 658.8px;
-    left: 510px;
-}
-
-.map_6 {
-    //-----桃園小地標
-    visibility: hidden;
-    position: absolute;
-    top: 200px;
-    left: 620px;
-}
 
 
 //-----------------下拉選單
@@ -149,6 +137,7 @@ select {
 .store-info {
     width: 250px;
     margin: 20px 10px 0;
+    
     p {
         margin: 10px;
     }
@@ -156,7 +145,7 @@ select {
         margin-left: 10px;
     }
     @include m() {
-       margin: 30px  auto 10px;
+       margin: 30px  auto 40px;
        
 
     }
@@ -182,7 +171,8 @@ select {
     width:280px;
     height:200px;
     @include m() {
-        margin: 0 auto;
+        margin: 40px auto 0;
+        height:200px;
         
 
 
@@ -199,7 +189,12 @@ iframe {
     width: 200px;
     margin-left: 12px;
     border-color: $color1;
+    @include m() {
+        width:220px;
+        
 
+
+    }
 }
 
 // }
