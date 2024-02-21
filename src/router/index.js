@@ -127,6 +127,22 @@ const router = createRouter({
       }
     },
     {
+      path: '/backendLogin',
+      name: 'backendLogin',
+      component: () => import('../views/backend/BackEndLogin.vue'),
+      meta: {
+        title: '後台登入'
+      }
+    },
+    {
+      path: '/backendProducts',
+      name: 'backendProducts',
+      component: () => import('../views/backend/BackendProducts.vue'),
+      meta: {
+        title: '商品管理'
+      }
+    },
+    {
       path: '/backendInfo',
       name: 'backendInfo',
       component: () => import('../views/backend/BackEndInfoView.vue'),
