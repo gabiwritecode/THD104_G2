@@ -16,7 +16,7 @@
 
             <div class="about_Lo_a">
                 <router-link to="/member" class="a">立即註冊</router-link>
-                <a href="#" class="a">忘記密碼?</a>
+                <router-link to="/forget" class="a">忘記密碼?</router-link>
             </div>
 
             <!---------------------------按鈕-------------------------->
