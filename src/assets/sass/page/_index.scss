@@ -33,24 +33,24 @@
 
     // ===== banner ====
     .banner{
-        height: 852px;
+        height: 100vh;
         overflow: hidden;
         position: relative;
         // background-image: linear-gradient(70deg, #A2CDD1 20%, #78BEC8 50%, #5BACBB 100%);
-        background-image: radial-gradient(circle farthest-corner at left 20% top 20%, #A2CDD1 10%, #78BEC8 50%, #5BACBB 100%);
+        background-image: radial-gradient(circle farthest-corner at left 20% top 20%, rgb(174, 217, 221) 10%, #78BEC8 40%, #5BACBB 100%);
         @include m(){
             height: 664px;
         }
         .text_move1{
             position: absolute;
-            top: 180px;
+            top: 20vh;
             z-index: 2;
             color:rgba( 0, 0, 0, 0);
             opacity: .15;
             animation: text_move1 10s linear infinite;
             @include m(){
-                top: 110px;
-                height: 70px;
+                top: 120px;
+                height: 50px;
                 animation: text_move1m 7s linear infinite;
             }
             @keyframes text_move1{
@@ -69,12 +69,11 @@
                 100%{
                     left: 220%;
                 }
-                
             }
         }
         .text_move2{
             position: absolute;
-            top: 700px;
+            bottom: 0vh;
             height: 150px;
             z-index: 4;
             color:rgba( 0, 0, 0, 0);
@@ -82,7 +81,7 @@
             animation: text_move2 10s linear infinite;
             @include m(){
                 top: 590px;
-                height: 90px;
+                height: 80px;
                 animation: text_move2m 7s linear infinite;
             }
             @keyframes text_move2{
@@ -108,7 +107,7 @@
             z-index: 1;
             position: absolute;
             bottom: 0px;
-            background: radial-gradient(circle farthest-corner at left 15% top 5%, #8EC6D1 0%, #78BEC8 45%, #52A6B7 90%);
+            background: radial-gradient(circle farthest-corner at left 15% top 5%, #92cbd6 0%, #78BEC8 40%, #4fa3b4 90%);
             height: 49%;
             width: 100%;
             background-size:contain;
@@ -169,6 +168,7 @@
                 width: 686px;
                 top: 17%;
                 z-index: 2;
+                // filter:drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.1));
                 @include m(){
                     width: 210px;
                     // font-size: 44px;

@@ -4,17 +4,22 @@
      <!------------------- banner ------------------->
         <section class="banner">
             <div class="container">
-                <span>BOISSON </span><br><span>MENU</span>
-                <img src="../assets/image/products/ion_leaf-outline.svg" alt="">
+                <!-- <span>BOISSON </span><br><span>MENU</span> -->
+                <img class="boisson_menu_text" src="../assets/image/products/BOISSON_MENU.png" alt="">
+                <!-- <img src="../assets/image/products/ion_leaf-outline.svg" alt=""> -->
                 <p>捌嵩茶飲的經典滋味<img src="../assets/image/products/Line_banner.svg" alt=""></p>
             </div>
+            <img class="wave_bgi wave_bgi4" src="@/assets/image/products/wave_bgi-01.png" alt="">
+            <img class="wave_bgi wave_bgi3" src="@/assets/image/products/wave_bgi-01.png" alt="">
+            <img class="wave_bgi wave_bgi2" src="@/assets/image/products/wave_bgi-01.png" alt="">
+            <img class="wave_bgi wave_bgi1" src="@/assets/image/products/wave_bgi-01.png" alt="">
         </section>
         <!---- 圓形動畫、飲料照片 ---->
         <section class="top">
             <div class="circle1"></div>
             <div class="circle2"></div>
             <div class="circle3"></div>
-            <img src="../assets/image/products/naixi_qubei.png" alt="">
+            <img src="../assets/image/products/naixi_qubei1.png" alt="">
         </section>
         
         <!---- TAIWAN TEA字 ---->
