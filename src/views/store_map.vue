@@ -129,6 +129,8 @@
       </div>
     </div>
   </div>
+
+  <MemberBtn></MemberBtn>
 </template>
 <style lang="scss">
   @import"../assets/sass/style.scss";
@@ -138,6 +140,7 @@
 import MemberBtn from "../components/member_btn.vue"
 import { ref, watch, onMounted  } from 'vue';
 export default{
+    components: { MemberBtn },
   setup() {
                 const cities = ref(['台北市', '新北市', '桃園市', '宜蘭縣', '台中市', '高雄市']);
         const selectedCity = ref('台北市');

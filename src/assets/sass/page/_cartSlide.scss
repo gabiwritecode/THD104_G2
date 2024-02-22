@@ -63,7 +63,7 @@
       text-align: center;
       margin: auto;
       margin-top: 50px;
-      width: 395px;
+      width: 410px;
       padding-bottom: 10px;
       border-bottom: 1px solid $color2;
     }
@@ -77,7 +77,7 @@
     .empty{
       height: 50vh;
       position: relative;
-      width: 395px;
+      width: 410px;
       // background-color: aquamarine;
       img{
         width: 60px;
@@ -98,12 +98,11 @@
       }
     }
     .container{
-      width: 395px;
+      width: 410px;
       height: 50vh;
       margin: auto;
       overflow-y: auto;
       
-      // background-color: aquamarine;
     }
 
     
@@ -163,7 +162,6 @@
     .dollor{
       @include font_t1();
       color: $black;
-      margin-right: 10px;
       span{
         color: $black;
       }
@@ -171,13 +169,14 @@
    }
    .button_2{
     display: flex;
+    justify-content: space-between;
     margin-top: 10px;
     img{
       padding-bottom: 20px;
     }
    }
    .line{
-    width: 395px;
+    width: 410px;
     margin: auto;
     margin-top: 10px;
     border-top: 1px solid $color2;
@@ -191,7 +190,7 @@
     margin: 27px auto;
     align-items: center;
     justify-content: space-between;
-    width: 395px;
+    width: 410px;
   }
   .clear_cart{
     @include btn_M();
@@ -199,7 +198,7 @@
   }
   .pay{
     @include btn_yellow();
-    width: 395px;
+    width: 410px;
   }
   .disabled{
     background-color: $grey1;
@@ -209,4 +208,60 @@
     }
   }
 
+}
+
+
+@media screen and (max-width: 390px){
+  .cart .card_slide{
+    width: 390px;
+  }
+  .cart .card_slide .container,
+  .cart .clearall,
+  .cart .card_slide .cart,
+  .cart .total,
+  .cart .card_slide .line
+  {
+    width: 380px;
+  }
+  
+.cart .card_slide ul{
+  // align-items: center;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+.cart .card_slide .button .dollor,
+.cart .card_slide .num{
+  font-size: 14px;
+}
+
+.cart .card_slide .button .dollor{
+  margin-left: 2px;
+}
+ 
+.cart .card_slide .product_r{
+  width: 280px;
+}
+
+.cart .card_slide select{
+  width: 60px;
+}
+.cart .card_slide .button_2{
+  justify-content: space-between;
+}
+.cart .card_slide .button_2 img{
+  width: 17px;
+}
+.cart .card_slide .lightbox .alertText{
+  width: 275px;
+  height: 200px;
+}
+.cart .card_slide .lightbox .alertText .text_1{
+  margin-top: 40px;
+}
+.cart .card_slide .lightbox .alertText button{
+  height: 35px;
+}
+.cart .pay{
+  width: 380px;
+}
 }

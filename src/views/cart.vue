@@ -133,7 +133,7 @@
             </div>
           </div>
         </form>
-        <button @click="checkInp()">結帳</button>
+        <button @click="checkInp()" :disabled="cart.length <= 0" :class="{'no_item' : cart.length <= 0}">結帳</button>
       </div>
     </div>
   </main>
@@ -202,7 +202,7 @@ export default{
           localStorage.setItem("cart", JSON.stringify(this.cart));
         },
         keepBuy() {
-          location.href = "/products";
+          location.href = "/thd104/g2/products";
         },
         checkInp(){
           let inputs = document.querySelectorAll('.write_info input')

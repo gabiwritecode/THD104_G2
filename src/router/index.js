@@ -150,6 +150,14 @@ const router = createRouter({
         title: '入口'
       }
     },
+    {
+      path: '/backendOrder',
+      name: 'backendOrder',
+      component: () => import('../views/backend/BackEndOrder.vue'),
+      meta: {
+        title: '訂單管理'
+      }
+    }
   ]
 })
 const main_title = '捌嵩'

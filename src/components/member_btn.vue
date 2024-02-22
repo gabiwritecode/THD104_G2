@@ -104,8 +104,6 @@
 export default {
   data() {
       return {
-        // cart: localStorage.getItem("cart") || []
-        props: ['drink1'],
         lightbox: false,
         cart:[]
       }

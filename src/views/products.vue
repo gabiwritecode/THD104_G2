@@ -278,7 +278,7 @@
 
 
                 <ul v-for="(item, index) in cart" :key="item.key_id">
-                    <li><img src="../assets/image/pic/icon/cartlist_logo.png" alt="" ></li>
+                    <li><img src="../assets/image/pic/icon/cartlist_logo.png" alt="" class="drink_logo"></li>
                     <div class="product_r">
                         <h3>{{item.name}}</h3>
                         <div class="inner">
@@ -348,15 +348,15 @@
     </div>
 </div>
 
-<memberBtn></memberBtn>
+
 
 </template>
 <!-- <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> -->
 
 <script>
-    import MemberBtn from "../components/member_btn.vue"
+   
 export default {
-    components:{MemberBtn},
+  
     data (){
         return{
             
@@ -953,7 +953,7 @@ export default {
            }
 
            if(isSelectAll){
-                location.href = '/cart'
+                location.href = '/thd104/g2/cart'
            }else{
                 this.lightbox = true
            }
