@@ -75,3 +75,10 @@
 .page-backendProducts header, .page-backendProducts footer{
   display: none;
 }
+
+// 當頁sidebar-btn改色
+.page-backendProducts .sidebar-btn-container{
+    li:nth-child(3){
+        background-color: $color2;
+    }
+}
