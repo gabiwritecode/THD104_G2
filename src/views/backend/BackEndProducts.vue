@@ -6,7 +6,7 @@
             <li><RouterLink to="#"  class="sidebar-btn" href="#"><i class="fa-regular fa-user"></i>會員管理</RouterLink></li>
             <li><RouterLink to="#"  class="sidebar-btn" href="#"><i class="fa-regular fa-file-lines"></i>訂單管理</RouterLink></li>
             <li><RouterLink to="./BackEndProducts"  class="sidebar-btn" href="#"><i class="fa-solid fa-box-archive"></i>商品管理</RouterLink></li>
-            <li><RouterLink to="./BackEndInfoView"  class="sidebar-btn" href="#"><i class="fa-regular fa-message"></i>消息管理</RouterLink></li>
+            <li><RouterLink to="./backendInfo"  class="sidebar-btn" href="#"><i class="fa-regular fa-message"></i>消息管理</RouterLink></li>
             <li><RouterLink to="#"  class="sidebar-btn" href="#"><i class="fa-regular fa-message"></i>消息分類</RouterLink></li>
             <li><RouterLink to="#"  class="sidebar-btn" href="#"><i class="fa-solid fa-location-dot"></i>門市管理</RouterLink></li>
           </ul>
@@ -18,30 +18,69 @@
           <table class="backend-info-table">
             <thead>
               <tr>
-                <th>文章編號</th>
-                <th>上架日期</th>
-                <th>文章分類</th>
-                <th>上下架</th>
-                <th>標題</th>
+                <th>商品編號</th>
+                <th>商品類別 </th>
+                <th>商品名稱</th>
+                <th>售價</th>
                 <th>操作</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>1</td>
-                <td>2024-02-01</td>
-                <td>商品資訊</td>
-                <td>上架</td>
-                <td>冰沙系列即將上市</td>
-                <td><button>編輯與查看</button></td>
+                <td>茶類</td>
+                <td>珍珠奶茶</td>
+                <td>50元</td>
+                <td><button class="bs_btn" @click="editWindow">編輯與查看</button></td>
               </tr>
             </tbody>
             <tbody></tbody>
           </table>
         </div>
+        <!-------- 編輯彈窗 -------->
+        <div class="edit_window">
+          <div class="container">
+            <h2>編輯與查看</h2>
+            <div>商品編號: <input type="text"></div>
+            <div>商品類別: <input type="text"></div>
+            <div>商品名稱: <input type="text"></div>
+            <div>商品售價: <input type="text"></div>
+            
+            <ul class="radio_product">
+              商品標籤: 
+              <li><input type="radio" id="none" name="tag_product"><label for="none">無</label></li>
+              <li><input type="radio" id="new_product" name="tag_product"><label for="new_product">新品上市</label></li>
+              <li><input type="radio" id="hot_product" name="tag_product"><label for="hot_product">熱銷商品</label></li>
+            </ul>
+
+            <ul class="edit_window_btn">
+              <li><button @click="editWindow">關閉</button></li>
+              <li><button @click="editWindow">儲存</button></li>
+            </ul>
+          </div>
+        </div>
+        <!-- 灰色背景 -->
+        <div class="edit_window_bg" @click="editWindow"></div>
     </main>
   
 </template>
+<script>
+  export default{
+    data(){
+      return {
+      }
+    },
+    methods:{
+      editWindow(){
+        const editWindow = document.querySelector('.edit_window');
+        const editWindowBg = document.querySelector('.edit_window_bg');
+        editWindow.classList.toggle("edit_window_on");
+        editWindowBg.classList.toggle("edit_window_on");
+      }
+    }
+  }
+</script>
+
 <style lang="scss" scoped>
 
   body{
@@ -51,5 +90,10 @@
     
   }
 
-
 </style>
+
+<!-- <style>
+ .page-backendProducts header, .page-backendProducts footer{
+    display: none;
+  }
+</style> -->

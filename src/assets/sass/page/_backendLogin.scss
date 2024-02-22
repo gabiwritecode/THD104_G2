@@ -1,9 +1,11 @@
 .backend_login{
     background-color: $color1;
+    height: 100vh;
+    overflow: hidden;
     .container{
         width: 400px;
-        height: 100vh;
-        margin: 0 auto;
+        height: 600px;
+        margin: 60px auto;
     }
     h1{
         color: $white;
@@ -11,12 +13,16 @@
     h2{
         color: $white;
         text-align: center;
+        margin: 40px auto;
     }
     img{
         display: block;
         margin: 0 auto;
         width: 260px;
         padding-right: 20px;
+    }
+    div{
+        margin: 20px auto;
     }
     p{
         color: $white;
@@ -31,9 +37,10 @@
         @include btn_L();
         background-color: $color2;
         text-decoration: none;
+        margin: 40px auto;
         &:hover {
         background-color: darken($color2, 10);
-     }
+        }
     }
     a{
         text-decoration: none;

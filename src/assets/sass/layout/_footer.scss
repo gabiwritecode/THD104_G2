@@ -64,8 +64,6 @@ footer{
             &:hover {
                 opacity: .8;
             }
-            @include m(){
-            }
         }
         p{
             color:$white;
@@ -114,7 +112,11 @@ footer{
             text-align: center;
             letter-spacing: normal;
             margin: 0 12px;
+            &:hover {
+                opacity: .8;
+            }
         }
+        
         .fa-line{
             font-size: 22px;
             padding-top: 2px;

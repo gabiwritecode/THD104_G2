@@ -6,10 +6,14 @@
             <h1>捌嵩飲茶後台管理</h1>
 
             <h2>登入後台</h2>
-            <p>帳號</p>
-            <input type="text" placeholder="請輸入Email">
-            <p>密碼</p>
-            <input type="password" placeholder="請輸入密碼">
+            <div>
+                <p>帳號</p>
+                <input type="text" placeholder="請輸入Email">
+            </div>
+            <div>
+                <p>密碼</p>
+                <input type="password" placeholder="請輸入密碼">
+            </div>
             <RouterLink to="./BackEndProducts"><button>登入後台</button></RouterLink>
         </div>
     </div>

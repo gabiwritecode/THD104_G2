@@ -12,6 +12,31 @@
 @mixin radio(){
     width: 20px;
     height: 20px;
-    border: 1px solid $color2;
+    // border: 1px solid $color2;
+    
+    position: relative;
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
+    // appearance: none;
+    outline: none;
+    border: none;
     cursor: pointer;
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $white;
+        outline: 1px solid $color2;
+    }
+    &:checked:before {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 10px;
+        height: 10px;
+        background-color: $color2;
+    }
 }
