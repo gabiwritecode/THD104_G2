@@ -25,6 +25,11 @@
             font-weight: 300;
         }
     }
+    img{
+        -webkit-user-drag: none;
+        -moz-user-drag: none;
+        -ms-user-drag: none;
+    }
 
     // ===== banner ====
     .banner{

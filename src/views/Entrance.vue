@@ -1,6 +1,6 @@
 <template>
     <div class="space"></div>
-    <div class="entrance_wrapper">
+    <main class="entrance_wrapper">
         <ul>
             <li class="btn">
                 <RouterLink to="./Homeview">前台
@@ -16,7 +16,7 @@
         </ul>
         <!-- 右下杯子 -->
         <img class="drink_icon" src="../assets/image/Entrance/drink.svg" alt="">
-    </div>
+    </main>
 </template>
 
 <style lang="scss" scoped>

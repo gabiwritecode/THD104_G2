@@ -9,7 +9,7 @@
         transform: translate(-50%,-50%);
         background-color: $white;
         width: 640px;
-        height: 480px;
+        height: 520px;
         border: 1px solid $color2;
         margin: 0 auto;
         display: none;
@@ -21,10 +21,17 @@
             text-align: center;
             margin: 20px auto;
         }
-        input[type="text"]{
+        li{
+            display: flex;
+            align-items: center;
+        }
+        span{
+            width: 80px;
+            display: block;
+        }
+        input[type="text"],input[type="number"]{
             @include input_M();
             margin: 8px auto;
-            margin-left: 11px;
         }
 
         .radio_product{
@@ -34,13 +41,18 @@
             li{
                 display:flex;
                 align-items: center;
-                padding-left: 16px;
+            }
+            li:first-child{
+                padding-right: 8px;
             }
         }
         input[type="radio"]{
             @include radio();
             margin: 0px 4px 0 0;
             display: block;
+        }
+        label{
+            padding-right: 16px;
         }
         .edit_window_btn{
             display: flex;
