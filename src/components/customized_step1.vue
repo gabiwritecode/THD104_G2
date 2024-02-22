@@ -1,11 +1,18 @@
 <script>
 export default {
+  emits: ['prev-step', 'next-step'], 
   setup(props, { emit }) {
     const prevStep = () => {
       emit('prev-step');
     };
 
     const nextStep = () => {
+      const teabase = document.getElementById('teabase').value;
+      const ice = document.getElementById('ice').value;
+      const sugar = document.getElementById('sugar').value;
+      localStorage.setItem('teabase',teabase)
+      localStorage.setItem('ice',ice)
+      localStorage.setItem('sugar',sugar)
       emit('next-step');
     };
 
@@ -26,7 +33,7 @@ export default {
     </div>
     <div class="customized-input-container">
       <span>選擇茶底：</span>
-      <select name="teabase" id="teabase">
+      <select  name="teabase" id="teabase">
         <option value="1">高山烏龍</option>
         <option value="2">龍井綠茶</option>
         <option value="3">日月潭紅茶</option>
@@ -34,7 +41,7 @@ export default {
         <option value="5">日月潭紅茶</option>
       </select>
       <span>冰塊：</span>
-      <select name="ice" id="ice">
+      <select  name="ice" id="ice">
         <option value="1">去冰</option>
         <option value="2">微冰</option>
         <option value="3">少冰</option>
@@ -42,7 +49,7 @@ export default {
         <option value="5">熱飲</option>
       </select>
       <span>甜度：</span>
-      <select name="sugar" id="sugar">
+      <select  name="sugar" id="sugar">
         <option value="1">無糖</option>
         <option value="2">一分糖</option>
         <option value="3">微糖</option>

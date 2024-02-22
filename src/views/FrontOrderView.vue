@@ -1,6 +1,7 @@
 
 <script setup>
   import {ref} from "vue";
+  import memberBtn from "../components/member_btn.vue";
    const overlayVisible = ref(false);
    const selectedOrder = ref(null);
     const orders = ref([
@@ -92,7 +93,8 @@
           </div>
         </div>
       </div>
-  </div>
+    </div>
+    <memberBtn></memberBtn>
 </template>
 <style scoped>
 html,body {
