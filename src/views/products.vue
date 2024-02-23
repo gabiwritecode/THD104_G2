@@ -3,6 +3,7 @@
     <div class="products_wrapper">
      <!------------------- banner ------------------->
         <div class="banner">
+            <order :appear = 'addToCart'></order>
             <div class="container">
                 <span>BOISSON </span><br><span>MENU</span>
                 <img src="../assets/image/products/ion_leaf-outline.svg" alt="">
@@ -354,9 +355,9 @@
 <!-- <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> -->
 
 <script>
-   
+import order from "../components/order_success.vue"
 export default {
-  
+  components:{order},
     data (){
         return{
             
