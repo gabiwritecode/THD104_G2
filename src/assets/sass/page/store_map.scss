@@ -15,8 +15,9 @@
         
             }
         }
-   
-
+    h1{
+        margin-top: 100px;
+    }
 }
 .store_name{
     width:120px;
@@ -79,6 +80,57 @@ path:hover {
     fill: $color2;
     transform: translate(-10px, -10px);
 }
+.Hualien:hover{
+    fill: $color1;
+    transform: translate(0, 0); 
+}
+
+.yunlin:hover{
+    fill: $color1;
+    transform: translate(0, 0); 
+}
+.nantou:hover{
+    fill: $color1;
+    transform: translate(0, 0);   
+}
+.Taitung:hover{
+    fill: $color1;
+    transform: translate(0, 0);  
+}
+.Tainan:hover{
+    fill: $color1;
+    transform: translate(0, 0);
+}
+.Chiayi:hover{
+    fill: $color1;
+    transform: translate(0, 0);
+}
+.Pingtung:hover{
+    fill: $color1;
+    transform: translate(0, 0);   
+}
+.Hsinchu:hover{
+    fill: $color1;
+    transform: translate(0, 0);
+}
+
+.Miaoli:hover{
+    fill: $color1;
+    transform: translate(0, 0);
+}
+.keelung:hover{
+    fill: $color1;
+    transform: translate(0, 0);
+}
+.changhua:hover{
+    fill: $color1;
+    transform: translate(0, 0);
+}
+.chiayi:hover{
+    fill: $color1;
+    transform: translate(0, 0);   
+}
+
 
 #svg {
     display: none;

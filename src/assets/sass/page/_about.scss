@@ -46,6 +46,8 @@
 .about_story_h1 {}
 
 .about_story_p {
+    margin:0 auto;
+    width:600px;
     @include m() {
         padding: 0 15px;
         width: 320px;
@@ -169,7 +171,7 @@
 }
 
 .about_Thought_p {
-    width: 900px;
+    width: 600px;
     margin: 20px auto 0;
     color: white;
 
