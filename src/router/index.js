@@ -159,6 +159,22 @@ const router = createRouter({
       }
     },
     {
+      path: '/BackEndStore',
+      name: 'BackEndStore',
+      component: () => import('../views/backend/BackEndStore.vue'),
+      meta: {
+        title: '門市管理'
+      }
+    },
+    {
+      path: '/Store_settings',
+      name: 'Store_settings',
+      component: () => import('../views/backend/Store_settings.vue'),
+      meta: {
+        title: '門市管理'
+      }
+    },
+    {
       path: '/backendCategories',
       name: 'backendCategories',
       component: () => import('../views/backend/BackEndCategories.vue'),

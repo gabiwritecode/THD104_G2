@@ -123,5 +123,8 @@
       }
     }
     
-  
+  // 隱藏header footer
+.page-Store_settings header,.page-Store_settings footer{
+  display: none;
+}
   }
