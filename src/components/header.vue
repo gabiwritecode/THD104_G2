@@ -8,13 +8,12 @@
       <ul class="empty"></ul>
       <ul class="menu">
         <button class="close_button" @click="hamburger"><i class="fa-solid fa-xmark"></i></button>
-        <li><RouterLink to="./Homeview" @click="hamburger"><img class="logo_m" src="../assets/image/pic/icon/logo.svg" alt=""></RouterLink></li>
-        <li><RouterLink to="./about">關於我們</RouterLink></li>
-        <li><RouterLink to="./info">最新消息</RouterLink></li>
-        <!-- <RouterLink to="/about">about</RouterLink> -->
-        <li><RouterLink to="/products">飲品菜單</RouterLink></li>
-        <li><RouterLink to="/customized">客製飲品</RouterLink></li>
-        <li><RouterLink to="/store_map">門市據點</RouterLink></li>
+        <li><RouterLink to="./Homeview"   @click="hamburger"><img class="logo_m" src="../assets/image/pic/icon/logo.svg" alt=""></RouterLink></li>
+        <li><RouterLink to="./about"      @click="hamburger">關於我們</RouterLink></li>
+        <li><RouterLink to="./info"       @click="hamburger">最新消息</RouterLink></li>
+        <li><RouterLink to="./products"   @click="hamburger">飲品菜單</RouterLink></li>
+        <li><RouterLink to="./customized" @click="hamburger">客製飲品</RouterLink></li>
+        <li><RouterLink to="./store_map"  @click="hamburger">門市據點</RouterLink></li>
         <li><p>Copyright© 2024 BOISSON TEA Inc.</p></li>
       </ul>
       <ul class="member_btn">
@@ -43,12 +42,10 @@
           slide.classList.toggle("on");
         },
         hamburger(){
-          // const hamburger = document.querySelector('.fa-bars');
           const menu = document.querySelector('.menu');
           menu.classList.toggle("menu_on");
           const headerMobileBg = document.querySelector('.header_mobile_bg');
           headerMobileBg.classList.toggle('header_mobile_bg_on');
-          
         }
     }
  }

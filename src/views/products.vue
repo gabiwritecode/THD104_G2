@@ -1,21 +1,26 @@
 <template>
    <div class="space"></div>
-    <div class="products_wrapper">
+    <main class="products_wrapper">
      <!------------------- banner ------------------->
-        <div class="banner">
+        <section class="banner">
             <div class="container">
-                <span>BOISSON </span><br><span>MENU</span>
-                <img src="../assets/image/products/ion_leaf-outline.svg" alt="">
+                <!-- <span>BOISSON </span><br><span>MENU</span> -->
+                <img class="boisson_menu_text" src="../assets/image/products/BOISSON_MENU.png" alt="">
+                <!-- <img src="../assets/image/products/ion_leaf-outline.svg" alt=""> -->
                 <p>捌嵩茶飲的經典滋味<img src="../assets/image/products/Line_banner.svg" alt=""></p>
             </div>
-        </div>
+            <img class="wave_bgi wave_bgi4" src="@/assets/image/products/wave_bgi-01.png" alt="">
+            <img class="wave_bgi wave_bgi3" src="@/assets/image/products/wave_bgi-01.png" alt="">
+            <img class="wave_bgi wave_bgi2" src="@/assets/image/products/wave_bgi-01.png" alt="">
+            <img class="wave_bgi wave_bgi1" src="@/assets/image/products/wave_bgi-01.png" alt="">
+        </section>
         <!---- 圓形動畫、飲料照片 ---->
-        <div class="top">
+        <section class="top">
             <div class="circle1"></div>
             <div class="circle2"></div>
             <div class="circle3"></div>
-            <img src="../assets/image/products/naixi_qubei.png" alt="">
-        </div>
+            <img src="../assets/image/products/naixi_qubei1.png" alt="">
+        </section>
         
         <!---- TAIWAN TEA字 ---->
         <div class="background_text">
@@ -36,7 +41,7 @@
         <!------------------- products ------------------->
 
         <!---- 純茶系列 ---->
-        <div class="product tea">
+        <section class="product tea">
             <ul>
                 <li>
                     <img src="../assets/image/products/tea_pic.png" alt="">
@@ -69,10 +74,10 @@
                  
                 </li>
             </ul>
-        </div>
+        </section>
         
         <!---- 奶茶系列 ---->
-        <div class="product milk_tea">
+        <section class="product milk_tea">
             <ul>
                 <li>
                     <div class="introduce"><h1><img src="../assets/image/products/ion_leaf-outline2.svg" alt="">奶茶系列</h1>
@@ -101,7 +106,7 @@
                     <img src="../assets/image/products/milktea_pic.png" alt="">
                 </li>
             </ul>
-        </div>
+        </section>
         <!------------------- 商品下半部 ------------------->
         <div class="area2">
 
@@ -115,7 +120,7 @@
             </div>
             
             <!---- 水果茶系列 ---->
-            <div class="product juice">
+            <section class="product juice">
                 <div class="rotate_oringe">
                     <img src="../assets/image/products/oringe_bgi.png" alt="">
                 </div>
@@ -154,10 +159,10 @@
                                     class="fa-solid fa-cart-shopping"></i></button></div> -->
                     </li>
                 </ul>
-            </div>
+            </section>
             
             <!---- 咖啡系列 ---->
-            <div class="product coffee">
+            <section class="product coffee">
                 
                 <div class="coffee_bean">
                     <img class="coffee_bean1" src="../assets/image/products/coffee_beans.svg" alt="">
@@ -199,10 +204,10 @@
                     <li class="left_list2">
                     </li>
                 </ul>
-            </div>
+            </section>
             
             <!---- 冰沙系列 ---->
-            <div class="product smoothies">
+            <section class="product smoothies">
 
                 <div class="ice">
                     <img src="../assets/image/products/ice.svg" alt="">
@@ -242,12 +247,12 @@
                                     class="fa-solid fa-cart-shopping"></i></button></div> -->
                     </li>
                 </ul>
-            </div>
+            </section>
 
 
 
      </div>     
-    </div>
+    </main>
 
 
 

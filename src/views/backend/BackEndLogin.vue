@@ -1,6 +1,6 @@
 <template>
     <div class="space"></div>
-    <div class="backend_login">
+    <main class="backend_login">
         <div class="container">
             <img src="@/assets/image/pic/icon/logo.svg" alt="">
             <h1>捌嵩飲茶後台管理</h1>
@@ -16,7 +16,7 @@
             </div>
             <RouterLink to="./BackEndProducts"><button>登入後台</button></RouterLink>
         </div>
-    </div>
+    </main>
     
 </template>
 

@@ -10,10 +10,6 @@ footer{
     @include m(){
         height: 280px;
     }
-    ul{ // 追蹤btn
-        display: flex;
-        justify-content: space-between;
-    }
     .footer{
         width: 1200px;
         position: relative;
@@ -28,6 +24,7 @@ footer{
         ul{
             display: flex;
             justify-content: center;
+            align-items: center;
             margin: 12px 0;
             flex-wrap: wrap;
             @include m(){
@@ -90,8 +87,11 @@ footer{
 
     
     } // .footer
+    
+    // 追蹤btn
     .btn{
-        // justify-content: right;
+        display: flex;
+        justify-content: space-between;
         position: absolute;
         right: 10%;
         bottom: 10%;

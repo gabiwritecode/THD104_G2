@@ -43,11 +43,11 @@ export default {
 
 <template>
   <!-- <div class="space"></div> -->
-  <div class="index_wrapper">
+  <main class="index_wrapper">
 
     <!------ banner ------>
 
-    <div class="banner">
+    <section class="banner">
       <img class="curve_b1" src="../assets/image/index/curve_i_b1.svg" alt="">
       <img class="curve_b2" src="../assets/image/index/curve_i_b2.svg" alt="">
       <img class="text_move1" src="../assets/image/index/BOISSON.png" alt="">
@@ -70,17 +70,17 @@ export default {
           <img class="beverage beverage4" src="../assets/image/index/banner_beverage4.png" alt="">
         <!-- </div> -->
       </div>
-    </div>
+    </section>
 
     <!---- 背景裝飾曲線1 ---->
-    <div class="background_img">
+    <section class="background_img">
         <img class="curve1" src="../assets/image/index/curve_i_1.png" alt="">
         <img class="curve2" src="../assets/image/index/curve_i_2.png" alt="">
         <img class="text_move_t" src="../assets/image/index/TAIWAN TEA.svg" alt="">
         <!-- <h1>TAIWAN TEA</h1> -->
-    </div>
+    </section>
     <!------ 介紹 ------>
-    <div class="introduce">
+    <section class="introduce">
 
 
       <h1>TAIWAN TEA</h1>
@@ -110,14 +110,14 @@ export default {
         </li>
       </ul>
 
-    </div>
+    </section>
 
 
     <!------ 背景色圓弧 ------>
     <div class="background_color"></div>
     
     <!------ TOP5商品 ------>
-      <div class="top_products_all">
+      <section class="top_products_all">
         <h1>TOP 5 熱銷飲品</h1>
         <ul>
           <li class="top_products product1">
@@ -149,7 +149,7 @@ export default {
             <p>享受絲滑口感與甜蜜幸福的奢華體驗。</p>
           </li>
         </ul>
-      </div>
+      </section>
 
     <!---- 背景裝飾曲線2 ---->
     <div class="background_img">
@@ -159,7 +159,7 @@ export default {
     
 
     <!------ 最新消息 ------>
-      <div class="news">
+      <section class="news">
         <div class="container">
           <h1>最新消息</h1>
           <ul>
@@ -189,7 +189,7 @@ export default {
           </ul>
           <RouterLink to="./info"><button>Read more</button></RouterLink>
         </div>
-      </div>
+      </section>
 
       <!---- 背景裝飾曲線3 ---->
       <div class="background_img">
@@ -197,7 +197,7 @@ export default {
       </div>
 
     
-  </div>
+    </main>
 
   <MemberBtn></MemberBtn>
 </template>
