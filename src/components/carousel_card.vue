@@ -5,7 +5,7 @@
 const router = useRouter()
 const {article} = defineProps(['article'])
 const navigateToArticle = () => {
-    router.push(`/article/${article.id}`)
+    router.push(`/article_item${article.id}`)
   }
 </script>
 <template>
