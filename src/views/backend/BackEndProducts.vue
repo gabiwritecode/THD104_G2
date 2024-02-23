@@ -8,7 +8,7 @@
             <li><RouterLink to="./BackEndProducts"  class="sidebar-btn"><i class="fa-solid fa-box-archive"></i>商品管理</RouterLink></li>
             <li><RouterLink to="./backendInfo"      class="sidebar-btn"><i class="fa-regular fa-message"></i>消息管理</RouterLink></li>
             <li><RouterLink to="./backendCategories"  class="sidebar-btn"><i class="fa-regular fa-message"></i>消息分類</RouterLink></li>
-            <li><RouterLink to="#"  class="sidebar-btn"><i class="fa-solid fa-location-dot"></i>門市管理</RouterLink></li>
+            <li><RouterLink to="./BackEndStore"  class="sidebar-btn"><i class="fa-solid fa-location-dot"></i>門市管理</RouterLink></li>
           </ul>
           <div class="backend-logout"><p>登出<i class="fa-solid fa-arrow-right-from-bracket"></i></p></div>
         </nav>
