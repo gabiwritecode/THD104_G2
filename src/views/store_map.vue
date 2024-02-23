@@ -158,12 +158,8 @@ export default{
             isIconVisible.value[index] = false;
         };
         // -----------------------------------------------------------------
-
-       
-                
-
-                const department = [];
-                department[0] = {
+        const department = [];
+        department[0] = {
                     districts: [
                         {
                             name: '南港區',
@@ -284,8 +280,8 @@ export default{
                             ]
                         }
                     ]
-                };
-                department[1] = {
+        };
+        department[1] = {
                     districts: [
                         {
                             name: '板橋區',
@@ -328,9 +324,9 @@ export default{
                             ]
                         }
                     ]
-                };  // 新北市
+        };  // 新北市
 
-                department[2] = {
+        department[2] = {
                     name: '桃園市',
                     districts: [
                         {
@@ -374,8 +370,8 @@ export default{
                             ]
                         }
                     ]
-                };
-                department[3] = {
+        };
+        department[3] = {
                     name: '宜蘭縣',
                     districts: [
                         {
@@ -421,8 +417,8 @@ export default{
                             ]
                         }
                     ]
-                };
-                department[4] = {
+        };
+        department[4] = {
                     name: '台中市',
                     districts: [
                         {
@@ -466,8 +462,8 @@ export default{
                             ]
                         }
                     ]
-                };  // 台中市
-                department[5] = {
+        };  // 台中市
+        department[5] = {
                     name: '高雄市',
                     districts: [
                         {
@@ -511,9 +507,9 @@ export default{
                             ]
                         }
                     ]
-                };  // 高雄市
+        };  // 高雄市
 
-                const districts = ref(department[0]?.districts || []);
+        const districts = ref(department[0]?.districts || []);
 
         const setCity = (city) => {
             selectedCity.value = city;
@@ -522,15 +518,14 @@ export default{
 
         const updateDistricts = () => {
             // Reset other selections
-            selectedDistrict.value = '';  // 先清空選擇的區域
+        selectedDistrict.value = '';  // 先清空選擇的區域
 
-            // Find the selected city and update districts
-            const selectedCityIndex = cities.value.indexOf(selectedCity.value);
+           
+        const selectedCityIndex = cities.value.indexOf(selectedCity.value);
             if (selectedCityIndex !== -1) {
-                // Ensure districts is reactive
+               
                 districts.value = [...department[selectedCityIndex]?.districts] || [];
 
-                // Ensure selectedDistrict is within the available options
                 if (districts.value.length > 0) {
                     selectedDistrict.value = districts.value[0].name;  // 設定為第一個區域
                 }
