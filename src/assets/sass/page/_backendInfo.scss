@@ -37,6 +37,9 @@
     display: flex;
     flex-direction: column;
   }
+  .sidebar-btn-container .active{
+    background-color: $color2;
+  }
 
   .sidebar-btn-container a:active{
     color: white;
@@ -118,10 +121,102 @@
 .page-backendInfo header,.page-backendInfo footer{
   display: none;
 }
+.page-backendCategories header,.page-backendCategories footer{
+  display: none;
+}
 
 // 當頁sidebar-btn改色
 .page-backendInfo .sidebar-btn-container{
     li:nth-child(4){
         background-color: $color2;
     }
+
 }
+.page-backendCategories .sidebar-btn-container{
+  li:nth-child(5){
+      background-color: $color2;
+  }
+
+}
+.backend-main{
+    
+  // ===== 編輯彈窗 =====
+  .edit_window{
+      position: fixed;
+      z-index: 1;
+      left: 60%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      background-color: $white;
+      width: 640px;
+      height: 520px;
+      border: 1px solid $color2;
+      margin: 0 auto;
+      display: none;
+      .container{
+          width: 450px;
+          margin: 60px auto;
+      }
+      h2{
+          text-align: center;
+          margin: 20px auto;
+      }
+      li{
+          display: flex;
+          align-items: center;
+      }
+      span{
+          width: 80px;
+          display: block;
+      }
+      input[type="text"]{
+          @include input_M();
+          margin: 8px auto;
+      }
+      textarea{
+        width: 358px;
+        height: 160px;
+        margin-left: 2px;
+        border-radius: 4px;
+        border-color:$color2 ;
+        resize: none;
+        margin-top: 10px
+      }
+      select{
+        @include select_M();
+      }
+
+      label{
+          padding-right: 16px;
+      }
+      .edit_window_btn{
+          display: flex;
+          justify-content: space-between;
+          margin: 40px auto;
+      }
+      button{
+          @include btn_bs_M();
+      }
+      .img-button{
+        @include btn_bs_S();
+        margin-top: 20px;
+      }
+      
+  } // edit_window
+  
+  // ===== 灰色背景 =====
+  .edit_window_bg{
+      background-color: $black;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      left: 0%;
+      position: fixed;
+      opacity: .6;
+      display: none;
+      transition: .8s all ease;
+  }
+  .edit_window_on{
+      display: block;
+  }
+} // backend-main

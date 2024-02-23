@@ -157,6 +157,14 @@ const router = createRouter({
       meta: {
         title: '訂單管理'
       }
+    },
+    {
+      path: '/backendCategories',
+      name: 'backendCategories',
+      component: () => import('../views/backend/BackEndCategories.vue'),
+      meta: {
+        title: '消息分類'
+      }
     }
   ]
 })
