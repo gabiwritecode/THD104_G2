@@ -18,17 +18,16 @@
 .about_Lo_container {
     width: 580px;
     height: 770px;
-    margin: 120px auto 40px;
+    margin: 150px auto 80px;
     background-color: $grey2;
     border: 1px solid white;
     border-radius: 40px;
     position: relative;
 
     @include m() {
-        width: 360px;
+        width: 320px;
         height: 460px;
-        margin-bottom: 20px;
-
+        border-radius: 24px;
     }
 
 }
@@ -71,8 +70,9 @@
     left: 452.3px;
 
     @include m() {
-        top: 222.4px;
-        left: 278.3px;
+        font-size: 18px;
+        top: 224px;
+        left: 258px;
     }
 }
 
@@ -81,11 +81,12 @@
     color: #78BEC8;
     position: absolute;
     top: 337.4px;
-    left: 452.3px;
+    left: 451.3px;
 
     @include m() {
-        top: 222.4px;
-        left: 278.3px;
+        font-size: 18px;
+        top: 224px;
+        left: 257px;
     }
 }
 

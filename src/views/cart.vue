@@ -236,7 +236,7 @@ export default{
 
 
 
-<style lang="scss">
+<style lang="scss" scoped>
   @import"../assets/sass/style.scss";
 </style>
 
