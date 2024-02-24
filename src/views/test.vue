@@ -593,6 +593,6 @@ export default {
     }
 }
 </script>
-<style lang="scss">
-  @import"../assets/sass/style.scss";
+<style lang="scss" scoped>
+//   @import"../assets/sass/style.scss";
 </style>

@@ -7,7 +7,7 @@
             <li><RouterLink to="./info">最新消息</RouterLink></li>
             <li class="logo"><img src="../assets/image/pic/icon/logo2.svg" alt=""></li>
             <li><RouterLink to="/products">飲品菜單</RouterLink></li>
-            <li><RouterLink to="#">門市據點</RouterLink></li>
+            <li><RouterLink to="/store_map">門市據點</RouterLink></li>
         </ul>
         <p class="tibaMe">本網站為緯育TibaMe【第89期】前端工程師專業技術養成班學員作品,僅供學習、展示之用途。</p>
         <p class="copyright">Copyright© 2024 BOISSON TEA Inc.</p>

@@ -147,7 +147,7 @@ const router = createRouter({
       name: 'backendInfo',
       component: () => import('../views/backend/BackEndInfoView.vue'),
       meta: {
-        title: '入口'
+        title: '消息管理'
       }
     },
     {
@@ -180,6 +180,14 @@ const router = createRouter({
       component: () => import('../views/backend/BackEndCategories.vue'),
       meta: {
         title: '消息分類'
+      }
+    },
+    {
+      path: '/BackEndMember',
+      name: 'BackEndMember',
+      component: () => import('../views/backend/BackEndMember.vue'),
+      meta: {
+        title: '會員管理'
       }
     }
   ]
