@@ -202,7 +202,7 @@ export default{
           localStorage.setItem("cart", JSON.stringify(this.cart));
         },
         keepBuy() {
-          location.href = "/thd104/g2/products";
+          location.href = "#/products";
         },
         checkInp(){
           let inputs = document.querySelectorAll('.write_info input')
@@ -224,7 +224,7 @@ export default{
           this.writtenLightbox = false
         },
         goToHomePage(){
-          location.href = '/HomeView'
+          location.href = '#/HomeView'
         }
   
       }
