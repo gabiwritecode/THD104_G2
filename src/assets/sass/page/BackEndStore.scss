@@ -1,8 +1,9 @@
-.backend-main{
+.backend-main {
   display: grid;
-  grid-template-columns: 20% 80% ;
+  grid-template-columns: 20% 80%;
 }
-.sidebar{
+
+.sidebar {
   height: auto;
   background-color: #78BEC8;
   text-align: center;
@@ -10,14 +11,17 @@
   display: flex;
   flex-direction: column;
 }
-.sidebar ul{
+
+.sidebar ul {
   margin-top: 70px;
 }
-.sidebar i{
+
+.sidebar i {
   margin-right: 10px;
   margin-left: 10px;
 }
-.sidebar-btn{
+
+.sidebar-btn {
   @include font_h2();
   height: 70px;
   width: 100%;
@@ -26,55 +30,63 @@
   justify-content: center;
   text-decoration: none;
   color: white;
-  
+
 }
-.sidebar-btn:hover{
+
+.sidebar-btn:hover {
   background-color: #6996A0;
 }
 
-.sidebar-btn-container{
+.sidebar-btn-container {
   display: flex;
   flex-direction: column;
 }
 
-.sidebar-btn-container a:active{
+.sidebar-btn-container a:active {
   color: white;
 }
-.backend-logout{
+
+.backend-logout {
   margin-top: 60px;
   margin-left: 20px;
 }
-.backend-logout p{
+
+.backend-logout p {
   @include font_t1();
   align-self: flex-end;
   color: white;
   cursor: pointer;
 }
-.backend-table-container{
+
+.backend-table-container {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   margin-top: 110px;
-  
+
 }
-.backend-table-container h1{
+
+.backend-table-container h1 {
   @include font_h1();
   color: #6996A0;
 }
-.backend-input-container{
+
+.backend-input-container {
   width: 960px;
   display: flex;
   justify-content: right;
   margin-bottom: 12px;
 }
-.backend-input-container input{
+
+.backend-input-container input {
   height: 26px;
   border: 1px solid #6996A0;
   border-radius: 4px;
 }
-.backend-input-container button{
+
+.backend-input-container button {
   margin-left: 4px;
   background-color: #6996A0;
   color: white;
@@ -83,30 +95,34 @@
   padding: 2px 21px;
   cursor: pointer;
 }
-.backend-info-table{
+
+.backend-info-table {
   @include font_t1();
   border-collapse: collapse;
   width: 960px;
   text-align: center;
   align-items: center;
 }
-.backend-info-table thead{
+
+.backend-info-table thead {
   background-color: #6996A0;
   color: white;
   height: 54px;
-  border:1px solid #6996A0;
+  border: 1px solid #6996A0;
   line-height: 54px;
 
 
 }
-.backend-info-table tbody tr{
+
+.backend-info-table tbody tr {
   height: 54px;
-  border:1px solid #6996A0;
+  border: 1px solid #6996A0;
   line-height: 54px;
- 
+
 
 }
-.backend-info-table tbody td button{
+
+.backend-info-table tbody td button {
   background-color: #6996A0;
   border: none;
   border-radius: 4px;
@@ -115,7 +131,148 @@
   cursor: pointer;
 }
 
+
+
+
+//----------------------------區塊二
+.block2 {
+  border: 1px solid black;
+  width: 600px;
+
+}
+
+// 當頁sidebar-btn改色
+.page-backendStore .sidebar-btn-container {
+  li:nth-child(1) {
+    background-color: $color2;
+  }
+
+}
+
+.page-BackEndStore .sidebar-btn-container {
+  li:nth-child(6) {
+    background-color: $color2;
+  }
+
+}
+
+// ===== 編輯彈窗 =====
+.edit_window_store {
+  position: fixed;
+  z-index: 1;
+  left: 60%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $white;
+  width: 640px;
+  height: 440px;
+  border: 1px solid $color2;
+  margin: 0 auto;
+  display: none;
+}
+
+.edit_window_store_bg {
+  background-color: $black;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0%;
+  position: fixed;
+  opacity: .6;
+  display: none;
+  transition: .8s all ease;
+}
+
+.edit_window_store_on {
+  display: block;
+}
+
+//--------區塊二 [ 左半邊]
+.left {
+  width: 360px;
+  margin: 0 auto ;
+
+}
+
+.right {
+  width: 360px;
+
+
+}
+
+.left_form {
+
+
+  margin: 20px 60px auto;
+
+  .input {
+    @include input_M();
+    width: 300px;
+    margin-bottom: 20px;
+  }
+
+}
+
+//--------區塊二 [ 右半邊]
+.right {
+  .right_form {
+    margin-left: 45px;
+
+
+    h3 {
+      margin-top: 20px;
+    }
+
+    div {
+      width: 200px;
+      height: 190px;
+      background-color: $grey2;
+    }
+  }
+
+  //---------新增input樣式
+  .input_image {
+    margin-top: 8px;
+    display: inline-block;
+    padding: 3px 20px;
+    cursor: pointer;
+    background-color: $color2;
+    /* 淺藍色 */
+    color: #fff;
+    /* 白色文字 */
+
+    border-radius: 4px;
+  }
+
+  //---------隱藏原生的文件上傳按鈕
+  #image {
+    display: none;
+  }
+
+}
+
+
+
+.buttonQQ {
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+
+
+  .buttonqq {
+
+    @include btn_bs_M();
+
+    margin-top: 25px;
+    margin-left: 50px;
+
+  }
+}
+
+
+
 // 隱藏header footer
-.page-BackEndStore header,.page-BackEndStore footer{
+.page-BackEndStore header,
+.page-BackEndStore footer {
   display: none;
 }

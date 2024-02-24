@@ -43,7 +43,9 @@
 //-----------------------品牌故事
 .about_story {}
 
-.about_story_h1 {}
+.about_story_h1 {
+    margin-top: 40px;
+}
 
 .about_story_p {
     margin:0 auto;
@@ -59,7 +61,7 @@
 //----------------------品牌起源
 .about_intrdouce {
     width: 1200px;
-    margin: 160px 0 0 0;
+    margin: 80px 0 0 0;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -145,7 +147,7 @@
 //---------------------------------------創業理念
 .about_Thought {
     width: 100%;
-    margin-top: 170px;
+    margin-top: 110px;
     background-color: #78BEC8;
     border: 1px solid white;
 
@@ -225,7 +227,7 @@
 
 .about_4point_h2 {
     width: 160px;
-    margin: 24px 0 0 24px;
+    margin: 24px 0 0 18px;
     color: white;
 
     @include m() {
@@ -253,7 +255,7 @@
 .about_value {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 
     @include m() {
         width: auto;
@@ -264,7 +266,7 @@
 }
 
 .about_value_h1 {
-    margin-top: 100px;
+    margin-top: 60px;
     margin-bottom: 60px;
 
     @include m() {

@@ -181,6 +181,14 @@ const router = createRouter({
       meta: {
         title: '消息分類'
       }
+    },
+    {
+      path: '/BackEndMember',
+      name: 'BackEndMember',
+      component: () => import('../views/backend/BackEndMember.vue'),
+      meta: {
+        title: '會員管理'
+      }
     }
   ]
 })

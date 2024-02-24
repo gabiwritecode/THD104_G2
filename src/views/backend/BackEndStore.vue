@@ -37,28 +37,82 @@
               <td>0912456789</td>
               <td>台北市南港區玉成街166巷</td>
               <td>10:00-21:30</td>
-              <td><RouterLink  to="/Store_settings" replace >
-                <button>
-                編輯與查看
-                </button>
-              </RouterLink>
-              </td>
+              <td><button @click="WindowToggle">編輯與查看</button></td>
             </tr>
           </tbody>
           <tbody></tbody>
         </table>
-      </div>
+      </div>        
   </main>
-
+  <div>
+          <div class="block2 edit_window_store" >
+                        <div class="left">
+                            <form action="" class="left_form">
+                            <h1 >編輯與查看</h1>
+                                <label for="">店名: <input type="text" class="input"></label>
+                                <br>
+                                <label for="">電話:</label>
+                                <input type="text" class="input">
+                                <br>
+                                <label for="">地址:</label>
+                                <input type="text" class="input"><br>
+                                <label for="">營業:</label>
+                                <select name="" id="">
+                                    <option value="正常">正常</option>
+                                    <option value="正常">結束</option>
+                                </select>
+                            </form>
+                        </div>
+                        
+                        <!-- <div class="right">
+                            <form action="" class="right_form">
+                                <h3>圖片上傳:</h3>
+                                <div></div>
+                                
+                                <label for="image" class="input_image">
+                                    <i class="fas fa-upload"></i> 選擇圖片
+                                </label>
+                                
+                                <input type="file" id="image">
+                            </form>
+                        </div> -->
+                        <div class="buttonQQ">
+                        <button class="buttonqq" @click="WindowToggle">關閉</button>
+                        <button class="buttonqq" @click="WindowToggle">儲存</button>
+                        
+                    </div> 
+           
+          </div>
+                    
+                    
+    </div>
+     <!-- 灰色背景 -->       
+    <div class="edit_window_store_bg" @click="editWindowToggle" ></div>
 </template>
+
+<script setup>
+import {ref, onMounted} from 'vue';
+const editWindowStore = ref(null);
+const editWindowStoreBg = ref(null);
+onMounted(() => {
+
+  editWindowStore.value = document.querySelector('.edit_window_store');
+  editWindowStoreBg.value = document.querySelector('.edit_window_store_bg');
+});
+const WindowToggle = () => {
+  editWindowStore.value.classList.toggle("edit_window_store_on");
+  editWindowStoreBg.value.classList.toggle("edit_window_store_on");
+};
+
+</script>
 <style lang="scss" scoped>
- 
 body{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   
 }
+
 
 
 </style>
