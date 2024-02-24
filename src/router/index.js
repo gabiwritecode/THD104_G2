@@ -147,7 +147,7 @@ const router = createRouter({
       name: 'backendInfo',
       component: () => import('../views/backend/BackEndInfoView.vue'),
       meta: {
-        title: '入口'
+        title: '消息管理'
       }
     },
     {

@@ -25,15 +25,15 @@
 }
 .article-title{
   @include font_h1();
-  color: black;
+  color: $black;
 }
 .article-subtitle{
   @include font_h2();
-  color: black;
+  color: $black;
 }
 .article-text{
   @include font_h2();
-  color: black;
+  color: $black;
   margin-bottom: 150px;
 }
 /* 文章RWD設定 */

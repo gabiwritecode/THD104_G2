@@ -1,13 +1,70 @@
-.BMember {
-  width: 700px;
-  border: 1px solid black;
+.page-BackEndMember {
+  .BMember {
+    width: 700px;
+    border: 1px solid $black;
 
-}
+  }
 
-.BMember1 {
-  display: flex;
-  width: 500px;
-  margin: 0 auto;
+  .BMember1 {
+    display: flex;
+    width: 500px;
+    margin: 0 auto;
+  }
+
+  
+
+
+
+
+  // ===== 編輯彈窗 =====
+  .edit_window_member {
+    position: fixed;
+    z-index: 1;
+    left: 60%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $white;
+    width: 640px;
+    height: 300px;
+    border: 1px solid $color2;
+    margin: 0 auto;
+    display: none;
+  }
+
+  .edit_window_member_bg {
+    background-color: $black;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0%;
+    position: fixed;
+    opacity: .6;
+    display: none;
+    transition: .8s all ease;
+  }
+
+  .edit_window_member_on {
+    display: block;
+  }
+
+  select{
+    @include select_S();
+    margin-left: 8px;
+  }
+
+  .edit_window_member .buttonq {
+    margin-top: 40px;
+    margin-left: 40px;
+    @include btn_bs_M();
+  }
+
+  .edit_window_member .button_left {
+    margin-left: 100px;
+  }
+
+  .edit_window_member ul:nth-child(2) {
+    margin-left: 40px;
+  }
 }
 
 // 當頁sidebar-btn改色
@@ -16,54 +73,6 @@
     background-color: $color2;
   }
 
-}
-
-
-
-
-// ===== 編輯彈窗 =====
-.edit_window_member {
-  position: fixed;
-  z-index: 1;
-  left: 60%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: $white;
-  width: 640px;
-  height: 300px;
-  border: 1px solid $color2;
-  margin: 0 auto;
-  display: none;
-}
-
-.edit_window_member_bg {
-  background-color: $black;
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  left: 0%;
-  position: fixed;
-  opacity: .6;
-  display: none;
-  transition: .8s all ease;
-}
-
-.edit_window_member_on {
-  display: block;
-}
-
-.buttonq {
-  margin-top: 40px;
-  margin-left: 40px;
-  @include btn_bs_M();
-}
-
-.button_left {
-  margin-left: 100px;
-}
-
-ul:nth-child(2) {
-  margin-left: 40px;
 }
 
 // 隱藏header footer

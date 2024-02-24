@@ -104,7 +104,7 @@
             <option v-for="(city, index) in cities" :key="index" :value="city">{{ city }}</option>
           </select>
 
-          <label for="">區：</label>
+          <label for=""></label>
           <select v-model="selectedDistrict" v-if="districts.length > 0">
             <option value="" selected>請選擇</option>
             <option v-for="(district, index) in districts" :key="index" :value="district.name">{{ district.name }}
