@@ -19,7 +19,7 @@
     &:hover {
         background-color: map-get($color_hover, yellow);
      }
-    }
+}
 
 @mixin tag_S(){
     @include tag_defut();
@@ -28,4 +28,20 @@
     font-size: map-get($title_size, t2);
     font-weight: map-get($fontWeight, t2);
     display: block;
-    }
+}
+
+//  商品頁用
+@mixin tag_P(){
+    @include tag_defut();
+    width: 60px;
+    height: 22px;
+    font-size: 13px;
+    font-weight: map-get($fontWeight, t2);
+    // display: block;
+    @include m(){
+        width: 52px;
+        height: 18px;
+        font-size: 12px;
+        padding: 0;
+      }
+}
