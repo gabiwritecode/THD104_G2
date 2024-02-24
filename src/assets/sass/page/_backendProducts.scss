@@ -28,6 +28,7 @@
         span{
             width: 80px;
             display: block;
+            
         }
         input[type="text"],input[type="number"]{
             @include input_M();
