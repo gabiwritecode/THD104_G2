@@ -7,17 +7,20 @@ footer{
     padding: 14px 20px;
     box-sizing: border-box;
     position: relative;
-    @include m(){
+    // @include r700{
+    //     height: 200px;
+    // }
+    @include r900(){
         height: 280px;
     }
     .footer{
         width: 1200px;
         position: relative;
         margin: 0 auto;
-        @include d1100() {
+        @include r1200() {
             width: auto;
         }
-        @include m(){
+        @include r900(){
             width: 250px;
         }
         
@@ -27,21 +30,27 @@ footer{
             align-items: center;
             margin: 12px 0;
             flex-wrap: wrap;
-            @include m(){
+            // @include r900{
+            //     margin-bottom: 70px;
+            // }
+            @include r900(){
                 margin: 16px auto 60px auto;
+                align-items: start;
             }
         }
         .menu li{
             width: 126px;
-            // align-items: center; 
             line-height: 5;
-            @include m(){
+            // @include r900{
+            //     line-height: 1.8;
+            // }
+            @include r900(){
                 width: 110px;
                 line-height: 3;
             }
         }
         .logo{
-            @include m(){
+            @include r900(){
                 display: none;
             }
         }
@@ -69,18 +78,18 @@ footer{
             text-align: center;
             margin: 0 auto;
             // justify-content: center;
-            @include m(){
+            @include r900(){
                 width: 250px;
             }
         }
         .tibaMe{
             padding-bottom: 4px;
-            @include m(){
+            @include r900(){
                 width: 210px;
             }
         }
         .copyright{
-            @include m(){
+            @include r900(){
                 font-size: 12.5px;
             }
         }
@@ -95,7 +104,10 @@ footer{
         position: absolute;
         right: 10%;
         bottom: 10%;
-        @include m(){
+        @include r1200{
+            right: 4%;
+        }
+        @include r900(){
             width: 210px;
             right:auto;  
             left: 50%;

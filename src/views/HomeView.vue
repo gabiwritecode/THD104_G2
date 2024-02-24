@@ -202,7 +202,7 @@ export default {
   <MemberBtn></MemberBtn>
 </template>
 
-<style lang="scss" scoped>
-// @import"../assets/sass/style.scss";
+<style lang="scss">
+@import"../assets/sass/style.scss";
 
 </style>

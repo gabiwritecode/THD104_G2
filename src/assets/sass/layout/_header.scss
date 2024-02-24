@@ -8,19 +8,27 @@ header{
     top: 0;
     z-index: 10;
     transition: .3s all ease;
+    @include r900{
+        height: 70px;
+    }
     @include m(){
         height: 65px;
     }
     
     nav{
         width: 1200px;
-        height: 60px;
+        height: auto;
         display: flex;
         margin: 10px auto;
+        align-items: center;
         justify-content: space-between;
-        @include m(){
+        @include r1200(){
+            width: 100%;
+            margin: 10px 20px;
+        }
+        @include r900(){
             position: relative;
-            height: 44px;
+            margin: 10px;
         }
         // === 漢堡 ===
         .fa-bars{
@@ -29,15 +37,19 @@ header{
             font-size: 22px;
             line-height: 2;
             padding-left: 20px;
-            @include m(){
+            @include r900(){
                 display: block;
             }
         }
         .logo{
             width: 154px;
+            display: block;
             &:hover {
                  transition: .2s all ease;
                 opacity: .8;
+            }
+            @include r900{
+                width: 130px;
             }
             @include m(){
                 width: 112px;
@@ -50,11 +62,12 @@ header{
             align-items: center;
         }
         .empty{
-            width: 440px;
-            @include t(){
-                width: auto;
+            // width: 440px;
+            width: 45%;
+            @include r1200{
+                width: 35%;
             }
-            @include m(){
+            @include r1100(){
                 display: none;
             }
         }
@@ -62,20 +75,24 @@ header{
         .menu{
             width: 620px;
             z-index: 20;
-            @include m(){
+            justify-content: center;
+            @include r900(){
+                width: 400px;
                 position: absolute;
-                left: -300px;
+                left: -420px;
                 top: -10px;
                 display: block;
                 padding: 10px;
                 box-sizing: border-box;
                 height: 600px;
-                width: 270px;
                 border-radius: 0 0 24px 0;
                 background-color: $color1;
                 opacity: .92;
                 box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
                 transition: .8s all ease;
+            }
+            @include r600(){
+                width: 270px;
             }
 
             // == 漢堡選單內的X按鈕 ==
@@ -85,7 +102,7 @@ header{
                 border: 0;
                 font-size: 24px;
                 background-color: rgba(120, 190, 200,0);
-                @include m(){
+                @include r900(){
                     padding: 10px 0px 0px 14px;
                     display: block;
                 }
@@ -94,7 +111,7 @@ header{
             .logo_m{
                 display: none;
                 width: 126px;
-                @include m(){
+                @include r900(){
                     padding-right: 8px;
                     display: block;
                     margin: 30px auto 26px auto;
@@ -107,14 +124,14 @@ header{
                 font-size: 13px;
                 font-weight: 300;
                 letter-spacing: .07rem;
-                @include m(){
+                @include r900(){
                 display: block;
                 margin: 24px auto 0px auto;
                 }
             }
             li{
-                margin: 0 14px;
-                @include m(){
+                margin: 0 10px;
+                @include r900(){
                     border-bottom: 1px solid $white;
                 }
                 a{
@@ -126,7 +143,7 @@ header{
                     &:hover{
                         color: $yellow;
                     }
-                    @include m(){
+                    @include r900(){
                         font-size: 18px;
                         height: 72px;
                         line-height: 4;
@@ -141,11 +158,12 @@ header{
         
         // 漢堡滑出
         .menu_on{
-            left: 0px;
+            left: -10px;
         }
         .member_btn{
-            @include m(){
-                margin-right: 16px;
+            // margin: 10px;
+            @include r900(){
+                // margin-right: 16px;
             }
         }
         .member_btn li{
@@ -179,7 +197,7 @@ header{
         background-color: $yellow;
         display: block;
         animation: a .4s 1 ease-out forwards;
-        @include m(){
+        @include r900(){
             visibility: hidden;
         }
     }
@@ -194,7 +212,7 @@ header{
     }
 
     .header_mobile_bg{
-        @include m(){
+        @include r900(){
             background-color: $black;
             width: 100%;
             height: 100%;
@@ -212,3 +230,109 @@ header{
     }
 } // header
 
+
+// ===== 當頁header a改色 =====
+.page-about{
+    header{
+        .menu li:nth-child(3) a{
+            color: $yellow;
+        }
+        .menu li:nth-child(3) a{
+            &:after{
+                content: "";
+                width: 100%;
+                height: 2px;
+                background-color: $yellow;
+                display: block;
+                animation: a .4s 1 ease-out forwards;
+                @include r900(){
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+}
+.page-info{
+    header{
+        .menu li:nth-child(4) a{
+            color: $yellow;
+        }
+        .menu li:nth-child(4) a{
+            &:after{
+                content: "";
+                width: 100%;
+                height: 2px;
+                background-color: $yellow;
+                display: block;
+                animation: a .4s 1 ease-out forwards;
+                @include r900(){
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+}
+
+
+.page-products{
+    header{
+        .menu li:nth-child(5) a{
+            color: $yellow;
+        }
+        .menu li:nth-child(5) a{
+            &:after{
+                content: "";
+                width: 100%;
+                height: 2px;
+                background-color: $yellow;
+                display: block;
+                animation: a .4s 1 ease-out forwards;
+                @include r900(){
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+}
+
+.page-customized{
+    header{
+        .menu li:nth-child(6) a{
+            color: $yellow;
+        }
+        .menu li:nth-child(6) a{
+            &:after{
+                content: "";
+                width: 100%;
+                height: 2px;
+                background-color: $yellow;
+                display: block;
+                animation: a .4s 1 ease-out forwards;
+                @include r900(){
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+}
+
+.page-store_map{
+    header{
+        .menu li:nth-child(7) a{
+            color: $yellow;
+        }
+        .menu li:nth-child(7) a{
+            &:after{
+                content: "";
+                width: 100%;
+                height: 2px;
+                background-color: $yellow;
+                display: block;
+                animation: a .4s 1 ease-out forwards;
+                @include r900(){
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+}

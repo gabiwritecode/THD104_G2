@@ -112,8 +112,8 @@
         <MemberBtn></MemberBtn>
 
 </template>
-<style lang="scss">
-  @import"../assets/sass/style.scss";
+<style lang="scss" scoped>
+//   @import"../assets/sass/style.scss";
 </style>
 <script>
 import MemberBtn from "../components/member_btn.vue"

@@ -19,27 +19,55 @@
 
 // ----- RWD -----
 
-@mixin d1100 (){
-    @media screen and (max-width: $d1100) {
+@mixin r1200 (){
+    @media screen and (max-width: $r1200) {
         // 內容
         @content;
     }
- }
-
- // 平板
- @mixin t(){
-    @media screen and (max-width: $t) {
+}
+@mixin r1100 (){
+    @media screen and (max-width: $r1100) {
         // 內容
         @content;
     }
- }
+}
+@mixin r1000 (){
+    @media screen and (max-width: $r1000) {
+        @content;
+    }
+}
+@mixin r900 (){
+    @media screen and (max-width: $r900) {
+        @content;
+    }
+}
+@mixin r800 (){
+    @media screen and (max-width: $r800) {
+        @content;
+    }
+}
+@mixin r700 (){
+    @media screen and (max-width: $r700) {
+        @content;
+    }
+}
+@mixin r600 (){
+    @media screen and (max-width: $r600) {
+        @content;
+    }
+}
 
- //手機
- @mixin m(){
+@mixin r500 (){
+    @media screen and (max-width: $r500) {
+        @content;
+    }
+}
+
+//手機
+@mixin m(){
     @media screen and (max-width: $m) {
-        // 內容
         @content;
     }
- }
+}
 
  
