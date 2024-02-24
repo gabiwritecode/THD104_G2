@@ -33,7 +33,7 @@
 
     // ===== banner ====
     .banner{
-        height: 100vh;
+        height: 852px;
         overflow: hidden;
         position: relative;
         // background-image: linear-gradient(70deg, #A2CDD1 20%, #78BEC8 50%, #5BACBB 100%);
@@ -43,13 +43,13 @@
         }
         .text_move1{
             position: absolute;
-            top: 20vh;
+            top: 180px;
             z-index: 2;
             color:rgba( 0, 0, 0, 0);
             opacity: .15;
             animation: text_move1 10s linear infinite;
             @include m(){
-                top: 120px;
+                top: 110px;
                 height: 50px;
                 animation: text_move1m 7s linear infinite;
             }
@@ -73,14 +73,14 @@
         }
         .text_move2{
             position: absolute;
-            bottom: 0vh;
+            bottom: 0px;
             height: 150px;
             z-index: 4;
             color:rgba( 0, 0, 0, 0);
             opacity: .2;
             animation: text_move2 10s linear infinite;
             @include m(){
-                top: 590px;
+                bottom: -2px;
                 height: 80px;
                 animation: text_move2m 7s linear infinite;
             }
@@ -150,11 +150,13 @@
         .container{
             height: 100%;
             width: 1200px;
-            // overflow-x: hidden;
             position: relative;
             box-sizing: border-box;
             margin: 0 auto;
-            // outline: 1px solid red;
+            @include r1200(){
+                width: auto;
+                overflow: hidden;
+            }
             @include m(){
                 width: 320px;
             }
@@ -351,10 +353,14 @@
     // ===== 介紹 ====
     .introduce {
         width: 1200px;
-        height: 880px;
+        height: 800px;
         margin: 80px auto;
         padding: 40px 0;
         position: relative;
+        @include r1200(){
+            width: auto;
+            margin: 0 40px;
+        }
         @include m(){
             width: 310px;
             height: 520px;
@@ -432,12 +438,13 @@
     .background_color{
         background-color: $color1;
         position: absolute;
-        height: 1280px;
+        height: 100%;
         width: 100%;
-        top: 2440px;
+        top: 2400px;
         z-index: -9999;
         // background-position: 1200px 1200px;
-        border-radius: 1300% 1300% 0 0/800% 800%;
+        border-radius: 300% 300% 0 0/100% 100%;
+        // border-radius: 50% 50% 0 0;
         @include m(){
             border-radius: 400% 400% 0 0/80% 80%;
             top: 1680px
@@ -451,6 +458,10 @@
         width: 1200px;
         margin: 100px auto;
         padding: 80px 0 180px 0;
+        @include r1200(){
+            width: auto;
+            margin: 0 40px;
+        }
         @include m(){
             width: 320px;
         }
@@ -524,6 +535,10 @@
         .container{
             width: 1200px;
             margin: 100px auto;
+            @include r1200(){
+                width: auto;
+                margin: 0 40px;
+            }
             @include m(){
                 width: 310px;
             }
@@ -553,7 +568,8 @@
         }
 
         h2{
-            text-align: center;
+            // text-align: center;
+            padding: 0 10px;
             color: $white;
             @include m(){
                 width: 100px;
@@ -561,7 +577,7 @@
             }
         }
         p{
-            text-align: center;
+            padding: 0 10px;
         }
         a{
             text-decoration: none;
