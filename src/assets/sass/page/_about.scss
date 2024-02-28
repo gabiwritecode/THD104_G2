@@ -1,4 +1,4 @@
-.page-about{
+.page-about {
     .about_banner {
         background-image: url("/src/assets/image/about/banner.png");
         background-size: cover;
@@ -6,7 +6,8 @@
         height: 450px;
         position: relative;
         margin-top: 60px;
-        @include m{
+
+        @include m {
             height: 280px;
         }
     }
@@ -35,7 +36,7 @@
     }
 
     .frame {
-        width: 1200px;
+        width: auto;
         margin: 0 auto;
 
         @include m() {
@@ -53,8 +54,14 @@
     }
 
     .about_story_p {
-        margin:0 auto;
-        width:600px;
+        margin: 0 auto;
+        width: 600px;
+
+        @include r600() {
+            width: 400px;
+            text-align: justify;
+        }
+
         @include m() {
             padding: 0 15px;
             width: 320px;
@@ -65,11 +72,15 @@
 
     //----------------------品牌起源
     .about_intrdouce {
-        width: 1200px;
+        width: auto;
         margin: 80px 0 0 0;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+
+        @include r1100() {
+            width: auto;
+        }
 
         @include m() {
             width: auto;
@@ -78,7 +89,33 @@
     }
 
     .about_intrdouce_left {
-        width: 480px;
+        max-width: 480px;
+
+        @include r1100() {
+            max-width: 500px;
+            margin-left: 20px;
+        }
+
+        @include r1000() {
+            max-width: 450px;
+            height: 400px;
+
+        }
+
+        @include r900() {
+            max-width: 440px;
+            height: 350px;
+
+        }
+
+        @include r800() {
+            margin-right: 8px;
+        }
+
+        @include r700() {
+            margin: 0 auto;
+        }
+
 
         @include m() {
             width: 390px;
@@ -93,6 +130,21 @@
 
     .about_origin_h2 {
         margin: 20px 0 16px 0;
+
+        @include r1000() {
+            margin-top: 0;
+        }
+
+        @include r900() {
+            margin-top: 5px;
+            margin-bottom: 5px;
+
+        }
+
+        @include r800() {
+            margin-top: 0;
+
+        }
 
         @include m() {
             width: 160px;
@@ -118,6 +170,22 @@
 
     .about_origin_p {
         margin-bottom: 40px;
+        text-align: justify;
+
+        @include r1000() {
+            margin-bottom: 30px;
+        }
+
+        @include r900() {
+            margin-bottom: 10px;
+        }
+
+        @include r800() {
+            font-size: 16px;
+            margin-bottom: 0;
+            letter-spacing: 0px;
+
+        }
 
         @include m() {
             margin: 0 auto;
@@ -130,6 +198,19 @@
     .about_origin_hr {
         margin: 80px 0 50px 0;
 
+        @include r1000() {
+            margin: 20px 0 20px 0;
+        }
+
+        @include r900() {
+            margin: 0;
+
+        }
+
+        @include r700() {
+            margin: 10px 0;
+        }
+
         @include m() {
             margin: 20px auto 20px;
             width: 320px;
@@ -137,9 +218,39 @@
     }
 
     .about_intrdouce_right {
-        width: 600px;
+        max-width: 600px;
         height: 512px;
         border-radius: 0 50px 0 50px;
+
+        @include r1100() {
+            max-width: 500px;
+            margin-right: 20px;
+        }
+
+        @include r1000() {
+            max-width: 450px;
+            height: 400px;
+
+        }
+
+        @include r900() {
+            max-width: 380px;
+            height: 350px;
+
+        }
+
+        @include r800() {
+            max-width: 300px;
+            height: 300px;
+            margin-right: 10px;
+        }
+
+        @include r700() {
+            max-width: 440px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
 
         @include m() {
             width: 320px;
@@ -156,6 +267,16 @@
         margin-top: 110px;
         background-color: #78BEC8;
         overflow: hidden;
+
+        @include r900() {
+            max-height: 800px;
+            margin-top: 60px;
+        }
+
+        @include r700() {
+            max-height: 1500px;
+
+        }
 
         @include m() {
             width: auto;
@@ -181,6 +302,11 @@
         width: 600px;
         margin: 20px auto;
         color: white;
+        text-align: justify;
+        @include r700() {
+           max-width:400px;
+
+        }
 
         @include m() {
             margin-top: 0 auto;
@@ -192,11 +318,20 @@
 
     //------------------------------創業理念4重點
     .about_Thought_4point {
-        width:1200px;
+        width: 1200px;
         margin: 0 auto;
         display: flex;
         justify-content: space-around;
-        
+
+        @include r1100() {
+            width: auto;
+        }
+
+        @include r700() {
+            flex-wrap: wrap;
+            max-width: 400px
+        }
+
         @include m() {
             width: auto;
             flex-wrap: wrap;
@@ -208,6 +343,7 @@
 
     .about_4point {
         margin-top: 20px;
+
 
         @include m() {
             width: 134px;
@@ -221,6 +357,12 @@
         display: block;
         width: 200px;
         height: 200px;
+
+        @include r900() {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto;
+        }
 
         @include m() {
             width: 120px;
@@ -248,6 +390,10 @@
         margin: 12px 0 110px 18px;
 
         @include m() {
+            margin-bottom: 50px;
+        }
+
+        @include m() {
             margin: 0 4px;
             width: 134px;
             font-size: 15px;
@@ -265,6 +411,17 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 140px;
+        width: auto;
+
+        @include r900() {
+            margin-bottom: 80px;
+        }
+
+        @include r700() {
+            flex-wrap: wrap;
+            max-width: 440px;
+            margin: 0 auto;
+        }
 
         @include m() {
             width: auto;
@@ -284,8 +441,35 @@
     }
 
     .about_value_left {
-        width: 600px;
+        max-width: 600px;
         border-radius: 0 50px 0 50px;
+
+        @include r1100() {
+            max-width: 500px;
+            margin-left: 20px;
+        }
+
+        @include r1100() {
+            max-width: 450px;
+            height: 400px;
+        }
+
+        @include r900() {
+            max-width: 380px;
+            height: 350px;
+        }
+
+        @include r800() {
+            max-width: 300px;
+            height: 300px;
+        }
+
+        @include r700() {
+            max-width: 440px;
+            height: 400px;
+            margin-left: 0;
+            margin-bottom: 20px;
+        }
 
         @include m() {
             width: 320px;
@@ -299,7 +483,35 @@
     }
 
     .about_value_right {
-        width: 480px;
+        max-width: 480px;
+
+        @include r1100() {
+            max-width: 500px;
+            margin-right: 20px;
+        }
+
+        @include r1000() {
+            max-width: 450px;
+            height: 400px;
+        }
+
+        @include r900() {
+            max-width: 380px;
+            height: 350px;
+        }
+
+        @include r800() {
+            max-width: 435px;
+
+        }
+
+        @include r700() {
+            margin-right: 0;
+        }
+        @include r600() {
+            margin-bottom: 20px;
+        }
+
 
         @include m() {
             width: 390px;
@@ -317,6 +529,13 @@
     .about_value_right_2 {}
 
     .about_value_right_h2 {
+        @include r800() {
+            margin: 0;
+        }
+        @include r600() {
+           margin: 10px 0;
+        }
+
         @include m() {
             width: 100px;
             margin-left: 33px;
@@ -341,6 +560,10 @@
     }
 
     .about_value_right_p {
+        @include r800() {
+            letter-spacing: 0px;
+
+        }
 
         @include m() {
 
@@ -352,6 +575,14 @@
     .about_value_right_hr {
         margin: 50px 0 50px;
 
+        @include r1000() {
+            margin: 20px 0 20px;
+        }
+
+        @include r900() {
+            margin: 0;
+        }
+
         @include m() {
             margin: 20px 0 20px;
             width: 320px;
@@ -359,4 +590,3 @@
         }
     }
 }
-// --------------------------------RWD

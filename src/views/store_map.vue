@@ -142,7 +142,7 @@ import { ref, watch, onMounted  } from 'vue';
 export default{
     components: { MemberBtn },
   setup() {
-                const cities = ref(['台北市', '新北市', '桃園市', '宜蘭縣', '台中市', '高雄市']);
+        const cities = ref(['台北市', '新北市', '桃園市', '宜蘭縣', '台中市', '高雄市']);
         const selectedCity = ref('台北市');
         const selectedDistrict = ref('');
         const selectedDistrictData = ref({ stores: [] });
@@ -160,6 +160,7 @@ export default{
         // -----------------------------------------------------------------
         const department = [];
         department[0] = {
+                    name: '台北市',
                     districts: [
                         {
                             name: '南港區',
@@ -169,7 +170,7 @@ export default{
                                     address: '台北市南港區同德路43號',
                                     tel: '0900-070000',
                                     time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14458.063120119392!2d121.58871874600607!3d25.050501784276772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab58f6b03321%3A0x7219d7fa03ee7003!2zNTDltZAg5Y2X5riv5ZyS5Y2A5bqX!5e0!3m2!1szh-TW!2stw!4v1708576196691!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14561.621483790235!2d120.65755177052712!3d24.157512205968253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d79edb579d3%3A0x8aba6c60727943fd!2zNTDltZAg6Iux5omN5bqX!5e0!3m2!1szh-TW!2stw!4v1709103283740!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
                                 },
 
                                 {
@@ -282,6 +283,7 @@ export default{
                     ]
         };
         department[1] = {
+                    name: '新北市',
                     districts: [
                         {
                             name: '板橋區',
@@ -319,7 +321,7 @@ export default{
                                     address: '新北市新莊區中正路4號',
                                     tel: '0933-444444',
                                     time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14560.918653918397!2d120.64273864030838!3d24.163677057646428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d820c9d6519%3A0x9b95a17eb496317e!2zNTDltZAg6KW_5bGv5bqX!5e0!3m2!1szh-TW!2stw!4v1707043772326!5m2!1szh-TW!2stw"   allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14561.621483790235!2d120.65755177052712!3d24.157512205968253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3469173b7cc1a0bf%3A0x808ac4363d3d9b83!2zNTDltZAg5ryi5Y-j5LiA5bqX!5e0!3m2!1szh-TW!2stw!4v1709103340636!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
                                 }
                             ]
                         }
@@ -345,7 +347,7 @@ export default{
                                     address: '桃園市桃園區中華路6號',
                                     tel: '0944-666666',
                                     time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231418.06303743587!2d121.00097639453126!3d25.003267899999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681fb30b060685%3A0x712ce90c822fb1ef!2zNTDltZAg5qGD5ZyS5Lit5bGx5p2x5bqX!5e0!3m2!1szh-TW!2stw!4v1708576559872!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115740.35428141282!2d121.2122343563199!3d24.969990548804116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681fdc9ba38159%3A0x32abae369d7ecc49!2zNTDltZAg5qGD5ZyS5Y2X5bmz5bqX!5e0!3m2!1szh-TW!2stw!4v1709103410199!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
                                 }
                             ]
                         },
@@ -357,7 +359,7 @@ export default{
                                     address: '桃園市中壢區中正路7號',
                                     tel: '0955-777777',
                                     time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231418.06303743587!2d121.00097639453126!3d25.003267899999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681e4c93c72ee1%3A0xac4fdc17b3964be0!2zNTDltZDmoYPlnJLlpKfoiIjlupc!5e0!3m2!1szh-TW!2stw!4v1708576577223!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115740.35428141282!2d121.2122343563199!3d24.969990548804116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681e8a35b545b1%3A0xc8c5b7d318d6ad20!2zNTDltZAg6b6c5bGx5Lit6IiI5bqX!5e0!3m2!1szh-TW!2stw!4v1709103553310!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
                                 },
 
                                 {
@@ -474,7 +476,7 @@ export default{
                                     address: '高雄市鼓山區中正路1號',
                                     tel: '0911-111111',
                                     time: '11:00-21:00',
-                                    iframe: '<<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117845.97023285026!2d120.24446133173683!3d22.628176612814773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e04c0d4cf93ad%3A0x6acff67e5e7e6611!2zNTDltZAg5aSn6aCG5bqX!5e0!3m2!1szh-TW!2stw!4v1708576789635!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58918.49361192222!2d120.26792505731646!3d22.638651957313535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e051b104a6ef9%3A0x651481c4bac71a8!2zNTDltZAg5rKz5aCk6KOV6Kqg5bqX!5e0!3m2!1szh-TW!2stw!4v1709103477806!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
                                 },
 
                                 {
