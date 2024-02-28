@@ -113,7 +113,7 @@
 
 </template>
 <style lang="scss" scoped>
-  @import"../assets/sass/style.scss";
+//   @import"../assets/sass/style.scss";
 </style>
 <script>
 import MemberBtn from "../components/member_btn.vue"

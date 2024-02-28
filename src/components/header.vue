@@ -54,5 +54,5 @@
 
 <style lang="scss">
     
-   @import "../assets/sass/style.scss";
+  //  @import "../assets/sass/style.scss";
 </style>
