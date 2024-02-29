@@ -365,9 +365,8 @@ export default {
   components:{order},
     data (){
         return{
-            
+        
             lightbox: false,
-            
             drinkList1: [
                 {
                     id: 1,
@@ -857,11 +856,7 @@ export default {
                     sugar:['甜度','全糖','少糖','半糖','微糖','無糖'],
                     sugar:'甜度',
                     ice:['冰塊','正常','少冰','微冰','去冰'],
-                    ice: '冰塊',
-                    add:['加料','仙草','愛玉','珍珠','椰果'],
-                    add: '加料',
-                    addPrice: 0,
-                    isSelected: false,
+                    ice: '冰塊'
                 },
                 
             ],
@@ -869,13 +864,14 @@ export default {
         
         }
     },
-   
+
     beforeMount(){
         let cart = JSON.parse(localStorage.getItem("cart"))
         if(cart){
             this.cart = cart
         }
     },
+    
     computed:{
     
       total(){
