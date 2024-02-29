@@ -24,8 +24,8 @@
     top: 50%;
     transform: translate(-50%, -50%);
     background-color: $white;
-    width: 640px;
-    height: 300px;
+    width: 680px;
+    height: 450px;
     border: 1px solid $color2;
     margin: 0 auto;
     display: none;
@@ -46,10 +46,18 @@
   .edit_window_member_on {
     display: block;
   }
-
+  
+  
+}
   select{
     @include select_S();
     margin-left: 8px;
+  }
+  input{
+    @include input_S();
+  }
+  li{
+    margin-bottom: 15px;
   }
 
   .edit_window_member .buttonq {
@@ -65,7 +73,6 @@
   .edit_window_member ul:nth-child(2) {
     margin-left: 40px;
   }
-}
 
 // 當頁sidebar-btn改色
 .page-BackEndMember .sidebar-btn-container {
