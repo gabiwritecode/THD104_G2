@@ -2,207 +2,323 @@
     width: 1200px;
     margin: 0 auto;
 
-    @include m() {
-        width: 390px;
+    
+    @include r1100() {
+        width: 1100px;
+    }
+
+    @include r1000() {
+        width: 1000px;
+    }
+
+    @include r900() {
+        width: 900px;
+    }
+
+    @include r800() {
+        width: 800px;
+    }
+
+    @include r700() {
+        width: 700px;
+    }
+
+    @include r600() {
+        width: 600px;
+    }
+
+    @include r500() {
+        width: 500px;
+    }
+    @include m () {
+        width: 400px;
         margin-top: 100px;
-
-
     }
 
 
-
-.a {
-    color: #78BEC8;
-}
-
-.about_Lo_container {
-    width: 580px;
-    height: 770px;
-    margin: 150px auto 80px;
-    background-color: $grey2;
-    border: 1px solid white;
-    border-radius: 40px;
-    position: relative;
-
-    @include m() {
-        width: 320px;
-        height: 460px;
-        border-radius: 24px;
+    .a {
+        color: #78BEC8;
     }
 
-}
+    .about_Lo_container {
+        width: 580px;
+        height: 770px;
+        margin: 150px auto 80px;
+        background-color: $grey2;
+        border: 1px solid white;
+        border-radius: 40px;
+        position: relative;
 
-.about_Lo_h1 {
-    margin-top: 90px;
+        @include r1100() {
+            height: 700px;
 
-    @include m() {
-        margin-top: 45px
-    }
-}
+        }
 
-.about_Lo_h3 {
-    margin-left: 100px;
+        @include r600() {
+            width: 480px;
+            height: 600px;
+        }
 
-    @include m() {
-        margin-left: 40px;
-        width:60px;
-    }
-}
+        @include r500() {
+            width: 400px;
+            height: 560px;
+        }
 
-.Lo_h3_1 {
-    margin-top: 48px;
-
-    @include m() {
-        margin-top: 20px
-    }
-}
-
-.about_Lo_input {
-    @include input_L();
-    margin: 0 auto;
-}
-
-.password {
-    font-size: 20px;
-    color: #78BEC8;
-    position: absolute;
-    top: 337.4px;
-    left: 452.3px;
-
-    @include m() {
-        font-size: 18px;
-        top: 224px;
-        left: 258px;
-    }
-}
-
-.fa-eye-slash {
-    font-size: 20px;
-    color: #78BEC8;
-    position: absolute;
-    top: 337.4px;
-    left: 451.3px;
-
-    @include m() {
-        font-size: 18px;
-        top: 224px;
-        left: 257px;
-    }
-}
-
-.about_Lo_a {
-    display: flex;
-    width: 400px;
-    margin: 0 auto;
-    justify-content: space-between;
-
-    a {
-        text-decoration: none;
-        margin-top: 8px;
-    }
-
-    @include m() {
-        width: 250px;
-        font-size: 14px;
-
-        a {
-            margin-top: 2px
+        @include m() {
+            width: 320px;
+            height: 460px;
+            border-radius: 24px;
         }
 
     }
-}
 
-.about_button {
-    @include btn_L();
-    margin-top: 36px;
+    .about_Lo_h1 {
+        margin-top: 90px;
 
-    @include m() {
-        margin-top: 16px;
+        @include r1100() {
+            margin-top: 60px;
+        }
 
+        @include m() {
+            margin-top: 45px
+        }
     }
-}
 
-.about_h5 {
-    font-size: 14px;
-    width: 389px;
-    margin: 36px auto 0;
-    text-align: center;
-    position: relative;
+    .about_Lo_h3 {
+        margin-left: 100px;
 
-    @include m() {
-        margin-top: 16px;
-        width: 260px;
-        font-size: 12px;
+        @include r600() {
+            margin-left: 115px;
+        }
 
+        @include r500() {
+            margin-left: 75px;
+        }
 
-
+        @include m() {
+            margin-left: 40px;
+            width: 60px;
+        }
     }
-}
 
-.about_h5:before,
-.about_h5:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    background: #aaa;
-    width: 30%;
-    height: 1px;
-}
+    .Lo_h3_1 {
+        margin-top: 48px;
 
-.about_h5:before {
-    left: 1%;
-}
+        @include r600() {
+            margin-top: 30px;
+        }
 
-.about_h5:after {
-    right: 1%;
-}
-
-.about_button2 {
-    width: 286px;
-    height: 54px;
-    display: flex;
-    margin: 32px auto;
-    border: 1px solid #78BEC8;
-    border-radius: 30px;
-    text-decoration: none;
-    color: #78BEC8;
-
-    @include m() {
-        margin-top: 16px;
-        width: 200px;
-        height: 40px;
+        @include m() {
+            margin-top: 20px
+        }
     }
-}
 
-img {
-    width: 30px;
-    height: 30px;
-    line-height: 54px;
-    margin-top: 12px;
-    margin-left: 39px;
+    .about_Lo_input {
+        @include r600() {
+            width: 256px;
+            height: 38px;
+        }
 
-    @include m() {
-        margin-top: 10px;
-        margin-left: 20px;
-        width: 20px;
-        height: 20px;
+        @include input_L();
+        margin: 0 auto;
     }
-}
 
-.google_h3 {
-    font-size: 18px;
-    margin-left: 8px;
-    width: 200px;
-    line-height: 54px;
+    .password {
+        font-size: 20px;
+        color: #78BEC8;
+        position: absolute;
+        top: 337.4px;
+        left: 452.3px;
 
-    @include m() {
+        @include r1100() {
+            top: 307.4px;
+        }
+
+        @include r600() {
+            top: 258.4px;
+            left: 333.3px;
+        }
+
+        @include r500() {
+            top: 258.4px;
+            left: 296.3px;
+        }
+
+
+        @include m() {
+            font-size: 18px;
+            top: 224px;
+            left: 258px;
+        }
+    }
+
+    .fa-eye-slash {
+        font-size: 20px;
+        color: #78BEC8;
+        position: absolute;
+        top: 337.4px;
+        left: 451.3px;
+
+        @include r1100() {
+            top: 307.4px;
+        }
+
+        @include r600() {
+            top: 258.4px;
+            left: 333.3px;
+        }
+
+        @include r500() {
+            top: 258.4px;
+            left: 296.3px;
+        }
+
+        @include m() {
+            font-size: 18px;
+            top: 224px;
+            left: 257px;
+        }
+    }
+
+    .about_Lo_a {
+        display: flex;
+        width: 400px;
+        margin: 0 auto;
+        justify-content: space-between;
+
+        a {
+            text-decoration: none;
+            margin-top: 8px;
+        }
+
+        @include r600() {
+            width: 260px;
+        }
+
+        @include r500() {
+            width: 260px;
+        }
+
+
+        @include m() {
+            width: 250px;
+            font-size: 14px;
+
+            a {
+                margin-top: 2px
+            }
+
+        }
+    }
+
+    .about_button {
+        @include btn_L();
+        margin-top: 36px;
+
+        @include r600() {
+            margin-top: 20px;
+            width: 260px;
+            height: 40px;
+        }
+
+        @include m() {
+            margin-top: 16px;
+
+        }
+    }
+
+    .about_h5 {
         font-size: 14px;
-        line-height: 40px;
+        width: 389px;
+        margin: 36px auto 0;
+        text-align: center;
+        position: relative;
+        @include r600() {
+            margin-top: 24px;
+            width: 260px;
+            
+        }
+
+        @include m() {
+            margin-top: 16px;
+            width: 260px;
+            font-size: 12px;
 
 
 
-
+        }
     }
-}
+
+    .about_h5:before,
+    .about_h5:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        background: #aaa;
+        width: 30%;
+        height: 1px;
+        @include r600() {
+            top:60%;
+            width:25%;
+            
+        }
+    }
+
+    .about_h5:before {
+        left: 1%;
+        
+    }
+
+    .about_h5:after {
+        right: 1%;
+    }
+
+    .about_button2 {
+        width: 286px;
+        height: 54px;
+        display: flex;
+        margin: 32px auto;
+        border: 1px solid #78BEC8;
+        border-radius: 30px;
+        text-decoration: none;
+        color: #78BEC8;
+
+        @include m() {
+            margin-top: 16px;
+            width: 200px;
+            height: 40px;
+        }
+    }
+
+    img {
+        width: 30px;
+        height: 30px;
+        line-height: 54px;
+        margin-top: 12px;
+        margin-left: 39px;
+
+        @include m() {
+            margin-top: 10px;
+            margin-left: 20px;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .google_h3 {
+        font-size: 18px;
+        margin-left: 8px;
+        width: 200px;
+        line-height: 54px;
+
+        @include m() {
+            font-size: 14px;
+            line-height: 40px;
+
+
+
+
+        }
+    }
 
 }

@@ -53,17 +53,18 @@
         <h1>編輯與查看</h1>
           <div class="BMember1">
             <ul>
-              <li>會員帳號:A0001</li>
-              <li>王小明</li>
-              <li>帳號狀態<select name="" id="">
+              <li>會員編號:<input type="text"></li>
+              <li>會員姓名:<input type="text"></li>
+              <li>帳號狀態:<select name="" id="">
                 <option value="">正常</option>
                 <option value="">結束</option>
               </select></li>
+              
             </ul>
             <ul>
-              <li>會員帳號:123456789@gmail.com</li>
-              <li>會員手機:0900-000000</li>
-              <li>創建時間:2021-02-09</li>
+              <li>會員帳號:<input type="text"></li>
+              <li>會員手機:<input type="text"></li>
+              <li>創建時間:<input type="text"></li>
             </ul>
         </div>
         

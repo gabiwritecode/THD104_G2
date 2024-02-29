@@ -2,58 +2,116 @@
     .map_container {
         width: 1200px;
         margin: 0 auto;
-        @include m() {
-            width:390px;
+
+        @include r1100() {
+            width: 1100px;
         }
 
-            img{
-                display:none;
-                @include m() {
-                    display:block;
-                    width:390px;
-                    height:244px;
-            
-            
-                }
+        @include r1000() {
+            width: 1000px;
+        }
+
+        @include r900() {
+            width: 900px;
+        }
+
+        @include r800() {
+            width: 800px;
+        }
+
+        @include r700() {
+            width: 700px;
+        }
+
+        @include r600() {
+            width: 600px;
+        }
+
+        @include r500() {
+            width: 500px;
+        }
+
+        @include m () {
+            width: 380px;
+            margin-top: 100px;
+        }
+
+        @include m() {
+            width: 390px;
+        }
+
+        img {
+            display: none;
+
+            @include r600() {
+                display: block;
+                margin: 0 auto;
+                width: 100%;
+                height: 400px;
+
+
             }
-        h1{
+        }
+
+        h1 {
             margin-top: 150px;
-            @include m{
+
+            @include r1100() {
+                margin-top: 100px;
+            }
+
+            @include m {
                 margin-top: 120px;
             }
         }
     }
-    .store_name{
-        width:120px;
+
+    .store_name {
+        width: 120px;
         display: none;
+
         @include m() {
-            margin:16px  auto 12px;
+            margin: 16px auto 12px;
             display: block;
 
         }
     }
-    .store_name2{
+
+    .store_name2 {
         @include m() {
-        display: none;
-        } 
+            display: none;
+        }
     }
 
     .map_box {
         display: flex;
-        @include m() {
+        @include r600() {
+            width:400px;
             margin:0 auto;
+
+        }
+
+        @include m() {
+            margin: 0 auto;
             display: block;
 
 
         }
     }
-        
 
-    form{
-        @include m() {
-        text-align: center;
+
+    form {
+
+        @include r600() {
+            text-align: center;
+            margin-top: 20px;
+
         }
-    }  
+
+        @include m() {
+            text-align: center;
+        }
+    }
 
 
 
@@ -65,10 +123,30 @@
     svg {
         height: 700px;
         width: 600px;
-        @include m() {
-        display: none;
+
+        @include r1100() {
+            width: 450px;
 
         }
+
+        @include r900() {
+            width: 350px;
+            height: 600px;
+
+        }
+
+        @include r700() {
+            width: 250px;
+            height: 500px;
+
+        }
+
+        @include r600() {
+            display: none;
+
+        }
+
+
 
     }
 
@@ -84,115 +162,245 @@
         fill: $color2;
         transform: translate(-10px, -10px);
     }
-    .Hualien:hover{
-        fill: $color1;
-        transform: translate(0, 0); 
-    }
 
-    .yunlin:hover{
-        fill: $color1;
-        transform: translate(0, 0); 
-    }
-    .nantou:hover{
-        fill: $color1;
-        transform: translate(0, 0);   
-    }
-    .Taitung:hover{
-        fill: $color1;
-        transform: translate(0, 0);  
-    }
-    .Tainan:hover{
-        fill: $color1;
-        transform: translate(0, 0);
-    }
-    .Chiayi:hover{
-        fill: $color1;
-        transform: translate(0, 0);
-    }
-    .Pingtung:hover{
-        fill: $color1;
-        transform: translate(0, 0);   
-    }
-    .Hsinchu:hover{
+    .Hualien:hover {
         fill: $color1;
         transform: translate(0, 0);
     }
 
-    .Miaoli:hover{
+    .yunlin:hover {
         fill: $color1;
         transform: translate(0, 0);
     }
-    .keelung:hover{
+
+    .nantou:hover {
         fill: $color1;
         transform: translate(0, 0);
     }
-    .changhua:hover{
+
+    .Taitung:hover {
         fill: $color1;
         transform: translate(0, 0);
     }
-    .chiayi:hover{
+
+    .Tainan:hover {
         fill: $color1;
-        transform: translate(0, 0);   
+        transform: translate(0, 0);
+    }
+
+    .Chiayi:hover {
+        fill: $color1;
+        transform: translate(0, 0);
+    }
+
+    .Pingtung:hover {
+        fill: $color1;
+        transform: translate(0, 0);
+    }
+
+    .Hsinchu:hover {
+        fill: $color1;
+        transform: translate(0, 0);
+    }
+
+    .Miaoli:hover {
+        fill: $color1;
+        transform: translate(0, 0);
+    }
+
+    .keelung:hover {
+        fill: $color1;
+        transform: translate(0, 0);
+    }
+
+    .changhua:hover {
+        fill: $color1;
+        transform: translate(0, 0);
+    }
+
+    .chiayi:hover {
+        fill: $color1;
+        transform: translate(0, 0);
     }
 
 
     #svg {
         display: none;
         z-index: 2;
-        
+
     }
 
-    .map_svg{
+    .map_svg {
         position: relative;
 
-        
 
-        
-        
+
+
+
     }
 
     //---------------地圖小標示
     .fa-house {
         color: #F5AF00;
-        
-        
-        
+
+        @include r700() {}
+
+
         &.map_1 {
             position: absolute;
             top: 63px;
             left: 444px;
-            
+
+            @include r1100() {
+
+                top: 93px;
+                left: 354px;
+            }
+
+            @include r900() {
+
+                top: 99px;
+                left: 275px;
+            }
+
+            @include r700() {
+                font-size: 10px;
+                top: 105px;
+                left: 195px;
+            }
+
+
+
         }
 
         &.map_2 {
             position: absolute;
             top: 104px;
             left: 439px;
-            
+
+            @include r1100() {
+
+                top: 129px;
+                left: 349px;
+            }
+
+            @include r900() {
+
+                top: 119px;
+                left: 269px;
+            }
+
+            @include r700() {
+                font-size: 10px;
+                top: 126.7px;
+                left: 195px;
+            }
+
         }
 
         &.map_3 {
             position: absolute;
             top: 165px;
             left: 460px;
+
+            @include r1100() {
+
+                top: 189px;
+                left: 370px;
+            }
+
+            @include r900() {
+
+                top: 177px;
+                left: 280px;
+            }
+
+            @include r700() {
+                font-size: 10px;
+                top: 157px;
+                left: 206px;
+
+            }
         }
 
         &.map_4 {
             position: absolute;
             top: 227px;
             left: 300px;
+
+            @include r1100() {
+
+                top: 242px;
+                left: 230px;
+            }
+
+            @include r900() {
+
+                top: 211px;
+                left: 170px;
+            }
+
+            @include r700() {
+                font-size: 10px;
+                top: 191px;
+                left: 126px;
+            }
         }
 
         &.map_5 {
             position: absolute;
             top: 448.8px;
             left: 304px;
+            left: 300px;
+
+            @include r1100() {
+
+                top: 428.8px;
+                left: 230px;
+            }
+
+            @include r1100() {
+
+                top: 364.8px;
+                left: 170px;
+            }
+
+            @include r900() {
+
+                top: 364.8px;
+                left: 170px;
+            }
+
+            @include r700() {
+                font-size: 10px;
+                top: 291.8px;
+                left: 130px;
+
+            }
         }
 
         &.map_6 {
             position: absolute;
             top: 88px;
             left: 384px;
+
+            @include r1100() {
+
+                top: 112px;
+                left: 304px;
+            }
+
+            @include r900() {
+
+                top: 116px;
+                left: 234px;
+            }
+
+            @include r700() {
+                font-size: 10px;
+                top: 119px;
+                left: 168px;
+            }
         }
     }
 
@@ -200,78 +408,168 @@
 
     //-----------------下拉選單
     select {
+
         @include select_L();
         margin: 10px;
+
+        @include r800() {
+
+            @include select_M();
+
+        }
+
     }
 
 
 
+    .store_name2 {
+        margin-left: 120px;
+
+        @include r800() {
+
+            margin-left: 60px;
+
+        }
+
+    }
 
     .store-info {
         width: 250px;
         margin: 20px 10px 0;
-        
+
+        @include r1100() {
+            width: 200px;
+
+        }
+
         p {
             margin: 10px;
         }
-        h2{
+
+        h2 {
             margin-left: 10px;
         }
+
         @include m() {
-        margin: 30px  auto 40px;
-        
+            margin: 30px auto 40px;
+
 
         }
     }
 
 
-    .select_box{
+    .select_box {
         border-bottom: 1px solid $grey1;
         display: flex;
         margin-bottom: 20px;
         padding-bottom: 20px;
-        height:250px;
+        height: 250px;
+
+        @include r1100() {
+            height: 200px;
+            margin-left: 100px;
+
+
+        }
+
+        @include r900() {
+            margin-left: 30px;
+
+        }
+
+        @include r800() {
+            width: 400px;
+            margin-left: 10px;
+
+        }
+
         @include m() {
-            height:400px;
-            display:block;
+            height: 400px;
+            display: block;
             border-bottom: none;
-            padding:0;
+            width:360px;
+            padding: 0;
             margin-bottom: 50px;
 
 
         }
     }
-    .iframe_box{
-        width:280px;
-        height:200px;
+
+    .iframe_box {
+        width: 280px;
+        height: 200px;
+
+        @include r1100() {
+            width: 200px;
+            weight: 100px;
+
+        }
+
+        @include r700() {
+            width: 180px;
+            height: 180px;
+
+        }
+
         @include m() {
             margin: 40px auto 0;
-            height:200px;
-            
+            height: 220px;
+
 
 
         }
     }
+
     iframe {
         width: 280px;
         height: 200px;
         padding-bottom: 10px;
         margin-top: 20px;
-    
+
+        @include r1100() {
+            width: 200px;
+            height: 180px;
+
+        }
+
+        @include r700() {
+            width: 180px;
+            height: 180px;
+
+        }
+        @include m() {
+            margin: 40px auto 0;
+            width:220px;
+            height: 200px;
+            margin-bottom: 10px;
+
+
+
+        }
+
     }
+
     .short {
         width: 200px;
         margin-left: 12px;
         border-color: $color1;
+
+        @include r700() {
+            width: 190px;
+
+
+        }
+
         @include m() {
-            width:220px;
-            
+            width: 220px;
+
 
 
         }
     }
 
-    #aaa{
-        height:100%;
+    #aaa {
+        height: 100%;
     }
+        
 }
