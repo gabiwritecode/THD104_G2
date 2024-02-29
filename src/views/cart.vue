@@ -101,12 +101,12 @@
             <input type="text" placeholder="請輸入您的地址" name="address" value="">
           </label>
           <label for="creditCard" class="lable_name">
-            <h2>付款方式:</h2>
+              <h2 class="paymethod">付款方式:</h2>
               <input type="radio" class="radio" name="payment" value="creditCard" id="creditCard">
-              <h2>信用卡</h2>
+              <h2 class="credit">信用卡</h2>
             <label for="linePay" class="lable_name">
               <input type="radio" class="radio" name="payment" value="linePay" id="linePay">
-              <h2>Line Pay</h2>
+              <h2 class="linepay">Line Pay</h2>
             </label>
           </label>
           <div class="creditcard">

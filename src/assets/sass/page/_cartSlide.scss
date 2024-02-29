@@ -213,7 +213,8 @@
 
 @media screen and (max-width: 430px){
   .cart .card_slide{
-    max-width: 430px;
+    // max-width: 430px;
+    width: 100%;
   }
   .cart .card_slide .container,
   .cart .card_slide .cart,
@@ -222,8 +223,47 @@
   .cart .total,
   .cart .pay{
     // max-width: 400px;
-    max-width: 380px;
-    
+    // max-width: 380px;
+    width: 90%;
+  }
+  .container li > img{
+    width: 80px;
+  }
+  .cart .card_slide select{
+    width: 60px;
+  }
+  
+  .cart .card_slide .num,
+  .cart .card_slide .button .dollor{
+    font-size: 14px;
+  }
+  .cart .card_slide .num {
+    margin: 0 8px;
+  }
+  .cart .card_slide .plus,
+  .cart .card_slide .minus {
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+  }
+  .cart .button{
+    margin-left: 0;
+  }
+  .cart .card_slide .button_2 img{
+    width: 15px;
+  }
+  .cart .card_slide h3{
+    height: 25px;
+  }
+  .cart .card_slide select{
+    height: 21px;
+  }
+  .cart .card_slide .product_r{
+    margin-left: 10px;
+  }
+  .cart .card_slide .sweet,
+  .cart .card_slide .add{
+    margin-left: 7px;
   }
   .cart .card_slide .product_r{
     max-width: 300px;

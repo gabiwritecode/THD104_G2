@@ -1,6 +1,5 @@
 <template>
 
-  <div class="order">
     <main class="backend-main">
       <nav class="sidebar">
         <div><img src="@/assets/image/logo.svg" alt="logo" width="200"></div>
@@ -35,17 +34,87 @@
               <td>已付款</td>
               <td>2024-01-21 10:30</td>
               <td>已完成</td>
-              <td><button>編輯與查看</button></td>
+              <td><button @click="editWindowToggle">編輯與查看</button></td>
             </tr>
           </tbody>
           <tbody></tbody>
         </table>
       </div>
+
+
+      <!-------- 編輯彈窗 -------->
+      
+        <div class="edit_window">
+          <div class="container">
+            <h2>編輯與查看</h2>
+            <ul>
+              <li><h3>訂單編號: 10001</h3></li>
+              <li><h3>會員帳號: 123456789@gmail.com</h3></li>
+            </ul>
+            <ul>
+              <li><h3>會員姓名: 王小明</h3></li>
+              <li><h3 class="orderTime">訂購時間: 2024-01-21 10:30</h3></li>
+            </ul>
+            <ul>
+              <li><h3>訂購地址: 台北市中山區南京東路三段219號5樓</h3></li>
+              <li class="icon"><img src="../../assets/image/pic/icon/change.svg" alt="">修改</li>
+            </ul>
+            <ul class="phone">
+              <li><h3>聯絡電話: 02 2712 0589</h3></li>
+              <li class="icon"><img src="../../assets/image/pic/icon/change.svg" alt="">修改</li>
+            </ul>
+            <ul class="statement">
+              <li class="pay_statement"><h3>付款狀態:</h3></li>
+              <select name="" id="">
+                <option value="">已付款</option>
+                <option value="">未付款</option>
+              </select>
+            </ul>
+            
+            <div class="order_table">
+              <h3>訂單商品明細:</h3>
+              <ul>
+                <li><h3>商品名稱: 珍珠紅茶拿鐵</h3></li>
+                <li><h3>數量: 1</h3></li>
+              </ul>
+              <h4>加料: 無</h4>
+              <h4>甜度: 微糖</h4>
+              <h4>冰塊: 去冰</h4>
+            </div>
+            <h4 class="total">金額總計: 60元</h4>
+
+
+            <ul class="edit_window_btn">
+              <li><button @click="editWindowToggle">關閉</button></li>
+              <li><button @click="editWindowToggle">儲存</button></li>
+            </ul>
+          </div>
+    </div>
+    <!-- 灰色背景 -->
+    <div class="edit_window_bg" @click="editWindowToggle"></div>
+     
+    
   </main>
 
-  </div>
 
 </template>
+
+
+<script setup>
+  import { ref, onMounted } from 'vue';
+  const editWindow = ref(null);
+  const editWindowBg = ref(null);
+  onMounted(() => {
+
+    editWindow.value = document.querySelector('.edit_window');
+    editWindowBg.value = document.querySelector('.edit_window_bg');
+  });
+  const editWindowToggle = () => {
+    editWindow.value.classList.toggle("edit_window_on");
+    editWindowBg.value.classList.toggle("edit_window_on");
+  };
+
+</script>
 <style lang="scss" scoped>
 
 body{
