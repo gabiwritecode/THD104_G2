@@ -407,7 +407,7 @@
 
 
     //-----------------下拉選單
-    select {
+    .map_box select {
 
         @include select_L();
         margin: 10px;
