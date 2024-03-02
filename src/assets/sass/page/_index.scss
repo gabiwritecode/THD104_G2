@@ -155,7 +155,6 @@
             margin: 0 auto;
             @include r1200(){
                 width: auto;
-                overflow: hidden;
             }
             @include m(){
                 width: 320px;

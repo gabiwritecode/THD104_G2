@@ -188,7 +188,7 @@ export default {
            }
 
            if(isSelectAll){
-                location.href = '/cart'
+                location.href = '#/cart'
            }else{
                 this.lightbox = true
            }

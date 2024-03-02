@@ -50,6 +50,8 @@
   .info{
     display: flex;
     flex-wrap: wrap;
+    width: 93%;
+    margin: auto;
     justify-content: space-between;
   }
   .cart_list_banner{
@@ -180,7 +182,7 @@
     font-size: 10px;
   }
   .creditcard_text .date{
-    margin-left: 17px;
+    margin-left: 14px;
   }
   .creditcard_1:last-child{
     margin-bottom: 0;
@@ -201,48 +203,145 @@
 }
 
 
-
-
-
-@media screen and (max-width: 390px){
-  .cart .cart_list_banner{
-    width: 360px;
+@media screen and (max-width: 920px){
+  .cart .info{
+    width: 95%;
+  }
+  .confirm_info,
+  .confirm_info h2,
+  .cart .cart_list_banner,
+  .cart .write_info,
+  .cart .creditcard{
+    width: 95%;
     margin: auto;
   }
-  .confirm_info h2{
-    width: 360px;
-    margin: auto;
-  }
+
   .cart .count{
-    width: 390px;
-    padding: 0 15px;  
-    box-sizing: border-box; 
+    width: 95%;
+    margin: 30px auto 0;
   }
   .cart .write_info > h2{
-    width: 360px;
-    margin: 40px auto;
-  }
-  .cart .lable_name input{
-    width: 280px;
+    width: 95%;
+    margin: 35px auto 45px;
   }
   .cart .lable_name{
-    margin: 0 0 40px 15px;
+    width: 95%;
+    margin: 0 auto 40px;
   }
-  .cart .creditcard{
-    padding: 13px;
-  }
-  .cart .write_info button{
-    width: 360px;
-    height: 46px;
-  }
-  .cart main .lightbox .lightbox_inner{
-    width: 300px;
-  }
-  .cart main .lightbox .lightbox_inner img{
+  .cart .lable_name h2{
     width: 50px;
   }
-  .cart main .lightbox .lightbox_inner button{
-    width: 220px;
+  .cart .lable_name .paymethod{
+    width: 120px;
+  }
+  .cart .lable_name .linepay{
+    width: 80px;
+  }
+  .cart .lable_name .credit{
+    width: 90px;
+  }
+  .cart .lable_name .radio{
+    margin-right: 10px;
+  }
+  .cart .write_info button{
+    width: 95%;
+  }
+  .cart .lable_name input{
+    width: 95%;
+  }
+  .cart .creditcard_text input{
+    width: 20%;
+  }
+  .cart .creditcard_1{
+    width: 100%;
+  }
+  .cart .creditnum{
+    width: 120px;
+  }
+  .creditcard_text{
+    width: 100%;
+  }
+  .creditcard .creditcard_1:nth-child(2) .creditnum{
+    margin-right: -2px;
+  }
+}
+
+@media screen and (max-width: 530px){
+  .cart .lable_name .paymethod{
+    width: 140px;
+  }
+  .cart .lable_name .credit{
+    width: 100px;
+  }
+  .cart .creditcard_text input{
+    width: 20%;
+    margin-right: 4px;
+  }
+ 
+}
+@media screen and (max-width: 430px){
+  .cart .button .minus, .cart .button .plus{
+    margin: 0;
+  }
+  .cart .button .minus{
+    margin-left: 26px;
+  }
+  .cart .confirm_info button ~ span{
+    margin: 0 10px;
+    font-size: 14px;
+  }
+  .cart .add_cart_text .amount{
+    font-size: 14px;
+  }
+  .cart .add_cart_text .amount ~ span{
+    font-size: 14px;
+  }
+  .cart .add_cart{
+    font-size: 16px;
+  }
+  .cart .order_list_r div{
+    font-size: 14px;
+  }
+  .cart .order_list_text span{
+    font-size: 15px;
+  }
+  .cart .lable_name .credit{
+    width: 120px;
+  }
+  .cart .lable_name .paymethod{
+    width: 200px;
+  }
+ 
+  .cart .creditnum{
+    font-size: 14px;
+    margin-right: 0;
+  }
+  .cart .creditcard_text .date{
+    margin-left: 0;
+  }
+  .cart .creditcard{
+    padding: 10px;
+  }
+  .cart .creditcard_text input{
+    margin-right: 2px;
+  }
+  
+}
+@media screen and (max-width: 386px){
+  .cart .lable_name .credit{
+    
+    margin-right: 0;
+    width: 126px;
+  }
+
+  .cart .lable_name .paymethod{
+    margin-right: 0;
+  }
+  .cart .creditcard_text input:last-child{
+    width: 21%;
+  }
+  .cart .lable_name:last-child{
+    margin: 0;
   }
 }
 
