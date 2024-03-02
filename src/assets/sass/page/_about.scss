@@ -72,8 +72,8 @@
 
     //----------------------品牌起源
     .about_intrdouce {
-        width: auto;
-        margin: 80px 0 0 0;
+        width: 1200px;
+        margin: 80px auto ;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -410,9 +410,12 @@
     .about_value {
         display: flex;
         justify-content: space-between;
+        margin:0 auto;
         margin-bottom: 140px;
-        width: auto;
-
+        width: 1200px;
+        @include r1100() {
+            width:auto;
+        }
         @include r900() {
             margin-bottom: 80px;
         }

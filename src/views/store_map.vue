@@ -97,14 +97,14 @@
       <!----------------- 下拉選單 ------------------>
       <div>
         <form ref="myForm" >
-          <div class="store_name">門市查詢：</div>
+          <!-- <div class="store_name">門市查詢：</div> -->
           <label for="" class="store_name2">門市查詢</label>
           <select v-model="selectedCity" @change="updateDistricts">
             <option value="" selected>縣市</option>
             <option v-for="(city, index) in cities" :key="index" :value="city">{{ city }}</option>
           </select>
 
-          <label for=""></label>
+          <label for="">鄉鎮市區</label>
           <select v-model="selectedDistrict" v-if="districts.length > 0">
             <option value="" selected>請選擇</option>
             <option v-for="(district, index) in districts" :key="index" :value="district.name">{{ district.name }}
