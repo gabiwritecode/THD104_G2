@@ -27,13 +27,12 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>活動情報</td>
-                <td><button @click="editWindowToggle">編輯</button></td>
-                <td><button>刪除</button></td>
+              <tr v-for="category in categories" :key="category.ID">
+                <td>{{ category.NAME }}</td>
+                <td><button @click="editWindowToggle(category)">編輯</button></td>
+                <td><button @click="deleteCategory(category.ID)">刪除</button></td>
               </tr>
             </tbody>
-            <tbody></tbody>
           </table>
         </div>
               <!-------- 編輯彈窗 -------->
@@ -41,14 +40,14 @@
           <div class="container">
             <h2>編輯</h2>
             <ul>
-              <li><span>分類名稱: </span><input type="text"></li>
-              <li><span>敘述: </span><textarea></textarea></li>
+              <li><span>分類名稱: </span><input v-model="editedCategory.name" type="text"></li>
+              <li><span>敘述: </span><textarea v-model="editedCategory.description"></textarea></li>
             </ul>
             
 
             <ul class="edit_window_btn">
               <li><button @click="editWindowToggle">關閉</button></li>
-              <li><button @click="editWindowToggle">儲存</button></li>
+              <li><button @click="saveCategory">儲存</button></li>
             </ul>
           </div>
         </div>
@@ -58,19 +57,92 @@
   
 </template>
 <script setup>
-import {ref, onMounted} from 'vue';
+import { ref, onMounted } from 'vue';
+
 const editWindow = ref(null);
 const editWindowBg = ref(null);
-onMounted(() => {
+const categories = ref([]);
+const editedCategory = ref({
+  name: '',
+  description: '',
+});
 
+onMounted(() => {
+  fetchData();
   editWindow.value = document.querySelector('.edit_window');
   editWindowBg.value = document.querySelector('.edit_window_bg');
 });
-const editWindowToggle = () => {
-  editWindow.value.classList.toggle("edit_window_on");
-  editWindowBg.value.classList.toggle("edit_window_on");
+
+const fetchData = async () => {
+  try {
+    const response = await fetch('php/manage-category.php');
+   
+    categories.value = await response.json(); 
+    console.log(categories.value)
+  } catch (error) {
+    console.error('Error:', error);
+  }
 };
 
+const editWindowToggle = (category) => {
+  if (category) {
+
+    editedCategory.value = {
+      ID: category.ID,
+      name: category.NAME,
+      description: category.DESCRIPTION,
+    };
+  }
+
+  editWindow.value.classList.toggle('edit_window_on');
+  editWindowBg.value.classList.toggle('edit_window_on');
+};
+
+const saveCategory = async () => {
+  try {
+    const response = await fetch('php/update-category.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded', 
+      },
+      body: new URLSearchParams({
+        categoryId: editedCategory.value.ID,
+        categoryName: editedCategory.value.name,
+        categoryDescription: editedCategory.value.description,
+      }),
+    });
+
+    const data = await response.json();
+    console.log(data);
+
+    fetchData();
+    editWindowToggle();
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
+
+
+const deleteCategory = async (categoryId) => {
+    if (confirm("確定要刪除這個分類嗎？")) {
+      try {
+        const response = await fetch('php/delete-category.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ categoryId }),
+        });
+
+        const data = await response.json();
+        console.log(data);
+
+        fetchData();
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    }
+  };
 </script>
 
 <style lang="scss" scoped>

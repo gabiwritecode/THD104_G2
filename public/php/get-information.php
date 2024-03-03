@@ -1,0 +1,10 @@
+<?php
+include("conn.php");
+$pdo = getPDO();
+// 取得INFORMATION的TABLE內容
+$statement = $pdo->prepare("SELECT INFORMATION.ID, INFORMATION.TITLE, INFORMATION.TEXT, INFORMATION.STATUS, INFORMATION_CATEGORY.NAME AS CATEGORY_NAME FROM INFORMATION JOIN INFORMATION_CATEGORY ON INFORMATION.CATEGORY_ID = INFORMATION_CATEGORY.ID");
+$statement->execute();
+$result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+echo json_encode($result);
+?>
