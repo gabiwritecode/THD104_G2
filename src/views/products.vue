@@ -3,6 +3,7 @@
     <main class="products_wrapper">
      <!------------------- banner ------------------->
         <section class="banner">
+            <order :appear = 'addToCart'></order>
             <div class="container">
                 <!-- <span>BOISSON </span><br><span>MENU</span> -->
                 <img class="boisson_menu_text" src="../assets/image/products/BOISSON_MENU.png" alt="">
@@ -288,13 +289,13 @@
                         <h3>{{item.name}}</h3>
                         <div class="inner">
                             <div class="select">
-                                <select name="" id="" class="size" v-model="item.size" @change="isSelected(item)">
+                                <select name="" id="size" class="size" v-model="item.size" @change="isSelected(item)">
                                     <option value="大小">大小</option>
                                     <option value="中杯">M</option>
                                     <option value="大杯">L</option>
                                 </select>
                                 <span>*</span>
-                                <select name="" id="" class="sweet" v-model="item.sugar" @change="isSelected(item)">
+                                <select name="" id="sweet" class="sweet" v-model="item.sugar" @change="isSelected(item)">
                                     <option value="甜度">甜度</option>
                                     <option value="全糖">全糖</option>
                                     <option value="少糖">少糖</option>
@@ -303,7 +304,7 @@
                                     <option value="無糖">無糖</option>
                                 </select>
                                 <span>*</span> <br>
-                                <select name="" id="" class="ice" v-model="item.ice" @change="isSelected(item)">
+                                <select name="" id="ice" class="ice" v-model="item.ice" @change="isSelected(item)">
                                     <option value="冰塊">冰塊</option>
                                     <option value="正常">正常</option>
                                     <option value="少冰">少冰</option>
@@ -359,14 +360,13 @@
 <!-- <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> -->
 
 <script>
-   
+import order from "../components/order_success.vue"
 export default {
-  
+  components:{order},
     data (){
         return{
-            
+        
             lightbox: false,
-            
             drinkList1: [
                 {
                     id: 1,
@@ -856,11 +856,7 @@ export default {
                     sugar:['甜度','全糖','少糖','半糖','微糖','無糖'],
                     sugar:'甜度',
                     ice:['冰塊','正常','少冰','微冰','去冰'],
-                    ice: '冰塊',
-                    add:['加料','仙草','愛玉','珍珠','椰果'],
-                    add: '加料',
-                    addPrice: 0,
-                    isSelected: false,
+                    ice: '冰塊'
                 },
                 
             ],
@@ -868,13 +864,14 @@ export default {
         
         }
     },
-   
+
     beforeMount(){
         let cart = JSON.parse(localStorage.getItem("cart"))
         if(cart){
             this.cart = cart
         }
     },
+    
     computed:{
     
       total(){
@@ -951,6 +948,9 @@ export default {
         goToPay(){
             
             let isSelectAll = true
+            let size = document.querySelectorAll('#size')
+            let sweet = document.querySelectorAll('#sweet')
+            let ice = document.querySelectorAll('#ice')
             for(let i = 0; i < this.cart.length; i++){
                 if(!this.cart[i].isSelected){
                     isSelectAll = false
@@ -958,9 +958,37 @@ export default {
            }
 
            if(isSelectAll){
-                location.href = '/thd104/g2/cart'
+                location.href = '#/cart'
            }else{
                 this.lightbox = true
+                // console.log(size);
+                for(let s = 0; s < size.length; s++){
+                        if(this.cart[s].size == '大小'){
+                            
+                            size[s].style.borderColor = 'red'
+                        }else{
+                            size[s].style.borderColor = '#6996A0'
+                        }
+                };
+
+                // console.log(sweet);
+                for(let w = 0; w < sweet.length; w++){
+                    if(this.cart[w].sugar == '甜度'){
+                        sweet[w].style.borderColor = 'red'
+                    }else{
+                        sweet[w].style.borderColor = '#6996A0'
+                    }
+                }
+
+                for(let i = 0; i < ice.length; i++){
+                    if(this.cart[i].ice == '冰塊'){
+                        ice[i].style.borderColor = 'red'
+                    }else{
+                        ice[i].style.borderColor = '#6996A0'
+                    }
+                }
+
+
            }
         },
         closeLightBox(){
