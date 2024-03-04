@@ -3,20 +3,24 @@
 import MemberBtn from "../components/member_btn.vue"
 import { ref, onMounted, onUnmounted } from 'vue';
 
+// Swiper Vue.js
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import { register } from 'swiper/element/bundle';
+register();
+import { Navigation } from 'swiper/modules';
 
 export default {
-  components: { MemberBtn },
+  components: {
+    MemberBtn, 
+    Swiper,
+    SwiperSlide,
+  },
   // 首頁header背景色 滾動透明
   setup(){
-  //   const headerBgc = document.querySelector('.page-home').querySelector('header')
-  //   // console.log(headerBgc);
-  //   window.addEventListener('scroll', function () {
-  //   if (window.scrollY > 120) {
-  //     headerBgc.classList.add('header_bgc');
-  //   } else {
-  //     headerBgc.classList.remove('header_bgc');
-  //   }
-  //   })
     const headerBgc = ref(null);
 
     const handleScroll = () => {
@@ -35,7 +39,10 @@ export default {
     onUnmounted(() => {
       window.removeEventListener('scroll', handleScroll);
     });
-  
+
+   return {
+      modules: [ Navigation],
+    };
   }
 }
 // import TheWelcome from '../components/TheWelcome.vue'
@@ -59,14 +66,14 @@ export default {
       <div class="container">
         <!-- <div class="beverage_container"> -->
           <!-- <h1>BOISSON</h1> -->
+          <img class="ball1" src="../assets/image/index/ball1.png" alt="">
           <img class="boisson_gradient" src="../assets/image/index/boisson_gradient.png" alt="">
           <p>捌嵩飲茶，品味悠久的文化底蘊，感受時光與茶的對話。</p>
-          <img class="ball1" src="../assets/image/index/ball1.png" alt="">
           <img class="ball2" src="../assets/image/index/ball2.png" alt="">
           <img class="fan" src="../assets/image/index/fan.png" alt="">
-          <img class="beverage beverage1" src="../assets/image/index/banner_beverage1.png" alt="">
-          <img class="beverage beverage2" src="../assets/image/index/banner_beverage2.png" alt="">
           <img class="beverage beverage3" src="../assets/image/index/banner_beverage3.png" alt="">
+          <img class="beverage beverage2" src="../assets/image/index/banner_beverage2.png" alt="">
+          <img class="beverage beverage1" src="../assets/image/index/banner_beverage1.png" alt="">
           <img class="beverage beverage4" src="../assets/image/index/banner_beverage4.png" alt="">
         <!-- </div> -->
       </div>
@@ -75,81 +82,112 @@ export default {
     <!---- 背景裝飾曲線1 ---->
     <section class="background_img">
         <img class="curve1" src="../assets/image/index/curve_i_1.png" alt="">
-        <img class="curve2" src="../assets/image/index/curve_i_2.png" alt="">
-        <img class="text_move_t" src="../assets/image/index/TAIWAN TEA.svg" alt="">
         <!-- <h1>TAIWAN TEA</h1> -->
     </section>
     <!------ 介紹 ------>
     <section class="introduce">
+      <img class="text_move_t" src="../assets/image/index/TAIWAN TEA.svg" alt="">
+      <div class="container">
+        <h1>TAIWAN TEA</h1>
+        
+        <ul class="introduce1">
+          <li><img src="../assets/image/index/index_pic1.jpg" alt=""></li>
+          <li>
+            <h2>極致的品質把控</h2>
+            <p>精心挑選高品質的原料，配合獨特的製茶技術，確保每一杯茶都保持著最細緻的香氣和口感。</p>
+          </li>
+        </ul>
+        
+        <div class="introduce2">
+          <ul>
+            <li><img src="../assets/image/index/index_pic2.jpg" alt=""></li>
+            <li>
+              <h2>獨特的茶味體驗</h2>
+              <p>以獨到的創意，為茶飲注入新的活力。不拘泥於傳統，尋求獨特的組合。每一杯都是藝術革命，結合風味新潮與經典滋味。</p>
+            </li>
+          </ul>
+          
+          <ul>
+            <li><img src="../assets/image/index/index_pic3.jpg" alt=""></li>
+            <li>
+              <h2>道地製茶的精髓</h2>
+              <p>以嚴謹的工藝，捕捉每片茶葉的道地風華。經過悉心挑選和精湛技術，感受最純粹、道地的茶香。</p>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-
-      <h1>TAIWAN TEA</h1>
-
-      <ul class="introduce1">
-        <li><img src="../assets/image/index/index_pic1.jpg" alt=""></li>
-        <li>
-          <h2>極致的品質把控</h2>
-          <p>精心挑選高品質的原料，配合獨特的製茶技術，確保每一杯茶都保持著最細緻的香氣和口感。</p>
-        </li>
-      </ul>
-
-      
-      <ul class="introduce2">
-        <li><img src="../assets/image/index/index_pic2.jpg" alt=""></li>
-        <li>
-          <h2>獨特的茶味體驗</h2>
-          <p>以獨到的創意，為茶飲注入新的活力。不拘泥於傳統，尋求獨特的組合。每一杯都是藝術革命，結合風味新潮與經典滋味。</p>
-        </li>
-      </ul>
-      
-      <ul class="introduce3">
-        <li><img src="../assets/image/index/index_pic3.jpg" alt=""></li>
-        <li>
-          <h2>道地製茶的精髓</h2>
-          <p>以嚴謹的工藝，捕捉每片茶葉的道地風華。經過悉心挑選和精湛技術，感受最純粹、道地的茶香。</p>
-        </li>
-      </ul>
-
+      <img class="curve2" src="../assets/image/index/curve_i_2.png" alt="">
     </section>
 
 
     <!------ 背景色圓弧 ------>
     <div class="background_color"></div>
     
-    <!------ TOP5商品 ------>
-      <section class="top_products_all">
-        <h1>TOP 5 熱銷飲品</h1>
-        <ul>
-          <li class="top_products product1">
-            <img src="../assets/image/index/top5_beverage1.png" alt="">
-            <h2>愛爾蘭巧克力奶昔</h2>
-            <p>享受絲滑口感與甜蜜幸福的奢華體驗。</p>
-          </li>
+    <!------ TOP6商品 ------>
+    <section class="top_products_all">
+      <h1>TOP 6 熱銷飲品</h1>
+      <swiper
+        :loop="true"
+        :navigation="false"
+        :grabCursor="true"
+        :centeredSlides="true"
+        :slidesPerView="'auto'"
+        :pagination="false"
+        :modules="modules"
+        :slides-per-view="3"
+        :breakpoints="{
+          900: {
+            slidesPerView: 5,
+          },
+        }"
+        :autoplay="{
+          delay: 2500,
+          disableOnInteraction: false,
+        }"
+        class="mySwiper">
+        <swiper-slide class="top1">
+          <img src="../assets/image/index/top5_beverage3.png" />
+          <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
+          <h2>巧克力奶昔</h2>
+          <p>濃郁巧克力，絲滑奶昔，甜蜜的巧思。</p>
+        </swiper-slide>
 
-          <li class="top_products product2">
-            <img src="../assets/image/index/top5_beverage2.png" alt="">
-            <h2>愛爾蘭巧克力奶昔</h2>
-            <p>享受絲滑口感與甜蜜幸福的奢華體驗。</p>
-          </li>
+        <swiper-slide class="top2">
+          <img src="../assets/image/index/top5_beverage4.png" />
+          <img class="cup_shadow" src="../assets/image/index/top5_shadow-14.png" alt="">
+          <h2>楊枝甘露</h2>
+          <p>芒果香濃，椰奶綿密，糖漿甜蜜，清新滋味。</p>
+        </swiper-slide>
 
-          <li class="top_products product3">
-            <img src="../assets/image/products/naixi_qubei.png" alt="">
-            <h2>愛爾蘭巧克力奶昔</h2>
-            <p>享受絲滑口感與甜蜜幸福的奢華體驗。</p>
-          </li>
+        <swiper-slide class="top3">
+          <img src="../assets/image/index/top5_beverage5.png" />
+          <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
+          <h2>柚子氣泡飲</h2>
+          <p>綿密氣泡，柔和酸甜，夏日的完美解渴。</p>
+        </swiper-slide>
 
-          <li class="top_products product4">
-            <img src="../assets/image/index/top5_beverage4.png" alt="">
-            <h2>愛爾蘭巧克力奶昔</h2>
-            <p>享受絲滑口感與甜蜜幸福的奢華體驗。</p>
-          </li>
-          <li class="top_products product5">
-            <img src="../assets/image/index/top5_beverage5.png" alt="">
-            <h2>愛爾蘭巧克力奶昔</h2>
-            <p>享受絲滑口感與甜蜜幸福的奢華體驗。</p>
-          </li>
-        </ul>
-      </section>
+        <swiper-slide class="top4">
+          <img src="../assets/image/index/top5_beverage1.png" />
+          <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
+          <h2>奇異果冰沙</h2>
+          <p>果香濃郁，冰涼美味，果粒驚喜。</p>
+        </swiper-slide>
+
+        <swiper-slide class="top5">
+          <img src="../assets/image/index/top5_beverage2.png" />
+          <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
+          <h2>清爽西瓜冰沙</h2>
+          <p>西瓜冰沙，清甜多汁，冰爽解渴，夏日的涼爽享受。</p>
+        </swiper-slide>
+      
+        <swiper-slide class="top6"><img src="../assets/image/index/top5_beverage6.png" />
+          <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
+          <h2>檸檬薄荷茶</h2>
+          <p>檸檬薄荷茶，清新檸香，薄荷冰涼，口感清爽。</p>
+        </swiper-slide>
+      </swiper>
+    </section>
 
     <!---- 背景裝飾曲線2 ---->
     <div class="background_img">
@@ -164,27 +202,27 @@ export default {
           <h1>最新消息</h1>
           <ul>
             <li>
-              <img src="../assets/image/index/news1.jpg" alt="">
-              <h2>莓果系列即將發售🎉 </h2>
-              <p>捌嵩飲茶，全新推出「莓果繽紛系列」！</p>
+              <RouterLink to="./article_item1"> <div><img src="../assets/image/index/news1.jpg" alt=""></div>
+              <h2>莓果系列即將發售 </h2>
+              <p>捌嵩飲茶，全新推出「莓果繽紛系列」！</p></RouterLink>
             </li>
           
             <li>
-              <img src="../assets/image/index/news2.jpg" alt="">
-              <h2>莓果系列即將發售🎉 </h2>
-              <p>捌嵩飲茶，全新推出「水果氣泡飲系列」！</p>
+              <RouterLink to="./article_item2"><div><img src="../assets/image/index/news2.jpg" alt=""></div>
+              <h2>捌嵩水果氣泡飲重磅上市 </h2>
+              <p>捌嵩飲茶，全新推出「水果氣泡飲系列」！</p></RouterLink>
             </li>
 
             <li>
-              <img src="../assets/image/index/news3.jpg" alt="">
-              <h2>莓果系列即將發售🎉 </h2>
-              <p>捌嵩飲茶，全新推出「莓果繽紛系列」！</p>
+              <RouterLink to="./article_item7"><div><img src="../assets/image/index/news3.jpg" alt=""></div>
+              <h2>南京店盛大開幕! </h2>
+              <p>慶祝南京店盛大開幕，全品項買一送一!</p></RouterLink>
             </li>
           
             <li>
-              <img src="../assets/image/index/news4.jpg" alt="">
-              <h2>莓果系列即將發售🎉 </h2>
-              <p>捌嵩飲茶，全新推出「莓果繽紛系列」！</p>
+              <RouterLink to="./article_item3"><div><img src="../assets/image/index/news4.jpg" alt=""></div>
+              <h2>2024年春季新菜單 </h2>
+              <p>最好喝的手搖飲料，盡在捌嵩飲茶</p></RouterLink>
             </li>
           </ul>
           <RouterLink to="./info"><button>Read more</button></RouterLink>
