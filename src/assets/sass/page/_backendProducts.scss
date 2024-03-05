@@ -34,7 +34,9 @@
             @include input_M();
             margin: 8px auto;
         }
-
+        p{
+            margin: 8px 4px;
+        }
         .radio_product{
             display:flex;
             margin: 10px auto;

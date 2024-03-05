@@ -560,7 +560,7 @@
       img{
         width: 100%;
         @include m(){
-         width: 100px;
+        //  width: 100px;
         }
       }
     }
