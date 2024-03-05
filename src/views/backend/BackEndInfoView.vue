@@ -187,7 +187,7 @@ const statusOptions = [
 
 const displayStatus = computed(() => {
   return (status) => {
-    return status === 1 ? statusOptions[0].label : statusOptions[1].label;
+    return status === 1 ? '上架' : '下架';
   };
 });
 
