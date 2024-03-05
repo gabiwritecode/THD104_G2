@@ -1,9 +1,11 @@
 <template>
    <div class="space"></div>
     <main class="products_wrapper">
+        <div class="opacity" id="show" v-if="show">
+            <h2>成功加入購物車</h2>
+        </div>
      <!------------------- banner ------------------->
         <section class="banner">
-            <order :appear = 'addToCart'></order>
             <div class="container">
                 <!-- <span>BOISSON </span><br><span>MENU</span> -->
                 <img class="boisson_menu_text" src="../assets/image/products/BOISSON_MENU.png" alt="">
@@ -257,7 +259,7 @@
 
 
 
-<!------ 購物車------>
+<!-- ---- 購物車------>
 <div class="cart">
 
     <div class="card_slide">
@@ -352,7 +354,7 @@
         <button class="pay" @click="goToPay" :disabled="cart.length <= 0" :class="{'disabled' : cart.length <= 0}">前往結帳</button>
 
     </div>
-</div>
+</div> 
 
 
 
@@ -360,12 +362,13 @@
 <!-- <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> -->
 
 <script>
-import order from "../components/order_success.vue"
+
 export default {
-  components:{order},
+    
     data (){
         return{
-        
+            
+            show: false,
             lightbox: false,
             drinkList1: [
                 {
@@ -384,6 +387,7 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    
                     
                 },
                 {
@@ -774,6 +778,7 @@ export default {
                     addPrice: 0,
                     isSelected: false,
                 },
+      
                 {
                     id: 24,
                     name: '巧克力摩卡',
@@ -912,9 +917,16 @@ export default {
         let item2 = JSON.parse(JSON.stringify(item));
         item2.key_id = Date.now();
         this.cart.push(item2);
-
+        
         localStorage.setItem("cart", JSON.stringify(this.cart));
-      },
+
+        
+        setTimeout(()=>{
+            this.show = true
+        }, 0)
+        this.show = false
+
+        },
         del(index) {
           this.cart.splice(index, 1)
           localStorage.setItem("cart", JSON.stringify(this.cart));
@@ -944,7 +956,7 @@ export default {
 
             localStorage.setItem("cart", JSON.stringify(this.cart));
         },
-        
+       
         goToPay(){
             
             let isSelectAll = true
