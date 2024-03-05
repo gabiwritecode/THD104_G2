@@ -87,7 +87,7 @@
       </div>
       <div class="write_info">
         <h2>確認完請填寫以下資訊</h2>
-        <form>
+        <form action="#" method="post">
           <label class="lable_name">
             <h2>姓名:</h2>
             <input type="text" placeholder="請輸入您的姓名" name="name" value="">
@@ -154,7 +154,10 @@ export default{
       data() {
         return {
           cart: JSON.parse(localStorage.getItem('cart')),
-          writtenLightbox: false
+          writtenLightbox: false,
+          write_info: [
+            
+          ]
           
         }
       },
@@ -216,6 +219,7 @@ export default{
           }
           if(written){
             this.writtenLightbox = true
+
           }else{
             alert('還有資料未填寫')
           }

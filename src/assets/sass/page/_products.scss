@@ -11,6 +11,36 @@
     font-weight: 300;
   }
 
+  // 新增成功添加購物車
+  .opacity{
+    
+      color: $color2;
+      font-size: 16px;
+      text-align: center;
+      padding: 20px;
+      margin: auto;
+      border-radius: 10px;
+      background-color: aqua;
+      position: fixed;
+      z-index: 3;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      animation: fadeout linear 1.5s;
+    }
+    @keyframes fadeout {
+      0%{
+        opacity: 0;
+      }
+      50%{
+        opacity: 1;
+      }
+      100%{
+        opacity: 0;
+      }
+    }
+  // ------------------------
   img{
         -webkit-user-drag: none;
         -moz-user-drag: none;
