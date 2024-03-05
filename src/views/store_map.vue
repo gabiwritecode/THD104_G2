@@ -96,35 +96,31 @@
         </div>  
       <!----------------- 下拉選單 ------------------>
       <div>
-        <form ref="myForm" >
-          <!-- <div class="store_name">門市查詢：</div> -->
-          <label for="" class="store_name2">門市查詢</label>
-          <select v-model="selectedCity" @change="updateDistricts">
-            <option value="" selected>縣市</option>
-            <option v-for="(city, index) in cities" :key="index" :value="city">{{ city }}</option>
-          </select>
+        <form ref="myForm">
+            <label for="citySelect" class="store_name2">門市查詢:</label>
+            <select v-model="selectedCity" @change="updateDistrictOptions">
+                <option v-for="city in cities" :value="city" :key="city">{{ city }}</option>
+            </select>
 
-          <label for="">鄉鎮市區</label>
-          <select v-model="selectedDistrict" v-if="districts.length > 0">
-            <option value="" selected>請選擇</option>
-            <option v-for="(district, index) in districts" :key="index" :value="district.name">{{ district.name }}
-            </option>
-          </select>
+            <label for="districtSelect">鄉鎮市區:</label>
+            <select v-model="selectedDistrict" @change="updateResults">
+                <option v-for="district in districts" :value="district" :key="district">{{ district }}</option>
+            </select>
         </form>
 
-        <div id="aaa">
-          <div v-for="(store, index) in selectedDistrictData.stores" :key="index" class="select_box">
-            <div v-html="store.iframe" class="iframe_box"></div>
-            <div class="store-info">
-              <h2 class="store-name"><i class="fa-solid fa-location-dot"></i>{{ store.name }}</h2>
-              <hr class="short">
-              <p class="store-address">地址：{{ store.address }}</p>
-              <p class="store-phone">電話：{{ store.tel }}</p>
-              <p class="store-phone">營業時間：{{ store.time }}</p>
+        <div id="result">
+            <div v-for="row in filteredResults" :key="row.store_id">
+              <div class="select_box">
+                <div v-html="row.IFRAME" class="iframe_box"> </div>
+                <div class="store-info">
+                    <h2 class="store-name"><i class="fa-solid fa-location-dot"></i>{{ row.STORE_NAME }}</h2>
+                    <hr class="short">
+                    <p class="store-address">地址:{{ row.ADDRESS }}</p>
+                    <p class="store-phone">電話:{{ row.PHONE_NUMBER }}</p>
+                    <p class="store-phone">營業時間:{{ row.BUSINESS_HOURS }}</p>
+                </div>
+              </div> 
             </div>
-
-            <br>
-          </div>
         </div>
       </div>
     </div>
@@ -141,443 +137,79 @@ import MemberBtn from "../components/member_btn.vue"
 import { ref, watch, onMounted  } from 'vue';
 export default{
     components: { MemberBtn },
-  setup() {
-        const cities = ref(['台北市', '新北市', '桃園市', '宜蘭縣', '台中市', '高雄市']);
-        const selectedCity = ref('台北市');
-        const selectedDistrict = ref('');
-        const selectedDistrictData = ref({ stores: [] });
+    setup() {
+      const selectedCity = ref('');
+    const selectedDistrict = ref('');
+    const cities = ref([]);
+    const districts = ref([]);
+    const filteredResults = ref([]);
+    let filteredData;
 
-        // -------------------------------------------地圖移入
-        const isIconVisible = ref([false, false, false, false, false, false, false]);
+    const fetchData = async (url) => {
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        throw error; // 抛出错误以便在调用方进行处理
+      }
+    };
 
-        const showIcon = (index) => {
-            isIconVisible.value[index] = true;
-        };
+    const updateDistrictOptions = () => {
+      districts.value = [...new Set(filteredData
+        .filter(row => row.NAME === selectedCity.value)
+        .map(row => row.DISTRICT_NAME))];
+      updateResults();
+    };
 
-        const hideIcon = (index) => {
-            isIconVisible.value[index] = false;
-        };
-        // -----------------------------------------------------------------
-        const department = [];
-        department[0] = {
-                    name: '台北市',
-                    districts: [
-                        {
-                            name: '南港區',
-                            stores: [
-                                {
-                                    name: '同德店',
-                                    address: '台北市南港區同德路43號',
-                                    tel: '0900-070000',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14561.621483790235!2d120.65755177052712!3d24.157512205968253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d79edb579d3%3A0x8aba6c60727943fd!2zNTDltZAg6Iux5omN5bqX!5e0!3m2!1szh-TW!2stw!4v1709103283740!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
+    const updateResults = () => {
+      filteredResults.value = filteredData.filter(row => row.DISTRICT_NAME === selectedDistrict.value);
+    };
 
-                                {
-                                    name: '育成店',
-                                    address: '台北市南港區育成路1號',
-                                    tel: '0900-070001',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14458.063120119392!2d121.58871874600607!3d25.050501784276772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab58f6b03321%3A0x7219d7fa03ee7003!2zNTDltZAg5Y2X5riv5ZyS5Y2A5bqX!5e0!3m2!1szh-TW!2stw!4v1708576196691!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
+    onMounted(async () => {
+      try {
+        filteredData = await fetchData('php/store_map.php');
+        cities.value = [...new Set(filteredData.map(row => row.NAME))];
+        selectedCity.value = cities.value[0];
+        updateDistrictOptions();
+        selectedDistrict.value = districts.value[0];
+        updateResults();
+      } catch (error) {
+        console.error('Error in onMounted:', error);
+        // 这里可以处理错误的逻辑，例如显示错误提示
+      }
+    });
 
-                                {
-                                    name: '中坡店',
-                                    address: '台北市南港區中坡南路2號',
-                                    tel: '0900-070002',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14457.647684990701!2d121.57315558715818!3d25.054024000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab750a727d6d%3A0x56bc61a3d18fe307!2zNTDltZAg5ZCM5b635bqX!5e0!3m2!1szh-TW!2stw!4v1708576274300!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
+    const isIconVisible = ref([false, false, false, false, false, false, false]);
 
-                                {
-                                    name: '忠孝店',
-                                    address: '台北市南港區忠孝東路3號',
-                                    tel: '0900-070003',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57830.54772981027!2d121.54225546374141!3d25.054115157924723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abc2155cadf7%3A0xc753da581f1ff509!2zNTDltZAg6ZW35pil5bqX!5e0!3m2!1szh-TW!2stw!4v1708576301769!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                }
-                            ]
-                        },
-                        {
-                            name: '信義區',
-                            stores: [
-                                {
-                                    name: '101店',
-                                    address: '台北市信義區同德路23號',
-                                    tel: '0980-000000',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57830.42371478346!2d121.47027574863277!3d25.054378000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a95c1633f847%3A0x1e1dda645362e70b!2zNTDltZAg5LyK6YCa5bqX!5e0!3m2!1szh-TW!2stw!4v1708576322868!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
+    const showIcon = (index) => {
+      isIconVisible.value[index] = true;
+    };
 
-                                {
-                                    name: '遠百店',
-                                    address: '台北市信義區永吉路1號',
-                                    tel: '0974-000000',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57830.42371478346!2d121.47027574863277!3d25.054378000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abc2155cadf7%3A0x8d525027085620c1!2zNTDltZAg5YyX5a-n5bqX!5e0!3m2!1szh-TW!2stw!4v1708576338886!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
+    const hideIcon = (index) => {
+      isIconVisible.value[index] = false;
+    };
 
-                                {
-                                    name: '菸廠店',
-                                    address: '台北市信義區中坡北路83號',
-                                    tel: '0970-000000',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57830.42371478346!2d121.47027574863277!3d25.054378000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a95c1633f847%3A0xcd6e1ab6c3a8482f!2zNTDltZAg5ZCI5rGf5bqX!5e0!3m2!1szh-TW!2stw!4v1708576356807!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
+    const setCity = (city) => {
+      selectedCity.value = city;
+      updateDistrictOptions();
+    };
 
-                                {
-                                    name: '永吉店',
-                                    address: '台北市信義同中坡南路135號',
-                                    tel: '7972-000000',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57830.42371478346!2d121.47027574863277!3d25.054378000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abda55c2d79d%3A0x9a23e29c4fd385e0!2zNTDltZAgU09HT-W6lw!5e0!3m2!1szh-TW!2stw!4v1708576378927!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                }
-                            ]
-
-                        },
-                        {
-                            name: '內湖區',
-                            stores: [
-                                {
-                                    name: '金莊店',
-                                    address: '台北市內湖區金龍路25號',
-                                    tel: '0970-000000',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57830.42371478346!2d121.47027574863277!3d25.054378000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9777d455a7d%3A0x8afa848e22752b14!2zNTDltZAg5o236YGL5ZaE5bCO5a-65bqX!5e0!3m2!1szh-TW!2stw!4v1708576395635!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
-
-                                {
-                                    name: '麗山店',
-                                    address: '台北市內湖區東湖路67號',
-                                    tel: '1900-000000',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57830.42371478346!2d121.47027574863277!3d25.054378000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9777d455a7d%3A0x70feca239fb420ee!2zNTDltZAg5paw55Sf5bqX!5e0!3m2!1szh-TW!2stw!4v1708576413483!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
-
-                                {
-                                    name: '行善店',
-                                    address: '台北市內湖區行忠路67號',
-                                    tel: '0910-000000',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57830.42371478346!2d121.47027574863277!3d25.054378000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96d069c15d7%3A0x44853f045036d49a!2zNTDltZAg5om_5b635bqX!5e0!3m2!1szh-TW!2stw!4v1708576430111!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
-
-
-                                {
-                                    name: '行愛店',
-                                    address: '台北市內湖區瑞光路106號',
-                                    tel: '0940-000000',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57830.42371478346!2d121.47027574863277!3d25.054378000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab94b00433c3%3A0x8858c04dd9778ea4!2zNTDltZAg5Y2X5Lqs5LiJ5rCR5bqX!5e0!3m2!1szh-TW!2stw!4v1708576443491!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
-
-                                {
-                                    name: '陽光店',
-                                    address: '台北市內湖區文德路22巷1號',
-                                    tel: '0980-000000',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57830.42371478346!2d121.47027574863277!3d25.054378000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abee7feb6fc7%3A0x6c4f37425ff76af5!2zNTDltZAg5rCR55Sf5bqX!5e0!3m2!1szh-TW!2stw!4v1708576457015!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                }
-                            ]
-                        }
-                    ]
-        };
-        department[1] = {
-                    name: '新北市',
-                    districts: [
-                        {
-                            name: '板橋區',
-                            stores: [
-                                {
-                                    name: '南雅店',
-                                    address: '新北市板橋區漢生東路193號',
-                                    tel: '0922-111111',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57830.35570196325!2d121.47027568515948!3d25.054522147813746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a8274eea1223%3A0xee0c9960d6e248fc!2zNTDltZAg5Lit5ZKM55Kw55CD5bqX!5e0!3m2!1szh-TW!2stw!4v1708576479347!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
-
-                                {
-                                    name: '橋板店',
-                                    address: '新北市板橋區中山路2號',
-                                    tel: '0922-222222',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14560.918653918397!2d120.64273864030838!3d24.163677057646428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d820c9d6519%3A0x9b95a17eb496317e!2zNTDltZAg6KW_5bGv5bqX!5e0!3m2!1szh-TW!2stw!4v1707043772326!5m2!1szh-TW!2stw"   allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                }
-                            ]
-                        },
-                        {
-                            name: '新莊區',
-                            stores: [
-                                {
-                                    name: '新莊店',
-                                    address: '新北市新莊區建福路71號',
-                                    tel: '0933-333333',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57826.97382099407!2d121.41915274863284!3d25.061688800000013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468032ec979825b%3A0x896625cb60685088!2zNTDltZAg5Y2X5Yui6KeS5bqX!5e0!3m2!1szh-TW!2stw!4v1708576503015!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
-
-                                {
-                                    name: '中和店',
-                                    address: '新北市新莊區中正路4號',
-                                    tel: '0933-444444',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14561.621483790235!2d120.65755177052712!3d24.157512205968253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3469173b7cc1a0bf%3A0x808ac4363d3d9b83!2zNTDltZAg5ryi5Y-j5LiA5bqX!5e0!3m2!1szh-TW!2stw!4v1709103340636!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                }
-                            ]
-                        }
-                    ]
-        };  // 新北市
-
-        department[2] = {
-                    name: '桃園市',
-                    districts: [
-                        {
-                            name: '桃園區',
-                            stores: [
-                                {
-                                    name: '內壢店',
-                                    address: '桃園市桃園區春日路150號',
-                                    tel: '0944-555555',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231273.76177603996!2d121.28215556741593!3d25.07976363714703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681faaf350d373%3A0x2b55fb140d0dabd7!2zNTDltZAg5qGD5ZyS5Lit5q2j5bqX!5e0!3m2!1szh-TW!2stw!4v1708576548290!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
-
-                                {
-                                    name: '桃園店',
-                                    address: '桃園市桃園區中華路6號',
-                                    tel: '0944-666666',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115740.35428141282!2d121.2122343563199!3d24.969990548804116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681fdc9ba38159%3A0x32abae369d7ecc49!2zNTDltZAg5qGD5ZyS5Y2X5bmz5bqX!5e0!3m2!1szh-TW!2stw!4v1709103410199!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                }
-                            ]
-                        },
-                        {
-                            name: '中壢區',
-                            stores: [
-                                {
-                                    name: '八德店',
-                                    address: '桃園市中壢區中正路7號',
-                                    tel: '0955-777777',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115740.35428141282!2d121.2122343563199!3d24.969990548804116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681e8a35b545b1%3A0xc8c5b7d318d6ad20!2zNTDltZAg6b6c5bGx5Lit6IiI5bqX!5e0!3m2!1szh-TW!2stw!4v1709103553310!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
-
-                                {
-                                    name: '中壢店',
-                                    address: '桃園市中壢區原化路357號',
-                                    tel: '0955-888888',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231418.06303743587!2d121.00097639453126!3d25.003267899999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681e4c93c72ee1%3A0xac4fdc17b3964be0!2zNTDltZDmoYPlnJLlpKfoiIjlupc!5e0!3m2!1szh-TW!2stw!4v1708576596145!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                }
-                            ]
-                        }
-                    ]
-        };
-        department[3] = {
-                    name: '宜蘭縣',
-                    districts: [
-                        {
-                            name: '宜蘭市',
-                            stores: [
-                                {
-                                    name: '蘭陽店',
-                                    address: '宜蘭縣宜蘭市神農路一段1號',
-                                    tel: '0933-555555',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115949.63165591535!2d121.63072354886506!3d24.746579379598813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3467e67e72cbbdf5%3A0x4bbc7e4a5feadafd!2zMjHojLblnYo!5e0!3m2!1szh-TW!2stw!4v1708576627271!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
-
-
-                                {
-                                    name: '宜蘭店',
-                                    address: '宜蘭縣宜蘭市三星路2段73號',
-                                    tel: '0933-666666',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116024.47525641824!2d121.5000531972656!3d24.66622110000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3467e1036aa77c09%3A0x21ad0b536f4c0134!2z5ZCz55SY5Li5!5e0!3m2!1szh-TW!2stw!4v1708576643988!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                }
-                            ]
-                        },
-                        {
-                            name: '羅東鎮',
-                            stores: [
-                                {
-                                    name: '三星店',
-                                    address: '宜蘭縣羅東鎮縣政北路一號 ',
-                                    tel: '0944-777777',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14493.101264533418!2d121.71982588715818!3d24.751747800000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3467e4958605b925%3A0x299f73c76c8aa1de!2z6a6u5aW257SF5LqG!5e0!3m2!1szh-TW!2stw!4v1708576682532!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
-
-
-                                {
-                                    name: '羅東店',
-                                    address: '宜蘭縣羅東鎮中正路8號',
-                                    tel: '0944-888888',
-                                    time: '11:00-21:00', time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14493.101264533418!2d121.71982588715818!3d24.751747800000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3467e4cff87c8c47%3A0xbfc57e5dcd17c566!2zMzDlubTogIHlupfmqrjmqqzmhJvnjokgLSDlj4Hmi74gLSjogIHlrZfomZ8g5aSp54S25omL5L2c6aOy5paZKQ!5e0!3m2!1szh-TW!2stw!4v1708576692195!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                }
-                            ]
-                        }
-                    ]
-        };
-        department[4] = {
-                    name: '台中市',
-                    districts: [
-                        {
-                            name: '西屯區',
-                            stores: [
-                                {
-                                    name: '逢甲店',
-                                    address: '台中市西屯區文心路9號',
-                                    tel: '0966-999999',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58248.67733111383!2d120.6132597189456!3d24.15270573871595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693da65f03b559%3A0x2d743238622a1777!2zNTDltZAg576O5p2R5LiA5bqX!5e0!3m2!1szh-TW!2stw!4v1708576715227!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
-
-                                {
-                                    name: '西屯店',
-                                    address: '台中市西屯區南京路76號',
-                                    tel: '0966-000000',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58248.67733111383!2d120.6132597189456!3d24.15270573871595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d8896626b7f%3A0x6ef4bd49abd88459!2zNTDltZAg6Z2S5rW35bqX!5e0!3m2!1szh-TW!2stw!4v1708576728791!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                }
-                            ]
-                        },
-                        {
-                            name: '北屯區',
-                            stores: [
-                                {
-                                    name: '大坑店',
-                                    address: '台中市北屯區北平路11號',
-                                    tel: '0988-111111',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58248.67733111383!2d120.6132597189456!3d24.15270573871595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d8896626b7f%3A0xdb2898128f9b7ce2!2zNTDltZAg5rKz5Y2X5bqX!5e0!3m2!1szh-TW!2stw!4v1708576740051!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
-
-                                {
-                                    name: '南陽店',
-                                    address: '台中市北屯區崇德路路289號',
-                                    tel: '0988-222222',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58248.67733111383!2d120.6132597189456!3d24.15270573871595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693df177c9c9a9%3A0x88e5ba8942d94e09!2zNTDltZAg5LiD5pyf5pyd5a-M5bqX!5e0!3m2!1szh-TW!2stw!4v1708576752703!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                }
-                            ]
-                        }
-                    ]
-        };  // 台中市
-        department[5] = {
-                    name: '高雄市',
-                    districts: [
-                        {
-                            name: '鳳山區',
-                            stores: [
-                                {
-                                    name: '鳳山店',
-                                    address: '高雄市鼓山區瀋陽街158號',
-                                    tel: '0911-111111',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58918.49361192222!2d120.26792505731646!3d22.638651957313535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e051b104a6ef9%3A0x651481c4bac71a8!2zNTDltZAg5rKz5aCk6KOV6Kqg5bqX!5e0!3m2!1szh-TW!2stw!4v1709103477806!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
-
-                                {
-                                    name: '大東店',
-                                    address: '高雄市鼓山區民生一路2號',
-                                    tel: '0911-222222',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14560.918653918397!2d120.64273864030838!3d24.163677057646428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d820c9d6519%3A0x9b95a17eb496317e!2zNTDltZAg6KW_5bGv5bqX!5e0!3m2!1szh-TW!2stw!4v1707043772326!5m2!1szh-TW!2stw"   allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                }
-                            ]
-                        },
-                        {
-                            name: '左營區',
-                            stores: [
-                                {
-                                    name: '啟明店',
-                                    address: '高雄市左營區子華路3號',
-                                    tel: '0922-333333',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117845.97023285026!2d120.24446133173683!3d22.628176612814773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e0484eb0b538f%3A0xff88e4679e6560a4!2zNTDltZAg6Z2S5bm05bqX!5e0!3m2!1szh-TW!2stw!4v1708576801309!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                },
-
-                                {
-                                    name: '蓮池店',
-                                    address: '高雄市左營區博愛二路4號',
-                                    tel: '0922-444444',
-                                    time: '11:00-21:00',
-                                    iframe: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117845.97023285026!2d120.24446133173683!3d22.628176612814773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e0489f43447c7%3A0x1d8b9d9b3ac2ae6!2zNTDltZAg6Ieq56uL5YWt5ZCI5bqX!5e0!3m2!1szh-TW!2stw!4v1708576814525!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
-                                }
-                            ]
-                        }
-                    ]
-        };  // 高雄市
-
-        const districts = ref(department[0]?.districts || []);
-
-        const setCity = (city) => {
-            selectedCity.value = city;
-            updateDistricts();
-        };
-
-        const updateDistricts = () => {
-            // Reset other selections
-        selectedDistrict.value = '';  // 先清空選擇的區域
-
-           
-        const selectedCityIndex = cities.value.indexOf(selectedCity.value);
-            if (selectedCityIndex !== -1) {
-               
-                districts.value = [...department[selectedCityIndex]?.districts] || [];
-
-                if (districts.value.length > 0) {
-                    selectedDistrict.value = districts.value[0].name;  // 設定為第一個區域
-                }
-            } else {
-                districts.value = [];
-            }
-        };
-
-        // 手動觸發組件掛載後的更新
-        onMounted(() => {
-            updateDistricts();
-
-            // 在區域資料初始化後，手動觸發一次 selectedDistrict 的 watch 監聽
-            const selectedDistrictIndex = districts.value.findIndex((d) => d.name === selectedDistrict.value);
-            if (selectedDistrictIndex !== -1) {
-                selectedDistrictData.value = {
-                    stores: districts.value[selectedDistrictIndex]?.stores || [],
-                };
-            } else {
-                selectedDistrictData.value = { stores: [] };
-            }
-        });
-
-        // Watch for changes in selectedDistrict and update district data
-        watch(selectedDistrict, () => {
-            const selectedDistrictIndex = districts.value.findIndex((d) => d.name === selectedDistrict.value);
-            if (selectedDistrictIndex !== -1) {
-                selectedDistrictData.value = {
-                    stores: districts.value[selectedDistrictIndex]?.stores || [],
-                };
-            } else {
-                selectedDistrictData.value = { stores: [] };
-            }
-        });
-
-        // --------------------------------------
-
-        return {
-            cities,
-            selectedCity,
-            districts,
-            selectedDistrict,
-            selectedDistrictData,
-            updateDistricts,
-            setCity,
-            isIconVisible,
-            showIcon,
-            hideIcon,
-        };
-    },
+    return {
+      selectedCity,
+      selectedDistrict,
+      cities,
+      districts,
+      filteredResults,
+      isIconVisible,
+      setCity,
+      hideIcon,
+      showIcon,
+      updateDistrictOptions,
+      updateResults
+    };
   }
+}
 
 </script>
