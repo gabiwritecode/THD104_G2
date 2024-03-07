@@ -40,8 +40,6 @@ $updatePriceL = "UPDATE PRODUCTS_PRICE SET PRICE = :priceL  WHERE SIZE='L' and P
 $updatePriceLStatement = $pdo->prepare($updatePriceL);
 $updatePriceLStatement->bindParam(':priceL', $priceL, PDO::PARAM_INT);
 $updatePriceLStatement->bindParam(':productIdL', $productId, PDO::PARAM_INT);
-
-
 $updatePriceLStatement->execute();
 
 echo '{"productId":1}';

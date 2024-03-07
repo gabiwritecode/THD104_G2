@@ -4,12 +4,12 @@
      <!------------------- banner ------------------->
         <section class="banner">
             <order :appear = 'addToCart'></order>
-            <div class="container">
+            <article class="banner_title">
                 <!-- <span>BOISSON </span><br><span>MENU</span> -->
                 <img class="boisson_menu_text" src="../assets/image/products/BOISSON_MENU.png" alt="">
                 <!-- <img src="../assets/image/products/ion_leaf-outline.svg" alt=""> -->
                 <p>捌嵩茶飲的經典滋味<img src="../assets/image/products/Line_banner.svg" alt=""></p>
-            </div>
+            </article>
             <img class="wave_bgi wave_bgi4" src="@/assets/image/products/wave_bgi-01.png" alt="">
             <img class="wave_bgi wave_bgi3" src="@/assets/image/products/wave_bgi-01.png" alt="">
             <img class="wave_bgi wave_bgi2" src="@/assets/image/products/wave_bgi-01.png" alt="">
@@ -23,17 +23,12 @@
             <img src="../assets/image/products/naixi_qubei1.png" alt="">
         </section>
         
-        <!---- TAIWAN TEA字 ---->
-        <div class="background_text">
-            <span>TAIWAN TEA</span>
-            <span>捌嵩飲茶，品味悠久的文化底蘊，感受時光與茶的對話。</span>
-        </div>
 
         <!---- 背景裝飾曲線 ---->
         <div class="background_img">
             <img class="curve1" src="../assets/image/products/curve_p_1.png" alt="">
             <img class="curve1 curve1m" src="../assets/image/products/curve_p_1m.svg" alt="">
-            <div class="bg_circle1"></div> 
+            <!-- <div class="bg_circle1"></div>  -->
             <img class="curve2" src="../assets/image/products/curve_p_2.png" alt="">
            
         </div>
@@ -43,8 +38,14 @@
 
         <!---- 純茶系列 ---->
         <section class="product tea">
+            <!---- TAIWAN TEA字 ---->
+            <div class="background_text">
+                <span>TAIWAN TEA</span>
+                <span>捌嵩飲茶，品味悠久的文化底蘊，感受時光與茶的對話。</span>
+            </div>
+
             <ul>
-                <li>
+                <li class="product_img">
                     <img src="../assets/image/products/tea_pic.png" alt="">
                 </li>
                 
@@ -103,7 +104,7 @@
                         </li>
                     </ol>
                    </li>
-                <li>
+                <li class="product_img">
                     <img src="../assets/image/products/milktea_pic.png" alt="">
                 </li>
             </ul>

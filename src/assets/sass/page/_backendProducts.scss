@@ -97,3 +97,17 @@
         background-color: $color2;
     }
 }
+
+ .tr_product{
+        background-color: rgba(120, 190, 200, .1) !important;
+    }
+    
+// 新品、熱銷標籤
+.backend_product_tag{
+    @include tag_P();
+    height: 24px;
+    line-height: 1.7;
+    font-size: 15px;
+    margin: 0 auto;
+    font-weight: 300;
+}
