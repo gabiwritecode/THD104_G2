@@ -110,13 +110,17 @@ export default {
 
      },
 
-  beforeMount(){
+     beforeMount() {
+  let cart = JSON.parse(localStorage.getItem("cart"));
+  if (cart) {
+    this.cart = cart;
 
-    let cart = JSON.parse(localStorage.getItem("cart"))
-    if(cart){
-        this.cart = cart
-    }
-  },
+    // Set default values for each item in the cart
+    this.cart.forEach((item) => {
+      this.isSelected(item);
+    });
+  }
+},
   computed:{
     
     total(){
@@ -168,31 +172,36 @@ export default {
         this.cart = []
         localStorage.setItem("cart", JSON.stringify(this.cart));
       },
-      isSelected(item){
-        if(item.size !== '大小' && item.sugar !== '甜度' && item.ice !== '冰塊'){
-            item.isSelected = true
-        }else{
-            item.isSelected = false
-        }
+      isSelected(item) {
+  if (item.size !== '大小' && item.sugar !== '甜度' && item.ice !== '冰塊') {
+    item.isSelected = true;
+  } else {
+    item.isSelected = false;
+  }
 
+  // Set default values for custom drinks
+  if (item.name == '客製飲品') {
+    // Retrieve values from local storage
+    item.sugar = localStorage.getItem('sugar') || '甜度';
+    item.ice = localStorage.getItem('ice') || '冰塊';
 
-          localStorage.setItem("cart", JSON.stringify(this.cart));
-        },
-        goToPay(){
-            
-            let isSelectAll = true
-            for(let i = 0; i < this.cart.length; i++){
-                if(!this.cart[i].isSelected){
-                    isSelectAll = false
-                }
-           }
+    // Set default size to '大杯'
+    item.size = '大杯';
+    // Set isSelected to true for items with default values
+    item.isSelected = true;
+  }
 
-           if(isSelectAll){
-                location.href = '#/cart'
-           }else{
-                this.lightbox = true
-           }
-        },
+  localStorage.setItem("cart", JSON.stringify(this.cart));
+},
+goToPay() {
+  let isSelectAll = this.cart.every((item) => item.isSelected);
+
+  if (isSelectAll) {
+    location.href = '#/cart';
+  } else {
+    this.lightbox = true;
+  }
+},
         closeLightBox(){
             this.lightbox = false
         }
