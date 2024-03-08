@@ -14,62 +14,59 @@
           </nav>
           <div class="backend-table-container">
             <h1>會員管理</h1>
-            <div class="backend-input-container"><input type="text"><button>搜尋</button></div>
+            <div class="backend-input-container"><input type="text" placeholder='請輸入會員編號' id="BsearchInput" v-model="searchInput"><button @click="handleBsearch">搜尋</button></div>
             <table class="backend-info-table">
               <thead>
                 <tr>
                   <th>會員編號</th>
                   <th>會員姓名</th>
                   <th>會員帳號</th>
-                  <th>會員手機</th>
+                  <th style="display: none;">會員手機</th>
                   <th>帳號狀態</th>
-                  <th>創建時間</th>
-                  <th>營業時間</th>
+                  <th style="display: none;">創建時間</th>
+                  <th></th>
                   <th></th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>A0001</td>
-                  <td>王小明</td>
-                  <td>123456789@gmail.com</td>
-                  <td>0900-000000</td>
-                  <td>正常</td>
-                  <td>2021-02-09</td>
-                  <td>10:00-21:30</td>
-                  <td>
-                    <button @click="windowToggle">
-                    編輯與查看
-                    </button>
-                  
-                  </td>
-                </tr>
+              <tbody id="memberTable">
+                  <tr v-for="member in members" :key="member.ID">
+                    <td>{{ member.ID }}</td>
+                    <td>{{ member.NAME }}</td>
+                    <td>{{ member['E-MAIL'] }}</td>
+                    <td style="display: none;">{{ member.PHONE }}</td>
+                    <td>{{ getStatusText(member.STATUS) }}</td>
+                    <td style="display: none;">{{ member.CREATE_TIME }}</td>
+                    
+                    <td>
+                      <button @click="editMember(member)">編輯與查看</button>
+                    </td>
+                  </tr>
               </tbody>
               <tbody></tbody>
             </table>
           </div>
       </main>
       <div class="BMember edit_window_member">
-        <h1>編輯與查看</h1>
+        <h2>編輯與查看</h2>
           <div class="BMember1">
             <ul>
-              <li>會員編號:<input type="text"></li>
-              <li>會員姓名:<input type="text"></li>
-              <li>帳號狀態:<select name="" id="">
-                <option value="">正常</option>
-                <option value="">結束</option>
+              <li>會員編號:<input type="text"  v-model="selectedMember.ID"></li>
+              <li>會員姓名:<input type="text" v-model="selectedMember.NAME"></li>
+              <li>帳號狀態:<select name="" id="" v-model="selectedMember.STATUS">
+                <option value="1">正常</option>
+                <option value="0">結束</option>
               </select></li>
-              
+              <li>會員帳號:<input type="text" v-model="selectedMember['E-MAIL']"></li>
             </ul>
             <ul>
-              <li>會員帳號:<input type="text"></li>
-              <li>會員手機:<input type="text"></li>
-              <li>創建時間:<input type="text"></li>
+             
+              <li style="display: none;">會員手機:<input type="text" v-model="selectedMember.PHONE" ></li>
+              <li style="display: none;">創建時間:<input type="text" v-model="selectedMember.CREATE_TIME" ></li>
             </ul>
         </div>
         
         <button class="buttonq  button_left" @click="windowToggle">關閉</button>
-        <button  class="buttonq" @click="windowToggle">儲存</button>
+        <button  class="buttonq" @click="send_data">儲存</button>
         
         
       </div>
@@ -77,19 +74,133 @@
      <!-- 灰色背景 -->       
     <div class="edit_window_member_bg" @click="windowToggle"></div>
     </template>
-    <script setup>
-    import {ref, onMounted} from 'vue';
-    const edit_window_member = ref(null);
-    const edit_window_member_bg = ref(null);
-    onMounted(() => {
+    <script >
+    import { ref, onMounted } from 'vue';
     
-      edit_window_member.value = document.querySelector('.edit_window_member');
-      edit_window_member_bg.value = document.querySelector('.edit_window_member_bg');
+   export default {
+    setup() {
+  const members = ref([]);
+  const searchInput =ref('');
+  const selectedMember = ref({
+    ID: '',
+    NAME: '',
+    'E-MAIL': '',
+    PHONE: '',
+    STATUS: '',
+    CREATE_TIME: ''
+  });
+  const send = ref(null);
+  const edit_window_member = ref(null);
+  const edit_window_member_bg = ref(null);
+
+  const fetchMembers = () => {
+    fetch('http://localhost/THD104G2/public/php/BmemberAll.php')
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Fetched data:', data);
+        members.value = data;
+      })
+      .catch((error) => console.error('Fetch error: ', error));
+  };
+
+  // 實現你的 getStatusText 邏輯
+  const getStatusText = (status) => {
+    return status === 1 ? '正常' : '停權';
+  };
+
+  function editMember(member) {
+    selectedMember.value = { ...member };
+    windowToggle();
+    
+  }
+  function send_data(){
+    saveToBackend();
+    windowToggle();
+    location.reload();
+  }
+  
+
+  const handleBsearch = () => {
+  const url = 'http://localhost/THD104G2/public/php/Bsearch.php';
+  const params = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: `memberID=${searchInput.value}`
+  };
+
+  fetch(url, params)
+    .then(response => response.json())
+    .then(data => {
+      // 更新 members 數據，以便在表格中顯示
+      members.value = data;
+    })
+    .catch(error => {
+      console.error('發生錯誤：', error);
     });
-    const windowToggle = () => {
-      edit_window_member.value.classList.toggle("edit_window_member_on");
-      edit_window_member_bg.value.classList.toggle("edit_window_member_on");
+};
+const saveToBackend = () => {
+      // 準備發送給後端的數據
+      const dataToSend = {
+        ID: selectedMember.value.ID,
+        NAME: selectedMember.value.NAME,
+        STATUS: selectedMember.value.STATUS,
+        'E-MAIL': selectedMember.value['E-MAIL'],
+        PHONE: selectedMember.value.PHONE,
+        CREATE_TIME: selectedMember.value.CREATE_TIME
+        
+      };
+
+      // 使用fetch發送POST請求到後端PHP
+      fetch('http://localhost/THD104G2/public/php/Bupdate.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dataToSend)
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+        console.log('111',dataToSend.STATUS);
+        // 在這裡處理後端返回的數據
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
     };
+
+
+
+  onMounted(() => {
+    edit_window_member.value = document.querySelector('.edit_window_member');
+    edit_window_member_bg.value = document.querySelector('.edit_window_member_bg');
+
+    // 調用 fetchMembers 函數以獲取資料
+    fetchMembers();
+  });
+
+  const windowToggle = () => {
+    edit_window_member.value.classList.toggle("edit_window_member_on");
+    edit_window_member_bg.value.classList.toggle("edit_window_member_on");
+  };
+
+  return {
+    
+    members,
+    selectedMember,
+    searchInput,
+    saveToBackend,
+    handleBsearch,
+    send_data,
+    editMember,
+    getStatusText,
+    windowToggle
+  };
+}
+
+};
     
     </script>
     <style lang="scss" scoped>
