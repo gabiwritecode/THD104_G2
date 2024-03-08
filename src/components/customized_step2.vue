@@ -1,23 +1,31 @@
+<script setup>
+import { ref, onMounted, defineProps, defineEmits } from 'vue';
+const props = defineProps(['next-step']);
+const emit = defineEmits();
 
-<script>
-export default {
-  emits: ['prev-step', 'next-step'], 
-  setup(props, { emit }) {
-    const prevStep = () => {
-      emit('prev-step');
-    };
+const addMilkCheckbox = ref(false);
 
-    const nextStep = () => {
-      emit('next-step');
-    };
+onMounted(() => {
+  // 回復初始值
+  addMilkCheckbox.value = localStorage.getItem('addMilk') === 'true' || false;
+});
 
-    return {
-      prevStep,
-      nextStep,
-    };
-  },
+const prevStep = () => {
+  // 儲存資料
+  localStorage.setItem('addMilk', addMilkCheckbox.value.toString());
+  // 觸發上一步
+  emit('prev-step');
+};
+
+const nextStep = () => {
+  // 儲存資料
+  localStorage.setItem('addMilk', addMilkCheckbox.value.toString());
+  // 觸發下一步
+  emit('next-step');
 };
 </script>
+
+
 <template>
   <div>
     <div class="customized-img-container">
@@ -30,7 +38,7 @@ export default {
     </div>
     <div class="customized-milk-container">
       <p>加奶：</p>
-      <input type="checkbox" class="checkbox" >
+      <input type="checkbox" class="checkbox" v-model="addMilkCheckbox">
     </div>
     <br>
     <div class="button-container">

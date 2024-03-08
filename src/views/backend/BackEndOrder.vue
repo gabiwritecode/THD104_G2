@@ -28,11 +28,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>10001</td>
-              <td>123456789@gmail.com</td>
+            <tr v-for="(order,index) in OrderData" :key="index">
+              <td>{{ index+1 }}</td>
+              <td>{{ order['E-MAIL']}}</td>
               <td>已付款</td>
-              <td>2024-01-21 10:30</td>
+              <td>{{order.ORDER_TIME}}</td>
               <td>已完成</td>
               <td><button @click="editWindowToggle">編輯與查看</button></td>
             </tr>
@@ -104,11 +104,29 @@
   import { ref, onMounted } from 'vue';
   const editWindow = ref(null);
   const editWindowBg = ref(null);
+
+
+  const OrderData = ref([]);
   onMounted(() => {
 
+    fetchOrderData();
     editWindow.value = document.querySelector('.edit_window');
     editWindowBg.value = document.querySelector('.edit_window_bg');
+
+
+    
   });
+
+  const fetchOrderData = async()=>{
+    try{
+      const response = await fetch('php/order_info.php');
+      const data = await response.json();
+      OrderData.value = data;
+    } catch (error){
+      console.error('Error fetching data:', error)
+    }
+  };
+
   const editWindowToggle = () => {
     editWindow.value.classList.toggle("edit_window_on");
     editWindowBg.value.classList.toggle("edit_window_on");

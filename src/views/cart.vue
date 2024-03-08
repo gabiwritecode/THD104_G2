@@ -90,7 +90,7 @@
         <form>
           <label class="lable_name">
             <h2>姓名:</h2>
-            <input type="text" placeholder="請輸入您的姓名" name="name" value="">
+            <input type="text" placeholder="請輸入您的姓名" name="name" value="" v-model="write_info.name">
           </label>
           <label class="lable_name">
             <h2>手機:</h2>
@@ -132,8 +132,8 @@
               </div>
             </div>
           </div>
+          <button @click="checkInp()" :disabled="cart.length <= 0" :class="{'no_item' : cart.length <= 0}">結帳</button>
         </form>
-        <button @click="checkInp()" :disabled="cart.length <= 0" :class="{'no_item' : cart.length <= 0}">結帳</button>
       </div>
     </div>
   </main>
@@ -142,7 +142,6 @@
 
 <!-- <MemberBtn></MemberBtn> -->
 </template>
-
 <script>
 import MemberBtn from "../components/member_btn.vue"
 
@@ -153,9 +152,17 @@ export default{
  
       data() {
         return {
-          cart: JSON.parse(localStorage.getItem('cart')),
-          writtenLightbox: false
-          
+          writtenLightbox: false,
+          write_info: [
+            {
+              name: '',
+              phone: '',
+              address: ''
+            }
+
+            ],
+            cart: JSON.parse(localStorage.getItem('cart'))
+            
         }
       },
       computed:{
@@ -184,7 +191,7 @@ export default{
             item.num = 1
         }
         localStorage.setItem("cart", JSON.stringify(this.cart));
-      },
+        },
         addNum(item){
 
           item.num++
@@ -196,7 +203,7 @@ export default{
             item.num = 1
         }
         localStorage.setItem("cart", JSON.stringify(this.cart));
-      },
+        },
         del(index) {
           this.cart.splice(index, 1)
           localStorage.setItem("cart", JSON.stringify(this.cart));
@@ -216,10 +223,32 @@ export default{
           }
           if(written){
             this.writtenLightbox = true
+            
+
           }else{
             alert('還有資料未填寫')
-          }
+
+            const myValue = localStorage.getItem('cart');
+            
+            // console.log(myValue);
+            const url = 'php/cart.php'
+            fetch(url, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: myValue
+              // body: { myValue: JSON.stringify(myValue) }
+              })
+
+              // .then(resp => resp.json())
+              // .then(body => alert(body.message))
+          };
+            
+          
+
         },
+        
         close(){
           this.writtenLightbox = false
         },
@@ -228,8 +257,7 @@ export default{
         }
   
       }
-    };
-   
+}
 
 
 </script>

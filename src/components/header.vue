@@ -17,7 +17,16 @@
         <li><p>Copyright© 2024 BOISSON TEA Inc.</p></li>
       </ul>
       <ul class="member_btn">
-          <li><RouterLink to="./Login_in"><i class="fa-solid fa-user"></i></RouterLink></li>
+          <li v-if="isLoggedIn">
+            <RouterLink to="./order">
+              <i class="fa-solid fa-user"></i>
+            </RouterLink>
+          </li>
+          <li v-else>
+            <RouterLink to="./Login_in">
+              <i class="fa-solid fa-user"></i>
+            </RouterLink>
+          </li>
           <li><a href="#" @click.prevent><i class="fa-solid fa-cart-shopping" @click="toggleSlide"></i></a></li>
       </ul>
     </nav>
@@ -47,7 +56,17 @@
           const headerMobileBg = document.querySelector('.header_mobile_bg');
           headerMobileBg.classList.toggle('header_mobile_bg_on');
         }
-    }
+    },
+    computed: {
+    isLoggedIn() {
+      // 獲得登入狀態
+      return localStorage.getItem('isLoggedIn') === 'true';
+    },
+    userId() {
+      // 取得ID
+      return localStorage.getItem('userId');
+    },
+  },
  }
 
 </script>
