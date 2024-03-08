@@ -68,7 +68,11 @@
               <td><i class="fas fa-shopping-cart"></i><a href="#">再點一次</a></td>
             </tr>
           </tbody>
-      </table>
+        </table>
+        <!----- 登出按鈕 ----->
+      <div class="logout_container">
+        <RouterLink to="./Login_in" class="frontend_logout">登出<i class="fa-solid fa-arrow-right-from-bracket"></i></RouterLink>
+      </div>
     </div>
       
      <div class="order-overlay" v-show="overlayVisible">
