@@ -7,10 +7,10 @@
 }
 .products_wrapper{
   overflow: hidden;
+  position: relative;
   @include m(){
     font-weight: 300;
   }
-
   // 新增成功添加購物車
   .opacity{
     
@@ -45,40 +45,9 @@
         -webkit-user-drag: none;
         -moz-user-drag: none;
         -ms-user-drag: none;
-    }
-
-  // ===== TAIWAN TEA字 ====
-  .background_text{
-    color:$color1;
-    font-size: 66px;
-    font-weight: 600;
-    position: absolute;
-    rotate:90deg;
-    right: -300px;
-    top: 1000px;
-    span{
-      padding-right: 16px;
-    }
-    @include r1100{
-      right: -350px;
-      font-size: 46px;
-    }
-    @include m(){
-      left: 40px;
-      rotate:0deg;
-      font-size: 32px;
-      width: 300px;
-      top: 298px;
-    }
-  } //background_text
-
-  .background_text span:nth-child(2){
-    @include font_t1();
-    @include m(){
-      display: block;
-      font-weight: 300;
-    }
   }
+
+  
 
   // ===== 背景裝飾曲線 ====
   .background_img{
@@ -87,6 +56,10 @@
       right: 0px;
       top: 320px;
       z-index: -999;
+      @include r1100{
+        width: 30vw;
+        top: 30vw;
+      }
       @include m(){
         display: none;
       }
@@ -95,7 +68,7 @@
       display: none;
       @include m(){
         display: block;
-        top: 190px;
+        // top: 190px;
       }
     }
     .bg_circle1{
@@ -132,6 +105,21 @@
       left: 0px;
       top: 1560px;
       z-index: -999;
+      @include r1200{
+        width: 10vw;
+        top: 36%;
+      }
+      @include r1000{
+        width: 9vw;
+        top: 38%;
+      }
+      @include r900{
+        top: 44%;
+      }
+      @include r500{
+        width: 10vw;
+        top: 46%;
+      }
       @include m(){
         width: 60px;
         top: 1930px;
@@ -155,59 +143,84 @@
     width: 100%;
     position: relative;
     z-index: -997;
+    @include r1000{
+      height: 45vw;
+
+    }
     @include m(){
       //  border-radius:0 0 80% 80%  /100% 100% ;
-      height: 185px;
-      margin: 0 auto;
+      // height: 185px;
+      // margin: 0 auto;
     }
 
-    .container{
+    .banner_title{
+      // border: 1px solid blue;
       width: 700px;
       margin: 120px auto;
-      @include m(){
-       width: 230px;
-       margin: 30px auto;
+      @include r1200{
+        width: auto;
+        margin: 10% 20%;
+      }
+      @include r900{
+        padding-right: 20vw;
+        margin: 8% 18%;
       }
       .boisson_menu_text{
         width: 430px;
         // filter:drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.1));
+        @include r900{
+          width: 100%;
+        }
         @include m(){
           // -webkit-text-stroke:1px $white;
-          // font-size: 42px;
-          width: 192px;
+
         }
       }
       p{
         @include font_h2();
         margin: 8px 0;
         color: $white;
+        @include r700{
+          @include font_t1();
+        }
+        @include r500{
+          font-size: 14px;
+        }
         @include m(){
           font-size: 12px;
           font-weight: 300;
           margin: 0;
         }
       }
+      // 白線
       p img{
         padding-bottom: 8px;
         padding-left: 10px;
         width: 220px;
-        @include m(){
+        @include r900(){
           display: none;
         }
       }
-    }
+    } //banner_title
     .wave_bgi{
       width: 5000px;
       position: absolute;
       z-index: -996;
+      @include r1000{
+        width: 300%;
+      }
       @include m(){
         width: 2000px;
+        animation-duration: 4s;
       }
     }
     .wave_bgi1{
       bottom: -250px;
       opacity: .6;
       animation: wave_move1 9s linear infinite;
+      @include r1000{
+        bottom: -26%;
+      }
       @include m(){
         bottom: -90px;
       }
@@ -216,6 +229,9 @@
       bottom: -140px;
       opacity: .5;
       animation: wave_move2 9s linear infinite;
+      @include r1000{
+        bottom: -6%;
+      }
       @include m(){
         bottom: -40px;
       }
@@ -224,6 +240,9 @@
       bottom: -60px;
       opacity: .3;
       animation: wave_move1 9s 1s linear infinite;
+      @include r1000{
+        bottom: 12%;
+      }
       @include m(){
         bottom: 0px;
       }
@@ -232,15 +251,14 @@
       bottom: 30px;
       opacity: .2;
       animation: wave_move2 9s 1s linear infinite;
+      @include r1000{
+        bottom: 30%;
+      }
       @include m(){
         bottom: 35px;
       }
     }
-    .wave_bgi{
-      @include m(){
-        animation-duration: 4s;
-      }
-    }
+    
     @keyframes wave_move1{
       0%{
         left: -50%;
@@ -262,29 +280,62 @@
   
   // ===== 圓形動畫、飲料照片 ====
   .top{
+    // border: 1px solid red;
     position: relative;
     width: 1200px;
+    // height: 600px;
+    top: -460px;
     margin: 0 auto;
+    @include r1200{
+      width: auto;
+      margin: 0 6%;
+    }
     @include m(){
+      // top: 0px;
       margin-bottom: 180px;
     }
-    @include r1100(){
-      width: auto;
-    }
+    // 去背飲料杯
+    img{
+      position: absolute;
+      right: 14%;
+      // top: 50px;
+      bottom: -550px;
+      width: 240px;
+      @include r1100{
+        width: 22vw;
+      }
+      @include r700{
+        bottom: -530px;
+      }
+      @include r600{
+        bottom: -516px;
+      }
+      @include m(){
+        // right: 18%;
+        // top: -100px;
+        // width: 80px;
+      }
+    }  
     .circle1{
       position: absolute;
       background-color: $color1;
       width: 110px;
       height: 110px;
       border-radius: 50%;
-      left: 90px;
-      top:-100px;
+      left: 40px;
+      bottom: -480px;
       animation: circle 4s ease-in-out backwards infinite ;
+      @include r1200{
+        width: 10vw;
+        height: 10vw;
+        left: 0vw;
+        bottom: -460px;
+      }
       @include m(){
-        width: 32px;
-        height: 32px;
-        left: 38px;
-        top: -44px;
+        // width: 32px;
+        // height: 32px;
+        // left: 38px;
+        // top: -44px;
       }
     }
     .circle2{
@@ -293,14 +344,20 @@
       width: 25px;
       height: 25px;
       border-radius: 50%;
-      left: 234px;
-      top: -40px;
+      left: 174px;
+      bottom: -480px;
       animation: circle 4s .5s ease-in-out backwards infinite;
-        @include m(){
-        width: 8px;
-        height: 8px;
-        left: 72px;
-        top: -14px;
+      @include r1200{
+        width: 2vw;
+        height: 2vw;
+        left: 14vw;
+        bottom: -460px;
+      }
+      @include m(){
+        // width: 8px;
+        // height: 8px;
+        // left: 72px;
+        // top: -14px;
       }
     }
       .circle3{
@@ -310,13 +367,32 @@
       height:196px;
       border-radius: 50%;
       right: 10%;
-      top: -334px;
-      animation: circle 4s ease-in-out backwards infinite ;
+      bottom: -310px;
+      animation: circle 4s ease-in-out backwards infinite;
+      @include r1100{
+        width: 16vw;
+        height: 16vw;
+      }
+      @include r1100{
+        bottom: -330px;
+      }
+      @include r900{
+        bottom: -350px;
+      }
+      @include r800{
+        bottom: -370px;
+      }
+      @include r600{
+        bottom: -390px;
+      }
+      @include r500{
+        bottom: -405px;
+      }
         @include m(){
-        width: 58px;
-        height: 58px;
-        right: 46px;
-        top: -92px;
+        // width: 58px;
+        // height: 58px;
+        // right: 46px;
+        bottom: -435px;
       }
     }
     @keyframes circle {
@@ -331,17 +407,7 @@
       }
     }
 
-    img{
-      position: absolute;
-      right: 14%;
-      top: -310px;
-      width: 240px;
-      @include m(){
-        right: 18%;
-        top: -100px;
-        width: 80px;
-      }
-    }  
+
     
   } // top
 
@@ -350,14 +416,65 @@
     width: 1200px;
     margin: 160px auto;
     position: relative;
+    // border: 1px solid red;
+    @include r1200{
+      width: auto;
+      margin: 10% 8%;
+    }
+    @include r900{
+      margin: 10% 12%;
+    }
     @include m(){
       width: 300px;
       margin: 70px auto;
     }
+    // ===== TAIWAN TEA字 ====
+  .background_text{
+    // border: 1px solid red;
+    color: $color1;
+    font-size: 4vw;
+    font-weight: 600;
+    position: absolute;
+    rotate: 90deg;
+    transform-origin: top left;
+    right: -59vw;
+    top: 0px;
+    @include r1200{
+      right: -5vw;
+      font-size: 46px;
+      display: none;
+    }
+    @include r600{
+      display: inline;
+      right: -660px;
+      font-size: 32px;
+    }
+    @include m(){
+      display: block;
+      left: 0px;
+      rotate: 0deg;
+      width: 300px;
+      top: -118px;
+    }
+    span:nth-child(2){
+      @include font_t1();
+      padding-left: 16px;
+      @include r600{
+        font-weight: 300;
+      }
+      @include m(){
+        padding-left: 0;
+        display: block;
+      }
+    }
+  } //background_text
 
     ul{
       display: flex;
       flex-wrap: wrap;
+      // width: 100%;
+      // margin: 0 auto;
+      align-items: end;
     }
     
     .introduce{
@@ -366,9 +483,12 @@
       @include m(){
         margin-bottom: 0px;
       }
-      img{
+      h1 img{
         margin-right: 8px;
-         @include m(){
+        @include r1000{
+          width: 30px;
+        }
+         @include r600(){
           width: 24px;
          }
       }
@@ -376,16 +496,22 @@
         margin: 0px 10px 0px 0;
         display: inline-block;
         font-size: 30px;
-        @include m(){
+        @include r1000{
+          font-size: 26px;
+        }
+        @include r600(){
         font-size: 20px;
         line-height: 2;
-        
         }
       }
       p{
         // font-weight: 300;
         color: $color2;
         display: inline-block;
+        @include r600{
+          // display: block;
+          font-size: 15px;
+        }
       }
     }
     
@@ -393,24 +519,37 @@
       display: flex;
       font-size: 20px;
       flex-wrap: wrap;
+      @include r600{
+        display: block;
+      }
       @include m(){
         font-size: 16px;
       }
     }
     ol li{
-      margin: 0 20px;
-      padding-right: 40px;
+      margin: 0 1vw;
+      height: 358px;
+      @include r1200{
+        height: 340px;
+        margin: 0 .5vw;
+      }
+      @include r900{
+        height: 320px;
+      }
       @include m(){
         padding-right: 0px;
         margin: 0 auto;
       }
     }
     ol .left_list{
+      padding-right: 2vw;
       border-right: 1px solid $color2;
-      height: 358px;
-      @include m(){
-        border-right: 0;
+      @include r1200{
+        margin-right: 1.2vw;
+      }
+      @include r600(){
         height: auto;
+        border-right: 0;
         border-bottom: 1px solid $color2;
         padding-bottom: 8px;
       }
@@ -419,7 +558,10 @@
       color:$color1;
       padding-left: 12px;
       margin-bottom: 40px;
-      @include m(){
+      @include r1200{
+        margin-bottom: 3vw;
+      }
+      @include r600(){
         padding-left: 8px;
         margin-top: 20px;
         margin-bottom: 24px;
@@ -429,13 +571,39 @@
     .row{
       position: relative;
       margin-bottom: 40px;
-      @include m(){
+      @include r900(){
+        margin-bottom: 30px;
+      }
+      @include m{
         margin-bottom: 20px;
+      }
+    }
+    ol span{
+      @include r1100{
+        font-size: 18px;
+      }
+      @include m{
+        font-size: 16px;
       }
     }
     .product_name{
       display: inline-block;
       width: 152px;
+      @include r1200{
+          width: 120px;
+      }
+      @include r1000{
+          width: 100px;
+      }
+      @include r900{
+          width: 120px;
+      }
+      @include r700{
+          width: 100px;
+      }
+      @include r600{
+          width: 132px;
+      }
       @include m(){
         width: 132px;
       }
@@ -443,8 +611,23 @@
     .product_price{
       display: inline-block;
       width: 68px;
+      @include r1200{
+          width: 62px;
+      }
+      @include r1100{
+          width: 52px;
+      }
+      @include r900{
+          width: 54px;
+      }
+      @include r700{
+          width: 48px;
+      }
+      @include r600{
+          width: 58px;
+      }
       @include m(){
-        width: 58px;
+        // width: 58px;
       }
     }
 
@@ -474,56 +657,200 @@
     }
   } //product
 
-  .tea .introduce, .milk_tea .introduce{
-    @include m(){
-      position: absolute;
-      width: 140px;
-      right: 0px;
-      top: 4px;
-    }
-  }
+  // 介紹文字 改到右邊
+  .tea, .milk_tea{
+    ul{
+      justify-content: center;
+      width: auto;
+      margin: 0 auto;
+      @include r1200{
+        height: 420px;
+      }
+      
+      @include r900{
+         justify-content: start;
+         width: 580px;
+        // margin: 0 6vw;
+        // height: 540px;
+        // position: relative;
+        height: 580px;
+      }
+      @include r700{
+        height: auto;
+        width: 540px;
+      }
+      @include r600{
+        width: 320px;
+        // display: block;
+      }
+      @include m{
+        width: 320px;
+      }
+      li{
+        position: relative;
+        width: auto;
+        @include r1200{
+          justify-content: space-between;
 
-  .milk_tea img, .tea img{
+        }
+        @include r900{
+          margin: 0 auto;
+        }
+      }
+    }
+    ol li {
+      @include r900{
+        height: 300px;
+      }
+      @include r700{
+        height: 290px;
+      }
+      @include r600{
+        height: auto;
+      }
+
+    }
+  
+    .product_img{
+      @include r1200{
+        width: 240px;
+      }
+      @include r1100{
+        width: 210px;
+        padding-bottom: 8px;
+      }
+      @include r1000{
+        width: 200px;
+      }
+      @include r900{
+        width: 180px;
+        // top: -0px;
+        // left: 0vw;
+      }
+      @include r700{
+        left: 3vw;
+      }
+      @include r600{
+        width: 120px;
+        left: 0vw;
+      }
       @include m(){
         width: 136px;
       }
     }
-  .milk_tea ul li:nth-child(2){
-    @include m(){
-    order:-1;
-    }
-  }
-
-   .milk_tea ul li ol li:nth-child(1){
-    @include m(){
-    order:-2;
+    .product_img img{
+      width: 100%;
+      @include r900{
+        // position: absolute;
+     
+        // border-radius: 50%;
+      }
     }
   }
 
   .tea{ 
-    img{
-      margin-right: 50px;
+    ul{
+      @include r1200{
+        // margin-top: 20%;
+      }
+    }
+    .introduce{
+      @include r1200{
+        position: absolute;
+        left: -250px;
+        top: -80px;
+      }
+       @include r1000{
+        left: -220px;
+        top: -80px;
+      }
+      @include r900{
+        left: 260px;
+        top: -200px;
+        // width: 200px;
+      }
+      @include r600{
+        left: 150px;
+        top: -160px;
+      }
+      @include m{
+        top: -190px;
+      }
+    }
+    .product_img{
+      margin-right: 3vw;
+      @include r1200{
+        margin-right: 2vw;
+      }
+      @include r900{
+        margin: 0;
+      }
     }
       .no1 .tag, .no6 .tag{
         display: block;
       }
   }
   .milk_tea{
-      .no1 .tag, .no6 .tag{
-        display: block;
+    ul{
+      @include r1200{
+        // margin-top: 18%;
       }
+    }
+    .introduce{
+      
+      @include r900{
+        position: absolute;
+        left: 260px;
+        top: -200px;
+      }
+      @include r600{
+        left: 150px;
+        top: -160px;
+      }
+      @include m{
+        top: -190px;
+      }
+    }
+    .product_img{
+      margin-left: 3vw;
+      @include r1200{
+        margin-left: 2vw;
+        // margin-right: 2vw;
+      }
+      @include r900{
+        margin: 0;
+      }
+    }
+    .no1 .tag, .no6 .tag{
+      display: block;
+    }
+  }
+    // 奶茶換順序
+  .milk_tea ul li:nth-child(2){
+    @include r900(){
+    order:-1;
+    }
+  }
+   .milk_tea ul li ol li:nth-child(1){
+    @include r900(){
+    order:-2;
+    }
   }
   
-  // ===== 商品下半部 ====
+  // ======= 商品下半部 =======
   .area2{
     background-color: $color1;
     margin-top: 140px;
     overflow: hidden;
     color: $white;
     position: relative;
+    @include r1200{
+      margin-top: 10%;
+    }
     @include m(){
       margin-top: 0px;
     }
+    
 
     // ===== 背景裝飾曲線 ====
     .curve3{
@@ -531,6 +858,12 @@
     left: 0px;
     top: 720px;
     // z-index: -998;
+    @include r1200{
+      width: 9vw;
+    }
+    @include r900{
+      top: 34%;
+    }
       @include m(){
         width: 60px;
         top: 800px;
@@ -540,19 +873,30 @@
     position: absolute;
     right: 0px;
     bottom: -160px;
-      @include m(){
+    @include r1200{
+      width: 24vw;
+      bottom: -5%;
+    }
+    @include r600(){
       width: 160px;
       bottom: -80px;
       // top: 200px;
       }
     }
   
-    // ===== 大標題 ====
+    // ===== 大標題 FRUIT & COFFEE ====
     .title{
       color: $white;
       width: 1200px;
       margin: 0px auto;
       padding: 50px 0;
+      @include r1200{
+        width: auto;
+        margin: 0 9%;
+      }
+      @include r900{
+        padding: 5% 0;
+      }
       @include m(){
         width: 320px;
         padding: 20px 0 30px 0;
@@ -562,6 +906,9 @@
         font-size: 92px;
         text-align: left;
         line-height: 0.8;
+        @include r1200{
+          font-size: 8vw;
+        }
         @include m(){
           font-size: 34px;
           margin: 10px auto;
@@ -574,24 +921,45 @@
           @include font_t2();
         }
       }
+    } // title
+
+    .product{
+      width: 1140px;
+      @include r1200{
+      width: auto;
+      margin: 10% 8%;
     }
-    
+      @include m(){
+        width: 320px;
+        margin: 0 auto;
+        margin-bottom: 60px;
+      }
+    }
     .rotate_oringe{
       position: absolute;
       right: -160px;
       top: -100px;
       width: 329px;
       animation: oringe 6s linear backwards infinite;
-      @include m(){
-        width: 100px;
+      @include r1200{
+        width: 26vw;
+        right: -14%;
+      }
+      @include r1000{
+        width: 24vw;
+        right: -12%;
+        top: -10%;
+      }
+      @include r700{
+        right: -10%;
+        top: 2%;
+      }
+      @include r600(){
         right: 0px;
         top: 100px;
       }
       img{
         width: 100%;
-        @include m(){
-        //  width: 100px;
-        }
       }
     }
     @keyframes oringe{
@@ -603,22 +971,6 @@
       }
     }
 
-    .product{
-      width: 1140px;
-      @include m(){
-        width: 320px;
-        margin: 0 auto;
-        margin-bottom: 60px;
-    
-      }
-    }
-    .juice, .smoothies{
-      padding-right: 60px;
-      @include m(){
-        padding: 0;
-      }
-    }
-
     // ===== 產品標題 ====
     .introduce{
       @include m(){
@@ -627,8 +979,12 @@
       h1{color:$white;}
       p{color:$white;}
       text-align:right;
-      @include m(){
+      @include r800(){
         text-align: left;
+        width: 80%;
+      }
+      @include r500{
+        width: auto;
       }
     }
   
@@ -639,6 +995,19 @@
       border-radius: 0 100px 0 100px;
       font-size: 20px;
       flex-wrap: wrap;
+      padding: 0 8%;
+      box-sizing: border-box;
+      @include r1200{
+        height: auto;
+        border-radius: 0 8vw 0 8vw;
+        // justify-content: space-between;
+      }
+      @include r1000{
+        padding: 0 6%;
+      }
+      @include r600{
+        padding: 0;
+      }
       @include m(){
         height: 290px;
         font-size: 16px;
@@ -649,34 +1018,128 @@
     ul .left_list2{
       width: 720px;
       display: block;
-      @include m(){
+      @include r1200{
+        width: 44vw;
+        padding: 0;
         display: none;
+      }
+     
+      // @include r1100{
+      //   width: 36vw;
+      // }
+      // @include r900{
+      //   width: 30vw;
+      // }
+      // @include m(){
+      //   display: none;
+      // }
+    }
+    li{
+      // outline: 1px solid red;
+       @include r600{
+        margin: 0 auto;
+      }
+      span{
+        @include r1100{
+          font-size: 18px;
+        }
+        @include m{
+          font-size: 16px;
+        }
+      }
+    }
+    .product_name{
+      @include r1200{
+        width: 140px;
+      }
+      @include r1100{
+        width: 130px;
+      }
+      @include r600{
+        width: 24vw;
+      }
+      @include r500{
+        width: 26vw;
+      }
+    }
+    .product_price{
+      @include r600{
+        width: 14vw;
       }
     }
     .product_img img{
       position: absolute;
       margin: 0;
+      @include r1200{
+        width: 46vw;
+      }
+      @include r900{
+        width: 40vw;
+      }
+      @include r600{
+        position: static;
+        width: 60%;
+        // border-radius: 0 0 0 36px;
+
+      }
       @include m(){
-        width: 214px;
-       border-radius: 0 0 0 36px;
-       position: static;
+       width: 214px;
       }
     }
-    .juice .product_img img, .smoothies .product_img img{
-      top: -25px;
-      border-radius: 0 0 0 100px;
+    // 果汁 、冰沙
+    .juice, .smoothies{
+      padding-right: 60px;
+      @include r1200{
+        padding-right: 3vw;
+      }
       @include m(){
-        border-radius: 0 0 0 36px;
+        padding: 0;
+      }
+      ul{
+        justify-content: end;
+      }
+      li{
+        // padding-right: 5vw;
+        @include r1200{
+          // padding-left: 50vw;
+        }
+        @include r1200{
+          // padding-left: 46vw;
+        }
+        @include r900{
+          // padding-left: 40vw;
+        }
+         @include m(){
+          // padding-left: 0px;
+          margin: 0 auto;
+          }
+      }
+      .product_img img{
+        bottom: 0;
+        border-radius: 0 0 0 100px;
+        @include r1200{
+        border-radius: 0 0 0 8vw;
+        // justify-content: space-between;
+      }
+        @include m(){
+          border-radius: 0 0 0 36px;
+        }
       }
     }
+
+    .juice .product_img img, .smoothies .product_img img{}
     li{
       @include m(){
         margin: 0 auto;
       }
     }
 
+    // 咖啡
     .coffee{
       padding-left: 60px;
+      @include r1200{
+        padding-left: 3vw;
+      }
       @include m(){
         padding-left: 0;
       }
@@ -686,7 +1149,7 @@
       left: 20px;
       top: 380px;
       animation: coffee_bean1 2s ease-in-out backwards infinite ;
-      @include m(){
+      @include r600(){
         left: 20px;
         width: 20px;
         animation: coffee_bean1m 2s ease-in-out backwards infinite ;
@@ -721,11 +1184,11 @@
       top: 424px;
       rotate:(85deg);
       animation: coffee_bean2 2s 1s ease-in-out backwards infinite ;
-        @include m(){
+        @include r600(){
           left: 6px;
           width: 20px;
           animation: coffee_bean2m 2s 1s ease-in-out backwards infinite ;
-      }
+        }
       }
       @keyframes coffee_bean2{
         0%{
@@ -755,11 +1218,11 @@
       top: 420px;
       rotate:(20deg);
       animation: coffee_bean3 2s 0.7s ease-in-out backwards infinite ;
-        @include m(){
+        @include r600(){
           left: 30px;
           width: 20px;
           animation: coffee_bean3m 2s .7s ease-in-out backwards infinite ;
-      }
+        }
       }
       @keyframes coffee_bean3{
         0%{
@@ -789,22 +1252,27 @@
       }
       .product_img img{
         right: 0px;
-        top: 22px;
+        bottom: 0;
         border-radius: 0;
-        @include m(){
-          padding-left: 104px;
+        @include r600(){
+          padding-left: 40%;
           border-radius: 0 0 36px 0;
+        }
+        @include m{
+          padding-left: 32%;
         }
       }
       li{
-        padding-left: 120px;
+        // padding-left: 120px;
+        @include r1200{
+          // padding-left: 5vw;
+        }
         @include m(){
           padding-left: 0px;
           margin: 0 auto;
           }
       }
     } //coffee
-  
    
     
     .smoothies {
@@ -812,8 +1280,11 @@
         position: absolute;
         right: 0px;
         bottom: -10px;
-        animation: ice 3s  ease-in-out backwards infinite ;
-        @include m(){
+        animation: ice 3s  ease-in-out backwards infinite;
+        @include r1200{
+          width: 5vw;
+        }
+        @include r600(){
           width: 40px;
           right: 16px;
           bottom: auto;
@@ -838,7 +1309,7 @@
       }
     }
       .product_img img{
-        top: -51px;
+        // top: -51px;
       }
     }
     // tag開關

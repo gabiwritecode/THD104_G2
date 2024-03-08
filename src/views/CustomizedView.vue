@@ -11,6 +11,15 @@ import Step3 from '@/components/customized_step3.vue';
 import Step4 from '@/components/customized_step4.vue';
 import Final from '@/components/customized_final.vue';
 
+const customizationData = ref({
+  teabase: null,
+  ice: null,
+  sugar: null,
+  addMilk: false,
+  selectedFruit: null,
+  selectedTopping: null,
+});
+
 const currentStep = ref(1);
 
 const prevStep = () => {

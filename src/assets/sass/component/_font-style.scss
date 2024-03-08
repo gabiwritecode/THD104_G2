@@ -7,7 +7,9 @@
     color: $color2;
     // line-height:2;
     margin: $mh + px $mw + px;
-
+    // @include r900{
+    //     font-size: 22px;
+    // }
     @include m(){
         margin: 20px $mw;
         letter-spacing:.07rem;
@@ -23,6 +25,9 @@
     color: $color2;
     // line-height:2;
     margin: $mh + px $mw + px;
+    //  @include r900{
+    //     font-size: 18px;
+    // }
 }
 
 // p 大部分內文

@@ -34,7 +34,7 @@ $categoryName = $categoryResult['NAME'];
 $updateQuery = "UPDATE INFORMATION SET CATEGORY_ID = :categoryId, STATUS = :status, TITLE = :title, SUBTITLE = :subtitle, TEXT = :text WHERE ID = :infoId";
 $updateStatement = $pdo->prepare($updateQuery);
 $updateStatement->bindParam(':categoryId', $category, PDO::PARAM_INT);
-$updateStatement->bindParam(':status', $status, PDO::PARAM_INT);  // Ensure that status is bound as an integer
+$updateStatement->bindParam(':status', $status, PDO::PARAM_INT);  
 $updateStatement->bindParam(':title', $title, PDO::PARAM_STR);
 $updateStatement->bindParam(':subtitle', $subtitle, PDO::PARAM_STR);
 $updateStatement->bindParam(':text', $text, PDO::PARAM_STR);
