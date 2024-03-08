@@ -1,6 +1,7 @@
 
 <script setup>
   import {ref} from "vue";
+  import { useRouter } from "vue-router";
   import memberBtn from "../components/member_btn.vue";
    const overlayVisible = ref(false);
    const selectedOrder = ref(null);
@@ -12,6 +13,32 @@
       { id: 5, time: '2024-05-19 18:30', details: '展開', price: '60元', status: '完成',  orderDetails: { name: '西瓜蜜桃茶', quantity: 1, extras: '無', sweetness: '無糖', ice: '去冰', total: '60元' } },
   
     ]);
+
+    const router = useRouter();
+    const logout = async () => {
+      try {
+        const response = await fetch('php/logout.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          localStorage.removeItem('isLoggedIn');
+          localStorage.removeItem('userId');
+          router.push({ name: 'Login_in' }); 
+        } else {
+          console.error('Logout failed:', data.message);
+        }
+      } catch (error) {
+        console.error('Logout error:', error);
+      }
+    };
+
+
 
     const openLightbox = (order) => {
       selectedOrder.value = order;
@@ -71,7 +98,7 @@
         </table>
         <!----- 登出按鈕 ----->
       <div class="logout_container">
-        <RouterLink to="./Login_in" class="frontend_logout">登出<i class="fa-solid fa-arrow-right-from-bracket"></i></RouterLink>
+        <div class="frontend_logout" @click="logout">登出<i class="fa-solid fa-arrow-right-from-bracket"></i></div>
       </div>
     </div>
       

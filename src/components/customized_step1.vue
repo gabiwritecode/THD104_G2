@@ -48,16 +48,15 @@ const nextStep = () => {
         <option value="去冰">去冰</option>
         <option value="微冰">微冰</option>
         <option value="少冰">少冰</option>
-        <option value="正常冰">正常冰</option>
-        <option value="熱飲">熱飲</option>
+        <option value="正常">正常</option>
       </select>
       <span>甜度：</span>
       <select  name="sugar" id="sugar" v-model="sugarSelect">
         <option value="無糖">無糖</option>
-        <option value="一分糖">一分糖</option>
-        <option value="微糖">微糖</option>
+        <option value="微糖">無糖</option>
+        <option value="半糖">微糖</option>
         <option value="少糖">少糖</option>
-        <option value="正常甜">正常甜</option>
+        <option value="全糖">全糖</option>
       </select>
     </div>
     <div class="button-container">

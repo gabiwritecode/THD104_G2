@@ -161,5 +161,6 @@
   }
   .frontend_logout{
     @include font_a($color2);
+    cursor: pointer;
   }
 }

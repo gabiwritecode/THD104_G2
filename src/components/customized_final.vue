@@ -1,5 +1,81 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+const cart = ref([]);
+const lightbox = ref(false);
+const toggleSlide = () => {
+  const slide = document.querySelector('.card_slide');
+  slide.classList.toggle("on");
+};
+
+const addNum = (item) => {
+  item.num++;
+  localStorage.setItem("cart", JSON.stringify(cart.value));
+};
+
+const subNum = (item) => {
+  item.num--;
+  if (item.num < 1) {
+    item.num = 1;
+  }
+  localStorage.setItem("cart", JSON.stringify(cart.value));
+};
+
+const del = (index) => {
+  cart.value.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart.value));
+};
+
+const checkAdd = (item) => {
+  if (item.add == '加料') {
+    item.addPrice = 0;
+  } else {
+    item.addPrice = 10;
+  }
+  localStorage.setItem("cart", JSON.stringify(cart.value));
+};
+
+const clearAll = () => {
+  cart.value = [];
+  localStorage.setItem("cart", JSON.stringify(cart.value));
+};
+
+const isSelected = (item) => {
+  if (item.size !== '大小' && item.sugar !== '甜度' && item.ice !== '冰塊') {
+    item.isSelected = true;
+  } else {
+    item.isSelected = false;
+  }
+  localStorage.setItem("cart", JSON.stringify(cart.value));
+};
+
+const total = computed(() => {
+  return cart.value.reduce((sum, item) => {
+    if (item.size == '大杯') {
+      return sum + item.num * (item.largePrice + item.addPrice);
+    } else {
+      return sum + item.num * (item.mediumPrice + item.addPrice);
+    }
+  }, 0);
+});
+
+const goToPay = () => {
+  let isSelectAll = true;
+  for (let i = 0; i < cart.value.length; i++) {
+    if (!cart.value[i].isSelected) {
+      isSelectAll = false;
+    }
+  }
+
+  if (isSelectAll) {
+    location.href = '#/cart';
+  } else {
+    lightbox.value = true;
+  }
+};
+
+const closeLightBox = () => {
+  lightbox.value = false;
+};
 
 const customizationData = ref({
   teabase: localStorage.getItem('teabase'),
