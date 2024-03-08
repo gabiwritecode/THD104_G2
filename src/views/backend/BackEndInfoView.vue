@@ -29,7 +29,7 @@
               <tr v-for="info in informationData" :key="info.ID">
                 <td>{{ info.ID }}</td>
                 <td>{{ info.CATEGORY_NAME }}</td>
-                <td>{{ displayStatus(info.STATUS) }}</td>
+                <td>{{ displayStatus(info.STATUS)}}</td>
                 <td>{{ info.TITLE }}</td>
                 <td><button @click="editWindowToggle(info)">編輯與查看</button></td>
               </tr>
@@ -140,7 +140,7 @@ const populateEditForm = (info) =>{ if (info) {
 }
 // 預覽圖片
 const handleImageUpload = () => {
-  // Ensure that fileInput.value is not null
+
   if (fileInput.value && fileInput.value.files.length > 0) {
     editFormData.value.imageFile = fileInput.value.files[0];
 
@@ -176,6 +176,8 @@ const submitForm = async () => {
 
     fetchInfoData();
     editWindowToggle();
+
+    editFormData.value.imagePreview = null;
   } catch (error) {
     console.error('Error:', error);
   }
@@ -187,7 +189,7 @@ const statusOptions = [
 
 const displayStatus = computed(() => {
   return (status) => {
-    return status === 1 ? '上架' : '下架';
+    return status == 1 ? '上架' : '下架';
   };
 });
 
