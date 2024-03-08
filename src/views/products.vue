@@ -2,7 +2,7 @@
    <div class="space"></div>
     <main class="products_wrapper">
         <div class="opacity" id="show" v-if="show">
-            <h2>成功加入購物車</h2>
+            <div>成功加入購物車</div>
         </div>
      <!------------------- banner ------------------->
         <section class="banner">
@@ -60,7 +60,7 @@
                         <li class="left_list"> 
                             <div class="size"> 
                                 <span class="product_name"></span> <span class="product_price">M</span><span class="product_price">L</span></div>
-                            <div class="row no1" v-for=" item in drinkList1" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <div class="row no1" v-for=" item in list.drinkList1" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i class="fa-solid fa-cart-shopping"></i></button></div>
                             <!-- <div class="row no2"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
                             <div class="row no3"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
                             <div class="row no4"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍茶勒</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>     -->
@@ -68,7 +68,7 @@
             
                             <li> 
                                 <div class="size"> <span class="product_name"></span> <span class="product_price">M</span><span class="product_price">L</span></div>
-                                <div class="row no5" v-for="item in drinkList2" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                                <div class="row no5" v-for="item in list.drinkList2" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i class="fa-solid fa-cart-shopping"></i></button></div>
                                 <!-- <div class="row no6"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
                                 <div class="row no7"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
                                 <div class="row no8"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍茶勒</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>    -->
@@ -89,7 +89,7 @@
                     <ol>
                         <li class="left_list"> 
                             <div class="size">                                                                 <span class="product_name"></span> <span class="product_price">M</span><span class="product_price">L</span></div>
-                            <div class="row no1" v-for="item in drinkList3" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <div class="row no1" v-for="item in list.drinkList3" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i class="fa-solid fa-cart-shopping"></i></button></div>
                             <!-- <div class="row no2"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
                             <div class="row no3"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
                             <div class="row no4"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍茶勒</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>     -->
@@ -98,7 +98,7 @@
                         <li> 
                              <div class="size">
                                 <span class="product_name"></span> <span class="product_price">M</span><span class="product_price">L</span></div>
-                            <div class="row no5" v-for="item in drinkList4" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <div class="row no5" v-for="item in list.drinkList4" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i class="fa-solid fa-cart-shopping"></i></button></div>
                             <!-- <div class="row no6"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span></div>
                             <div class="row no7"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span></div>
                             <div class="row no8"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍茶勒</span> <span class="product_price ">$30</span><span class="product_price">$35</span></div>    -->
@@ -144,7 +144,7 @@
                     <li> 
                         <div class="size"> <span class="product_name"></span> <span class="product_price">M</span><span
                                 class="product_price">L</span></div>
-                        <div class="row no1" v-for="item in drinkList5" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
+                        <div class="row no1" v-for="item in list.drinkList5" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
                                 class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span
                                 class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i
                                     class="fa-solid fa-cart-shopping"></i></button></div>
@@ -186,7 +186,7 @@
                     <li> 
                         <div class="size"> <span class="product_name"></span> <span class="product_price">M</span><span
                                 class="product_price">L</span></div>
-                        <div class="row no1" v-for="item in drinkList6" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
+                        <div class="row no1" v-for="item in list.drinkList6" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
                                 class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span
                                 class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i
                                     class="fa-solid fa-cart-shopping"></i></button></div>
@@ -232,7 +232,7 @@
                     <li>
                         <div class="size"> <span class="product_name"></span> <span class="product_price">M</span><span
                                 class="product_price">L</span></div>
-                        <div class="row no1" v-for="item in drinkList7" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
+                        <div class="row no1" v-for="item in list.drinkList7" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
                                 class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span
                                 class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i
                                     class="fa-solid fa-cart-shopping"></i></button></div>
@@ -291,7 +291,7 @@
                         <h3>{{item.name}}</h3>
                         <div class="inner">
                             <div class="select">
-                                <select name="" id="size" class="size" v-model="item.size" @change="isSelected(item)">
+                                <select name="" id="size" class="size" v-model="item.size" @change="isSelected(item)" required>
                                     <option value="大小">大小</option>
                                     <option value="中杯">M</option>
                                     <option value="大杯">L</option>
@@ -370,7 +370,8 @@ export default {
             
             show: false,
             lightbox: false,
-            drinkList1: [
+            list:{
+                drinkList1: [
                 {
                     id: 1,
                     name: '高山烏龍',
@@ -861,11 +862,16 @@ export default {
                     sugar:['甜度','全糖','少糖','半糖','微糖','無糖'],
                     sugar:'甜度',
                     ice:['冰塊','正常','少冰','微冰','去冰'],
-                    ice: '冰塊'
+                    ice: '冰塊',
+                    add:['加料','仙草','愛玉','珍珠','椰果'],
+                    add: '加料',
+                    addPrice: 0,
+                    isSelected: false,
                 },
                 
-            ],
-            cart: []
+            ]
+            },
+            cart: [],
         
         }
     },

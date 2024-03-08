@@ -104,18 +104,8 @@
 export default {
   data() {
       return {
-        // lightbox: false,
+        lightbox: false,
         cart: []
-        // size:['大小','中杯','大杯'],  
-        // size: '大小',
-        // sugar:['甜度','全糖','少糖','半糖','微糖','無糖'],
-        // sugar:'甜度',
-        // ice:['冰塊','正常','少冰','微冰','去冰'],
-        // ice: '冰塊',
-        // add:['加料','仙草','愛玉','珍珠','椰果'],
-        // add: '加料',
-        // addPrice: 0,
-        // isSelected: false,
       }
 
      },
