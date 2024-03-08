@@ -12,11 +12,16 @@
         </div>
 
     </div>
+    <MemberBtn></MemberBtn>
 </template>
 
 <script>
+    import MemberBtn from "../components/member_btn.vue";
+    
     export default {
-        
+        components: {
+            MemberBtn, 
+        }
     }
 </script>
 

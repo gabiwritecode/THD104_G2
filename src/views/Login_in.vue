@@ -35,9 +35,13 @@
   <script>
  import { ref, onMounted} from 'vue';
  import { useRouter } from 'vue-router';
+ import MemberBtn from "../components/member_btn.vue";
  
   
   export default {
+    components: {
+      MemberBtn, 
+    },
     setup() {
       const email = ref('');
       const password = ref('');

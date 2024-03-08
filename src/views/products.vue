@@ -59,7 +59,7 @@
                         <li class="left_list"> 
                             <div class="size"> 
                                 <span class="product_name"></span> <span class="product_price">M</span><span class="product_price">L</span></div>
-                            <div class="row no1" v-for=" item in drinkList1" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <div class="row no1" v-for=" item in drinkList1" :key="item.id"><button class="tag" :class="{'tag_on': item.tagOn}"><i :class="{'fa-solid fa-crown': item.tag === '熱銷', 'fa-solid fa-wine-glass': item.tag === '新品'}"></i> {{ item.tag }}</button><span class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i class="fa-solid fa-cart-shopping"></i></button></div>
                             <!-- <div class="row no2"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
                             <div class="row no3"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
                             <div class="row no4"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍茶勒</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>     -->
@@ -67,7 +67,7 @@
             
                             <li> 
                                 <div class="size"> <span class="product_name"></span> <span class="product_price">M</span><span class="product_price">L</span></div>
-                                <div class="row no5" v-for="item in drinkList2" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                                <div class="row no5" v-for="item in drinkList2" :key="item.id"><button class="tag" :class="{'tag_on': item.tagOn}"><i :class="{'fa-solid fa-crown': item.tag === '熱銷', 'fa-solid fa-wine-glass': item.tag === '新品'}"></i> {{ item.tag }}</button><span class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i class="fa-solid fa-cart-shopping"></i></button></div>
                                 <!-- <div class="row no6"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
                                 <div class="row no7"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
                                 <div class="row no8"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍茶勒</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>    -->
@@ -88,7 +88,7 @@
                     <ol>
                         <li class="left_list"> 
                             <div class="size">                                                                 <span class="product_name"></span> <span class="product_price">M</span><span class="product_price">L</span></div>
-                            <div class="row no1" v-for="item in drinkList3" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <div class="row no1" v-for="item in drinkList3" :key="item.id"><button class="tag" :class="{'tag_on': item.tagOn}"><i :class="{'fa-solid fa-crown': item.tag === '熱銷', 'fa-solid fa-wine-glass': item.tag === '新品'}"></i> {{ item.tag }}</button><span class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i class="fa-solid fa-cart-shopping"></i></button></div>
                             <!-- <div class="row no2"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
                             <div class="row no3"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>
                             <div class="row no4"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍茶勒</span> <span class="product_price ">$30</span><span class="product_price">$35</span><button class="add_cart"><i class="fa-solid fa-cart-shopping"></i></button></div>     -->
@@ -97,7 +97,7 @@
                         <li> 
                              <div class="size">
                                 <span class="product_name"></span> <span class="product_price">M</span><span class="product_price">L</span></div>
-                            <div class="row no5" v-for="item in drinkList4" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i class="fa-solid fa-cart-shopping"></i></button></div>
+                            <div class="row no5" v-for="item in drinkList4" :key="item.id"><button class="tag" :class="{'tag_on': item.tagOn}"><i :class="{'fa-solid fa-crown': item.tag === '熱銷', 'fa-solid fa-wine-glass': item.tag === '新品'}"></i> {{ item.tag }}</button><span class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i class="fa-solid fa-cart-shopping"></i></button></div>
                             <!-- <div class="row no6"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span></div>
                             <div class="row no7"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍</span> <span class="product_price ">$30</span><span class="product_price">$35</span></div>
                             <div class="row no8"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span class="product_name">高山烏龍茶勒</span> <span class="product_price ">$30</span><span class="product_price">$35</span></div>    -->
@@ -143,7 +143,7 @@
                     <li> 
                         <div class="size"> <span class="product_name"></span> <span class="product_price">M</span><span
                                 class="product_price">L</span></div>
-                        <div class="row no1" v-for="item in drinkList5" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
+                        <div class="row no1" v-for="item in drinkList5" :key="item.id"><button class="tag" :class="{'tag_on': item.tagOn}"><i :class="{'fa-solid fa-crown': item.tag === '熱銷', 'fa-solid fa-wine-glass': item.tag === '新品'}"></i> {{ item.tag }}</button><span
                                 class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span
                                 class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i
                                     class="fa-solid fa-cart-shopping"></i></button></div>
@@ -169,7 +169,7 @@
                 <div class="coffee_bean">
                     <img class="coffee_bean1" src="../assets/image/products/coffee_beans.svg" alt="">
                     <img class="coffee_bean2" src="../assets/image/products/coffee_beans.svg" alt="">
-                    <img class="coffee_bean3" src="../assets/image/products/coffee_beans.svg" alt="">
+                    <img class="coffee_bean3" src="../assets/image/products/coffee_beans3.svg" alt="">
                 </div>
 
                 <div class="introduce">
@@ -185,7 +185,7 @@
                     <li> 
                         <div class="size"> <span class="product_name"></span> <span class="product_price">M</span><span
                                 class="product_price">L</span></div>
-                        <div class="row no1" v-for="item in drinkList6" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
+                        <div class="row no1" v-for="item in drinkList6" :key="item.id"><button class="tag" :class="{'tag_on': item.tagOn}"><i :class="{'fa-solid fa-crown': item.tag === '熱銷', 'fa-solid fa-wine-glass': item.tag === '新品'}"></i> {{ item.tag }}</button><span
                                 class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span
                                 class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i
                                     class="fa-solid fa-cart-shopping"></i></button></div>
@@ -231,7 +231,7 @@
                     <li>
                         <div class="size"> <span class="product_name"></span> <span class="product_price">M</span><span
                                 class="product_price">L</span></div>
-                        <div class="row no1" v-for="item in drinkList7" :key="item.id"><button class="tag"><i class="fa-solid fa-crown"></i>熱銷</button><span
+                        <div class="row no1" v-for="item in drinkList7" :key="item.id"><button class="tag" :class="{'tag_on': item.tagOn}"><i :class="{'fa-solid fa-crown': item.tag === '熱銷', 'fa-solid fa-wine-glass': item.tag === '新品'}"></i> {{ item.tag }}</button><span
                                 class="product_name">{{ item.name }}</span> <span class="product_price ">${{ item.mediumPrice }}</span><span
                                 class="product_price">${{ item.largePrice }}</span><button class="add_cart" @click="addToCart(item)"><i
                                     class="fa-solid fa-cart-shopping"></i></button></div>
@@ -385,6 +385,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: true,
                     
                 },
                 {
@@ -403,6 +405,9 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: false,
+                    
                 },
                 {
                     id: 3,
@@ -420,7 +425,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
-                
+                    tag: '熱銷',
+                    tagOn: false,
                 },
                 {
                     id: 4,
@@ -438,6 +444,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: false,
                 }
 
             ],
@@ -458,6 +466,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: false,
                 },
                 {
                     id: 6,
@@ -475,6 +485,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '新品',
+                    tagOn: true,
                 },
                 {
                     id: 7,
@@ -492,6 +504,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: false,
                 },
                 {
                     id: 8,
@@ -509,6 +523,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: false,
                 }
             ],
             drinkList3: [
@@ -528,6 +544,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: true,
                 },
                 {
                     id: 10,
@@ -545,6 +563,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: false,
                 },
                 {
                     id: 11,
@@ -562,6 +582,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: false,
                 },
                 {
                     id: 12,
@@ -579,6 +601,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: false,
                 },
                 
             ],
@@ -599,6 +623,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: false,
                 },
                 {
                     id: 14,
@@ -616,6 +642,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: false,
                 },
                 {
                     id: 15,
@@ -633,6 +661,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: false,
                 },
                 {
                     id: 16,
@@ -649,6 +679,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: true,
                 },
                 
             ],
@@ -669,6 +701,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: true,
                 },
                 {
                     id: 18,
@@ -686,6 +720,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: true,
                 },
                 {
                     id: 19,
@@ -703,6 +739,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: false,
                 },
                 {
                     id: 20,
@@ -720,6 +758,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: false,
                 },
                 
             ],
@@ -740,6 +780,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: false,
                 },
                 {
                     id: 22,
@@ -757,6 +799,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: false,
                 },
                 {
                     id: 23,
@@ -774,6 +818,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: false,
                 },
                 {
                     id: 24,
@@ -791,6 +837,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '新品',
+                    tagOn: true,
                 },
                 
             ],
@@ -811,6 +859,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '新品',
+                    tagOn: true,
                 },
                 {
                     id: 26,
@@ -828,6 +878,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: true,
                 },
                 {
                     id: 27,
@@ -845,6 +897,8 @@ export default {
                     add: '加料',
                     addPrice: 0,
                     isSelected: false,
+                    tag: '熱銷',
+                    tagOn: false,
                 },
                 {
                     id: 28,
@@ -857,7 +911,13 @@ export default {
                     sugar:['甜度','全糖','少糖','半糖','微糖','無糖'],
                     sugar:'甜度',
                     ice:['冰塊','正常','少冰','微冰','去冰'],
-                    ice: '冰塊'
+                    ice: '冰塊',
+                    add:['加料','仙草','愛玉','珍珠','椰果'],
+                    add: '加料',
+                    addPrice: 0,
+                    isSelected: false,
+                    tag: '熱銷',
+                    tagOn: false,
                 },
                 
             ],

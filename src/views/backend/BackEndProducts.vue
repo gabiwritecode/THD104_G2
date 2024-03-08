@@ -29,10 +29,10 @@
         </thead>
 
         <tbody>
-           <tr v-for="product in productData" :key="product.ID" :class="{' tr_product':['奶茶系列', '咖啡系列','客製飲品'].includes(product.CATEGORY_NAME) }">
+           <tr v-for="product in productData" :key="product.ID" :class="{'tr_product':['奶茶系列', '咖啡系列','客製飲品'].includes(product.CATEGORY_NAME)}">
               <td>{{ product.ID }}</td>
               <td>{{ product.CATEGORY_NAME }}</td>
-              <td><p :class="{ 'backend_product_tag':['熱銷','新品'].includes(product.TAG) }">{{ product.TAG }}</p></td>
+              <td><p :class="{'backend_product_tag':['熱銷','新品'].includes(product.TAG)}">{{ product.TAG }}</p></td>
               <td>{{ product.NAME }}</td>
               <td>{{ product.PRICE_M }}</td>
               <td>{{ product.PRICE_L}}</td>
