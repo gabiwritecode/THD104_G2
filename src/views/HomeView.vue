@@ -149,42 +149,54 @@ export default {
         <swiper-slide class="top1">
           <img src="../assets/image/index/top5_beverage3.png" />
           <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
-          <h2>巧克力奶昔</h2>
-          <p>濃郁巧克力，絲滑奶昔，甜蜜的巧思。</p>
+          <article class="top_product_depiction">
+            <h2>巧克力奶昔</h2>
+            <p>濃郁巧克力，絲滑奶昔，甜蜜的巧思。</p>
+          </article>
         </swiper-slide>
 
         <swiper-slide class="top2">
           <img src="../assets/image/index/top5_beverage4.png" />
           <img class="cup_shadow" src="../assets/image/index/top5_shadow-14.png" alt="">
-          <h2>楊枝甘露</h2>
-          <p>芒果香濃，椰奶綿密，糖漿甜蜜，清新滋味。</p>
+          <article class="top_product_depiction">
+            <h2>楊枝甘露</h2>
+            <p>芒果香濃，椰奶綿密，糖漿甜蜜，清新滋味。</p>
+          </article>
         </swiper-slide>
 
         <swiper-slide class="top3">
           <img src="../assets/image/index/top5_beverage5.png" />
           <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
-          <h2>柚子氣泡飲</h2>
-          <p>綿密氣泡，柔和酸甜，夏日的完美解渴。</p>
+          <article class="top_product_depiction">
+            <h2>柚子氣泡飲</h2>
+            <p>綿密氣泡，柔和酸甜，夏日的完美解渴。</p>
+          </article>
         </swiper-slide>
 
         <swiper-slide class="top4">
           <img src="../assets/image/index/top5_beverage1.png" />
           <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
-          <h2>奇異果冰沙</h2>
-          <p>果香濃郁，冰涼美味，果粒驚喜。</p>
+          <article class="top_product_depiction">
+            <h2>奇異果冰沙</h2>
+            <p>果香濃郁，冰涼美味，果粒驚喜。</p>
+          </article>
         </swiper-slide>
 
         <swiper-slide class="top5">
           <img src="../assets/image/index/top5_beverage2.png" />
           <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
-          <h2>清爽西瓜冰沙</h2>
-          <p>西瓜冰沙，清甜多汁，冰爽解渴，夏日的涼爽享受。</p>
+          <article class="top_product_depiction">
+            <h2>清爽西瓜冰沙</h2>
+            <p>西瓜冰沙，清甜多汁，冰爽解渴，夏日的涼爽享受。</p>
+          </article>
         </swiper-slide>
       
         <swiper-slide class="top6"><img src="../assets/image/index/top5_beverage6.png" />
           <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
-          <h2>檸檬薄荷茶</h2>
-          <p>檸檬薄荷茶，清新檸香，薄荷冰涼，口感清爽。</p>
+          <article class="top_product_depiction">
+            <h2>檸檬薄荷茶</h2>
+            <p>檸檬薄荷茶，清新檸香，薄荷冰涼，口感清爽。</p>
+          </article>
         </swiper-slide>
       </swiper>
     </section>

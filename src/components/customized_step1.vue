@@ -1,28 +1,31 @@
-<script>
-export default {
-  emits: ['prev-step', 'next-step'], 
-  setup(props, { emit }) {
-    const prevStep = () => {
-      emit('prev-step');
-    };
+<script setup>
+import { ref, onMounted, defineProps, defineEmits } from 'vue';
 
-    const nextStep = () => {
-      const teabase = document.getElementById('teabase').value;
-      const ice = document.getElementById('ice').value;
-      const sugar = document.getElementById('sugar').value;
-      localStorage.setItem('teabase',teabase)
-      localStorage.setItem('ice',ice)
-      localStorage.setItem('sugar',sugar)
-      emit('next-step');
-    };
+const props = defineProps(['next-step']);
+const emit = defineEmits();
 
-    return {
-      prevStep,
-      nextStep,
-    };
-  },
+const teabaseSelect = ref('');
+const iceSelect = ref('');
+const sugarSelect = ref('');
+
+onMounted(() => {
+  // 初始值
+  teabaseSelect.value = localStorage.getItem('teabase') || '';
+  iceSelect.value = localStorage.getItem('ice') || '';
+  sugarSelect.value = localStorage.getItem('sugar') || '';
+});
+
+const nextStep = () => {
+  // 使用 localStorage 儲存選擇的值（可選）
+  localStorage.setItem('teabase', teabaseSelect.value);
+  localStorage.setItem('ice', iceSelect.value);
+  localStorage.setItem('sugar', sugarSelect.value);
+
+  // 下一頁
+  emit('next-step');
 };
 </script>
+
 <template>
    <div class="customized-img-container">
       <img src="@/assets/image/customized/tea.jpg" alt="img">
@@ -33,28 +36,27 @@ export default {
     </div>
     <div class="customized-input-container">
       <span>選擇茶底：</span>
-      <select  name="teabase" id="teabase">
-        <option value="1">高山烏龍</option>
-        <option value="2">龍井綠茶</option>
-        <option value="3">日月潭紅茶</option>
-        <option value="4">茉莉花茶</option>
-        <option value="5">日月潭紅茶</option>
+      <select  name="teabase" id="teabase" v-model="teabaseSelect">
+        <option value="高山烏龍">高山烏龍</option>
+        <option value="龍井綠茶">龍井綠茶</option>
+        <option value="日月潭紅茶">日月潭紅茶</option>
+        <option value="茉莉花茶">茉莉花茶</option>
+        <option value="日月潭紅茶">日月潭紅茶</option>
       </select>
       <span>冰塊：</span>
-      <select  name="ice" id="ice">
-        <option value="1">去冰</option>
-        <option value="2">微冰</option>
-        <option value="3">少冰</option>
-        <option value="4">正常冰</option>
-        <option value="5">熱飲</option>
+      <select  name="ice" id="ice" v-model="iceSelect">
+        <option value="去冰">去冰</option>
+        <option value="微冰">微冰</option>
+        <option value="少冰">少冰</option>
+        <option value="正常">正常</option>
       </select>
       <span>甜度：</span>
-      <select  name="sugar" id="sugar">
-        <option value="1">無糖</option>
-        <option value="2">一分糖</option>
-        <option value="3">微糖</option>
-        <option value="4">少糖</option>
-        <option value="5">正常甜</option>
+      <select  name="sugar" id="sugar" v-model="sugarSelect">
+        <option value="無糖">無糖</option>
+        <option value="微糖">無糖</option>
+        <option value="半糖">微糖</option>
+        <option value="少糖">少糖</option>
+        <option value="全糖">全糖</option>
       </select>
     </div>
     <div class="button-container">

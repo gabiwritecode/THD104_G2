@@ -29,10 +29,10 @@
         </thead>
 
         <tbody>
-           <tr v-for="product in productData" :key="product.ID">
+           <tr v-for="product in productData" :key="product.ID" :class="{' tr_product':['奶茶系列', '咖啡系列','客製飲品'].includes(product.CATEGORY_NAME) }">
               <td>{{ product.ID }}</td>
               <td>{{ product.CATEGORY_NAME }}</td>
-              <td>{{ product.TAG}}</td>
+              <td><p :class="{ 'backend_product_tag':['熱銷','新品'].includes(product.TAG) }">{{ product.TAG }}</p></td>
               <td>{{ product.NAME }}</td>
               <td>{{ product.PRICE_M }}</td>
               <td>{{ product.PRICE_L}}</td>
@@ -62,12 +62,11 @@
           <li><span>售價-M:  </span><input type="number" v-model="editFormData.priceM"></li>
           <li><span>售價-L:  </span><input type="number" v-model="editFormData.priceL"></li>
         </ul>
-        
         <ul class="radio_product">
           <li><span>商品標籤: </span></li>
-          <li><input type="radio" id="none"        name="tag_product" v-model="editFormData.tag" :checked="editFormData.tag === null"><label for="none">無</label></li>
-          <li><input type="radio" id="new_product" name="tag_product" v-model="editFormData.tag" :checked="editFormData.tag === '新品'"><label for="new_product">新品上市</label></li>
-          <li><input type="radio" id="hot_product" name="tag_product" v-model="editFormData.tag" :checked="editFormData.tag === '熱銷'"><label for="hot_product">熱銷商品</label></li>
+          <li><input type="radio" id="none"        name="tag_product" value="" v-model="editFormData.tag" :checked="editFormData.tag === null||''"><label for="none">無</label></li>
+          <li><input type="radio" id="new_product" name="tag_product" value="新品" v-model="editFormData.tag" :checked="editFormData.tag === '新品'"><label for="new_product">新品上市</label></li>
+          <li><input type="radio" id="hot_product" name="tag_product" value="熱銷" v-model="editFormData.tag" :checked="editFormData.tag === '熱銷'"><label for="hot_product">熱銷商品</label></li>
         </ul>
 
         <ul class="edit_window_btn">
@@ -145,15 +144,6 @@
     editFormData.value.priceM = product.PRICE_M;
     editFormData.value.priceL = product.PRICE_L;
     editFormData.value.tag = product.TAG;
-
-    // 根據從 PHP 撈到的資料設定 radio 的選中狀態
-    // if (product.TAG === '熱銷') {
-    //   editFormData.value.tag = 'hot_product';
-    // } else if (product.TAG === '新品') {
-    //   editFormData.value.tag = 'new_product';
-    // } else {
-    //   editFormData.value.tag = 'none';
-    // }
   }
 }
 
@@ -177,12 +167,13 @@ const submitForm = async () => {
     console.log(data);
     console.log(editFormData.value.status);
 
-    fetchInfoData();
+    fetchProductData();
     editWindowToggle();
   } catch (error) {
     console.error('Error:', error);
   }
 };
+
 </script>
 
 <style lang="scss" scoped>

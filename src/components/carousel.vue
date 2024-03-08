@@ -40,7 +40,7 @@ export default {
   <section class="slider-section">
       <i  @click="scrollCarousel('left')" class="fa-solid fa-angle-left"></i>
         <div  ref="carousel" class="carousel"  @scroll="handleScroll">
-          <CarouselCard class="article" v-for="article in articles" :key="article.id" :article="article">
+          <CarouselCard class="article" v-for="article in articles" :key="article.ID" :article="article">
            
           </CarouselCard>
   

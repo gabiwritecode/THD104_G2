@@ -5,20 +5,20 @@
 const router = useRouter()
 const {article} = defineProps(['article'])
 const navigateToArticle = () => {
-    router.push(`/article_item${article.id}`)
+    router.push(`/article_item${article.ID}`)
   }
 </script>
 <template>
   <div>
      <div class="info-article-wrapper" @click="navigateToArticle">
               <figure>
-                <img :src="article.img"/>
+                <img :src="article.IMG"/>
               </figure>
-              <div class="info-article-tag">{{article.tag}}</div>
+              <div class="info-article-tag">{{article.CATEGORY_NAME}}</div>
               <div class="info-article-body">
-                <h2>{{article.title}}</h2>
+                <h2>{{article.TITLE}}</h2>
                 <p>
-                  {{article.subtitle}}
+                  {{article.SUBTITLE}}
                 </p>
               </div>
               <div class="more-info">Read More</div>
