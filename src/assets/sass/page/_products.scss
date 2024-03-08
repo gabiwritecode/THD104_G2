@@ -1162,8 +1162,11 @@
         }
         @include r600(){
           width: 20px;
-          top: 262px;
+          top: 252px;
           left: 30px;
+        }
+        @include r500(){
+          top: 232px;
         }
         @include m{
           top: 208px;
@@ -1182,20 +1185,27 @@
       }
 
       .coffee_bean2{
-      position: absolute;
-      left: -20px;
-      top: 424px;
-      rotate:(85deg);
-      animation: coffee_bean2 2s 1s ease-in-out backwards infinite ;
-       @include r900{
-        width: 4.2%;
-        left: -14px;
-        top: 412px;
-      }
+        position: absolute;
+        left: -20px;
+        top: 424px;
+        rotate:(85deg);
+        animation: coffee_bean2 2s 1s ease-in-out backwards infinite ;
+        @include r900{
+          width: 4.2%;
+          left: -14px;
+          top: 412px;
+        }
+        @include r800{
+          left: -10px;
+          top: 408px;
+        }
         @include r600(){
           left: 16px;
           width: 20px;
-          top: 282px;
+          top: 272px;
+        }
+        @include r500(){
+          top: 252px;
         }
         @include m{
           top: 222px;
@@ -1214,20 +1224,27 @@
       }
   
       .coffee_bean3{
-      position: absolute;
-      left: 40px;
-      top: 424px;
-      // rotate:(20deg);
-      animation: coffee_bean3 2s 0.7s ease-in-out backwards infinite ;
-       @include r900{
-        width: 4.2%;
-        left: 44px;
-        top: 412px;
-      }
-        @include r600(){
+        position: absolute;
+        left: 40px;
+        top: 424px;
+        // rotate:(20deg);
+        animation: coffee_bean3 2s 0.7s ease-in-out backwards infinite ;
+        @include r900{
+          width: 4.2%;
           left: 44px;
+          top: 412px;
+        }
+        @include r800{
+          left: 38px;
+          top: 408px;
+        }
+        @include r600(){
           width: 20px;
-          top: 282px;
+          left: 44px;
+          top: 272px;
+        }
+        @include r500(){
+          top: 252px;
         }
         @include m{
           top: 222px;
