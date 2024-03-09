@@ -145,7 +145,9 @@
     z-index: -997;
     @include r1000{
       height: 45vw;
-
+    }
+    @include r600{
+      height: 55vw;
     }
     @include m(){
       //  border-radius:0 0 80% 80%  /100% 100% ;
@@ -164,6 +166,10 @@
       @include r900{
         padding-right: 20vw;
         margin: 8% 18%;
+      }
+      @include r600{
+        padding-right: 16vw;
+        margin: 12% 18%;
       }
       .boisson_menu_text{
         width: 430px;
@@ -552,6 +558,8 @@
         border-right: 0;
         border-bottom: 1px solid $color2;
         padding-bottom: 8px;
+        margin: 0;
+        padding: 0;
       }
     }
     .size{
@@ -638,10 +646,10 @@
       @include tag_P();
       position:absolute;
       top: -24px;
-      left: -4px;
+      left: -2px;
       display: none;
       @include m(){
-        top: -14px;
+        top: -16px;
         left: -2px;
         // width: 52px;
         // height: 20px;
@@ -677,7 +685,7 @@
       }
       @include r700{
         height: auto;
-        width: 540px;
+        width: 530px;
       }
       @include r600{
         width: 320px;
@@ -786,9 +794,9 @@
         margin: 0;
       }
     }
-      .no1 .tag, .no6 .tag{
-        display: block;
-      }
+      // .no1 .tag, .no6 .tag{
+      //   display: block;
+      // }
   }
   .milk_tea{
     ul{
@@ -821,9 +829,9 @@
         margin: 0;
       }
     }
-    .no1 .tag, .no6 .tag{
-      display: block;
-    }
+    // .no1 .tag, .no6 .tag{
+    //   display: block;
+    // }
   }
     // 奶茶換順序
   .milk_tea ul li:nth-child(2){
@@ -995,7 +1003,7 @@
       border-radius: 0 100px 0 100px;
       font-size: 20px;
       flex-wrap: wrap;
-      padding: 0 8%;
+      padding: 1% 8%;
       box-sizing: border-box;
       @include r1200{
         height: auto;
@@ -1092,7 +1100,7 @@
       @include r1200{
         padding-right: 3vw;
       }
-      @include m(){
+      @include r600(){
         padding: 0;
       }
       ul{
@@ -1127,7 +1135,6 @@
       }
     }
 
-    .juice .product_img img, .smoothies .product_img img{}
     li{
       @include m(){
         margin: 0 auto;
@@ -1145,105 +1152,113 @@
       }
 
       .coffee_bean1{
-      position: absolute;
-      left: 20px;
-      top: 380px;
-      animation: coffee_bean1 2s ease-in-out backwards infinite ;
-      @include r600(){
+        position: absolute;
         left: 20px;
-        width: 20px;
-        animation: coffee_bean1m 2s ease-in-out backwards infinite ;
-      }
+        top: 380px;
+        animation: coffee_bean1 2s ease-in-out backwards infinite ;
+        @include r900{
+          width: 4.2%;
+          left: 14px;
+        }
+        @include r600(){
+          width: 20px;
+          top: 252px;
+          left: 30px;
+        }
+        @include r500(){
+          top: 232px;
+        }
+        @include m{
+          top: 208px;
+        }
       }
       @keyframes coffee_bean1{
         0%{
-          top:390px;
+          transform: translate(0px , -30%); 
         }
         50%{
-          top:380px;
+          transform: translate(0px , -0px); 
         }
         100%{
-          top:390px;
-        }
-      }
-      @keyframes coffee_bean1m{
-        0%{
-          top: 230px;
-        }
-        50%{
-          top: 224px;
-        }
-        100%{
-          top: 230px;
+          transform: translate(0px , -30%); 
         }
       }
 
       .coffee_bean2{
-      position: absolute;
-      left: -20px;
-      top: 424px;
-      rotate:(85deg);
-      animation: coffee_bean2 2s 1s ease-in-out backwards infinite ;
+        position: absolute;
+        left: -20px;
+        top: 424px;
+        rotate:(85deg);
+        animation: coffee_bean2 2s 1s ease-in-out backwards infinite ;
+        @include r900{
+          width: 4.2%;
+          left: -14px;
+          top: 412px;
+        }
+        @include r800{
+          left: -10px;
+          top: 408px;
+        }
         @include r600(){
-          left: 6px;
+          left: 16px;
           width: 20px;
-          animation: coffee_bean2m 2s 1s ease-in-out backwards infinite ;
+          top: 272px;
+        }
+        @include r500(){
+          top: 252px;
+        }
+        @include m{
+          top: 222px;
         }
       }
       @keyframes coffee_bean2{
         0%{
-          top: 434px;
+          transform: translateX(0%);
         }
         50%{
-          top: 424px;
+          transform: translateX(30%);
         }
         100%{
-          top: 434px;
+          transform: translateX(0%);
         }
       }
-      @keyframes coffee_bean2m{
-        0%{
-          top: 250px;
-        }
-        50%{
-          top: 244px;
-        }
-        100%{
-          top: 250px;
-        }
-      }
+  
       .coffee_bean3{
-      position: absolute;
-      left: 40px;
-      top: 420px;
-      rotate:(20deg);
-      animation: coffee_bean3 2s 0.7s ease-in-out backwards infinite ;
+        position: absolute;
+        left: 40px;
+        top: 424px;
+        // rotate:(20deg);
+        animation: coffee_bean3 2s 0.7s ease-in-out backwards infinite ;
+        @include r900{
+          width: 4.2%;
+          left: 44px;
+          top: 412px;
+        }
+        @include r800{
+          left: 38px;
+          top: 408px;
+        }
         @include r600(){
-          left: 30px;
           width: 20px;
-          animation: coffee_bean3m 2s .7s ease-in-out backwards infinite ;
+          left: 44px;
+          top: 272px;
+        }
+        @include r500(){
+          top: 252px;
+        }
+        @include m{
+          top: 222px;
         }
       }
       @keyframes coffee_bean3{
         0%{
-          top: 430px;
+          transform: translateY(0%);
         }
         50%{
-          top: 420px;
+          transform: translateY(36%);
         }
         100%{
-          top: 430px;
-        }
-      }
-      @keyframes coffee_bean3m{
-        0%{
-          top: 250px;
-        }
-        50%{
-          top: 244px;
-        }
-        100%{
-          top: 250px;
+          transform: translateY(0%);
         }
       }
 
@@ -1284,51 +1299,57 @@
         @include r1200{
           width: 5vw;
         }
+        @include r800{
+          width: 6vw;
+        }
         @include r600(){
-          width: 40px;
+          width: 7vw;
           right: 16px;
-          bottom: auto;
-          top: 220px;
+          bottom: 340px;
+          // top: 220px;
+        }
+        @include m{
+          bottom: 300px;
         }
         img{
           width: 100%;
         }
       }
       @keyframes ice {
-      0%{
-        scale:1;
-        // opacity: 1;
+        0%{
+          scale:1;
+          // opacity: 1;
+        }
+        50%{ 
+          scale:1.2;
+          // opacity: .7;
+        }
+        100%{
+          scale:1;
+          //  opacity: 1;
+        }
       }
-      50%{ 
-        scale:1.2;
-        // opacity: .7;
-      }
-      100%{
-        scale:1;
-        //  opacity: 1;
-      }
-    }
-      .product_img img{
-        // top: -51px;
-      }
-    }
-    // tag開關
-    .no4{
-      margin-bottom: 0;
-    }
-    .size{
-      color:$yellow;
-      margin-top: 20px;
-    }
-    .add_cart{
-      color: $color1;
-      background-color: $white;
-    }
-    .tag{
-      display: block;
-    }
+    } // smoothies
 
-  } // .area2
+    // .no4{
+      //   margin-bottom: 0;
+      // }
+      .size{
+        color: $yellow;
+        margin-top: 20px;
+      }
+      .add_cart{
+        color: $color1;
+        background-color: $white;
+      }
+      
+    } // .area2
+    // === tag開關 ===
+    .product{
+      .tag_on{
+        display: block;
+      }
+    }
 
 
 } //.products_wrapper
