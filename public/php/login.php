@@ -25,6 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($user && $user['PASSWORD'] === $password) {
             // 登入成功
             $response = array('success' => true, 'user_id' => $user['ID']);
+            session_start();
+
+          
+            $_SESSION['userId'] = $user['ID'];
         } else {
             // 登入失敗
             $response = array('success' => false, 'message' => 'Invalid email or password');
