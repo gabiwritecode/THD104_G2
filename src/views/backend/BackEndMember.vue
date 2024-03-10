@@ -94,7 +94,7 @@ const edit_window_member = ref(null);
 const edit_window_member_bg = ref(null);
 
 const fetchMembers = () => {
-  fetch('php/BmemberAll.php')
+  fetch('/php/BmemberAll.php')
     .then((response) => response.json())
     .then((data) => {
       console.log('Fetched data:', data);
@@ -121,7 +121,7 @@ function send_data(){
 
 
 const handleBsearch = () => {
-const url = 'php/Bsearch.php';
+const url = '/php/Bsearch.php';
 const params = {
   method: 'POST',
   headers: {
@@ -153,7 +153,7 @@ const saveToBackend = () => {
     };
 
     // 使用fetch發送POST請求到後端PHP
-    fetch('php/Bupdate.php', {
+    fetch('/php/Bupdate.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

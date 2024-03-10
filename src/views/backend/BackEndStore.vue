@@ -135,7 +135,7 @@ export default{
                 });
                 const fetchData = () => {
                     
-                    fetch('php/all.php')
+                    fetch('http://localhost/THD104G2/public/php/all.php')
                         .then(response => response.json())
                         .then(responseData => {
                             data.value = responseData;
@@ -215,7 +215,7 @@ export default{
                     };
                     
                     
-                    fetch('php/update.php', {
+                    fetch('http://localhost/THD104G2/public/php/update.php', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -246,7 +246,8 @@ export default{
                 const uniqueStoreNames = new Set();
 
                 const search = () => {
-                    fetch('php/search.php', {
+                    //http://localhost/THD104G2/public/php/search.php
+                    fetch('/php/search.php', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/x-www-form-urlencoded',
