@@ -1,4 +1,9 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Credentials: true");
+
 include 'conn2.php';  // 引入包含連線相關代碼的檔案
 
 // 檢查是否是 POST 請求
@@ -17,11 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pdo = getPDO();
 
         // 使用 prepared statement 更新數據
-        $stmt = $pdo->prepare("UPDATE stores 
-            SET store_name = :store_name, 
-                phone_number = :phone_number, 
-                address = :address 
-            WHERE store_id = :store_id");
+        $stmt = $pdo->prepare("UPDATE STORE 
+            SET NAME = :store_name, 
+                PHONE = :phone_number, 
+                ADDRESS = :address 
+            WHERE ID = :store_id;");
 
         $stmt->bindParam(':store_name', $data['store_name'], PDO::PARAM_STR);
         $stmt->bindParam(':phone_number', $data['phone_number'], PDO::PARAM_STR);
