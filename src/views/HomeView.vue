@@ -1,52 +1,3 @@
-<script>
-
-import MemberBtn from "../components/member_btn.vue"
-import { ref, onMounted, onUnmounted } from 'vue';
-
-// Swiper Vue.js
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import { register } from 'swiper/element/bundle';
-register();
-import { Navigation } from 'swiper/modules';
-
-export default {
-  components: {
-    MemberBtn, 
-    Swiper,
-    SwiperSlide,
-  },
-  // 首頁header背景色 滾動透明
-  setup(){
-    const headerBgc = ref(null);
-
-    const handleScroll = () => {
-      if (window.scrollY > 120) {
-        headerBgc.value.classList.add('header_bgc');
-      } else {
-        headerBgc.value.classList.remove('header_bgc');
-      }
-    };
-
-    onMounted(() => {
-      headerBgc.value = document.querySelector('.page-home header');
-      window.addEventListener('scroll', handleScroll);
-    });
-
-    onUnmounted(() => {
-      window.removeEventListener('scroll', handleScroll);
-    });
-
-   return {
-      modules: [ Navigation],
-    };
-  }
-}
-// import TheWelcome from '../components/TheWelcome.vue'
-</script>
 
 <template>
   <!-- <div class="space"></div> -->
@@ -71,10 +22,14 @@ export default {
           <p>捌嵩飲茶，品味悠久的文化底蘊，感受時光與茶的對話。</p>
           <img class="ball2" src="../assets/image/index/ball2.png" alt="">
           <img class="fan" src="../assets/image/index/fan.png" alt="">
+
           <img class="beverage beverage3" src="../assets/image/index/banner_beverage3.png" alt="">
           <img class="beverage beverage2" src="../assets/image/index/banner_beverage2.png" alt="">
           <img class="beverage beverage1" src="../assets/image/index/banner_beverage1.png" alt="">
           <img class="beverage beverage4" src="../assets/image/index/banner_beverage4.png" alt="">
+          <img class="leaf1" src="../assets/image/index/leaf.png" alt="">
+          <img class="leaf2" src="../assets/image/index/leaf2.png" alt="">
+          <img class="leaf3" src="../assets/image/index/leaf2.png" alt="">
         <!-- </div> -->
       </div>
     </section>
@@ -88,9 +43,17 @@ export default {
     <section class="introduce">
       <img class="text_move_t" src="../assets/image/index/TAIWAN TEA.svg" alt="">
       <div class="container">
-        <h1>TAIWAN TEA</h1>
+        <h1 
+          data-aos="flip-up"
+          data-aos-duration="500"
+          data-aos-easing="ease-in-out"
+           >TAIWAN TEA</h1>
         
-        <ul class="introduce1">
+        <ul 
+          data-aos="fade-up" 
+          data-aos-duration="1200"
+          data-aos-easing="ease-in-out"
+        class="introduce1">
           <li><img src="../assets/image/index/index_pic1.jpg" alt=""></li>
           <li>
             <h2>極致的品質把控</h2>
@@ -99,7 +62,10 @@ export default {
         </ul>
         
         <div class="introduce2">
-          <ul>
+          <ul
+            data-aos="fade-up" 
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out">
             <li><img src="../assets/image/index/index_pic2.jpg" alt=""></li>
             <li>
               <h2>獨特的茶味體驗</h2>
@@ -107,7 +73,10 @@ export default {
             </li>
           </ul>
           
-          <ul>
+          <ul
+            data-aos="fade-up" 
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out">
             <li><img src="../assets/image/index/index_pic3.jpg" alt=""></li>
             <li>
               <h2>道地製茶的精髓</h2>
@@ -126,8 +95,16 @@ export default {
     
     <!------ TOP6商品 ------>
     <section class="top_products_all">
-      <h1>TOP 6 熱銷飲品</h1>
-      <swiper
+      <h1 
+        data-aos="flip-up"
+        data-aos-duration="500"
+        data-aos-easing="ease-in-out"
+        data-aos-once="true">TOP 6 熱銷飲品</h1>
+      <swiper 
+        data-aos="fade-up" 
+        data-aos-duration="800"
+        data-aos-easing="ease-in-out"
+        data-aos-once="true"
         :loop="true"
         :navigation="false"
         :grabCursor="true"
@@ -211,8 +188,16 @@ export default {
     <!------ 最新消息 ------>
       <section class="news">
         <div class="container">
-          <h1>最新消息</h1>
-          <ul>
+          <h1
+            data-aos="flip-up"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true">最新消息</h1>
+          <ul
+            data-aos="fade-up" 
+            data-aos-duration="1200"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true">
             <li>
               <RouterLink to="./article_item1"> <div><img src="../assets/image/index/news1.jpg" alt=""></div>
               <h2>莓果系列即將發售 </h2>
@@ -237,7 +222,11 @@ export default {
               <p>最好喝的手搖飲料，盡在捌嵩飲茶</p></RouterLink>
             </li>
           </ul>
-          <RouterLink to="./info"><button>Read more</button></RouterLink>
+          <RouterLink to="./info"><button 
+            data-aos="flip-up"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-once="true">Read more</button></RouterLink>
         </div>
       </section>
 
@@ -246,7 +235,10 @@ export default {
         <img class="curve4" src="../assets/image/index/curve_i_4.png" alt="">
       </div>
 
-    
+      <!-- 回到上面按鈕 -->
+      <button @click="scrollToTop" class="back_top" id="back_top">
+        <i class="fa-solid fa-chevron-up"></i>
+      </button>
     </main>
 
   <MemberBtn></MemberBtn>
@@ -256,3 +248,91 @@ export default {
 @import"../assets/sass/style.scss";
 
 </style>
+
+<script>
+import MemberBtn from "../components/member_btn.vue"
+import { ref, onMounted, onUnmounted } from 'vue';
+
+// Swiper Vue.js
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import { register } from 'swiper/element/bundle';
+register();
+import { Navigation } from 'swiper/modules';
+
+export default {
+  components: {
+    MemberBtn, 
+    Swiper,
+    SwiperSlide,
+  },
+  // 首頁header背景色 滾動透明
+  setup(){
+    const headerBgc = ref(null);
+
+    const handleScroll = () => {
+      if (window.scrollY > 120) {
+        headerBgc.value.classList.add('header_bgc');
+      } else {
+        headerBgc.value.classList.remove('header_bgc');
+      }
+    };
+
+    onMounted(() => {
+      headerBgc.value = document.querySelector('.page-home header');
+      window.addEventListener('scroll', handleScroll);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('scroll', handleScroll);
+    });
+
+
+    // 回到上面按鈕
+    const showBackToTopButton = ref(null);
+
+    const handleScrollTop = () => {
+
+      // 轉成百分比
+      const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+
+      if (scrollPercentage > 30) {
+        showBackToTopButton.value.classList.add('back_top_on')
+        showBackToTopButton.value.classList.remove('back_top_hide')
+      } else {
+         showBackToTopButton.value.classList.add('back_top_hide')
+      }
+    };
+
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    };
+
+    onMounted(() => {
+      showBackToTopButton.value = document.querySelector('#back_top');
+      window.addEventListener('scroll', handleScrollTop);
+      
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('scroll', handleScrollTop);
+    });
+
+   return {
+      modules: [ Navigation],
+      showBackToTopButton,
+      scrollToTop,
+    };
+  }
+  
+}
+
+
+  
+</script>

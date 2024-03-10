@@ -43,6 +43,7 @@
     // ===== banner ====
     .banner{
         height: 852px;
+        // height: 100vh;
         overflow: hidden;
         position: relative;
         // width: 100%;
@@ -57,7 +58,7 @@
         .text_move1{
             position: absolute;
             top: 180px;
-            z-index: -2;
+            z-index: -1;
             color:rgba( 0, 0, 0, 0);
             opacity: .15;
             animation: text_move1 10s linear infinite;
@@ -65,7 +66,7 @@
                 width: 60vw;
             }
             @include m(){
-                top: 110px;
+                top: 130px;
                 animation: text_move1m 7s linear infinite;
             }
             @keyframes text_move1{
@@ -88,11 +89,12 @@
         .text_move2{
             position: absolute;
             bottom: 0px;
+            right: -80%;
             width: 1000px;
             z-index: 4;
             color:rgba( 0, 0, 0, 0);
             opacity: .2;
-            animation: text_move2 10s linear infinite;
+            animation: text_move2 10s linear 1s infinite;
             @include r1100{
                 width: 60vw;
             }
@@ -127,6 +129,7 @@
             background: radial-gradient(circle farthest-corner at left 15% top 5%, #9ad1dc 0%, #76bcc7 35%, #4a9cb0 90%);
             height: 49%;
             width: 100%;
+            filter: blur(.12vw);
             background-size:contain;
             @include r900(){
                 height: 57%;
@@ -166,6 +169,7 @@
             position: absolute;
             bottom: 24%;
             right: 0;
+            filter: blur(.05vw);
             @include r1100{
                 width: 36vw;
                  right: -6%;
@@ -180,6 +184,7 @@
                 width: 40%;
                 bottom: 48%;
                 right: -8%;
+                filter: blur(.2vw);
             }
         }
 
@@ -203,6 +208,8 @@
                 width: 686px;
                 margin-top: 140px;
                 z-index: 2;
+                opacity: 0;
+                animation: beverage 1s ease-out 1s forwards 1;
                 @include r1100{
                     width: 58vw;
                 }
@@ -213,6 +220,8 @@
             }
             p{
                 font-size: 18px;
+                opacity: 0;
+                animation: beverage 1.5s ease-out 1.2s forwards 1;
                 @include r700{
                     font-size: 14px;
                 }
@@ -221,6 +230,110 @@
                 }
                 @include m(){
                     width: 230px;
+                }
+            }
+            .leaf1{
+                position: absolute;
+                width: 12%;
+                z-index: 3;
+                top: -20%;
+                left: -20%;
+                animation: leaf1 8s ease-out 1.8s backwards infinite;
+            }
+            @keyframes leaf1{
+                0%{
+                    top: -20%;
+                    left: -20%;
+                    transform: rotate(0deg);
+                    opacity: 1;
+                    scale: .9;
+                    filter: blur(.3vw);
+                }
+                20%{
+                    opacity: .6;
+                    scale: 1.2;
+                    filter: blur(.35vw);
+                     
+                }
+                40%{
+                    top: 110%;
+                    left: 120%;
+                    transform: rotate(310deg);
+                    opacity: 1;
+                    scale: 1;
+                    filter: blur(.3vw);
+                }
+                100%{
+                top: 350%;
+                left: 350%;
+                }
+            }
+            .leaf2{
+                position: absolute;
+                width: 9%;
+                z-index: 3;
+                top: -15%;
+                left: -40%;
+                animation: leaf2 7.5s ease-out 2.3s backwards infinite;
+            }
+            @keyframes leaf2{
+                0%{
+                    top: -15%;
+                    left: -40%;
+                    transform: rotate(40deg);
+                    opacity: 1;
+                    scale: .9;
+                    filter: blur(.15vw);
+                }
+                20%{
+                    opacity: .7;
+                    scale: 1.4;
+                    filter: blur(.25vw);
+                }
+                40%{
+                    top: 110%;
+                    left: 60%;
+                    transform: rotate(-280deg);
+                    opacity: 1;
+                    scale: 1;
+                    filter: blur(.15vw);
+                }100%{
+                top: 350%;
+                left: 350%;
+                }
+            }
+            .leaf3{
+                position: absolute;
+                width: 5%;
+                z-index: -1;
+                top: -15%;
+                left: 35%;
+                animation: leaf3 8.8s ease-out 2.8s backwards infinite;
+            }
+            @keyframes leaf3{
+                0%{
+                    top: -15%;
+                    left: 35%;
+                    transform: rotate(20deg);
+                    opacity: 1;
+                    scale: .9;
+                    filter: blur(.05vw);
+                }
+                20%{
+                    opacity: .7;
+                    scale: 1.4;
+                    filter: blur(.04vw);
+                }
+                40%{
+                    top: 110%;
+                    left: 150%;
+                    transform: rotate(-350deg);
+                    opacity: 1;
+                    scale: 1;
+                    filter: blur(.05vw);
+                }100%{
+                top: 350%;
+                left: 350%;
                 }
             }
             .ball1{
@@ -244,6 +357,7 @@
                 bottom: 40%;
                 left: -10%;
                 z-index: 2;
+                filter: blur(1px);
                 @include r900(){
                     display: none;
                 }
@@ -252,7 +366,8 @@
                 position: absolute;
                 bottom: -12%;
                 left: -21%;
-                z-index: -1;
+                z-index: -2;
+                filter: blur(.1vw);
                 animation: fan 20s linear backwards infinite;
                 @include r1100{
                     left: -30vw;
@@ -262,6 +377,7 @@
                 @include r900{
                     top: 15%;
                     left: -36%;
+                    filter: blur(.2vw);
                 }
                 @include r800{
                     top: 20%;
@@ -289,9 +405,10 @@
             .beverage{
                 position: absolute;
                 z-index: 3;
+                opacity: 0;
                 // transition: .5s all ease;
-                @include r1100{
-                    width: 33vw;
+                @include r1200{
+                    width: 30vw;
                 }
                 @include r700{
                     width: 36vw;
@@ -303,6 +420,7 @@
             .beverage1{
                 left: 1%;
                 bottom: 3%;
+                animation: beverage 1.7s ease-out .0s forwards 1;
                 @include r900{
                     left: 5%;
                     bottom: 6%;
@@ -316,6 +434,7 @@
             .beverage2{
                 left: 26%;
                 bottom: 14%;
+                animation: beverage 1.2s ease-out .2s forwards 1;
                 @include r900{
                     left: 28%;
                     bottom: 22%;
@@ -328,6 +447,7 @@
             .beverage3{
                 right: 15%;
                 bottom: 19%;
+                animation: beverage 1s ease-out .1s forwards 1;
                 @include r900{
                     right: 12%;
                     bottom: 34%;
@@ -351,8 +471,9 @@
             .beverage4{
                 right: -8%;
                 bottom: -5%;
-                @include r1100{
-                    width: 40vw;
+                animation: beverage 1.3s ease-out .35s forwards 1;
+                @include r1200{
+                    width: 36vw;
                 }
                  @include r900{
                     bottom: 3%;
@@ -366,7 +487,16 @@
                     right: -16%;
                 }
             }
-
+            @keyframes beverage{
+                0%{
+                    transform: translate(0px , -20%); 
+                    opacity: 0;
+                }
+                100%{
+                    opacity: 1;
+                    transform: translate(0px , 0%); 
+                }
+            }
         } // container
     } // banner
 
@@ -851,6 +981,7 @@
             border-radius: 15px;
             color: $white;
             font-size: 14px;
+            animation: ice 3s ease-in-out backwards infinite;
              &:hover {
                 color: $yellow;
                 // border-color: $yellow;
@@ -860,13 +991,42 @@
 
     } // news
 
-} // index_wrapper
+    @keyframes blur{
+                0%{
+                    filter: blur(1vw);
+                    opacity: 0;
+                }
+                100%{
+                    opacity: 1;
+                    filter: blur(0vw);
+                }
+            }
 
-
-.page-home  header{
+            
+            
+        } // index_wrapper
+       
+        
+.page-home header{
     background-color: rgba(120, 190, 200,0);
 }
 
 .header_bgc{
-        background-color: rgba(120, 190, 200,1) !important;
+    background-color: rgba(120, 190, 200,1) !important;
 }
+
+// 回到上面按鈕
+.back_top {
+    @include btn_back_top();
+}
+.back_top_on{
+    opacity: .8;
+}
+
+.back_top_hide {
+    opacity: 0;
+    transform: translateY(150%);
+    transition: all .5s linear;
+    pointer-events: none;
+}
+        
