@@ -170,7 +170,7 @@ export default{
 
   onMounted(async () => {
     try {
-      filteredData = await fetchData('/php/store_map.php');
+      filteredData = await fetchData('php/store_map.php');
       cities.value = [...new Set(filteredData.map(row => row.NAME))];
       selectedCity.value = cities.value[0];
       updateDistrictOptions();
