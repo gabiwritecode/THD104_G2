@@ -15,8 +15,8 @@
       <div class="backend-table-container">
         <h1>門市管理</h1>
         <div class="backend-input-container">
-          <input v-model="searchInput" type="text" id="searchInput" />
-        <button @click="search">Search</button>
+          <input v-model="searchInput" type="text" id="searchInput"  placeholder="縣市查詢"/>
+        <button @click="search">搜尋</button>
       </div>
         <table id="dataTable" class="backendinfo-table">
             <thead class="thead" >
@@ -34,7 +34,7 @@
             <tbody >
                 <tr v-for="row in filteredData" :key="row.store_id" class="tr" >
                     
-                    <td>{{ row.city_name }}</td>
+                    <td>{{ row.NAME }}</td>
                     <td>{{ row.district_name }}</td>
                     <td>{{ row.store_name }}</td>
                     <td>{{ row.phone_number }}</td>
@@ -54,6 +54,7 @@
                
 
                 <form @submit.prevent="saveForm" >
+                    <h2>編輯與查看</h2>
                     <div style="display: flex;" class="form">
                         <label for="cityFilter">縣市:</label>
                         <select v-model="selectedCity" @change="filterByCity">
@@ -100,22 +101,7 @@
 
             </div>
                         
-                        <!-- <div class="right">
-                            <form action="" class="right_form">
-                                <h3>圖片上傳:</h3>
-                                <div></div>
-                                
-                                <label for="image" class="input_image">
-                                    <i class="fas fa-upload"></i> 選擇圖片
-                                </label>
-                                
-                                <input type="file" id="image">
-                            </form>
-                        </div> -->
-                        <!-- <div class="buttonQQ">
-                        <button class="buttonqq" @click="WindowToggle">關閉</button>
-                        <button class="buttonqq" @click="WindowToggle">儲存</button>
-                         -->
+                        
                     </div> 
            
           </div>
@@ -149,7 +135,7 @@ export default{
                 });
                 const fetchData = () => {
                     
-                    fetch('http://localhost/THD104G2/public/php/all.php?action=get_all_data')
+                    fetch('php/all.php')
                         .then(response => response.json())
                         .then(responseData => {
                             data.value = responseData;
@@ -172,7 +158,7 @@ export default{
                 };
 
                 const populateDropdowns = () => {
-                    uniqueCities.value = [...new Set(data.value.map(row => row.city_name))];
+                    uniqueCities.value = [...new Set(data.value.map(row => row.NAME))];
                     uniqueDistricts.value = [...new Set(data.value.map(row => row.district_name))];
                     uniqueBusinessHours.value = [...new Set(data.value.map(row => row.business_hours))];
                 };
@@ -180,7 +166,7 @@ export default{
                 const watch_data = storeId => {
                     const storeData = data.value.find(row => row.store_id === storeId);
 
-                    selectedCity.value = storeData.city_name;
+                    selectedCity.value = storeData.NAME;
                     selectedDistrict.value = storeData.district_name;
                     selectedBusinessHours.value = storeData.business_hours;
 
@@ -190,6 +176,7 @@ export default{
                     formData.value.store_id = storeData.store_id;
 
                     openModalForm();
+                    WindowToggle();
                 };
 
                 const filterByCity = () => {
@@ -224,16 +211,16 @@ export default{
                         phone_number: formData.value.phone_number,
                         address: formData.value.address,
                         store_id: formData.value.store_id,
+                        
                     };
-
-                    fetch('http://localhost/THD104G2/public/php/update.php', {
+                    
+                    
+                    fetch('php/update.php', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                         },
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded',
-                        },
+                        
                         body: JSON.stringify(formDataValue),
                     })
                         .then(response => {
@@ -259,7 +246,8 @@ export default{
                 const uniqueStoreNames = new Set();
 
                 const search = () => {
-                    fetch('http://localhost/THD104G2/public/php/search.php', {
+                    //http://localhost/THD104G2/public/php/search.php
+                    fetch('php/search.php', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/x-www-form-urlencoded',

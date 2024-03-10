@@ -1,7 +1,10 @@
 <?php
 // 包含資料庫連接文件
 include 'conn2.php';
-
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Credentials: true");
 try {
     // 建立資料庫連接
     $pdo = getPDO();
@@ -30,6 +33,11 @@ try {
 
     // 取得查詢結果
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    header('Access-Control-Allow-Origin: *');
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+    header("Access-Control-Allow-Headers: Content-Type");
+    header("Access-Control-Allow-Credentials: true");
 
     // 將結果轉換為 JSON 格式並輸出
     echo json_encode($result);

@@ -39,7 +39,12 @@
         <!------------------- products ------------------->
 
         <!---- 純茶系列 ---->
-        <section class="product tea">
+        <section class="product tea" 
+        data-aos="fade-up" 
+        data-aos-duration="600"
+        data-aos-easing="ease-in-out"
+        data-aos-once="true"
+        >
             <!---- TAIWAN TEA字 ---->
             <div class="background_text">
                 <span>TAIWAN TEA</span>
@@ -81,7 +86,12 @@
         </section>
         
         <!---- 奶茶系列 ---->
-        <section class="product milk_tea">
+        <section class="product milk_tea"
+        data-aos="fade-up" 
+        data-aos-duration="600"
+        data-aos-easing="ease-in-out"
+        data-aos-once="true"
+        >
             <ul>
                 <li>
                     <div class="introduce"><h1><img src="../assets/image/products/ion_leaf-outline2.svg" alt="">奶茶系列</h1>
@@ -119,26 +129,58 @@
             <img class="curve4" src="../assets/image/products/curve_p_4.png" alt="">
             <!---- 大標題 ---->
             <div class="title">
-                <h1>FRUIT & COFFEE</h1>
-                <p>清新解渴，每口都是生活的美好。</p>
+                <h1 
+                    data-aos="flip-up"
+                    data-aos-duration="500"
+                    data-aos-easing="ease-in-out"
+                    data-aos-once="true">FRUIT & COFFEE</h1>
+                <p
+                    data-aos="flip-up"
+                    data-aos-duration="500"
+                    data-aos-easing="ease-in-out"
+                    data-aos-once="true"
+                    data-aos-delay="250"
+                    >清新解渴，每口都是生活的美好。</p>
             </div>
             
             <!---- 水果茶系列 ---->
-            <section class="product juice">
+            <section class="product juice"
+           
+            >
                 <div class="rotate_oringe">
-                    <img src="../assets/image/products/oringe_bgi.png" alt="">
+                    <img 
+                    data-aos="fade-left" 
+                    data-aos-duration="600"
+                    data-aos-easing="ease-in-out" 
+                    data-aos-once="true"
+                    src="../assets/image/products/oringe_bgi.png" alt="">
                 </div>
 
-                <div class="introduce">
+                <div class="introduce"
+                    data-aos="flip-up"
+                    data-aos-duration="500"
+                    data-aos-easing="ease-in-out"
+                    data-aos-once="true"
+>
                     <h1><img src="../assets/image/products/ion_leaf-outline3.svg" alt="">水果茶系列</h1>
                     <p>果香十足，清新解渴，水果茶，夏日的綠意悠然。</p>
                 </div>
 
                 <div class="product_img">
-                    <img src="../assets/image/products/juice.png" alt="">
+                    <img 
+                    data-aos="fade-right" 
+                    data-aos-duration="600"
+                    data-aos-easing="ease-in-out" 
+                    data-aos-once="true"
+                    src="../assets/image/products/juice.png" alt="">
                 </div>
 
-                <ul>
+                <ul
+                    data-aos="fade-right" 
+                    data-aos-duration="600"
+                    data-aos-easing="ease-in-out" 
+                    data-aos-once="true"
+                    >
                     <li class="left_list2">
                     </li>
             
@@ -166,7 +208,9 @@
             </section>
             
             <!---- 咖啡系列 ---->
-            <section class="product coffee">
+            <section class="product coffee"
+
+                >
                 
                 <div class="coffee_bean">
                     <img class="coffee_bean1" src="../assets/image/products/coffee_beans.svg" alt="">
@@ -174,16 +218,30 @@
                     <img class="coffee_bean3" src="../assets/image/products/coffee_beans3.svg" alt="">
                 </div>
 
-                <div class="introduce">
+                <div class="introduce"
+                    data-aos="flip-up"
+                    data-aos-duration="500"
+                    data-aos-easing="ease-in-out"
+                    data-aos-once="true">
                     <h1><img src="../assets/image/products/ion_leaf-outline3.svg" alt="">咖啡系列</h1>
                     <p>香濃咖啡，醒神提神，每杯都是品味的享受。</p>
                 </div>
 
                 <div class="product_img">
-                    <img src="../assets/image/products/coffee.png" alt="">
+                    <img
+                    data-aos="fade-left" 
+                    data-aos-duration="600"
+                    data-aos-easing="ease-in-out" 
+                    data-aos-once="true"
+                     src="../assets/image/products/coffee.png" alt="">
                 </div>
                 
-                <ul>
+                <ul
+                    data-aos="fade-left" 
+                    data-aos-duration="600"
+                    data-aos-easing="ease-in-out" 
+                    data-aos-once="true"
+                    >
                     <li> 
                         <div class="size"> <span class="product_name"></span> <span class="product_price">M</span><span
                                 class="product_price">L</span></div>
@@ -211,22 +269,38 @@
             </section>
             
             <!---- 冰沙系列 ---->
-            <section class="product smoothies">
+            <section class="product smoothies"
+
+                >
 
                 <div class="ice">
                     <img src="../assets/image/products/ice.svg" alt="">
                 </div>
 
-                <div class="introduce">
+                <div class="introduce"
+                data-aos="flip-up"
+                data-aos-duration="500"
+                data-aos-easing="ease-in-out"
+                data-aos-once="true">
                     <h1><img src="../assets/image/products/ion_leaf-outline3.svg" alt="">冰沙系列</h1>
                     <p>多種水果結合，口感豐富，每一口都是夏日的清涼享受。</p>
                 </div>
 
                 <div class="product_img">
-                    <img src="../assets/image/products/Smoothies.png" alt="">
+                    <img 
+                    data-aos="fade-right" 
+                    data-aos-duration="600"
+                    data-aos-easing="ease-in-out" 
+                    data-aos-once="true"
+                    src="../assets/image/products/Smoothies.png" alt="">
                 </div>
 
-                <ul>
+                <ul
+                    data-aos="fade-right" 
+                    data-aos-duration="600"
+                    data-aos-easing="ease-in-out" 
+                    data-aos-once="true"
+                    >
                     <li class="left_list2">
                     </li>
             
@@ -252,7 +326,10 @@
                     </li>
                 </ul>
             </section>
-
+             <!-- 回到上面按鈕 -->
+      <button @click="scrollToTop" class="back_top" id="back_top">
+        <i class="fa-solid fa-chevron-up"></i>
+      </button>
 
 
      </div>     
@@ -368,7 +445,7 @@ export default {
     
     data (){
         return{
-            
+            showBackToTopButton: null,
             show: false,
             lightbox: false,
             list:{
@@ -1069,9 +1146,35 @@ export default {
         },
         closeLightBox(){
             this.lightbox = false
-        }
+        },
         
-    }
+        
+    // 回到上面按鈕
+    handleScrollTop() {
+      const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+
+      if (scrollPercentage > 30) {
+        this.showBackToTopButton.classList.remove('back_top_hide');
+        this.showBackToTopButton.classList.add('back_top_on');
+      } else {
+        this.showBackToTopButton.classList.add('back_top_hide');
+      }
+    },
+    scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    },
+  },
+    mounted() {
+        this.showBackToTopButton = document.querySelector('#back_top');
+        window.addEventListener('scroll', this.handleScrollTop);
+    },
+    beforeDestroy() {
+        window.removeEventListener('scroll', this.handleScrollTop);
+    },
+    
 
    
 }

@@ -26,7 +26,10 @@
       justify-content: space-between;
       margin-bottom: 10px;
       .orderTime{
-        margin-right: 57px;
+        // margin-right: 57px;
+      }
+      .account{
+        // margin-right: 50px;
       }
       
     }
@@ -50,6 +53,8 @@
     .order_table{
       width: 400px;
       margin: auto;
+      height: 200px;
+      overflow-y: auto;
       border: 1px solid #6996A0;
       padding: 30px;
       h3{

@@ -15,3 +15,8 @@ app.use(sessionPlugin);
 
 
 app.mount('#app')
+
+// 換頁會自動跳到網頁最上方
+router.afterEach(() => {
+    window.scrollTo(0, 0);
+});

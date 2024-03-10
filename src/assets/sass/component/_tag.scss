@@ -44,6 +44,7 @@
     height: 22px;
     font-size: 13px;
     font-weight: map-get($fontWeight, t2);
+    letter-spacing: normal;
     // display: block;
     @include m(){
         width: 52px;
