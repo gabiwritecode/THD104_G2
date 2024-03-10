@@ -37,7 +37,119 @@
   margin-bottom: 150px;
 }
 /* 文章RWD設定 */
-@media screen and (max-width: 390px) {
+@media screen and (max-width:1200px){
+  .article-img-container{
+    width: 1100px;
+    height: 550px;
+  }
+  .article-img-container img{
+    width: 1100px;
+    height: 550px;
+  }
+  .article-text-container{
+    width: 1100px;
+  }
+
+}
+@media screen and (max-width:1100px){
+  .article-img-container{
+    width: 1000px;
+    height: 500px;
+  }
+  .article-img-container img{
+    width: 1100px;
+    height: 500px;
+  }
+  .article-text-container{
+    width: 1000px;
+  }
+
+}
+@media screen and (max-width:1000px){
+  .article-img-container{
+    width: 900px;
+    height: 450px;
+  }
+  .article-img-container img{
+    width: 900px;
+    height: 450px;
+  }
+  .article-text-container{
+    width: 900px;
+  }
+
+}
+@media screen and (max-width:900px){
+  .article-img-container{
+    width: 800px;
+    height: 400px;
+  }
+  .article-img-container img{
+    width: 800px;
+    height: 400px;
+  }
+  .article-text-container{
+    width: 800px;
+  }
+
+}
+@media screen and (max-width:800px){
+  .article-img-container{
+    width: 700px;
+    height: 350px;
+  }
+  .article-img-container img{
+    width: 700px;
+    height: 350px;
+  }
+  .article-text-container{
+    width: 700px;
+  }
+
+}
+@media screen and (max-width:700px){
+  .article-img-container{
+    width: 600px;
+    height: 380px;
+  }
+  .article-img-container img{
+    width: 600px;
+    height: 380px;
+  }
+  .article-text-container{
+    width: 600px;
+  }
+
+}
+@media screen and (max-width:600px){
+  .article-img-container{
+    width: 550px;
+    height: 330px;
+  }
+  .article-img-container img{
+    width: 550px;
+    height: 330px;
+  }
+  .article-text-container{
+    width: 550px;
+  }
+
+}
+@media screen and (max-width:500px){
+  .article-img-container{
+    width: 400px;
+    height: 280px;
+  }
+  .article-img-container img{
+    width: 400px;
+    height: 280px;
+  }
+  .article-text-container{
+    width: 400px;
+  }
+
+}
+@media screen and (max-width: 430px) {
   /* 文章RWD圖片設定 */
   .article-img-container{
     width: 320px;

@@ -22,6 +22,7 @@
 }
 /* slider寬度 */
 .slider-section{
+  width: 95vw;
   max-width: 1200px;
   position: relative;
 }
@@ -35,11 +36,7 @@
   overflow: hidden;
   scroll-behavior: smooth;
 }
-/* 拖曳效果 */
-.carousel.dragging{
-  cursor: grab;
-  scroll-behavior: auto;
-}
+
 /* 左右按鈕 */
 .fa-angle-right,.fa-angle-left{
   top: 50%;
@@ -149,12 +146,16 @@ color: white;
 
 
 /* 響應式布局 */
-@media screen and (max-width:390px){
+
+
+@media screen and (max-width:430px){
+
   .info-body{
     width: 390px;
   }
   .slider-section,.second-slider-section{
-    max-width: 370px;
+    max-width: 400px;
+    min-width: 380px;
   }
 
 }
