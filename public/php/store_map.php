@@ -1,12 +1,15 @@
 <?php
 include('conn2.php');
-          
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Credentials: true");       
 
 try {
-    $sql = "SELECT CITY.ID, CITY.NAME, DISTRICT.ID, MIN(DISTRICT.NAME) AS DISTRICT_NAME,
-    MIN(STORE.ID) AS STORE_ID, MIN(STORE.NAME) AS STORE_NAME,
-    MIN(STORE.ADDRESS) AS ADDRESS, MIN(STORE.PHONE) AS PHONE_NUMBER,
-    MIN(STORE.BUSINESS_HOURS) AS BUSINESS_HOURS, MIN(STORE.IFRAME) AS IFRAME
+    $sql = "SELECT CITY.ID, CITY.NAME, DISTRICT.ID, MIN(DISTRICT.NAME) AS district_name,
+    MIN(STORE.ID) AS stroe_id, MIN(STORE.NAME) AS stroe_name,
+    MIN(STORE.ADDRESS) AS address, MIN(STORE.PHONE) AS phone_number,
+    MIN(STORE.BUSINESS_HOURS) AS business_hours, MIN(STORE.IFRAME) AS IFRAME
     FROM CITY
     JOIN DISTRICT ON CITY.ID = DISTRICT.CITY_ID
     JOIN STORE ON DISTRICT.ID = STORE.DISTRICT_ID
