@@ -1,10 +1,8 @@
 <script>
-import { ref, defineProps } from 'vue';
-import{useRouter} from "vue-router";
-import CarouselCard from "../components/carousel_card.vue"
+import { ref } from 'vue';
+import CarouselCard from "../components/carousel_card.vue";
 
 export default {
-  
   props: {
     articles: Array,
   },
@@ -12,11 +10,12 @@ export default {
     CarouselCard
   },
   setup() {
-     
     const carousel = ref(null);
+    let touchStartX = 0;
+    let touchEndX = 0;
 
     const scrollCarousel = (direction) => {
-      const scrollAmount = 400; 
+      const scrollAmount = 410;
 
       if (direction === 'left') {
         carousel.value.scrollLeft -= scrollAmount;
@@ -25,27 +24,51 @@ export default {
       }
     };
 
+    const handleTouchStart = (event) => {
+      touchStartX = event.touches[0].clientX;
+    };
 
+    const handleTouchMove = (event) => {
+      touchEndX = event.touches[0].clientX;
+    };
+
+    const handleTouchEnd = () => {
+      const swipeDistance = touchStartX - touchEndX;
+      if (swipeDistance > 50) {
+        scrollCarousel('right');
+      } else if (swipeDistance < -50) {
+        scrollCarousel('left');
+      }
+    };
 
     return {
       carousel,
       scrollCarousel,
+      handleTouchStart,
+      handleTouchMove,
+      handleTouchEnd,
     };
   },
 };
 </script>
 
 
+
+
 <template>
   <section class="slider-section">
-      <i  @click="scrollCarousel('left')" class="fa-solid fa-angle-left"></i>
-        <div  ref="carousel" class="carousel"  @scroll="handleScroll">
-          <CarouselCard class="article" v-for="article in articles" :key="article.ID" :article="article">
-           
-          </CarouselCard>
-  
-        </div>
-      <i @click="scrollCarousel('right')"  class="fa-solid fa-angle-right"></i>
-    </section>
+    <i @click="scrollCarousel('left')" class="fa-solid fa-angle-left"></i>
+    <div
+      ref="carousel"
+      class="carousel"
+      @scroll="handleScroll"
+      @touchstart="handleTouchStart"
+      @touchmove="handleTouchMove"
+      @touchend="handleTouchEnd"
+    >
+      <CarouselCard class="article" v-for="article in articles" :key="article.ID" :article="article"></CarouselCard>
+    </div>
+    <i @click="scrollCarousel('right')" class="fa-solid fa-angle-right"></i>
+  </section>
 </template>
 

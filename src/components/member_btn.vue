@@ -110,13 +110,17 @@ export default {
 
      },
 
-  beforeMount(){
+     beforeMount() {
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        if (cart) {
+            this.cart = cart;
 
-    let cart = JSON.parse(localStorage.getItem("cart"))
-    if(cart){
-        this.cart = cart
-    }
-  },
+
+            this.cart.forEach((item) => {
+            this.isSelected(item);
+            });
+        }
+},
   computed:{
     
     total(){
@@ -174,6 +178,16 @@ export default {
         }else{
             item.isSelected = false
         }
+        if (item.name == '客製飲品') {
+      
+        item.sugar = localStorage.getItem('sugar') || '甜度';
+        item.ice = localStorage.getItem('ice') || '冰塊';
+
+       
+        item.size = '大杯';
+      
+        item.isSelected = true;
+    }
 
 
           localStorage.setItem("cart", JSON.stringify(this.cart));
@@ -188,6 +202,7 @@ export default {
                 if(!this.cart[i].isSelected){
                     isSelectAll = false
                 }
+            // let isSelectAll = this.cart.every((item) => item.isSelected);
            }
 
            if(isSelectAll){

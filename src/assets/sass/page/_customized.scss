@@ -99,8 +99,161 @@
   
 }
 
+@media screen and (max-width:1200px) {
+  .customized-text-container{
+    width: 1100px;
+  }
 
-@media screen and (max-width:390px) {
+.customized-milk-container{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+ align-items: center;
+}
+}
+@media screen and (max-width:1100px) {
+  .customized-text-container{
+    width: 900px;
+  }
+ 
+.customized-milk-container{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+ align-items: center;
+}
+}
+@media screen and (max-width:900px) {
+  .customized-text-container{
+    width: 720px;
+  }
+ 
+.customized-milk-container{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+ align-items: center;
+}
+}
+@media screen and (max-width:800px) {
+  .customized-text-container{
+    width: 640px;
+  }
+  /* 客製化第二頁開始的圖片 */
+.customized-img-container{
+  width: 640px;
+  height: 473px;
+ 
+}
+.customized-img-container img{
+  width: 640px;
+  height: 473px;
+}
+
+.customized-milk-container{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+ align-items: center;
+}
+}
+@media screen and (max-width:700px) {
+  .customized-text-container{
+    width: 580px;
+  }
+  /* 客製化第二頁開始的圖片 */
+.customized-img-container{
+  width: 580px;
+  height: 430px;
+ 
+}
+.customized-img-container img{
+  width: 580px;
+  height: 430px;
+}
+
+.customized-milk-container{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+ align-items: center;
+}
+}
+@media screen and (max-width:700px) {
+
+  /* 客製化第二頁開始的圖片 */
+.customized-img-container{
+  width: 580px;
+  height: 430px;
+ 
+}
+.customized-img-container img{
+  width: 580px;
+  height: 430px;
+}
+
+.customized-milk-container{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+ align-items: center;
+}
+}
+@media screen and (max-width:600px) {
+  .customized-text-container{
+    width: 480px;
+  }
+  /* 客製化第二頁開始的圖片 */
+.customized-img-container{
+  width: 480px;
+  height: 355px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.customized-img-container img{
+  width: 480px;
+  height: 355px;
+}
+.customized-checkbox-container{
+  flex-direction: column;
+  align-items: flex-end;
+  width: 120px;
+}
+.customized-milk-container{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+ align-items: center;
+}
+}
+@media screen and (max-width:500px) {
+  .customized-text-container{
+    width: 420px;
+  }
+  /* 客製化第二頁開始的圖片 */
+.customized-img-container{
+  width: 420px;
+  height: 310px;
+  border-top-right-radius: 26px;
+  border-bottom-left-radius: 26px;
+}
+.customized-img-container img{
+  width: 420px;
+  height: 310px;
+}
+.customized-checkbox-container{
+  flex-direction: column;
+  align-items: flex-end;
+  width: 120px;
+}
+.customized-milk-container{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+ align-items: center;
+}
+}
+@media screen and (max-width:430px) {
   .customized-text-container{
     width: 370px;
   }

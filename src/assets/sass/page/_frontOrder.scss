@@ -113,8 +113,11 @@
     cursor: pointer;
     font-size: 25px;
   }
+  .order-detail-toggle{
+    cursor: pointer;
+  }
 
-  @media (max-width: 390px)  {
+  @media (max-width: 430px)  {
     
     .order-table{
       width: 800px;
