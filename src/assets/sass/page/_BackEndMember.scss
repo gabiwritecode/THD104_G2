@@ -7,11 +7,11 @@
 
   .BMember1 {
     display: flex;
-    width: 500px;
+    width: 300px;
     margin: 0 auto;
   }
 
-  
+
 
 
 
@@ -46,17 +46,25 @@
   .edit_window_member_on {
     display: block;
   }
-  
-  
 
-  select{
+  .BMember h2 {
+    width: 120px;
+    margin: 30px auto;
+
+  }
+
+
+
+  select {
     @include select_S();
     margin-left: 8px;
   }
-  input{
+
+  input {
     @include input_S();
   }
-  .BMember1 li{
+
+  .BMember1 li {
     margin-bottom: 15px;
   }
 
@@ -74,6 +82,7 @@
     margin-left: 40px;
   }
 }
+
 // 當頁sidebar-btn改色
 .page-BackEndMember .sidebar-btn-container {
   li:nth-child(1) {

@@ -151,7 +151,7 @@
 
   .form {
     width: 800px;
-    margin: 40px 0;
+    margin-top:40px;
     margin-left: 35px;
   }
 
@@ -168,8 +168,9 @@
     width: 600px;
 
   }
-  .input_box{
-    width:400px;
+
+  .input_box {
+    width: 400px;
     margin-left: 100px;
   }
 
@@ -205,6 +206,11 @@
     display: block;
   }
 
+  .modal-content h2 {
+    width: 120px;
+    margin: 30px auto;
+  }
+
   //--------區塊二 [ 左半邊]
   .left {
     width: 360px;
@@ -233,7 +239,6 @@
 
   //--------區塊二 [ 右半邊]
   .right {
-    
     .right_form {
       margin-left: 45px;
 
@@ -285,7 +290,7 @@
 
       @include btn_bs_M();
 
-      margin-top: 25px;
+      margin-top: 15px;
       margin-left: 50px;
 
     }
