@@ -15,7 +15,7 @@ try {
     $pdo = getPDO();
 
     // 準備 SQL 查詢
-    $sql = "SELECT * FROM member WHERE ID = :memberID;";
+    $sql = "SELECT * FROM MEMBER WHERE ID = :memberID;";
     
     // 使用 PDO 預備語句
     $mem = $pdo->prepare($sql);

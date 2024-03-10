@@ -33,3 +33,12 @@
   </div>
   <memberBtn></memberBtn>
 </template>
+<style scoped>
+
+  @media screen and (max-width:1000px){
+    header nav{
+      width: 1000px;
+    }
+  }
+
+</style>

@@ -16,7 +16,7 @@
         <h1>門市管理</h1>
         <div class="backend-input-container">
           <input v-model="searchInput" type="text" id="searchInput"  placeholder="縣市查詢"/>
-        <button @click="search">Search</button>
+        <button @click="search">搜尋</button>
       </div>
         <table id="dataTable" class="backendinfo-table">
             <thead class="thead" >

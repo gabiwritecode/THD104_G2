@@ -84,6 +84,7 @@
     display: flex;
     justify-content: right;
     margin-bottom: 12px;
+     
   }
 
   .backend-input-container input {
@@ -107,7 +108,7 @@
   .backendinfo-table {
     @include font_t1();
     border-collapse: collapse;
-    width: 1000px;
+    width: 960px;
     text-align: center;
     align-items: center;
   }
@@ -151,7 +152,7 @@
 
   .form {
     width: 800px;
-    margin: 40px 0;
+    margin-top:40px;
     margin-left: 35px;
   }
 
@@ -168,8 +169,9 @@
     width: 600px;
 
   }
-  .input_box{
-    width:400px;
+
+  .input_box {
+    width: 400px;
     margin-left: 100px;
   }
 
@@ -203,6 +205,11 @@
 
   .edit_window_store_on {
     display: block;
+  }
+
+  .modal-content h2 {
+    width: 120px;
+    margin: 30px auto;
   }
 
   //--------區塊二 [ 左半邊]
@@ -284,7 +291,7 @@
 
       @include btn_bs_M();
 
-      margin-top: 25px;
+      margin-top: 15px;
       margin-left: 50px;
 
     }

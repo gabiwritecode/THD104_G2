@@ -1,5 +1,7 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed} from 'vue';
+import { useRouter } from 'vue-router';
+const router = useRouter()
 const cart = ref([]);
 const lightbox = ref(false);
 const toggleSlide = () => {
@@ -36,15 +38,6 @@ const checkAdd = (item) => {
 
 const clearAll = () => {
   cart.value = [];
-  localStorage.setItem("cart", JSON.stringify(cart.value));
-};
-
-const isSelected = (item) => {
-  if (item.size !== '大小' && item.sugar !== '甜度' && item.ice !== '冰塊') {
-    item.isSelected = true;
-  } else {
-    item.isSelected = false;
-  }
   localStorage.setItem("cart", JSON.stringify(cart.value));
 };
 
@@ -93,17 +86,25 @@ const addToCart = () => {
     mediumPrice: 30,
     largePrice: 35,
     size:['大小','中杯','大杯'],  
-    size: '大杯',  
-    sugar: customizationData.value.sugar,
-    ice: customizationData.value.ice,
+    size: '大小',
+    sugar:['甜度','全糖','少糖','半糖','微糖','無糖'],
+    sugar:'甜度',
+    ice:['冰塊','正常','少冰','微冰','去冰'],
+    ice: '冰塊',
+    add:['加料','仙草','愛玉','珍珠','椰果'],
+    add: '加料',
     addPrice: 0,
     num: 1,
   };
+  
 
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   cart.push(newItem);
   localStorage.setItem('cart', JSON.stringify(cart));
+  location.reload()
+  
 }
+
 
 </script>
 

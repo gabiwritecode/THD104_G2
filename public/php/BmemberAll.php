@@ -6,7 +6,7 @@ header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorizatio
 
 try {
     // 確保這個查詢僅返回JSON格式的結果
-    $sql = "SELECT * FROM member;";
+    $sql = "SELECT * FROM MEMBER;";
     
     // 使用 PDO 執行查詢
     $statement = getPDO()->query($sql);
