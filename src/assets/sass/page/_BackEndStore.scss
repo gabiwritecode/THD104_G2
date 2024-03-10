@@ -84,6 +84,7 @@
     display: flex;
     justify-content: right;
     margin-bottom: 12px;
+     
   }
 
   .backend-input-container input {
@@ -107,7 +108,7 @@
   .backendinfo-table {
     @include font_t1();
     border-collapse: collapse;
-    width: 1000px;
+    width: 960px;
     text-align: center;
     align-items: center;
   }
