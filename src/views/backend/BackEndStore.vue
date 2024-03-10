@@ -246,6 +246,7 @@ export default{
                 const uniqueStoreNames = new Set();
 
                 const search = () => {
+                    //http://localhost/THD104G2/public/php/search.php
                     fetch('php/search.php', {
                         method: 'POST',
                         headers: {

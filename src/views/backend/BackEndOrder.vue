@@ -28,13 +28,13 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(order,index) in OrderData" :key="index">
+            <tr v-for="(order,index) in OrderData" :key="order.ORDER_ID">
               <td>{{ index+1 }}</td>
               <td>{{ order['E-MAIL']}}</td>
               <td>已付款</td>
               <td>{{order.ORDER_TIME}}</td>
               <td>已完成</td>
-              <td><button @click="editWindowToggle">編輯與查看</button></td>
+              <td><button @click="editWindowToggle(order)">編輯與查看</button></td>
             </tr>
           </tbody>
           <tbody></tbody>
@@ -48,19 +48,19 @@
           <div class="container">
             <h2>編輯與查看</h2>
             <ul>
-              <li><h3>訂單編號: 10001</h3></li>
-              <li><h3>會員帳號: 123456789@gmail.com</h3></li>
+              <li><h3>訂單編號: {{ OrderInner.orderId }}</h3></li>
+              <li><h3 class="account">會員帳號: {{ OrderInner.email }}</h3></li>
             </ul>
             <ul>
-              <li><h3>會員姓名: 王小明</h3></li>
-              <li><h3 class="orderTime">訂購時間: 2024-01-21 10:30</h3></li>
+              <li><h3>會員姓名: {{ OrderInner.name }}</h3></li>
+              <li><h3 class="orderTime">訂購時間: {{ OrderInner.orderTime }}</h3></li>
             </ul>
             <ul>
-              <li><h3>訂購地址: 台北市中山區南京東路三段219號5樓</h3></li>
+              <li><h3>訂購地址: {{ OrderInner.address }}</h3></li>
               <li class="icon"><img src="../../assets/image/pic/icon/change.svg" alt="">修改</li>
             </ul>
             <ul class="phone">
-              <li><h3>聯絡電話: 02 2712 0589</h3></li>
+              <li><h3>聯絡電話: {{OrderInner.phone}}</h3></li>
               <li class="icon"><img src="../../assets/image/pic/icon/change.svg" alt="">修改</li>
             </ul>
             <ul class="statement">
@@ -73,13 +73,16 @@
             
             <div class="order_table">
               <h3>訂單商品明細:</h3>
-              <ul>
-                <li><h3>商品名稱: 珍珠紅茶拿鐵</h3></li>
-                <li><h3>數量: 1</h3></li>
-              </ul>
-              <h4>加料: 無</h4>
-              <h4>甜度: 微糖</h4>
-              <h4>冰塊: 去冰</h4>
+              <div class="order_list">
+                <ul>
+                  <li><h3>商品名稱: {{OrderDetail.product_name }}-{{ OrderDetail.size }}</h3></li>
+                  <li><h3>數量: {{ OrderDetail.num}}</h3></li>
+                </ul>
+                <h4>加料: {{ OrderDetail.add }}</h4>
+                <h4>甜度: {{ OrderDetail.sugar }}</h4>
+                <h4>冰塊: {{ OrderDetail.ice }}</h4>
+
+              </div>
             </div>
             <h4 class="total">金額總計: 60元</h4>
 
@@ -107,12 +110,29 @@
 
 
   const OrderData = ref([]);
+  const OrderInner = ref({
+    orderId: '',
+    email: '',
+    name: '',
+    orderTime: '',
+    address: '',
+    phone: '',
+  });
+  const OrderDetail = ref({
+    product_name: '',
+    size: '',
+    num: '',
+    add: '',
+    sugar: '',
+    ice: ''
+
+  })
   onMounted(() => {
 
     fetchOrderData();
     editWindow.value = document.querySelector('.edit_window');
     editWindowBg.value = document.querySelector('.edit_window_bg');
-
+    // OrderData.find(())
 
     
   });
@@ -127,11 +147,33 @@
     }
   };
 
-  const editWindowToggle = () => {
+  const editWindowToggle = (order) => {
+    populateEditForm(order);
+    detail(order);
     editWindow.value.classList.toggle("edit_window_on");
     editWindowBg.value.classList.toggle("edit_window_on");
   };
 
+  const populateEditForm = (order) =>{ if (order) {
+    // console.log(order); 
+    OrderInner.value.orderId = order.ORDER_ID;
+    OrderInner.value.email = order['E-MAIL'];
+    OrderInner.value.name = order.NAME;
+    OrderInner.value.orderTime = order.ORDER_TIME;
+    OrderInner.value.address = order.ADDRESS;
+    OrderInner.value.phone = order.PHONE;
+  }
+  }
+  const detail = (order) =>{ if (order) {
+    // console.log(order); 
+    OrderDetail.value.product_name = order.PRODUCT_NAME;
+    OrderDetail.value.size = order.SIZE;
+    OrderDetail.value.num = order.QUANTITY;
+    OrderDetail.value.add = order.TOPPINGS;
+    OrderDetail.value.sugar = order.SUGAR_LEVEL;
+    OrderDetail.value.ice = order.ICE_LEVEL;
+  }
+}
 </script>
 <style lang="scss" scoped>
 

@@ -87,18 +87,18 @@
       </div>
       <div class="write_info">
         <h2>確認完請填寫以下資訊</h2>
-        <form>
+        <form action="">
           <label class="lable_name">
             <h2>姓名:</h2>
             <input type="text" placeholder="請輸入您的姓名" name="name" value="" v-model="write_info.name">
           </label>
           <label class="lable_name">
             <h2>手機:</h2>
-            <input type="text" placeholder="請輸入您的手機號碼" name="phone" value="">
+            <input type="text" placeholder="請輸入您的手機號碼" name="phone" value="" v-model="write_info.phone">
           </label>
           <label class="lable_name">
             <h2>地址:</h2>
-            <input type="text" placeholder="請輸入您的地址" name="address" value="">
+            <input type="text" placeholder="請輸入您的地址" name="address" value="" v-model="write_info.address">
           </label>
           <label for="creditCard" class="lable_name">
               <h2 class="paymethod">付款方式:</h2>
@@ -129,11 +129,12 @@
               <div class="creditnum">背面後三碼</div>
               <div class="creditcard_text">
                 <input type="text" placeholder="CVC/CVV" value="" maxlength="3">
-              </div>
+              </div> 
             </div>
+            <!-- <input type="submit" value="結帳" @click="checkInp()" :disabled="cart.length <= 0" :class="{'no_item' : cart.length <= 0}"> -->
           </div>
-          <button @click="checkInp()" :disabled="cart.length <= 0" :class="{'no_item' : cart.length <= 0}">結帳</button>
         </form>
+        <button name="sumbit" @click="checkInp()" :disabled="cart.length <= 0" :class="{'no_item' : cart.length <= 0}">結帳</button>
       </div>
     </div>
   </main>
@@ -154,11 +155,11 @@ export default{
         return {
           writtenLightbox: false,
           write_info: [
-            {
-              name: '',
-              phone: '',
-              address: ''
-            }
+          //   // {
+          //   //   // name: '',
+          //   //   // phone: '',
+          //   //   // address: ''
+          //   // }
 
             ],
             cart: JSON.parse(localStorage.getItem('cart'))
@@ -228,16 +229,53 @@ export default{
           }else{
             alert('還有資料未填寫')
 
-            const myValue = localStorage.getItem('cart');
+            const myValue = JSON.parse(localStorage.getItem('cart'));
             
-            // console.log(myValue);
+            // const formData = new FormData(document.getElementById("info"));
+            // console.log(this.write_info.name);
+            // console.log(this.write_info.phone);
+            // console.log(this.write_info.address);
+            const name1 = this.write_info.name
+            const phone = this.write_info.phone
+            const address = this.write_info.address
+            console.log(name);
+            // const write_info = {
+
+            //   name : this.write_info.name,
+            //   phone : this.write_info.phone,
+            //   address : this.write_info.address
+            // }
+            // console.log(write_info);
+            // const url1 = 'php/cart.php'
+            // // 发送 AJAX 请求
+            // fetch(url1, {
+            //     method: 'POST',
+            //     headers: {
+            //     'Content-Type': 'application/json'
+            //   },
+            //     body: JSON.stringify({
+            //       name: name,
+            //       phone: phone,
+            //       address: address
+
+            //     })
+            // })
+            console.log(myValue);
             const url = 'php/cart.php'
             fetch(url, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
               },
-              body: myValue
+              // body: myValue,
+              body: JSON.stringify({
+                  myValue: myValue,
+                  name1: name1,
+                  phone: phone,
+                  address: address
+
+                })
+
               // body: { myValue: JSON.stringify(myValue) }
               })
 

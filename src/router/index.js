@@ -143,7 +143,7 @@ const router = createRouter({
     {
       path: '/backendProducts',
       name: 'backendProducts',
-      component: () => import('../views/backend/BackendProducts.vue'),
+      component: () => import('../views/backend/BackEndProducts.vue'),
       meta: {
         title: '商品管理'
       }
