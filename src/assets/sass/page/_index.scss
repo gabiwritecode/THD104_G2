@@ -992,15 +992,15 @@
     } // news
 
     @keyframes blur{
-                0%{
-                    filter: blur(1vw);
-                    opacity: 0;
-                }
-                100%{
-                    opacity: 1;
-                    filter: blur(0vw);
-                }
-            }
+        0%{
+            filter: blur(1vw);
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+            filter: blur(0vw);
+        }
+    }
 
             
             
@@ -1026,7 +1026,7 @@
 .back_top_hide {
     opacity: 0;
     transform: translateY(150%);
-    transition: all .5s linear;
+    transition: all .3s linear;
     pointer-events: none;
 }
         
