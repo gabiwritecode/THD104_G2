@@ -28,13 +28,13 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(order,index) in OrderData" :key="order.ORDER_ID">
-              <td>{{ index+1 }}</td>
-              <td>{{ order['E-MAIL']}}</td>
+            <tr v-for="(order,index) in OrderData" :key="index">
+              <td>{{ index + 1 }}</td>
+              <td>{{ order[0]['E-MAIL'] }}</td>
               <td>已付款</td>
-              <td>{{order.ORDER_TIME}}</td>
+              <td>{{order[0].ORDER_TIME}}</td>
               <td>已完成</td>
-              <td><button @click="editWindowToggle(order)">編輯與查看</button></td>
+              <td><button @click="editWindowToggle(index)">編輯與查看</button></td>
             </tr>
           </tbody>
           <tbody></tbody>
@@ -73,14 +73,14 @@
             
             <div class="order_table">
               <h3>訂單商品明細:</h3>
-              <div class="order_list">
+              <div class="order_list" v-for="(OrderDetail,index) in OrderDetail[current_index]" :key="index">
                 <ul>
-                  <li><h3>商品名稱: {{OrderDetail.product_name }}-{{ OrderDetail.size }}</h3></li>
-                  <li><h3>數量: {{ OrderDetail.num}}</h3></li>
+                  <li><h3>商品名稱: {{OrderDetail.PRODUCT_NAME }}-{{ OrderDetail.SIZE }} <span class="topping" v-if="OrderDetail.SIZE === 'M' || OrderDetail.SIZE ==='中杯'">${{ OrderDetail.MEDIUM_PRICE +addPrice }}</span><span v-else class="topping">${{ OrderDetail.LARGE_PRICE +addPrice }}</span></h3></li>
+                  <li><h3>數量: {{ OrderDetail.QUANTITY}}</h3></li>
                 </ul>
-                <h4>加料: {{ OrderDetail.add }}</h4>
-                <h4>甜度: {{ OrderDetail.sugar }}</h4>
-                <h4>冰塊: {{ OrderDetail.ice }}</h4>
+                <h4>加料: <span v-if="OrderDetail.TOPPINGS == '加料'" class="topping">無</span><span v-else class="topping">{{ OrderDetail.TOPPINGS }}</span></h4>
+                <h4>甜度: {{ OrderDetail.SUGAR_LEVEL }}</h4>
+                <h4>冰塊: {{ OrderDetail.ICE_LEVEL }}</h4>
 
               </div>
             </div>
@@ -88,13 +88,13 @@
 
 
             <ul class="edit_window_btn">
-              <li><button @click="editWindowToggle">關閉</button></li>
-              <li><button @click="editWindowToggle">儲存</button></li>
+              <li><button @click="editWindowToggle(undefined)">關閉</button></li>
+              <li><button @click="editWindowToggle(undefined)">儲存</button></li>
             </ul>
           </div>
     </div>
     <!-- 灰色背景 -->
-    <div class="edit_window_bg" @click="editWindowToggle"></div>
+    <div class="edit_window_bg" @click="editWindowToggle(undefined)"></div>
      
     
   </main>
@@ -118,22 +118,17 @@
     address: '',
     phone: '',
   });
-  const OrderDetail = ref({
-    product_name: '',
-    size: '',
-    num: '',
-    add: '',
-    sugar: '',
-    ice: ''
-
-  })
+  const OrderDetail = ref([])
+  const current_index = ref(null)
+  const addPrice = ref(0)
+  
   onMounted(() => {
 
     fetchOrderData();
     editWindow.value = document.querySelector('.edit_window');
     editWindowBg.value = document.querySelector('.edit_window_bg');
-    // OrderData.find(())
-
+    
+// console.log();
     
   });
 
@@ -141,37 +136,65 @@
     try{
       const response = await fetch('php/order_info.php');
       const data = await response.json();
-      OrderData.value = data;
+      const flatOrderData = [];
+      const flatOrderData1 = [];
+      for (let order of data) {
+        
+          flatOrderData.push(order);
+          flatOrderData1.push(order);
+          // for (let product of order){
+          //   flatOrderData1.push(product)
+          // }
+        }
+      
+      OrderData.value = flatOrderData
+      OrderDetail.value = flatOrderData1
+
+      // console.log(OrderData.value);
+      // console.log(OrderDetail.value[1][0]);
+      // console.log(OrderData.value[0].PRODUCT_NAME);
+
+
     } catch (error){
       console.error('Error fetching data:', error)
     }
   };
 
-  const editWindowToggle = (order) => {
-    populateEditForm(order);
-    detail(order);
+  const editWindowToggle = (index) => { 
+    
+    populateEditForm(index);
+    // console.log(index);
+    // console.log(order);
+    detail(index);
     editWindow.value.classList.toggle("edit_window_on");
     editWindowBg.value.classList.toggle("edit_window_on");
-  };
+  }
+  ;
 
-  const populateEditForm = (order) =>{ if (order) {
-    // console.log(order); 
-    OrderInner.value.orderId = order.ORDER_ID;
-    OrderInner.value.email = order['E-MAIL'];
-    OrderInner.value.name = order.NAME;
-    OrderInner.value.orderTime = order.ORDER_TIME;
-    OrderInner.value.address = order.ADDRESS;
-    OrderInner.value.phone = order.PHONE;
+  const populateEditForm = (index) =>{ if (index != null && index != undefined) {
+
+    OrderInner.value.orderId = OrderData.value[index][0].ORDER_ID;
+    // console.log( OrderData.value[index][0].ORDER_ID); 
+    OrderInner.value.email = OrderData.value[index][0]['E-MAIL'];
+    OrderInner.value.name =OrderData.value[index][0].NAME;
+    OrderInner.value.orderTime =OrderData.value[index][0].ORDER_TIME;
+    OrderInner.value.address =OrderData.value[index][0].ADDRESS;
+    OrderInner.value.phone =OrderData.value[index][0].PHONE;
   }
   }
-  const detail = (order) =>{ if (order) {
+  
+  const detail = (index) =>{ if (index != null && index != undefined) {
     // console.log(order); 
-    OrderDetail.value.product_name = order.PRODUCT_NAME;
-    OrderDetail.value.size = order.SIZE;
-    OrderDetail.value.num = order.QUANTITY;
-    OrderDetail.value.add = order.TOPPINGS;
-    OrderDetail.value.sugar = order.SUGAR_LEVEL;
-    OrderDetail.value.ice = order.ICE_LEVEL;
+     current_index.value = index
+
+     
+       if(OrderDetail[current_index] === '加料'){
+        addPrice.value = 0
+     }else{
+        addPrice.value = 10
+     }
+
+     
   }
 }
 </script>
