@@ -14,7 +14,8 @@
         </nav>
         <div class="backend-table-container">
           <h1>消息管理</h1>
-          <div class="backend-input-container"><input type="text"><button>搜尋</button></div>
+          <div class="backend-input-container"> <input type="text" v-model.trim="search">
+        <button @click="searchTitle">搜尋</button></div>
           <table class="backend-info-table" v-if="informationData.length">
             <thead>
               <tr>
@@ -85,6 +86,7 @@ const editWindowBg = ref(null);
 const informationData = ref([]);
 const categories = ref([]);
 const fileInput = ref(null);
+const search = ref('');
 const editFormData = ref({
   InfoId:'',
   category: '',
@@ -126,6 +128,7 @@ const editWindowToggle = (info) => {
   populateEditForm(info);
   editWindow.value.classList.toggle("edit_window_on");
   editWindowBg.value.classList.toggle("edit_window_on");
+  search.value='';
 };
 
 const populateEditForm = (info) =>{ if (info) {
@@ -192,6 +195,15 @@ const displayStatus = computed(() => {
     return status == 1 ? '上架' : '下架';
   };
 });
+const searchTitle = async () => {
+  await fetchInfoData();
+
+  if (search.value) {
+    informationData.value = informationData.value.filter(info =>
+      info.TITLE.toLowerCase().includes(search.value.toLowerCase())
+    );
+  }
+};
 
 </script>
 <style lang="scss" scoped>

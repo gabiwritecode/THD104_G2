@@ -17,7 +17,7 @@
         </nav>
         <div class="backend-table-container">
           <h1>消息管理</h1>
-          <div class="backend-input-container"><input type="text"><button>搜尋</button></div>
+          <div class="backend-input-container"><input type="text" v-model.trim="search"><button @click="searchCategories">搜尋</button></div>
           <table class="backend-info-table">
             <thead>
               <tr>
@@ -62,10 +62,14 @@ import { ref, onMounted } from 'vue';
 const editWindow = ref(null);
 const editWindowBg = ref(null);
 const categories = ref([]);
+
 const editedCategory = ref({
+  ID: '',
   name: '',
   description: '',
 });
+
+const search = ref('');
 
 onMounted(() => {
   fetchData();
@@ -76,9 +80,8 @@ onMounted(() => {
 const fetchData = async () => {
   try {
     const response = await fetch('php/manage-category.php');
-   
-    categories.value = await response.json(); 
-    console.log(categories.value)
+    categories.value = await response.json();
+    console.log(categories.value);
   } catch (error) {
     console.error('Error:', error);
   }
@@ -86,7 +89,6 @@ const fetchData = async () => {
 
 const editWindowToggle = (category) => {
   if (category) {
-
     editedCategory.value = {
       ID: category.ID,
       name: category.NAME,
@@ -103,7 +105,7 @@ const saveCategory = async () => {
     const response = await fetch('php/update-category.php', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded', 
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: new URLSearchParams({
         categoryId: editedCategory.value.ID,
@@ -122,28 +124,41 @@ const saveCategory = async () => {
   }
 };
 
-
 const deleteCategory = async (categoryId) => {
-    if (confirm("確定要刪除這個分類嗎？")) {
-      try {
-        const response = await fetch('php/delete-category.php', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ categoryId }),
-        });
+  if (confirm('確定要刪除這個分類嗎？')) {
+    try {
+      const response = await fetch('php/delete-category.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ categoryId }),
+      });
 
-        const data = await response.json();
-        console.log(data);
+      const data = await response.json();
+      console.log(data);
 
-        fetchData();
-      } catch (error) {
-        console.error('Error:', error);
-      }
+      fetchData();
+    } catch (error) {
+      console.error('Error:', error);
     }
-  };
+  }
+};
+
+const searchCategories = async () => {
+  await fetchData();
+
+  if (search.value) {
+    categories.value = categories.value.filter(category =>
+      category.NAME.toLowerCase().includes(search.value.toLowerCase())
+    );
+  }
+};
 </script>
+
+
+
+
 
 <style lang="scss" scoped>
 
