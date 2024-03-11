@@ -105,7 +105,7 @@ const fetchMembers = () => {
 
 // 實現你的 getStatusText 邏輯
 const getStatusText = (status) => {
-  return status === 1 ? '正常' : '停權';
+  return status == 1 ? '正常' : '停權';
 };
 
 function editMember(member) {
