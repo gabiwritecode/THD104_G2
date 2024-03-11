@@ -8,17 +8,40 @@
             <h2>登入後台</h2>
             <div>
                 <p>帳號</p>
-                <input type="text" placeholder="請輸入Email">
+                <input v-model.trim="username" type="text" placeholder="請輸入Email">
             </div>
             <div>
                 <p>密碼</p>
-                <input type="password" placeholder="請輸入密碼">
+                <input  v-model.trim="password" type="password" placeholder="請輸入密碼">
             </div>
-            <RouterLink to="./BackEndMember"><button>登入後台</button></RouterLink>
+            <button @click="login">登入後台</button>
         </div>
     </main>
     
 </template>
+<script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const username = ref('tibame123@gmail.com'); 
+const password = ref('123456'); 
+const router = useRouter();
+
+const login = () => {
+
+  if (username.value === 'tibame123@gmail.com' && password.value === '123456') {
+
+    router.push('/BackEndMember');
+  } else {
+
+    alert('帳號或密碼不正確');
+  
+    username.value = '';
+    password.value = '';
+  }
+};
+</script>
+
 
 <style lang="scss" scoped>
 

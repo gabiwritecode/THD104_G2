@@ -17,7 +17,7 @@
         </nav>
         <div class="backend-table-container">
           <h1>消息管理</h1>
-          <div class="backend-input-container"><input type="text"><button>搜尋</button></div>
+          <div class="backend-input-container"><input type="text"><button @click="searchCategories">搜尋</button></div>
           <table class="backend-info-table">
             <thead>
               <tr>
@@ -57,7 +57,7 @@
   
 </template>
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 
 const editWindow = ref(null);
 const editWindowBg = ref(null);
@@ -66,6 +66,7 @@ const editedCategory = ref({
   name: '',
   description: '',
 });
+const search = ref('');
 
 onMounted(() => {
   fetchData();
@@ -92,10 +93,12 @@ const editWindowToggle = (category) => {
       name: category.NAME,
       description: category.DESCRIPTION,
     };
+
   }
 
   editWindow.value.classList.toggle('edit_window_on');
   editWindowBg.value.classList.toggle('edit_window_on');
+  search.value = '';
 };
 
 const saveCategory = async () => {
@@ -143,6 +146,14 @@ const deleteCategory = async (categoryId) => {
       }
     }
   };
+  const searchCategories = () => {
+  const filteredCategories = categories.value.filter((category) =>
+    category.NAME.toLowerCase().includes(search.value.toLowerCase())
+  );
+  categories.value = filteredCategories;
+ 
+};
+watch(search, searchCategories);
 </script>
 
 <style lang="scss" scoped>

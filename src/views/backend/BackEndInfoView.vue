@@ -14,7 +14,7 @@
         </nav>
         <div class="backend-table-container">
           <h1>消息管理</h1>
-          <div class="backend-input-container"><input type="text"><button>搜尋</button></div>
+          <div class="backend-input-container"><input type="text"><button @click="searchData">搜尋</button></div>
           <table class="backend-info-table" v-if="informationData.length">
             <thead>
               <tr>
@@ -79,12 +79,13 @@
   
 </template>
 <script setup>
-import {ref, onMounted, computed} from 'vue';
+import {ref, onMounted, computed, watch} from 'vue';
 const editWindow = ref(null);
 const editWindowBg = ref(null);
 const informationData = ref([]);
 const categories = ref([]);
 const fileInput = ref(null);
+const search = ref('');
 const editFormData = ref({
   InfoId:'',
   category: '',
@@ -126,6 +127,7 @@ const editWindowToggle = (info) => {
   populateEditForm(info);
   editWindow.value.classList.toggle("edit_window_on");
   editWindowBg.value.classList.toggle("edit_window_on");
+  search.value='';
 };
 
 const populateEditForm = (info) =>{ if (info) {
@@ -192,6 +194,17 @@ const displayStatus = computed(() => {
     return status == 1 ? '上架' : '下架';
   };
 });
+const searchData = () => {
+  informationData.value = filteredInformation;
+};
+
+const filteredInformation = computed(() => {
+  return informationData.value.filter((info) =>
+    info.TITLE.toLowerCase().includes(search.value.toLowerCase())
+  );
+});
+
+watch(search, searchData);
 
 </script>
 <style lang="scss" scoped>
