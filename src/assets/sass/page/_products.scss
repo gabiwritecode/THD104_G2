@@ -343,11 +343,8 @@
         left: 0vw;
         bottom: -460px;
       }
-      @include m(){
-        // width: 32px;
-        // height: 32px;
-        // left: 38px;
-        // top: -44px;
+      @include r600(){
+        bottom: -450px;
       }
     }
     .circle2{
@@ -365,11 +362,11 @@
         left: 14vw;
         bottom: -460px;
       }
-      @include m(){
-        // width: 8px;
-        // height: 8px;
-        // left: 72px;
-        // top: -14px;
+      @include r600(){
+        width: 2.2vw;
+        height: 2.2vw;
+        left: 12.5vw;
+        bottom: -455px;
       }
     }
       .circle3{
