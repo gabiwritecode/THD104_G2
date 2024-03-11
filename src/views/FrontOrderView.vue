@@ -597,9 +597,9 @@ const drinklist = ref([
         const size = order.SIZE;
 
 
-        if (size === 'M') {
+        if (size === 'M' || size === '中杯') {
           return order.MEDIUM_PRICE;
-        } else if (size === 'L') {
+        } else if (size === 'L' || size === '大杯') {
           return order.LARGE_PRICE;
         } else {
           return 'Unknown Size'; 
