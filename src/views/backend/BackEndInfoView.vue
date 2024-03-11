@@ -14,8 +14,9 @@
         </nav>
         <div class="backend-table-container">
           <h1>消息管理</h1>
-          <div class="backend-input-container"><input type="text"><button @click="searchData">搜尋</button></div>
-          <table class="backend-info-table" v-if="filteredInformation.length">
+          <div class="backend-input-container"> <input type="text" v-model.trim="search">
+        <button @click="searchTitle">搜尋</button></div>
+          <table class="backend-info-table" v-if="informationData.length">
             <thead>
               <tr>
                 <th>文章編號</th>
@@ -79,7 +80,7 @@
   
 </template>
 <script setup>
-import {ref, onMounted, computed, watch} from 'vue';
+import {ref, onMounted, computed} from 'vue';
 const editWindow = ref(null);
 const editWindowBg = ref(null);
 const informationData = ref([]);
@@ -194,17 +195,15 @@ const displayStatus = computed(() => {
     return status == 1 ? '上架' : '下架';
   };
 });
-const searchData = () => {
-  informationData.value = filteredInformation.value;
+const searchTitle = async () => {
+  await fetchInfoData();
+
+  if (search.value) {
+    informationData.value = informationData.value.filter(info =>
+      info.TITLE.toLowerCase().includes(search.value.toLowerCase())
+    );
+  }
 };
-
-const filteredInformation = computed(() => {
-  return informationData.value.filter((info) =>
-    info.TITLE.includes(search.value)
-  );
-});
-
-watch(search, searchData);
 
 </script>
 <style lang="scss" scoped>

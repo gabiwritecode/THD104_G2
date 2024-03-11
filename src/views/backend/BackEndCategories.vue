@@ -17,7 +17,7 @@
         </nav>
         <div class="backend-table-container">
           <h1>消息管理</h1>
-          <div class="backend-input-container"><input type="text"><button @click="searchCategories">搜尋</button></div>
+          <div class="backend-input-container"><input type="text" v-model.trim="search"><button @click="searchCategories">搜尋</button></div>
           <table class="backend-info-table">
             <thead>
               <tr>
@@ -57,17 +57,19 @@
   
 </template>
 <script setup>
-import { ref, onMounted, watch } from 'vue';
+import { ref, onMounted } from 'vue';
 
 const editWindow = ref(null);
 const editWindowBg = ref(null);
 const categories = ref([]);
+
 const editedCategory = ref({
+  ID: '',
   name: '',
   description: '',
 });
+
 const search = ref('');
-const filteredCategories = ref([]);
 
 onMounted(() => {
   fetchData();
@@ -78,8 +80,8 @@ onMounted(() => {
 const fetchData = async () => {
   try {
     const response = await fetch('php/manage-category.php');
-    categories.value = await response.json(); 
-    console.log(categories.value)
+    categories.value = await response.json();
+    console.log(categories.value);
   } catch (error) {
     console.error('Error:', error);
   }
@@ -96,7 +98,6 @@ const editWindowToggle = (category) => {
 
   editWindow.value.classList.toggle('edit_window_on');
   editWindowBg.value.classList.toggle('edit_window_on');
-  search.value = '';
 };
 
 const saveCategory = async () => {
@@ -104,7 +105,7 @@ const saveCategory = async () => {
     const response = await fetch('php/update-category.php', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded', 
+        'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: new URLSearchParams({
         categoryId: editedCategory.value.ID,
@@ -124,7 +125,7 @@ const saveCategory = async () => {
 };
 
 const deleteCategory = async (categoryId) => {
-  if (confirm("確定要刪除這個分類嗎？")) {
+  if (confirm('確定要刪除這個分類嗎？')) {
     try {
       const response = await fetch('php/delete-category.php', {
         method: 'POST',
@@ -144,15 +145,19 @@ const deleteCategory = async (categoryId) => {
   }
 };
 
-const searchCategories = () => {
-  filteredCategories.value = categories.value.filter((category) =>
-    category.NAME.includes(search.value)
-  );
+const searchCategories = async () => {
+  await fetchData();
+
+  if (search.value) {
+    categories.value = categories.value.filter(category =>
+      category.NAME.toLowerCase().includes(search.value.toLowerCase())
+    );
+  }
 };
-
-watch(search, searchCategories);
-
 </script>
+
+
+
 
 
 <style lang="scss" scoped>
