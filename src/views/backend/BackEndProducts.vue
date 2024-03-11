@@ -14,7 +14,7 @@
     </nav>
     <div class="backend-table-container">
       <h1>商品管理</h1>
-      <div class="backend-input-container"><input type="text" placeholder="商品搜尋"><button>搜尋</button></div>
+      <div class="backend-input-container"><input type="text" v-model.trim="search" placeholder="搜尋商品名稱"><button @click="searchProductName">搜尋</button></div>
       <table class="backend-info-table" v-if="productData.length">
         <thead>
           <tr>
@@ -102,6 +102,7 @@
   const editWindowBg = ref(null);
 
   const productData = ref([]);
+  const search = ref('');
   const editFormData = ref({
   productId:'',
   category: '',
@@ -134,6 +135,7 @@
     populateEditForm(product);
     editWindow.value.classList.toggle("edit_window_on");
     editWindowBg.value.classList.toggle("edit_window_on");
+    search.value='';
   };
 
   const populateEditForm = (product) =>{ if (product) {
@@ -171,6 +173,17 @@ const submitForm = async () => {
     editWindowToggle();
   } catch (error) {
     console.error('Error:', error);
+  }
+};
+
+// 搜尋功能
+const searchProductName = async () => {
+  await fetchProductData();
+
+  if (search.value) {
+    productData.value = productData.value.filter(product =>
+      product.NAME.toLowerCase().includes(search.value.toLowerCase())
+    );
   }
 };
 
