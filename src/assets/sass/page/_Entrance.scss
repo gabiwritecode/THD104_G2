@@ -69,7 +69,8 @@
         font-size: 28px;
         font-weight: 500;
         text-align: center;
-        cursor: pointer;
+        // cursor: pointer;
+        pointer-events: none;
         margin: 0 auto;
         
         @include r1200{
@@ -92,14 +93,15 @@
             width: 220px;
             display: block;
             margin: 0 auto;
+            cursor: pointer;
             animation: oringe 6s linear backwards infinite;
             transition: .5s all ease-out;
             &:hover {
             // opacity: .8;
-            filter:drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.5));
-            scale: 1.02;
+            filter:drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.4));
+            // scale: 1.02;
             // rotate: 180deg;
-        }
+            }
             @include r1000{
                 width: 80%;
             }
@@ -109,8 +111,18 @@
                 // left: 58px;
                 // top: 4px;
             }
+        }
+        .cup2{
+            rotate: 180deg;
+        }
+        .st0{
+            transition: .3s all ease-out;
+            fill:#78BEC8;
+            &:hover{
+                fill: $yellow;
+            }
+        }
 
-    }
     .logo{
         display: block;
         margin: 20px auto;
@@ -128,11 +140,11 @@
     // === 右下杯子 ===
     .drink_icon{
         position: absolute;
-        width: 110px;
+        width: 100px;
         right: 20%;
-        bottom: 8%;
+        bottom: 5%;
         z-index: -999;
-        animation: drink_icon 3s linear backwards infinite;
+        animation: drink_icon 4s linear backwards infinite;
         @include r1200{
             width: 9vw;
             right: 10%;
