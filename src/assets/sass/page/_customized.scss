@@ -1,4 +1,10 @@
 
+ img{
+        -webkit-user-drag: none;
+        -moz-user-drag: none;
+        -ms-user-drag: none;
+    }
+
 .customized-image-container{
   margin: 0 auto;
   margin-top: 120px;
@@ -25,22 +31,18 @@
   text-align: center;
 }
 /* 客製化第二頁開始的圖片 */
-.customized-img-container{
-  width: 760px;
-  height: 560px;
-  border-top-right-radius: 60px;
-  border-bottom-left-radius: 60px;
-  margin: 0 auto;
-  margin-top: 120px;
-  text-align: center;
-  overflow: hidden;
-}
-.customized-img-container img{
-  width: 760px;
-  height: 560px;
-  object-fit: cover;
-  object-position: center;
-}
+// .customized-img-container{
+
+  // border-top-right-radius: 60px;
+  // border-bottom-left-radius: 60px;
+
+// }
+// .customized-img-container img{
+//   width: 760px;
+//   height: 560px;
+//   object-fit: cover;
+//   object-position: center;
+// }
 .customized-input-container select{
   height: 30px;
   border-radius: 4px;
@@ -99,6 +101,298 @@
   
 }
 
+// ===== 動畫 ======
+/* 客製化第二頁開始的圖片 */
+.customized-img-container{
+  width: 760px;
+  height: 460px;
+  // border: 1px solid red;
+  //  position: relative;
+  margin: 0 auto;
+  margin-top: 120px;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  align-items: end;
+  @include r1000{
+    width: auto;
+    margin: 10% 10% 0 10%;
+    height: 60vh;
+  }
+  @include r800{
+    height: 45vh;
+  }
+.animation{
+  // border: 1px solid blue;
+  position: relative;
+  width: 200px;
+  height: 260px;
+  margin: 0 auto;
+  margin-bottom: 6%;
+}
+.cup_shake{
+  animation: cup_shake 2s ease 0s backwards infinite;
+  @keyframes cup_shake{
+      0%{
+          // transform: translate(-50%,0%); 
+          // rotate: 100deg;
+          // opacity: 0;
+          rotate: 5deg;
+      }50%{
+      rotate: -5deg;
+      }
+      100%{
+        rotate: 5deg;
+        // opacity: 1;
+          // transform: translate(-50%,260%); 
+      }
+    }
+ }
+
+.customized_animation{
+    position:absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    height: auto;
+    @include r800{
+    }
+  }
+  .cup{
+    bottom: 0%;
+    width: 140px;
+    @include r800{
+      width: 110px;
+    }
+  }
+  .water{
+    // border: 1px solid red;
+    bottom: 9%;
+    width: 100px; 
+    // opacity: 1;
+    animation: water 3s ease .5s backwards infinite;
+    @include r800{
+      width: 80px;
+      bottom: 5%;
+    }
+  }
+  @keyframes water{
+    0%{
+        opacity: .7;
+    }
+    50%{
+       opacity: 1; 
+    }
+    100%{
+        opacity: .7; 
+    }
+  }
+  .water2{
+    bottom: 10%;
+    width: 90px; 
+    // border: 1px solid $color1;
+    @include r800{
+      bottom: 2%;
+    }
+  }
+  .nowater{
+    // border: 1px solid $color1;
+    bottom: 1%;
+    width: 124px;
+    animation: nowater 3.5s ease .3s backwards infinite; 
+    @include r800{
+      width: 94;
+    }
+  }
+  @keyframes nowater{
+    0%{
+        transform: translate(-50%,-0%); 
+    }
+    50%{
+       transform: translate(-50%,-62%); 
+    }
+    100%{
+        transform: translate(-50%,0%); 
+    }
+  }
+  .water_drop1{
+    bottom: 68%;
+    width: 21px;
+    left: 37%;
+    animation: water_drop 3s ease 0s backwards infinite; 
+    @include r800{
+      width: 18px;
+      left: 40%;
+      bottom: 60%;
+    }
+  }
+   .water_drop2{
+    bottom: 75%;
+    width: 21px;
+    left: 52%;
+    animation: water_drop 3s ease .5s backwards infinite;
+    @include r800{
+      width: 18px;
+      bottom: 66%;
+    }
+  }
+   .water_drop3{
+    bottom: 65%;
+    width: 21px;
+    left: 62%;
+    animation: water_drop 3s ease .3s backwards infinite;
+    @include r800{
+      width: 18px;
+      left: 60%;
+      bottom: 57%;
+    } 
+  }
+  @keyframes water_drop{
+    0%{
+        transform: translate(-50%,0%); 
+    }
+    100%{
+      opacity: 0;
+        transform: translate(-50%,480%); 
+    }
+  }
+  .bubble1{
+    bottom: 68%;
+    width: 21px;
+    left: 38%;
+    animation: bubble 3s ease 0s backwards infinite; 
+    @include r800{
+      width: 17px;
+      left: 40%;
+      bottom: 60%;
+    }
+  }
+   .bubble2{
+    bottom: 75%;
+    width: 21px;
+    left: 52%;
+    animation: bubble 3s ease .5s backwards infinite; 
+    @include r800{
+      width: 17px;
+      bottom: 66%;
+    }
+  }
+   .bubble3{
+     bottom: 65%;
+    width: 21px;
+    left: 62%;
+    animation: bubble 3s ease .3s backwards infinite; 
+     @include r800{
+      width: 17px;
+      left: 60%;
+      bottom: 57%;
+    } 
+  }
+  .fruit{
+    width: 22px;
+    @include r800{
+      width: 19px;
+    }
+  }
+  @keyframes bubble{
+    0%{
+        transform: translate(-50%,0%); 
+    }
+    100%{
+      opacity: 0;
+        transform: translate(-50%,580%); 
+    }
+  }
+  .straw{
+    bottom: 72%;
+    left: 62%;
+    width: 48px;
+    animation: straw 3s ease .3s backwards infinite; 
+    @include r800{
+      width: 38px;
+      // left: 60%;
+      bottom: 54%;
+    }
+  }
+  @keyframes straw{
+    0%{
+        transform: translate(-50%,0%); 
+        opacity: 0;
+    }
+    100%{
+      opacity: 1;
+        transform: translate(-50%,60%); 
+    }
+  }
+  .straw_stop{
+    bottom: 55%;
+    left: 54.5%;
+    width: 48px;
+    rotate: -3deg;
+    animation: none;
+    @include r800{
+      width: 38px;
+      left: 56%;
+      bottom: 45%;
+    }
+  }
+  .cover{
+    width: 148px;
+    bottom: 63%;
+    @include r800{
+      width: 118px;
+      bottom: 50%;
+    }
+  }
+  .cover2{
+    width: 148px;
+    bottom: 65%;
+    transform-origin: left;
+    // animation: cover2 2s ease 0s backwards infinite; 
+    @include r800{
+      width: 118px;
+      bottom: 50%;
+    }
+  }
+  .waves {
+  // margin: 0 40%;
+    position:absolute;
+    width: 100px;
+    height: 36px;
+    margin-bottom:-7px; /*Fix for safari gap*/
+    bottom: 45%;
+    left: 50%;
+    transform: translate(-50%,0);
+    @include r800{
+      width: 80px;
+      bottom: 37%;
+      height: 22px;
+    }
+  }
+/* Animation */
+    .parallax > use {
+        animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+    }
+    .parallax > use:nth-child(1) {
+        animation-delay: -2s;
+        animation-duration: 3.5s;
+    }
+    .parallax > use:nth-child(2) {
+        animation-delay: -3s;
+        animation-duration: 7s;
+    }
+    @keyframes move-forever {
+        0% {
+        transform: translate3d(-90px,0,0);
+        }
+        100% { 
+            transform: translate3d(85px,0,0);
+        }
+    }
+}
+
+
+// ===== RWD ======
+
 @media screen and (max-width:1200px) {
   .customized-text-container{
     width: 1100px;
@@ -141,13 +435,14 @@
   }
   /* 客製化第二頁開始的圖片 */
 .customized-img-container{
-  width: 640px;
-  height: 473px;
+  // width: 640px;
+  // height: 473px;
  
 }
 .customized-img-container img{
-  width: 640px;
-  height: 473px;
+  // width: 640px;
+  // height: 473px;
+  // border: 1px solid red;
 }
 
 .customized-milk-container{
@@ -163,13 +458,13 @@
   }
   /* 客製化第二頁開始的圖片 */
 .customized-img-container{
-  width: 580px;
-  height: 430px;
+  // width: 580px;
+  // height: 430px;
  
 }
 .customized-img-container img{
-  width: 580px;
-  height: 430px;
+  // width: 580px;
+  // height: 430px;
 }
 
 .customized-milk-container{
@@ -183,13 +478,13 @@
 
   /* 客製化第二頁開始的圖片 */
 .customized-img-container{
-  width: 580px;
-  height: 430px;
+  // width: 580px;
+  // height: 430px;
  
 }
 .customized-img-container img{
-  width: 580px;
-  height: 430px;
+  // width: 580px;
+  // height: 430px;
 }
 
 .customized-milk-container{
@@ -205,14 +500,14 @@
   }
   /* 客製化第二頁開始的圖片 */
 .customized-img-container{
-  width: 480px;
-  height: 355px;
-  border-top-right-radius: 30px;
-  border-bottom-left-radius: 30px;
+  // width: 480px;
+  // height: 355px;
+  // border-top-right-radius: 30px;
+  // border-bottom-left-radius: 30px;
 }
 .customized-img-container img{
-  width: 480px;
-  height: 355px;
+  // width: 480px;
+  // height: 355px;
 }
 .customized-checkbox-container{
   flex-direction: column;
@@ -232,14 +527,14 @@
   }
   /* 客製化第二頁開始的圖片 */
 .customized-img-container{
-  width: 420px;
-  height: 310px;
-  border-top-right-radius: 26px;
-  border-bottom-left-radius: 26px;
+  // width: 420px;
+  // height: 310px;
+  // border-top-right-radius: 26px;
+  // border-bottom-left-radius: 26px;
 }
 .customized-img-container img{
-  width: 420px;
-  height: 310px;
+  // width: 420px;
+  // height: 310px;
 }
 .customized-checkbox-container{
   flex-direction: column;
@@ -259,14 +554,14 @@
   }
   /* 客製化第二頁開始的圖片 */
 .customized-img-container{
-  width: 320px;
-  height: 236px;
-  border-top-right-radius: 24px;
-  border-bottom-left-radius: 24px;
+  // width: 320px;
+  // height: 236px;
+  // border-top-right-radius: 24px;
+  // border-bottom-left-radius: 24px;
 }
 .customized-img-container img{
-  width: 320px;
-  height: 236px;
+  // width: 320px;
+  // height: 236px;
 }
 .customized-checkbox-container{
   flex-direction: column;
