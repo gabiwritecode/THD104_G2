@@ -67,6 +67,7 @@ const editedCategory = ref({
   description: '',
 });
 const search = ref('');
+const filteredCategories = ref([]);
 
 onMounted(() => {
   fetchData();
@@ -77,7 +78,6 @@ onMounted(() => {
 const fetchData = async () => {
   try {
     const response = await fetch('php/manage-category.php');
-   
     categories.value = await response.json(); 
     console.log(categories.value)
   } catch (error) {
@@ -87,13 +87,11 @@ const fetchData = async () => {
 
 const editWindowToggle = (category) => {
   if (category) {
-
     editedCategory.value = {
       ID: category.ID,
       name: category.NAME,
       description: category.DESCRIPTION,
     };
-
   }
 
   editWindow.value.classList.toggle('edit_window_on');
@@ -125,36 +123,37 @@ const saveCategory = async () => {
   }
 };
 
-
 const deleteCategory = async (categoryId) => {
-    if (confirm("確定要刪除這個分類嗎？")) {
-      try {
-        const response = await fetch('php/delete-category.php', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ categoryId }),
-        });
+  if (confirm("確定要刪除這個分類嗎？")) {
+    try {
+      const response = await fetch('php/delete-category.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ categoryId }),
+      });
 
-        const data = await response.json();
-        console.log(data);
+      const data = await response.json();
+      console.log(data);
 
-        fetchData();
-      } catch (error) {
-        console.error('Error:', error);
-      }
+      fetchData();
+    } catch (error) {
+      console.error('Error:', error);
     }
-  };
-  const searchCategories = () => {
-  const filteredCategories = categories.value.filter((category) =>
-    category.NAME.toLowerCase().includes(search.value.toLowerCase())
-  );
-  categories.value = filteredCategories;
- 
+  }
 };
+
+const searchCategories = () => {
+  filteredCategories.value = categories.value.filter((category) =>
+    category.NAME.includes(search.value)
+  );
+};
+
 watch(search, searchCategories);
+
 </script>
+
 
 <style lang="scss" scoped>
 

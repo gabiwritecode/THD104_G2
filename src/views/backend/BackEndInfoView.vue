@@ -15,7 +15,7 @@
         <div class="backend-table-container">
           <h1>消息管理</h1>
           <div class="backend-input-container"><input type="text"><button @click="searchData">搜尋</button></div>
-          <table class="backend-info-table" v-if="informationData.length">
+          <table class="backend-info-table" v-if="filteredInformation.length">
             <thead>
               <tr>
                 <th>文章編號</th>
@@ -195,12 +195,12 @@ const displayStatus = computed(() => {
   };
 });
 const searchData = () => {
-  informationData.value = filteredInformation;
+  informationData.value = filteredInformation.value;
 };
 
 const filteredInformation = computed(() => {
   return informationData.value.filter((info) =>
-    info.TITLE.toLowerCase().includes(search.value.toLowerCase())
+    info.TITLE.includes(search.value)
   );
 });
 
