@@ -84,7 +84,7 @@
 
               </div>
             </div>
-            <h4 class="total">金額總計: {{totalPrice}}元</h4>
+            <h4 class="total">金額總計: {{Number(totalPrice)}}元</h4>
 
 
             <ul class="edit_window_btn">
