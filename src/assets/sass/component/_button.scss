@@ -136,7 +136,7 @@
     width: 36px;
     height: 36px;
     border: #ffffff solid 1px;
-    background-color: $color1;
+    background-color: $yellow;
     border-radius: 30px;
     color: $white;
     text-align: center;
@@ -146,7 +146,7 @@
     cursor: pointer;
     transition: all .3s linear;
     &:hover{
-        background-color: $yellow;
+        background-color: $color1;
         scale:1.1;
     }
     @include r1100{
