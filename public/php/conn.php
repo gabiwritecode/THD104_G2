@@ -2,9 +2,9 @@
 function getPDO() {
     // MySQL 相關訊息
     $db_host = "127.0.0.1";
-    $db_user = "root";
-    $db_pass = "password";
-    $db_select = "THD104_G2";
+    $db_user = "tibamefe_since2021";
+    $db_pass = "vwRBSb.j&K#E";
+    $db_select = "tibamefe_thd104g2";
 
 
     // 建立數據庫連結對象
