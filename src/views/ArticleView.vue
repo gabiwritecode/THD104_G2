@@ -31,8 +31,8 @@ onBeforeMount(async () => {
      
       console.log('Article IDs in data:', articles.value.map(a => a.ID));
 
-      article.value = articles.value.find(a => a.ID === articleId);
-      // article.value = articles.value.find(a => a.ID === articleId.toString());
+      //article.value = articles.value.find(a => a.ID === articleId);
+      article.value = articles.value.find(a => a.ID === articleId.toString());
 
       if (!article.value) {
         console.error('Article not found for ID:', articleId);

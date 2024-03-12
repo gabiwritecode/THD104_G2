@@ -90,7 +90,7 @@
             position: absolute;
             bottom: 0px;
             right: -80%;
-            width: 1000px;
+            width: 900px;
             z-index: 4;
             color:rgba( 0, 0, 0, 0);
             opacity: .2;
@@ -1020,7 +1020,7 @@
     @include btn_back_top();
 }
 .back_top_on{
-    opacity: .8;
+    opacity: .7;
 }
 
 .back_top_hide {

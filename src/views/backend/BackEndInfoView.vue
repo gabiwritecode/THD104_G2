@@ -14,7 +14,7 @@
         </nav>
         <div class="backend-table-container">
           <h1>消息管理</h1>
-          <div class="backend-input-container"> <input type="text" v-model.trim="search">
+          <div class="backend-input-container"> <input type="text" v-model.trim="search" placeholder="搜尋標題">
         <button @click="searchTitle">搜尋</button></div>
           <table class="backend-info-table" v-if="informationData.length">
             <thead>

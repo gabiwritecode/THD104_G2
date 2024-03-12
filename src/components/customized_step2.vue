@@ -29,7 +29,20 @@ const nextStep = () => {
 <template>
   <div>
     <div class="customized-img-container">
-      <img src="@/assets/image/customized/milk.jpg" alt="img">
+      <!-- <img src="@/assets/image/customized/milk.jpg" alt="img"> -->
+      <!-- 步驟動畫 -->
+      <section class="animation">
+        <img class="customized_animation water2" src="@/assets/image/customized/water2.svg" alt="">
+        <div>
+        <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+              <defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" /></defs>
+              <g class="parallax"><use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255, 193, 7, 1)" /></g></svg>
+        </div>
+        <img class="customized_animation water_drop1" src="@/assets/image/customized/water_drop.svg" alt="">
+        <img class="customized_animation water_drop2" src="@/assets/image/customized/water_drop.svg" alt="">
+        <img class="customized_animation water_drop3" src="@/assets/image/customized/water_drop.svg" alt="">
+        <img class="customized_animation cup" src="@/assets/image/customized/cup.svg" alt="">
+      </section>
     </div>
     <div class="customized-text-container">
       <h1>第二步:加牛奶</h1>

@@ -25,21 +25,19 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 10px;
-      .orderTime{
-        // margin-right: 57px;
-      }
-      .account{
-        // margin-right: 50px;
-      }
       
     }
     .icon{
       margin-right: 120px;
       color: #6996A0;
     }
+    .address,
     .phone,
     .statement{
       justify-content: flex-start;
+    }
+    .address li:nth-child(2){
+      margin-left: 15px;
     }
     .phone li:first-child{
       margin-right: 15px;
@@ -57,6 +55,9 @@
       overflow-y: auto;
       border: 1px solid #6996A0;
       padding: 30px;
+      .topping{
+        display: inline;
+      }
       h3{
         text-align: center;
         // margin-bottom: 20px;

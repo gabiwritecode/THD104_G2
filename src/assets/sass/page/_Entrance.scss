@@ -142,7 +142,7 @@
         position: absolute;
         width: 100px;
         right: 20%;
-        bottom: 5%;
+        bottom: 3%;
         z-index: -999;
         animation: drink_icon 4s linear backwards infinite;
         @include r1200{
@@ -157,13 +157,13 @@
     }
      @keyframes drink_icon{
         0%{
-          transform: translate(0px , -25%); 
+          transform: translate(0px , -75%); 
         }
         50%{
           transform: translate(5% , -0px); 
         }
         100%{
-          transform: translate(0px , -25%); 
+          transform: translate(0px , -75%); 
         }
       }
 
