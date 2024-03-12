@@ -13,7 +13,6 @@
      $db_user = "root";
      $db_pass = "password";
      $db_select = "THD104_G2";
-
      //建立資料庫連線物件
      $dsn = "mysql:host=".$db_host.";dbname=".$db_select.";charset=utf8";
 
