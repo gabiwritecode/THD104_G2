@@ -73,15 +73,21 @@
     //----------------------品牌起源
     .about_intrdouce {
         width: 1200px;
-        margin: 80px auto ;
+        margin: 80px auto;
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
+
+        // 
+        @media(max-width: 1200px) {
+            width: auto;
+        }
 
         @include r1100() {
             width: auto;
         }
-
+        @media(max-width: 710px) {
+            flex-wrap: wrap;
+        }
         @include m() {
             width: auto;
             margin: 80px 0 0 0;
@@ -111,7 +117,9 @@
         @include r800() {
             margin-right: 8px;
         }
-
+        @media(max-width: 710px) {
+            margin: 0 auto;
+        }
         @include r700() {
             margin: 0 auto;
         }
@@ -206,7 +214,9 @@
             margin: 0;
 
         }
-
+        @media(max-width: 710px) {
+            margin:10px 0;
+        }
         @include r700() {
             margin: 10px 0;
         }
@@ -243,6 +253,11 @@
             max-width: 300px;
             height: 300px;
             margin-right: 10px;
+        }
+        @media(max-width: 710px) {
+            max-width: 440px;
+            height: 400px;
+            margin: 0 auto;
         }
 
         @include r700() {
@@ -303,8 +318,9 @@
         margin: 20px auto;
         color: white;
         text-align: justify;
+
         @include r700() {
-           max-width:400px;
+            max-width: 400px;
 
         }
 
@@ -410,12 +426,20 @@
     .about_value {
         display: flex;
         justify-content: space-between;
-        margin:0 auto;
+        margin: 0 auto;
         margin-bottom: 140px;
         width: 1200px;
-        @include r1100() {
-            width:auto;
+
+        @media(max-width: 1200px) {
+            width: auto;
         }
+
+        @include r1100() {
+            width: auto;
+        }
+
+        
+
         @include r900() {
             margin-bottom: 80px;
         }
@@ -489,7 +513,7 @@
         max-width: 480px;
 
         @include r1100() {
-            max-width: 500px;
+            max-width: 450px;
             margin-right: 20px;
         }
 
@@ -511,6 +535,7 @@
         @include r700() {
             margin-right: 0;
         }
+
         @include r600() {
             margin-bottom: 20px;
         }
@@ -535,8 +560,9 @@
         @include r800() {
             margin: 0;
         }
+
         @include r600() {
-           margin: 10px 0;
+            margin: 10px 0;
         }
 
         @include m() {
@@ -577,6 +603,10 @@
 
     .about_value_right_hr {
         margin: 50px 0 50px;
+
+        @include r1100() {
+            margin: 20px 0 20px;
+        }
 
         @include r1000() {
             margin: 20px 0 20px;
