@@ -224,43 +224,14 @@ export default{
           }
           if(written){
             this.writtenLightbox = true
-            
-
-          }else{
-            alert('還有資料未填寫')
 
             const myValue = JSON.parse(localStorage.getItem('cart'));
             
-            // const formData = new FormData(document.getElementById("info"));
-            // console.log(this.write_info.name);
-            // console.log(this.write_info.phone);
-            // console.log(this.write_info.address);
             const name1 = this.write_info.name
             const phone = this.write_info.phone
             const address = this.write_info.address
-            console.log(name);
-            // const write_info = {
-
-            //   name : this.write_info.name,
-            //   phone : this.write_info.phone,
-            //   address : this.write_info.address
-            // }
-            // console.log(write_info);
-            // const url1 = 'php/cart.php'
-            // // 发送 AJAX 请求
-            // fetch(url1, {
-            //     method: 'POST',
-            //     headers: {
-            //     'Content-Type': 'application/json'
-            //   },
-            //     body: JSON.stringify({
-            //       name: name,
-            //       phone: phone,
-            //       address: address
-
-            //     })
-            // })
-            console.log(myValue);
+           
+            // console.log(myValue);
             const url = 'php/cart.php'
             fetch(url, {
               method: 'POST',
@@ -276,11 +247,14 @@ export default{
 
                 })
 
-              // body: { myValue: JSON.stringify(myValue) }
               })
+            
 
-              // .then(resp => resp.json())
-              // .then(body => alert(body.message))
+          }else{
+            alert('還有資料未填寫')
+
+            
+
           };
             
           

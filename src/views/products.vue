@@ -1055,17 +1055,23 @@ export default {
  
         addToCart(item) {
         // console.log(item);
-        let item2 = JSON.parse(JSON.stringify(item));
-        item2.key_id = Date.now();
-        this.cart.push(item2);
-        
-        localStorage.setItem("cart", JSON.stringify(this.cart));
+        if(localStorage.isLoggedIn){
+            let item2 = JSON.parse(JSON.stringify(item));
+            item2.key_id = Date.now();
+            this.cart.push(item2);
+            
+            localStorage.setItem("cart", JSON.stringify(this.cart));
+            
+            setTimeout(()=>{
+                this.show = true
+            }, 0)
+            this.show = false
 
-        
-        setTimeout(()=>{
-            this.show = true
-        }, 0)
-        this.show = false
+        }else{
+            alert("請登入會員")
+            location.href = '#/Login_in'
+        }
+
 
         },
         del(index) {

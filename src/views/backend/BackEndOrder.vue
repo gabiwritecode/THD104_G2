@@ -55,7 +55,7 @@
               <li><h3>會員姓名: {{ OrderInner.name }}</h3></li>
               <li><h3 class="orderTime">訂購時間: {{ OrderInner.orderTime }}</h3></li>
             </ul>
-            <ul>
+            <ul class="address">
               <li><h3>訂購地址: {{ OrderInner.address }}</h3></li>
               <li class="icon"><img src="../../assets/image/pic/icon/change.svg" alt="">修改</li>
             </ul>
@@ -75,16 +75,16 @@
               <h3>訂單商品明細:</h3>
               <div class="order_list" v-for="(OrderDetail,index) in OrderDetail[current_index]" :key="index">
                 <ul>
-                  <li><h3>商品名稱: {{OrderDetail.PRODUCT_NAME }}-{{ OrderDetail.SIZE }} <span class="topping" v-if="OrderDetail.SIZE === 'M' || OrderDetail.SIZE ==='中杯'">${{ OrderDetail.MEDIUM_PRICE +addPrice }}</span><span v-else class="topping">${{ OrderDetail.LARGE_PRICE +addPrice }}</span></h3></li>
+                  <li><h3>商品名稱: {{OrderDetail.PRODUCT_NAME }}-{{ OrderDetail.SIZE }} <span class="topping" v-if="OrderDetail.SIZE === 'M' || OrderDetail.SIZE ==='中杯'">${{ OrderDetail.MEDIUM_PRICE + (OrderDetail.TOPPINGS !== '加料' && OrderDetail.TOPPINGS !== '無' ? 10 : 0) }}</span><span v-else class="topping">${{ OrderDetail.LARGE_PRICE + (OrderDetail.TOPPINGS !== '加料' && OrderDetail.TOPPINGS !== '無' ? 10 : 0)}}</span></h3></li>
                   <li><h3>數量: {{ OrderDetail.QUANTITY}}</h3></li>
                 </ul>
-                <h4>加料: <span v-if="OrderDetail.TOPPINGS == '加料'" class="topping">無</span><span v-else class="topping">{{ OrderDetail.TOPPINGS }}</span></h4>
+                <h4>加料: <span v-if="OrderDetail.TOPPINGS ==='加料' || OrderDetail.TOPPINGS ==='無'" class="topping">無</span><span v-else class="topping">{{ OrderDetail.TOPPINGS }}</span></h4>
                 <h4>甜度: {{ OrderDetail.SUGAR_LEVEL }}</h4>
                 <h4>冰塊: {{ OrderDetail.ICE_LEVEL }}</h4>
 
               </div>
             </div>
-            <h4 class="total">金額總計: 60元</h4>
+            <h4 class="total">金額總計: {{totalPrice}}元</h4>
 
 
             <ul class="edit_window_btn">
@@ -104,7 +104,7 @@
 
 
 <script setup>
-  import { ref, onMounted } from 'vue';
+  import { ref, onMounted , computed} from 'vue';
   const editWindow = ref(null);
   const editWindowBg = ref(null);
 
@@ -120,7 +120,7 @@
   });
   const OrderDetail = ref([])
   const current_index = ref(null)
-  const addPrice = ref(0)
+ 
   
   onMounted(() => {
 
@@ -128,7 +128,7 @@
     editWindow.value = document.querySelector('.edit_window');
     editWindowBg.value = document.querySelector('.edit_window_bg');
     
-// console.log();
+
     
   });
 
@@ -139,14 +139,10 @@
       const flatOrderData = [];
       const flatOrderData1 = [];
       for (let order of data) {
-        
+        // console.log(order);
           flatOrderData.push(order);
           flatOrderData1.push(order);
-          // for (let product of order){
-          //   flatOrderData1.push(product)
-          // }
         }
-      
       OrderData.value = flatOrderData
       OrderDetail.value = flatOrderData1
 
@@ -166,6 +162,7 @@
     // console.log(index);
     // console.log(order);
     detail(index);
+    // totalPrice(index);
     editWindow.value.classList.toggle("edit_window_on");
     editWindowBg.value.classList.toggle("edit_window_on");
   }
@@ -176,27 +173,36 @@
     OrderInner.value.orderId = OrderData.value[index][0].ORDER_ID;
     // console.log( OrderData.value[index][0].ORDER_ID); 
     OrderInner.value.email = OrderData.value[index][0]['E-MAIL'];
-    OrderInner.value.name =OrderData.value[index][0].NAME;
-    OrderInner.value.orderTime =OrderData.value[index][0].ORDER_TIME;
-    OrderInner.value.address =OrderData.value[index][0].ADDRESS;
-    OrderInner.value.phone =OrderData.value[index][0].PHONE;
+    OrderInner.value.name = OrderData.value[index][0].NAME;
+    OrderInner.value.orderTime = OrderData.value[index][0].ORDER_TIME;
+    OrderInner.value.address = OrderData.value[index][0].ADDRESS;
+    OrderInner.value.phone = OrderData.value[index][0].PHONE;
   }
   }
   
   const detail = (index) =>{ if (index != null && index != undefined) {
-    // console.log(order); 
      current_index.value = index
-
      
-       if(OrderDetail[current_index] === '加料'){
-        addPrice.value = 0
-     }else{
-        addPrice.value = 10
-     }
-
-     
+    //  console.log(OrderDetail.value[current_index.value]);
+    };
+  
   }
-}
+
+
+  const totalPrice = computed(() => {
+  if (current_index.value !== null && current_index.value !== undefined) {
+    return OrderDetail.value[current_index.value].reduce((sum, item) => {
+      if (item.SIZE === '大杯' || item.SIZE === 'L') {
+        return sum + ((item.LARGE_PRICE + (item.TOPPINGS !== '加料' && item.TOPPINGS !== '無' ? 10 : 0))) * item.QUANTITY;
+      } else {
+        return sum + ((item.MEDIUM_PRICE + (item.TOPPINGS !== '加料' && item.TOPPINGS !== '無' ? 10 : 0))) * item.QUANTITY;
+      }
+    }, 0);
+  }
+});
+    
+
+  
 </script>
 <style lang="scss" scoped>
 
