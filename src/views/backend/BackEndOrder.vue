@@ -75,7 +75,7 @@
               <h3>訂單商品明細:</h3>
               <div class="order_list" v-for="(OrderDetail,index) in OrderDetail[current_index]" :key="index">
                 <ul>
-                  <li><h3>商品名稱: {{OrderDetail.PRODUCT_NAME }}-{{ OrderDetail.SIZE }} <span class="topping" v-if="OrderDetail.SIZE === 'M' || OrderDetail.SIZE ==='中杯'">${{ OrderDetail.MEDIUM_PRICE + (OrderDetail.TOPPINGS !== '加料' && OrderDetail.TOPPINGS !== '無' ? 10 : 0) }}</span><span v-else class="topping">${{ OrderDetail.LARGE_PRICE + (OrderDetail.TOPPINGS !== '加料' && OrderDetail.TOPPINGS !== '無' ? 10 : 0)}}</span></h3></li>
+                  <li><h3>商品名稱: {{OrderDetail.PRODUCT_NAME }}-{{ OrderDetail.SIZE }} <span class="topping" v-if="OrderDetail.SIZE === 'M' || OrderDetail.SIZE ==='中杯'">${{ Number(OrderDetail.MEDIUM_PRICE) + (OrderDetail.TOPPINGS !== '加料' && OrderDetail.TOPPINGS !== '無' ? 10 : 0) }}</span><span v-else class="topping">${{ Number(OrderDetail.LARGE_PRICE) + (OrderDetail.TOPPINGS !== '加料' && OrderDetail.TOPPINGS !== '無' ? 10 : 0)}}</span></h3></li>
                   <li><h3>數量: {{ OrderDetail.QUANTITY}}</h3></li>
                 </ul>
                 <h4>加料: <span v-if="OrderDetail.TOPPINGS ==='加料' || OrderDetail.TOPPINGS ==='無'" class="topping">無</span><span v-else class="topping">{{ OrderDetail.TOPPINGS }}</span></h4>
