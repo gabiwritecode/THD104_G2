@@ -193,9 +193,9 @@
   if (current_index.value !== null && current_index.value !== undefined) {
     return OrderDetail.value[current_index.value].reduce((sum, item) => {
       if (item.SIZE === '大杯' || item.SIZE === 'L') {
-        return sum + ((item.LARGE_PRICE + (item.TOPPINGS !== '加料' && item.TOPPINGS !== '無' ? 10 : 0))) * item.QUANTITY;
+        return sum + ((Number(item.LARGE_PRICE) + (item.TOPPINGS !== '加料' && item.TOPPINGS !== '無' ? 10 : 0))) * item.QUANTITY;
       } else {
-        return sum + ((item.MEDIUM_PRICE + (item.TOPPINGS !== '加料' && item.TOPPINGS !== '無' ? 10 : 0))) * item.QUANTITY;
+        return sum + ((Number(item.MEDIUM_PRICE) + (item.TOPPINGS !== '加料' && item.TOPPINGS !== '無' ? 10 : 0))) * item.QUANTITY;
       }
     }, 0);
   }
