@@ -1,8 +1,10 @@
 
 <template>
   <!-- <div class="space"></div> -->
-  <main class="index_wrapper">
+  <loading-screen v-if="isLoading"></loading-screen>
 
+  <main class="index_wrapper">
+    <div v-if="!isLoading">
     <!------ banner ------>
 
     <section class="banner">
@@ -111,7 +113,6 @@
         :centeredSlides="true"
         :slidesPerView="'auto'"
         :pagination="false"
-        :modules="modules"
         :slides-per-view="3"
         :breakpoints="{
           900: {
@@ -234,14 +235,14 @@
       <div class="background_img">
         <img class="curve4" src="../assets/image/index/curve_i_4.png" alt="">
       </div>
-
+    </div>
       <!-- 回到上面按鈕 -->
       <button @click="scrollToTop" class="back_top" id="back_top">
         <i class="fa-solid fa-chevron-up"></i>
       </button>
     </main>
-
-  <MemberBtn></MemberBtn>
+    
+    <MemberBtn></MemberBtn>
 </template>
 
 <style lang="scss">
@@ -251,6 +252,7 @@
 
 <script>
 import MemberBtn from "../components/member_btn.vue"
+import LoadingScreen from '@/components/Loading.vue';
 import { ref, onMounted, onUnmounted } from 'vue';
 
 // Swiper Vue.js
@@ -261,13 +263,14 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import { register } from 'swiper/element/bundle';
 register();
-import { Navigation } from 'swiper/modules';
+// import { Navigation } from 'swiper/modules';
 
 export default {
   components: {
     MemberBtn, 
     Swiper,
     SwiperSlide,
+    LoadingScreen
   },
   // 首頁header背景色 滾動透明
   setup(){
@@ -286,9 +289,9 @@ export default {
       window.addEventListener('scroll', handleScroll);
     });
 
-    onUnmounted(() => {
-      window.removeEventListener('scroll', handleScroll);
-    });
+    // onUnmounted(() => {
+    //   window.removeEventListener('scroll', handleScroll);
+    // });
 
 
     // 回到上面按鈕
@@ -324,10 +327,47 @@ export default {
       window.removeEventListener('scroll', handleScrollTop);
     });
 
+     // Loading
+    const isLoading = ref(true);
+    const footer = ref(null);
+
+    onMounted(()=>{
+       footer.value = document.querySelector('.page-home footer');
+      if(isLoading){
+        footer.value.classList.add('footer_off')
+        setTimeout(() => {
+          isLoading.value = false;
+          footer.value.classList.remove('footer_off')
+        },3650);
+      }else{
+        isLoading.value = false;
+      }
+    });
+    // onMounted(()=>{
+    //   if(isLoading.value=false){
+    //     footer.value.classList.remove('footer_off')
+  
+    //   }
+      
+    // })
+
+    //  onMounted(() => {
+    //   if (!localStorage.getItem('loadingAnimationShown')) {
+    //     setTimeout(() => {
+    //       isLoading.value = false;
+    //       localStorage.setItem('loadingAnimationShown', 'true');
+    //     }, 3750);
+    //   } else {
+    //     isLoading.value = false;
+    //     localStorage.removeItem('loadingAnimationShown');
+    //   }
+    // });
+
    return {
-      modules: [ Navigation],
+      // modules: [ Navigation],
       showBackToTopButton,
       scrollToTop,
+      isLoading
     };
   }
   
