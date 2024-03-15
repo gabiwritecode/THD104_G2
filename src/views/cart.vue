@@ -162,7 +162,7 @@ export default{
           //   // }
 
             ],
-            cart: JSON.parse(localStorage.getItem('cart'))
+            cart: JSON.parse(localStorage.getItem('cart')) || []
             
         }
       },
@@ -224,7 +224,6 @@ export default{
           }
           if(written){
             this.writtenLightbox = true
-
             const myValue = JSON.parse(localStorage.getItem('cart'));
             
             const name1 = this.write_info.name
@@ -248,10 +247,14 @@ export default{
                 })
 
               })
+
+            
             
 
           }else{
             alert('還有資料未填寫')
+
+            
 
             
 

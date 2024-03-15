@@ -14,7 +14,14 @@ $phone = $data->phone;
 $address = $data->address;
 $pdo = getPDO();
 
-$sql = "INSERT INTO `ORDER`(ORDER_TIME, MEMBER_ID, `NAME`, PHONE, `ADDRESS`) VALUES (NOW(), '1', ?, ?, ?)";
+
+session_start();
+
+$userId = $_SESSION["userId"];
+   
+
+
+$sql = "INSERT INTO `ORDER`(ORDER_TIME, MEMBER_ID, `NAME`, PHONE, `ADDRESS`) VALUES (NOW(), '$userId', ?, ?, ?)";
 $statement = $pdo->prepare($sql);
 $statement->bindValue(1, $name);
 $statement->bindValue(2, $phone);
