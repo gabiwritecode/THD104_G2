@@ -35,26 +35,33 @@
   white-space: nowrap;
   overflow: hidden;
   scroll-behavior: smooth;
+  // height: 465px;
+  padding: 6px 2px 8px 2px;
 }
 
 /* 左右按鈕 */
 .fa-angle-right,.fa-angle-left{
   top: 50%;
-  height: 46px;
-  width: 46px;
+  height: 40px;
+  width: 40px;
   cursor: pointer;
   position: absolute;
   font-size: 1.2rem;
   text-align: center;
-  line-height: 46px;
-  background: #fff;
+  line-height: 40px;
+  background-color: white;
+  background: rgba(120, 190, 200,.6);
+  // outline: 1px solid $color1;
+  color: $white;
   border-radius: 50%;
   transform: translateY(-50%);
 
 }
 .fa-angle-left:hover,.fa-angle-right:hover{
-background-color: #6996A0;
-color: white;
+  background-color: $color1;
+  // color: white;
+  // outline: 0;
+  transition: .3s all ease;
 }
 .fa-angle-left{
   left: -23px;
@@ -74,16 +81,23 @@ color: white;
 .info-article-wrapper{
   width: 370px;
   height: 435px;
-  border: 1px solid #6996A0;
+  outline: 1px solid #6996A0;
   border-top-right-radius: 24px;
   border-bottom-left-radius: 24px;
-
+  background-color: #fff;
 
   /* 圖片及文字置中 */
   text-align: center; 
   padding-top: 24px;
   
-
+  &:hover{
+    filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.2));
+    outline: 2px solid $yellow;
+  }
+  &:hover > .more-info{
+    transition: .3s all ease;
+    color:$yellow;
+  }
 }
 .info-article-wrapper figure {
   /* 移除圖片默認邊距 */

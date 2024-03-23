@@ -12,7 +12,7 @@
           </div>
   
       </div>
-      <button class="close_slide" @click="toggleSlide">X</button>
+      <button class="close_slide" @click="toggleSlide"><i class="fa-solid fa-xmark"></i></button>
       <h2 class="cart">購物車</h2>
   
       <div class="container">
@@ -141,6 +141,8 @@
   
       const slide = document.querySelector('.card_slide');
       slide.classList.toggle("on");
+        const headerMobileBg = document.querySelector('.cart_slide_bg');
+        headerMobileBg.classList.toggle('cart_slide_bg_on');
       },
       addNum(item){
         item.num++

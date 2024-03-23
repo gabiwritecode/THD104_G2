@@ -32,6 +32,7 @@
     </nav>
     <!-- 手機版 打開漢堡灰色背景 -->
     <div class="header_mobile_bg" @click="hamburger"></div>
+    <div class="cart_slide_bg" @click="toggleSlide"></div>
   </header>
 
 </template>
@@ -55,6 +56,8 @@
     
       const slide = document.querySelector('.card_slide');
       slide.classList.toggle("on");
+      const headerMobileBg = document.querySelector('.cart_slide_bg');
+      headerMobileBg.classList.toggle('cart_slide_bg_on');
     },
     hamburger(){
       const menu = document.querySelector('.menu');

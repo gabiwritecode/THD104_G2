@@ -57,17 +57,17 @@ export default {
 
 <template>
   <section class="slider-section">
-    <i @click="scrollCarousel('left')" class="fa-solid fa-angle-left"></i>
     <div
-      ref="carousel"
-      class="carousel"
-      @scroll="handleScroll"
-      @touchstart="handleTouchStart"
-      @touchmove="handleTouchMove"
-      @touchend="handleTouchEnd"
+    ref="carousel"
+    class="carousel"
+    @scroll="handleScroll"
+    @touchstart="handleTouchStart"
+    @touchmove="handleTouchMove"
+    @touchend="handleTouchEnd"
     >
-      <CarouselCard class="article" v-for="article in articles" :key="article.ID" :article="article"></CarouselCard>
-    </div>
+    <CarouselCard class="article" v-for="article in articles" :key="article.ID" :article="article"></CarouselCard>
+  </div>
+  <i @click="scrollCarousel('left')" class="fa-solid fa-angle-left"></i>
     <i @click="scrollCarousel('right')" class="fa-solid fa-angle-right"></i>
   </section>
 </template>

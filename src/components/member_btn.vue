@@ -141,6 +141,8 @@ export default {
 
     const slide = document.querySelector('.card_slide');
     slide.classList.toggle("on");
+    const headerMobileBg = document.querySelector('.cart_slide_bg');
+    headerMobileBg.classList.toggle('cart_slide_bg_on');
     },
     addNum(item){
       item.num++
