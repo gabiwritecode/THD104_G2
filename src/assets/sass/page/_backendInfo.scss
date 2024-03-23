@@ -1,3 +1,6 @@
+.sidebar li:hover{
+  background-color: darken($color2, 0);
+}
 .backend-main{
   display: grid;
   grid-template-columns: 20% 80% ;
@@ -30,9 +33,6 @@
     color: white;
     
   }
-  .sidebar-btn:hover{
-    background-color: $color2;
-  }
 
   .sidebar-btn-container{
     display: flex;
@@ -55,6 +55,9 @@
     color: white;
     cursor: pointer;
     margin-bottom: 162px;
+    &:hover{
+      opacity: .8;
+    }
   }
   .backend-table-container{
     height: 100%;
@@ -129,13 +132,13 @@
 
 // 當頁sidebar-btn改色
 .page-backendInfo .sidebar-btn-container{
-    li:nth-child(4){
+    li:nth-child(3){
         background-color: $color2;
     }
 
 }
 .page-backendCategories .sidebar-btn-container{
-  li:nth-child(5){
+  li:nth-child(4){
       background-color: $color2;
   }
 

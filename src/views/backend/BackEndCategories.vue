@@ -6,17 +6,17 @@
         <nav class="sidebar">
           <div><img src="@/assets/image/logo.svg" alt="logo" width="200"></div>
           <ul class="sidebar-btn-container">
-            <li><RouterLink to="./BackEndMember"  class="sidebar-btn" href="#"><i class="fa-regular fa-user"></i>會員管理</RouterLink></li>
             <li><RouterLink to="./backendOrder"  class="sidebar-btn" href="#"><i class="fa-regular fa-file-lines"></i>訂單管理</RouterLink></li>
             <li><RouterLink to="./backendProducts"  class="sidebar-btn" href="#"><i class="fa-solid fa-box-archive"></i>商品管理</RouterLink></li>
             <li><RouterLink to="./backendInfo"  class="sidebar-btn" href="#"><i class="fa-regular fa-message"></i>消息管理</RouterLink></li>
             <li><RouterLink to="./backendCategories"  class="sidebar-btn" href="#"><i class="fa-regular fa-message"></i>消息分類</RouterLink></li>
+            <li><RouterLink to="./BackEndMember"  class="sidebar-btn" href="#"><i class="fa-regular fa-user"></i>會員管理</RouterLink></li>
             <li><RouterLink to="./BackEndStore"  class="sidebar-btn" href="#"><i class="fa-solid fa-location-dot"></i>門市管理</RouterLink></li>
           </ul>
           <div class="backend-logout"><p>登出<i class="fa-solid fa-arrow-right-from-bracket"></i></p></div>
         </nav>
         <div class="backend-table-container">
-          <h1>消息管理</h1>
+          <h1>消息分類管理</h1>
           <div class="backend-input-container"><input type="text" v-model.trim="search" placeholder="搜尋分類"><button @click="searchCategories">搜尋</button></div>
           <table class="backend-info-table">
             <thead>

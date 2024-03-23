@@ -39,9 +39,9 @@
 
   }
 
-  .sidebar-btn:hover {
-    background-color: #6996A0;
-  }
+  // .sidebar li:hover{
+  //   background-color: darken($color1, 10);
+  // }
 
   .sidebar-btn-container {
     display: flex;
@@ -52,17 +52,17 @@
     color: white;
   }
 
-  .backend-logout {
-    margin-top: 60px;
-    margin-left: 20px;
-  }
+  // .backend-logout {
+  //   margin-top: 60px;
+  //   margin-left: 20px;
+  // }
 
-  .backend-logout p {
-    @include font_t1();
-    align-self: flex-end;
-    color: white;
-    cursor: pointer;
-  }
+  // .backend-logout p {
+  //   @include font_t1();
+  //   align-self: flex-end;
+  //   color: white;
+  //   cursor: pointer;
+  // }
 
   .backend-table-container {
     height: 100vh;
@@ -299,11 +299,11 @@
 }
 
 // 當頁sidebar-btn改色
-.page-backendStore .sidebar-btn-container {
-  li:nth-child(1) {
-    background-color: $color2;
-  }
-}
+// .page-backendStore .sidebar-btn-container {
+//   li:nth-child(1) {
+//     background-color: $color2;
+//   }
+// }
 
 .page-BackEndStore .sidebar-btn-container {
   li:nth-child(6) {

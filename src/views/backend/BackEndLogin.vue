@@ -31,7 +31,7 @@ const login = () => {
 
   if (username.value === 'tibame123@gmail.com' && password.value === '123456') {
 
-    router.push('/BackEndMember');
+    router.push('/BackEndOrder');
   } else {
 
     alert('帳號或密碼不正確');
