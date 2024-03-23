@@ -377,7 +377,7 @@
       border-radius: 50%;
       right: 10%;
       bottom: -310px;
-      animation: circle 4s ease-in-out backwards infinite;
+      animation: circle 4s ease-in-out 1s backwards infinite;
       @include r1100{
         width: 16vw;
         height: 16vw;
@@ -1283,7 +1283,9 @@
         display: block;
       }
     }
-
+    button{
+       padding: 0;
+    }
 } //.products_wrapper
 
 

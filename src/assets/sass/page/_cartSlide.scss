@@ -56,7 +56,12 @@
       position: absolute;
       right: 20px;
       top: 20px;
+      padding: 0;
       cursor: pointer;
+      transition: .2s all ease;
+      &:hover{
+       background-color: darken($color2, 10);
+      }
     }
     
     .cart{
@@ -112,7 +117,7 @@
 
       // justify-content: center;
       padding-bottom: 5px;
-      border-bottom: 2px dashed $color2;
+      border-bottom: 1px dashed $color2;
       margin: 20px auto 0px;
    
       
@@ -174,6 +179,11 @@
     margin-top: 10px;
     img{
       padding-bottom: 20px;
+      cursor: pointer;
+      transition: .3s all ease;
+      &:hover{
+        opacity: .8;
+      }
     }
    }
    .line{
@@ -196,6 +206,11 @@
   .clear_cart{
     @include btn_M();
     width: 120px;
+    padding: 0;
+    font-size: 18px;
+    @include r800{
+      letter-spacing: normal;
+    }
   }
   .pay{
     @include btn_yellow();
