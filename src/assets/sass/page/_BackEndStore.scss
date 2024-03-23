@@ -9,48 +9,48 @@
     height: 2200px;
   }
 
-  .sidebar {
-    height: auto;
-    background-color: #78BEC8;
-    text-align: center;
-    padding-top: 40px;
-    display: flex;
-    flex-direction: column;
-  }
+  // .sidebar {
+  //   height: auto;
+  //   background-color: #78BEC8;
+  //   text-align: center;
+  //   padding-top: 40px;
+  //   display: flex;
+  //   flex-direction: column;
+  // }
 
-  .sidebar ul {
-    margin-top: 70px;
-  }
+  // .sidebar ul {
+  //   margin-top: 70px;
+  // }
 
-  .sidebar i {
-    margin-right: 10px;
-    margin-left: 10px;
-  }
+  // .sidebar i {
+  //   margin-right: 10px;
+  //   margin-left: 10px;
+  // }
 
-  .sidebar-btn {
-    @include font_h2();
-    height: 70px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: white;
+  // .sidebar-btn {
+  //   @include font_h2();
+  //   height: 70px;
+  //   width: 100%;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   text-decoration: none;
+  //   color: white;
 
-  }
+  // }
 
   // .sidebar li:hover{
   //   background-color: darken($color1, 10);
   // }
 
-  .sidebar-btn-container {
-    display: flex;
-    flex-direction: column;
-  }
+  // .sidebar-btn-container {
+  //   display: flex;
+  //   flex-direction: column;
+  // }
 
-  .sidebar-btn-container a:active {
-    color: white;
-  }
+  // .sidebar-btn-container a:active {
+  //   color: white;
+  // }
 
   // .backend-logout {
   //   margin-top: 60px;
@@ -64,20 +64,20 @@
   //   cursor: pointer;
   // }
 
-  .backend-table-container {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: 110px;
+  // .backend-table-container {
+  //   height: 100vh;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: flex-start;
+  //   align-items: center;
+  //   margin-top: 110px;
 
-  }
+  // }
 
-  .backend-table-container h1 {
-    @include font_h1();
-    color: #6996A0;
-  }
+  // .backend-table-container h1 {
+  //   @include font_h1();
+  //   color: #6996A0;
+  // }
 
   .backend-input-container {
     width: 1000px;
@@ -87,21 +87,21 @@
      
   }
 
-  .backend-input-container input {
-    height: 26px;
-    border: 1px solid #6996A0;
-    border-radius: 4px;
-  }
+  // .backend-input-container input {
+  //   height: 26px;
+  //   border: 1px solid #6996A0;
+  //   border-radius: 4px;
+  // }
 
-  .backend-input-container button {
-    margin-left: 4px;
-    background-color: #6996A0;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 2px 21px;
-    cursor: pointer;
-  }
+  // .backend-input-container button {
+  //   margin-left: 4px;
+  //   background-color: #6996A0;
+  //   color: white;
+  //   border: none;
+  //   border-radius: 4px;
+  //   padding: 2px 21px;
+  //   cursor: pointer;
+  // }
 
 
 
