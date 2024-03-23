@@ -126,6 +126,7 @@
         class="mySwiper">
         <swiper-slide class="top1">
           <img src="../assets/image/index/top5_beverage3.png" />
+            <img class="top_no" src="../assets/image/index/top_no1.svg" />
           <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
           <article class="top_product_depiction">
             <h2>巧克力奶昔</h2>
@@ -135,6 +136,7 @@
 
         <swiper-slide class="top2">
           <img src="../assets/image/index/top5_beverage4.png" />
+            <img class="top_no" src="../assets/image/index/top_no2.svg" />
           <img class="cup_shadow" src="../assets/image/index/top5_shadow-14.png" alt="">
           <article class="top_product_depiction">
             <h2>楊枝甘露</h2>
@@ -144,6 +146,7 @@
 
         <swiper-slide class="top3">
           <img src="../assets/image/index/top5_beverage5.png" />
+            <img class="top_no" src="../assets/image/index/top_no3.svg" />
           <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
           <article class="top_product_depiction">
             <h2>柚子氣泡飲</h2>
@@ -153,6 +156,7 @@
 
         <swiper-slide class="top4">
           <img src="../assets/image/index/top5_beverage1.png" />
+            <img class="top_no" src="../assets/image/index/top_no4.svg" />
           <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
           <article class="top_product_depiction">
             <h2>奇異果冰沙</h2>
@@ -162,6 +166,7 @@
 
         <swiper-slide class="top5">
           <img src="../assets/image/index/top5_beverage2.png" />
+            <img class="top_no" src="../assets/image/index/top_no5.svg" />
           <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
           <article class="top_product_depiction">
             <h2>清爽西瓜冰沙</h2>
@@ -169,7 +174,9 @@
           </article>
         </swiper-slide>
       
-        <swiper-slide class="top6"><img src="../assets/image/index/top5_beverage6.png" />
+          <swiper-slide class="top6">
+            <img src="../assets/image/index/top5_beverage6.png" />
+            <img class="top_no" src="../assets/image/index/top_no6.svg" />
           <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
           <article class="top_product_depiction">
             <h2>檸檬薄荷茶</h2>
@@ -200,27 +207,35 @@
             data-aos-easing="ease-in-out"
             data-aos-once="true">
             <li>
-              <RouterLink to="./article_item1"> <div><img src="../assets/image/index/news1.jpg" alt=""></div>
+              <RouterLink to="./article_item1">
+                <div><img src="../assets/image/index/news1.jpg" alt=""></div>
               <h2>莓果系列即將發售 </h2>
-              <p>捌嵩飲茶，全新推出「莓果繽紛系列」！</p></RouterLink>
+                <p>捌嵩飲茶，全新推出「莓果繽紛系列」！</p>
+              </RouterLink>
             </li>
           
             <li>
-              <RouterLink to="./article_item2"><div><img src="../assets/image/index/news2.jpg" alt=""></div>
+              <RouterLink to="./article_item2">
+                <div><img src="../assets/image/index/news2.jpg" alt=""></div>
               <h2>捌嵩水果氣泡飲重磅上市 </h2>
-              <p>捌嵩飲茶，全新推出「水果氣泡飲系列」！</p></RouterLink>
+                <p>捌嵩飲茶，全新推出「水果氣泡飲系列」！</p>
+              </RouterLink>
             </li>
 
             <li>
-              <RouterLink to="./article_item7"><div><img src="../assets/image/index/news3.jpg" alt=""></div>
+              <RouterLink to="./article_item7">
+                <div><img src="../assets/image/index/news3.jpg" alt=""></div>
               <h2>南京店盛大開幕! </h2>
-              <p>慶祝南京店盛大開幕，全品項買一送一!</p></RouterLink>
+                <p>慶祝南京店盛大開幕，全品項買一送一!</p>
+              </RouterLink>
             </li>
           
             <li>
-              <RouterLink to="./article_item3"><div><img src="../assets/image/index/news4.jpg" alt=""></div>
+              <RouterLink to="./article_item3">
+                <div><img src="../assets/image/index/news4.jpg" alt=""></div>
               <h2>2024年春季新菜單 </h2>
-              <p>最好喝的手搖飲料，盡在捌嵩飲茶</p></RouterLink>
+                <p>最好喝的手搖飲料，盡在捌嵩飲茶</p>
+              </RouterLink>
             </li>
           </ul>
           <RouterLink to="./info"><button 
@@ -272,15 +287,17 @@ export default {
     SwiperSlide,
     LoadingScreen
   },
-  // 首頁header背景色 滾動透明
   setup(){
+    // 首頁header背景色 滾動透明
     const headerBgc = ref(null);
 
     const handleScroll = () => {
       if (window.scrollY > 120) {
-        headerBgc.value.classList.add('header_bgc');
+        // headerBgc.value.classList.add('header_bgc');
+        headerBgc.value.style.backgroundColor = 'rgba(120, 190, 200, 0.9)';
       } else {
-        headerBgc.value.classList.remove('header_bgc');
+        // headerBgc.value.classList.remove('header_bgc');
+        headerBgc.value.style.backgroundColor = '';
       }
     };
 

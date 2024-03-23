@@ -41,23 +41,55 @@
   data() {
       return {
         // cart:[]
+        headerSize: null,
+        hasReducedHeight: false
       }
      },
-      methods: {
+  mounted() {
+    this.headerSize = document.querySelector('header');
+    window.addEventListener('scroll', this.headerScroll);
+  },
+  methods: {
+
+    toggleSlide() {
     
-        toggleSlide() {
-        
-          const slide = document.querySelector('.card_slide');
-          slide.classList.toggle("on");
-        },
-        hamburger(){
-          const menu = document.querySelector('.menu');
-          menu.classList.toggle("menu_on");
-          const headerMobileBg = document.querySelector('.header_mobile_bg');
-          headerMobileBg.classList.toggle('header_mobile_bg_on');
-        }
+      const slide = document.querySelector('.card_slide');
+      slide.classList.toggle("on");
     },
-    computed: {
+    hamburger(){
+      const menu = document.querySelector('.menu');
+      const headerMobileBg = document.querySelector('.header_mobile_bg');
+      menu.classList.toggle("menu_on");
+      headerMobileBg.classList.toggle('header_mobile_bg_on');
+      
+      // 滾動畫面時也關閉選單
+      window.addEventListener('scroll', () => {
+        menu.classList.remove("menu_on");
+        headerMobileBg.classList.remove('header_mobile_bg_on');
+      });
+
+      // 監聽視窗寬度變化事件
+      window.addEventListener('resize', () => {
+        menu.classList.remove("menu_on");
+        headerMobileBg.classList.remove('header_mobile_bg_on');
+      });
+    },
+    
+    // header高度變小
+    headerScroll() {
+      if (window.scrollY > 100 && !this.hasReducedHeight) {
+        const currentHeight = parseInt(getComputedStyle(this.headerSize).height.replace('px', ''));
+        this.headerSize.style.height = `${currentHeight - 12}px`;
+        this.headerSize.style.backgroundColor = 'rgba(120, 190, 200, 0.9)';
+        this.hasReducedHeight = true;
+      } else if (window.scrollY <= 100 && this.hasReducedHeight) {
+        this.headerSize.style.height = '';
+        this.headerSize.style.backgroundColor = '';
+        this.hasReducedHeight = false;
+      }
+    }
+  },
+  computed: {
     isLoggedIn() {
       // 獲得登入狀態
       return localStorage.getItem('isLoggedIn') === 'true';
@@ -67,6 +99,7 @@
       return localStorage.getItem('userId');
     },
   },
+  
  }
 
 </script>
