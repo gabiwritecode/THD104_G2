@@ -1,9 +1,9 @@
 
- img{
-        -webkit-user-drag: none;
-        -moz-user-drag: none;
-        -ms-user-drag: none;
-    }
+img{
+      -webkit-user-drag: none;
+      -moz-user-drag: none;
+      -ms-user-drag: none;
+  }
 
 .customized-image-container{
   margin: 0 auto;
@@ -24,40 +24,58 @@
 .customized-text-container h2 {
   text-align: center;
   color: $black;
+  margin-left: auto;
+  margin-right: auto;
+  @include r1000{
+    width: 80vw;
+  }
 }
-
+.customized-text-container h2{
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  @include r900{
+    width: 80vw;
+  }
+}
 .customized-input-container{
   margin: 20px auto;
   text-align: center;
+  @include r500{
+    width: 240px;
+  }
+  span{
+    @include r500{
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    }
+  }
 }
-/* 客製化第二頁開始的圖片 */
-// .customized-img-container{
 
-  // border-top-right-radius: 60px;
-  // border-bottom-left-radius: 60px;
-
-// }
-// .customized-img-container img{
-//   width: 760px;
-//   height: 560px;
-//   object-fit: cover;
-//   object-position: center;
-// }
 .customized-input-container select{
-  height: 30px;
-  border-radius: 4px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  // height: 30px;
+  // border-radius: 4px;
+  // -webkit-appearance: none;
+  // -moz-appearance: none;
+  // appearance: none;
   
-  /* 添加自訂箭頭 */
-  background: url('@/assets/image/customized/select arrow.png') no-repeat right center;
+  // /* 添加自訂箭頭 */
+  // background: url('@/assets/image/customized/select arrow.png') no-repeat right center;
 
   padding-right: 30px;
-  padding-left: 5px;
-  background-size: 25px; 
-  box-sizing: border-box;
-  border: 1px solid #78BEC8;
+  // padding-left: 5px;
+  // background-size: 25px; 
+  // box-sizing: border-box;
+  // border: 1px solid #78BEC8;
+  margin-right: 16px;
+  // cursor: pointer;
+  @include select_M();
+  width: auto;
+  @include r500{
+    margin: 4px 0;
+    width: 110px;
+  }
 }
 .button-container{
   margin: 0 auto;
@@ -90,22 +108,39 @@
 }
 
 .customized-checkbox-container .checkbox,.customized-milk-container .checkbox{
-  width: 29px;
-  height: 29px;
+  width: 26px;
+  height: 26px;
   border-radius: 4px;
+  margin-right: 4px;
+   cursor: pointer;
 }
 
 .customized-checkbox-item .radio-box{
-  width: 14px;
-  height: 14px;
-  
+  width: 20px;
+  height: 20px;
+  margin: 0 4px 0 8px;
+   cursor: pointer;
+}
+.page-customized label{
+   cursor: pointer;
+}
+.customized_result h3{
+  text-align: left;
+  font-size: 18px;
+  width: 200px;
+  margin: 0 auto;
+  padding-left: 40px;
+  line-height: 1.7;
+}
+.customized_result span{
+  color: $color2;
 }
 
 // ===== 動畫 ======
 /* 客製化第二頁開始的圖片 */
 .customized-img-container{
   width: 760px;
-  height: 460px;
+  height: 400px;
   // border: 1px solid red;
   //  position: relative;
   margin: 0 auto;
@@ -117,10 +152,10 @@
   @include r1000{
     width: auto;
     margin: 10% 10% 0 10%;
-    height: 60vh;
+    // height: 50vh;
   }
   @include r800{
-    height: 45vh;
+    height: 300px;
   }
 .animation{
   // border: 1px solid blue;
@@ -257,7 +292,7 @@
   }
   .bubble1{
     bottom: 68%;
-    width: 21px;
+    width: 20px;
     left: 38%;
     animation: bubble 3s ease 0s backwards infinite; 
     @include r800{
@@ -268,7 +303,7 @@
   }
    .bubble2{
     bottom: 75%;
-    width: 21px;
+    width: 20px;
     left: 52%;
     animation: bubble 3s ease .5s backwards infinite; 
     @include r800{
@@ -278,7 +313,7 @@
   }
    .bubble3{
      bottom: 65%;
-    width: 21px;
+    width: 20px;
     left: 62%;
     animation: bubble 3s ease .3s backwards infinite; 
      @include r800{
@@ -511,7 +546,7 @@
 }
 .customized-checkbox-container{
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   width: 120px;
 }
 .customized-milk-container{
@@ -519,6 +554,9 @@
   margin: 0 auto;
   justify-content: center;
  align-items: center;
+}
+.customized-checkbox-item{
+  margin: 2px 0;
 }
 }
 @media screen and (max-width:500px) {
@@ -538,7 +576,7 @@
 }
 .customized-checkbox-container{
   flex-direction: column;
-  align-items: flex-end;
+  // align-items: flex-end;
   width: 120px;
 }
 .customized-milk-container{
@@ -565,7 +603,7 @@
 }
 .customized-checkbox-container{
   flex-direction: column;
-  align-items: flex-end;
+  // align-items: flex-end;
   width: 120px;
 }
 .customized-milk-container{

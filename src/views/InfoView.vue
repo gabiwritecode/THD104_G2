@@ -25,11 +25,11 @@
 </script>
 <template>
   <div class="info-body">
-    <h1 class="info-title">最新消息</h1>
-    <h2 class="info-subtitle">商品資訊</h2>
-      <Carousel :articles="articles"/>
-    <h2 class="info-subtitle info-spacing">門市消息</h2>
-      <Carousel :articles="articles2"/>
+    <h1 class="info-title animate__animated animate__flipInX">最新消息</h1>
+    <h2 class="info-subtitle animate__animated animate__fadeIn">商品資訊</h2>
+    <Carousel :articles="articles" class="animate__animated animate__fadeIn" />
+    <h2 class="info-subtitle info-spacing animate__animated animate__fadeIn">門市消息</h2>
+    <Carousel :articles="articles2" class="animate__animated animate__fadeIn" />
   </div>
   <memberBtn></memberBtn>
 </template>

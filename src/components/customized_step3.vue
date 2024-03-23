@@ -35,9 +35,14 @@ const nextStep = () => {
       <section class="animation">
         <img class="customized_animation water2" src="@/assets/image/customized/water2.svg" alt="">
         <div>
-        <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-              <defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" /></defs>
-              <g class="parallax"><use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255, 193, 7, 1)" /></g></svg>
+          <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+              <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255, 193, 7, 1)" />
+            </g>
+          </svg>
         </div>
         <img class="customized_animation bubble1 fruit" src="@/assets/image/customized/fruit.svg" alt="">
         <img class="customized_animation bubble2 fruit" src="@/assets/image/customized/fruit.svg" alt="">
@@ -51,24 +56,24 @@ const nextStep = () => {
     </div>
     <div class="customized-checkbox-container">
       <div class="customized-checkbox-item">
-        <p>水蜜桃：</p>
-        <input type="radio" name="fruit" class="radio-box" v-model="selectedFruit" value="水蜜桃">
+        <input type="radio" name="fruit" class="radio-box" v-model="selectedFruit" value="水蜜桃" id="peach">
+        <label for="peach">水蜜桃</label>
       </div>
       <div class="customized-checkbox-item">
-        <p>草莓：</p>
-        <input type="radio" name="fruit" class="radio-box" v-model="selectedFruit" value="草莓">
+        <input type="radio" name="fruit" class="radio-box" v-model="selectedFruit" value="草莓" id="strawberry">
+        <label for="strawberry">草莓</label>
       </div>
       <div class="customized-checkbox-item">
-        <p>藍莓：</p>
-        <input type="radio" name="fruit" class="radio-box" v-model="selectedFruit" value="藍莓">
+        <input type="radio" name="fruit" class="radio-box" v-model="selectedFruit" value="藍莓" id="blueberry">
+        <label for="blueberry">藍莓</label>
       </div>
       <div class="customized-checkbox-item">
-        <p>香蕉：</p>
-        <input type="radio" name="fruit" class="radio-box" v-model="selectedFruit" value="香蕉">
+        <input type="radio" name="fruit" class="radio-box" v-model="selectedFruit" value="香蕉" id="banana">
+        <label for="banana">香蕉</label>
       </div>
       <div class="customized-checkbox-item">
-        <p>不添加：</p>
-        <input type="radio" name="fruit" class="radio-box" v-model="selectedFruit" value="不添加">
+        <input type="radio" name="fruit" class="radio-box" v-model="selectedFruit" value="不添加" id="nofruit">
+        <label for="nofruit">不添加</label>
       </div>
     </div>
     <br>

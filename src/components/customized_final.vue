@@ -116,11 +116,15 @@ const addToCart = () => {
       <section class="animation cup_shake">
         <img class="customized_animation water2" src="@/assets/image/customized/water2.svg" alt="">
         <div>
-        <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-              <defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" /></defs>
-              <g class="parallax">
-                <!-- <use xlink:href="#gentle-wave" x="48" y="2" fill="rgba(255, 193, 7,0.5)" /> -->
-                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255, 193, 7, 1)" /></g></svg>
+          <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+              <!-- <use xlink:href="#gentle-wave" x="48" y="2" fill="rgba(255, 193, 7,0.5)" /> -->
+              <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255, 193, 7, 1)" />
+            </g>
+          </svg>
         </div>
         <img class="customized_animation straw" src="@/assets/image/customized/straw.svg" alt="">
         <img class="customized_animation cup" src="@/assets/image/customized/cup.svg" alt="">
@@ -128,19 +132,20 @@ const addToCart = () => {
 
       </section>
     </div>
-    <div class="customized-text-container">
-      <h1>恭喜您! 專屬客製化飲料已製作完成!</h1>
+    <div class="customized-text-container customized_result">
+      <h1 class="animate__animated animate__headShake">恭喜您! 專屬客製化飲料已製作完成!</h1>
       <h2>趕快把客製化的飲料加入購物車吧!</h2>
-      <h2>選擇的茶底: {{ customizationData.teabase }}</h2>
-      <h2>選擇的冰塊: {{ customizationData.ice }}</h2>
-      <h2>選擇的甜度: {{ customizationData.sugar }}</h2>
-      <h2>是否加奶: {{ customizationData.addMilk ? '是' : '否' }}</h2>
-      <h2>選擇的水果: {{ customizationData.selectedFruit }}</h2>
-      <h2>選擇的加料: {{ customizationData.selectedTopping }}</h2>
+      <h3>選擇的茶底: <span>{{ customizationData.teabase }}</span></h3>
+      <h3>選擇的冰塊: <span>{{ customizationData.ice }}</span></h3>
+      <h3>選擇的甜度: <span>{{ customizationData.sugar }}</span></h3>
+      <h3>是否加牛奶: <span>{{ customizationData.addMilk ? '是' : '否' }}</span></h3>
+      <h3>選擇的水果: <span>{{ customizationData.selectedFruit }}</span></h3>
+      <h3>選擇的加料: <span>{{ customizationData.selectedTopping }}</span></h3>
     </div>
     <br>
     <div class="button-container">
-      <button class="customized-button" @click="addToCart">加入購物車<i class="fas fa-shopping-cart"></i></button>
+      <button class="customized-button customized-button animate__animated animate__headShake animate__delay-2s"
+        @click="addToCart">加入購物車<i class="fas fa-shopping-cart"></i></button>
     </div>
   </div>
 </template>
