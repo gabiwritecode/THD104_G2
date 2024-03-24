@@ -180,9 +180,9 @@
     img{
       padding-bottom: 20px;
       cursor: pointer;
-      transition: .3s all ease;
+      transition: .2s all ease;
       &:hover{
-        opacity: .8;
+        filter: brightness(120%);
       }
     }
    }

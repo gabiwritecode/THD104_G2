@@ -30,7 +30,7 @@ const nextStep = () => {
   <div class="customized-img-container">
     <!-- <img src="@/assets/image/customized/tea.jpg" alt="img"> -->
     <!-- 步驟動畫 -->
-    <section class="animation">
+    <section class="animation animate__animated animate__pulse">
       <img class="customized_animation water" src="@/assets/image/customized/water.svg" alt="">
       <img class="customized_animation nowater" src="@/assets/image/customized/nowater.svg" alt="">
       <img class="customized_animation cup" src="@/assets/image/customized/cup.svg" alt="">
@@ -38,7 +38,7 @@ const nextStep = () => {
 
   </div>
   <div class="customized-text-container">
-    <h1>第一步:選擇茶底</h1>
+    <h1 class="animate__animated animate__pulse">第一步:選擇茶底</h1>
     <h2>請在下方選項中選擇您喜歡的茶類，做為客製化飲料的基底</h2>
   </div>
   <div class="customized-input-container">

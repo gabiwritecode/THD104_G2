@@ -126,7 +126,7 @@
         class="mySwiper">
         <swiper-slide class="top1">
           <img src="../assets/image/index/top5_beverage3.png" />
-            <img class="top_no" src="../assets/image/index/top_no1.svg" />
+          <img class="top_no" src="../assets/image/index/top_no1.svg" />
           <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
           <article class="top_product_depiction">
             <h2>巧克力奶昔</h2>
@@ -136,7 +136,7 @@
 
         <swiper-slide class="top2">
           <img src="../assets/image/index/top5_beverage4.png" />
-            <img class="top_no" src="../assets/image/index/top_no2.svg" />
+          <img class="top_no" src="../assets/image/index/top_no2.svg" />
           <img class="cup_shadow" src="../assets/image/index/top5_shadow-14.png" alt="">
           <article class="top_product_depiction">
             <h2>楊枝甘露</h2>
@@ -146,7 +146,7 @@
 
         <swiper-slide class="top3">
           <img src="../assets/image/index/top5_beverage5.png" />
-            <img class="top_no" src="../assets/image/index/top_no3.svg" />
+          <img class="top_no" src="../assets/image/index/top_no3.svg" />
           <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
           <article class="top_product_depiction">
             <h2>柚子氣泡飲</h2>
@@ -156,7 +156,7 @@
 
         <swiper-slide class="top4">
           <img src="../assets/image/index/top5_beverage1.png" />
-            <img class="top_no" src="../assets/image/index/top_no4.svg" />
+          <img class="top_no" src="../assets/image/index/top_no4.svg" />
           <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
           <article class="top_product_depiction">
             <h2>奇異果冰沙</h2>
@@ -166,7 +166,7 @@
 
         <swiper-slide class="top5">
           <img src="../assets/image/index/top5_beverage2.png" />
-            <img class="top_no" src="../assets/image/index/top_no5.svg" />
+          <img class="top_no" src="../assets/image/index/top_no5.svg" />
           <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
           <article class="top_product_depiction">
             <h2>清爽西瓜冰沙</h2>
@@ -174,9 +174,9 @@
           </article>
         </swiper-slide>
       
-          <swiper-slide class="top6">
-            <img src="../assets/image/index/top5_beverage6.png" />
-            <img class="top_no" src="../assets/image/index/top_no6.svg" />
+        <swiper-slide class="top6">
+          <img src="../assets/image/index/top5_beverage6.png" />
+          <img class="top_no" src="../assets/image/index/top_no6.svg" />
           <img class="cup_shadow " src="../assets/image/index/top5_shadow-14.png" alt="">
           <article class="top_product_depiction">
             <h2>檸檬薄荷茶</h2>

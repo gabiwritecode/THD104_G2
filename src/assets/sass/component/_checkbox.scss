@@ -1,11 +1,11 @@
 // ----- check box -----
 // 還沒查到怎麼改裡面樣式
 @mixin checkbox(){
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     border: 1px solid $color2;
     border-radius: 4px;
-    
+    accent-color: $color2;
     cursor: pointer;
 }
 
@@ -20,6 +20,8 @@
     // appearance: none;
     outline: none;
     border: none;
+    padding: 0;
+    accent-color: $color2;
     cursor: pointer;
     &:before {
         content: "";

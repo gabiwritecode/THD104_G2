@@ -137,6 +137,9 @@
         width: 100vw;
         // height: 130vh;
         animation: up .8s linear 2.9s forwards 1;
+        @include r700{
+            width: 140%;
+        }
    }
     @keyframes up{
         0%{

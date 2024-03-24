@@ -98,6 +98,10 @@
     margin-top: 50px;
     // margin-left: 40px;
     cursor: pointer;
+    transition: .2s all ease;
+    &:hover{
+      filter: brightness(120%);
+    }
   }
   .order_list_r div{
     @include font_t1();
@@ -112,6 +116,7 @@
   }
   .add_cart{
     @include btn_M();
+    padding: 0;
   }
   .add_cart_text{
     line-height: 40px;
@@ -149,7 +154,7 @@
     color: $grey1;
   }
   .lable_name .radio{
-    // @include radio();
+    @include radio();
     width: 20px;
     height: 20px;
     // margin-top: 5px;

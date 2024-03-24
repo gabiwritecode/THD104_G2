@@ -31,7 +31,7 @@ const nextStep = () => {
     <div class="customized-img-container">
       <!-- <img src="@/assets/image/customized/tapioka.jpg" alt="img"> -->
       <!-- 步驟動畫 -->
-      <section class="animation">
+      <section class="animation animate__animated animate__pulse">
         <img class="customized_animation water2" src="@/assets/image/customized/water2.svg" alt="">
         <div>
           <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
@@ -50,7 +50,7 @@ const nextStep = () => {
       </section>
     </div>
     <div class="customized-text-container">
-      <h1>第四步:加料</h1>
+      <h1 class="animate__animated animate__pulse">第四步:加料</h1>
       <h2>手搖飲怎麼能沒有加料!趕快把喜歡的料加入選項吧</h2>
     </div>
     <div class="customized-checkbox-container">

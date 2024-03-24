@@ -794,6 +794,9 @@
             @include r800{
                 width: 6vw;
             }
+            @include r500{
+                width: 6.8vw;
+            }
             
         }
         .top1 .top_no{
@@ -932,12 +935,15 @@
             scale: 1.45;
             filter: grayscale(0%) blur(0px) brightness(105%);
             transition: .8s all ease;
+        }
+        .swiper-slide-active img:first-child{
             &:hover{
                 transform: translate(0px , -10px); 
                 @include r900{
                     transform: translate(0px , 0px); 
                 }
             }
+            
         }
         .swiper-slide-active h2 ,.swiper-slide-active p{
             opacity: 1;

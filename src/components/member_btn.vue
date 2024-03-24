@@ -208,7 +208,9 @@ export default {
            }
 
            if(isSelectAll){
-                location.href = '#/cart'
+                location.href = '#/cart';
+               const headerMobileBg = document.querySelector('.cart_slide_bg');
+               headerMobileBg.classList.remove('cart_slide_bg_on');
            }else{
                 this.lightbox = true
                 // console.log(size);
